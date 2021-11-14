@@ -24,6 +24,8 @@ jobs:
       - run: rm -r .git
       - run: ls -la
       - run: cd build && git init
+      - run: pwd
+      - run: ls -la
       - run: git commit -m "(CI) added React build" -a
       - run: echo "https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
       - run: git remote add origin https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git
