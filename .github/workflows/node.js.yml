@@ -18,10 +18,14 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run build
-#       - name: Commit files
+      - run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - run: rm -r .git
       - run: ls -la
-      - run: cd build && ls -la
-#         run: |
-#           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-#           git config --local user.name "github-actions[bot]"
-#           git commit -m "Add changes" -a
+      - run: cd build && git init
+      - run: git commit -m "(CI) added React build" -a
+      - run: echo "https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
+      - run: git remote add origin https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git
+      - run: git push HEAD:production --force
+
