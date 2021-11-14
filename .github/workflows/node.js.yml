@@ -19,8 +19,8 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.email "dev.ureckon@gmail.com"
+          git config --global user.name "sudo-ureckon"
       - run: |
           rm -r .git
           ls -la
@@ -29,7 +29,7 @@ jobs:
           ls -la
           git add .
           git commit -m "(CI) added React build"
-          git remote add origin https://github.com/dev-ureckon/ureckon-22-frontend.git
+          git remote add origin https://ureckon-sudo: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@github.com/dev-ureckon/ureckon-22-frontend.git
           git branch -M production
           git push -u origin production
           
