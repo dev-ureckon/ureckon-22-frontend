@@ -31,6 +31,6 @@ jobs:
           git commit -m "(CI) added React build"
           git remote add origin https://ureckon-sudo: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@github.com/dev-ureckon/ureckon-22-frontend.git
           git branch -M production
-          git push -u origin production
+          git push -u -f origin production
           
 
