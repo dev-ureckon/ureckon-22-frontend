@@ -30,7 +30,7 @@ jobs:
           cd build && git init
           git add .
           git commit -m "(CI) added React build"
-          git remote add origin https://ureckon-sudo:@${TOKEN}github.com/dev-ureckon/ureckon-22-frontend.git
+          git remote add origin https://ureckon-sudo:${TOKEN}@github.com/dev-ureckon/ureckon-22-frontend.git
           git branch -M production
           git push -u -f origin production
         env:
