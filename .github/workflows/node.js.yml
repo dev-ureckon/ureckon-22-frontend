@@ -29,7 +29,8 @@ jobs:
           ls -la
           git add .
           git commit -m "(CI) added React build"
-          echo "https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
-          git remote add origin https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git
-          git push HEAD:production --force
+          git remote add origin https://github.com/dev-ureckon/ureckon-22-frontend.git
+          git branch -M production
+          git push -u origin production
+          
 
