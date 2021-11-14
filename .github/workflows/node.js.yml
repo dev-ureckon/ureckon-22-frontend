@@ -16,21 +16,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install
-      - run: npm run build
-      - run: |
+      - name: Build
+        run: |
+          npm install
+          npm run build
+      - name: Configure Git
+        run: |
           git config --global user.email "dev.ureckon@gmail.com"
           git config --global user.name "sudo-ureckon"
-      - run: |
+      - name: Push to production
+        run: |
           rm -r .git
-          ls -la
           cd build && git init
-          pwd
-          ls -la
           git add .
           git commit -m "(CI) added React build"
-          git remote add origin https://ureckon-sudo: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@github.com/dev-ureckon/ureckon-22-frontend.git
+          git remote add origin https://ureckon-sudo:@${TOKEN}github.com/dev-ureckon/ureckon-22-frontend.git
           git branch -M production
           git push -u -f origin production
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
           
 
