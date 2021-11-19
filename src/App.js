@@ -1,9 +1,8 @@
-import { ThemeProvider } from '@mui/material/styles';
-import {CssBaseline} from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles'
+import { CssBaseline } from '@mui/material'
 import theme from './theme'
 
 import RouteComponent from './Routes'
-
 
 function App() {
   return (
@@ -15,4 +14,3 @@ function App() {
 }
 
 export default App
-
