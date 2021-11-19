@@ -1,7 +1,7 @@
 export const ContactLogic = () => {
-    function foo() {
-        return 0
-    }
+  function foo() {
+    return 0
+  }
 
-    return { foo }
+  return { foo }
 }
