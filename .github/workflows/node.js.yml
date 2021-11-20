@@ -3,13 +3,12 @@
 
 name: React Build for Production
 
-on: 
+on:
   push:
     branches:
       - staging
-  pull_request:
-    branches: 
-      - staging
+  workflow_dispatch:
+    
 
 jobs:
   createPullRequest:
@@ -35,5 +34,4 @@ jobs:
           git push -u -f origin production
         env:
           TOKEN: ${{ secrets.TOKEN }}
-          
 
