@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStyles } from './home.style'
 
-
 import { HomeLogic } from './home'
 
 function Home() {
