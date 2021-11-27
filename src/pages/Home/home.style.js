@@ -5,4 +5,10 @@ export const useStyles = makeStyles((theme) => ({
   voot: {
     color: 'black',
   },
+  footer: {
+    position: 'absolute',  bottom:0
+  },
+  sponsored: {
+    color: 'white'
+  }
 }))
