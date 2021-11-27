@@ -1,7 +1,5 @@
 import React from 'react'
 import { useStyles } from './home.style'
-import { HomeLogic } from './home'
-import { styled } from '@mui/material/styles';
 import { Paper } from '@mui/material'
 import Grid from '@mui/material/Grid';
 import ureckonLogo from "../../assets/UreckonWhiteLogo.png"
@@ -10,13 +8,6 @@ import uemLogo from "../../assets/IMGs/UEM Logo (White).png"
 
 import bgvideo from '../../assets/Background video.mp4'
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
-
 function Home() {
   const classes = useStyles()
   return <div className={classes.root}>
@@ -24,12 +15,7 @@ function Home() {
       <source src={bgvideo} type="video/mp4" />
     </video>
 
-    <Grid
-      container
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-    >
+    <Grid container >
       <Grid item xs={4}>
         <img src={uemLogo} alt="UEM" />
       </Grid>
