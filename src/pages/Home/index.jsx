@@ -43,7 +43,7 @@ function Home() {
       {/* for main container */}
       <Grid container>
         {/* for Navbar */}
-        <Grid container align="center" sx={{ paddingTop: 5, paddingX:20}}>
+        <Grid container align="center" sx={{ paddingTop: 5, paddingX: 20 }}>
           <Grid item lg={4}>
             <img src={uemLogo} alt="UEM" />
           </Grid>
@@ -57,10 +57,10 @@ function Home() {
 
         {/* for Menu */}
         <Grid container columns={13}>
-          <Grid item lg={12} sx={{paddingTop:8}}>
-            <Grid className="menufont"  container alignItems="center">
+          <Grid item lg={12} sx={{ paddingTop: 8 }}>
+            <Grid className="menufont" container alignItems="center">
               <Grid item container justifyContent="center" lg={6}>
-               Login
+                Login
               </Grid>
               <Grid item container justifyContent="flex-end" lg={6}>
                 More
@@ -90,34 +90,46 @@ function Home() {
             </div>
             <div>
               <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
-                <img src={instawhite} alt="heading"
-                id="ico2"
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut} />
+                <img
+                  src={instawhite}
+                  alt="heading"
+                  id="ico2"
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                />
               </a>
             </div>
             <div>
               <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
-                <img src={linkedinwhite} alt="heading"
-                id="ico3"
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut} />
+                <img
+                  src={linkedinwhite}
+                  alt="heading"
+                  id="ico3"
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                />
               </a>
             </div>
             <div>
               <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
-                <img src={twitterwhite} alt="heading" 
-                id="ico4"
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}/>
+                <img
+                  src={twitterwhite}
+                  alt="heading"
+                  id="ico4"
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                />
               </a>
             </div>
             <div>
               <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
-                <img src={youtubewhite} alt="heading"
-                id="ico5"
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut} />
+                <img
+                  src={youtubewhite}
+                  alt="heading"
+                  id="ico5"
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                />
               </a>
             </div>
           </Grid>
@@ -127,7 +139,7 @@ function Home() {
           direction="row"
           justifyContent="space-around"
           className={classes.footer}
-          sx={{paddingX:30}}
+          sx={{ paddingX: 30 }}
         >
           <Grid item alignSelf="center">
             <div className="Sponsor">Sponsored By</div>
@@ -135,7 +147,7 @@ function Home() {
           <Grid item>
             <img src={repubgamers} alt="UEM" />
           </Grid>
-          <Grid item sx={{paddingTop:3}}>
+          <Grid item sx={{ paddingTop: 3 }}>
             <img src={asus} alt="UEM" />
           </Grid>
         </Grid>

@@ -5,6 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     color: 'black',
   },
   footer: {
-    position: 'absolute',  bottom:20
+    position: 'absolute',
+    bottom: 20,
   },
 }))
