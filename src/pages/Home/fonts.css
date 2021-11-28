@@ -8,13 +8,13 @@
 .Sponsor{
     font-family:'IBM Plex Sans', sans-serif; 
     color: aliceblue;
-    font-size: 25px;
+    font-size: 36px;
 }
 .menufont{
     font-family: 'Blanka', sans-serif;
     font-size: 48px;
     color: white;
     letter-spacing: 0.1em;
-    border: 0.1px solid #43C9ED;
     text-shadow: -0.5px 0.5px 1px #43C9ED, 0.5px 0.5px 1px #43C9ED;
+    line-height: 2em;
 }
