@@ -60,16 +60,16 @@ function Home() {
           <Grid item lg={12} sx={{ paddingTop: 8 }}>
             <Grid className="menufont" container alignItems="center">
               <Grid item container justifyContent="center" lg={6}>
-                Login
+                <a href="" className="menulink">Login</a>
               </Grid>
               <Grid item container justifyContent="flex-end" lg={6}>
-                More
+              <a href="" className="menulink">More</a>
               </Grid>
               <Grid item container justifyContent="flex-end" lg={6}>
-                Events
+              <a href="" className="menulink">Events</a>
               </Grid>
               <Grid item container justifyContent="center" lg={6}>
-                About
+              <a href="" className="menulink">About</a>
               </Grid>
             </Grid>
           </Grid>

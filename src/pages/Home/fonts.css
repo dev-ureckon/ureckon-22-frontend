@@ -18,3 +18,7 @@
     text-shadow: -0.5px 0.5px 1px #43C9ED, 0.5px 0.5px 1px #43C9ED;
     line-height: 2em;
 }
+.menulink{
+    text-decoration: none;
+    color: white;
+}
