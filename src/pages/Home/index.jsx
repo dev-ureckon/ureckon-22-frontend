@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useStyles } from './home.style'
-import { Paper } from '@mui/material'
 import Grid from '@mui/material/Grid'
 import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
 import headingLogo from '../../assets/IMGs/Heading.png'
@@ -13,85 +12,33 @@ import instawhite from '../../assets/SVGs/instagram logo white.svg'
 import linkedinwhite from '../../assets/SVGs/linkedin logo white.svg'
 import twitterwhite from '../../assets/SVGs/twitter logo white.svg'
 import youtubewhite from '../../assets/SVGs/youtube logo white.svg'
-
-
+import instacolor from '../../assets/SVGs/instagram logo colored.svg'
+import fbcolor from '../../assets/SVGs/facebook icon colored.svg'
+import linkedincolor from '../../assets/SVGs/linkedin logo colored.svg'
+import twittercolor from '../../assets/SVGs/twitter logo colored.svg'
+import youtubecolor from '../../assets/SVGs/youtube logo colored.svg'
 
 function Home() {
   const classes = useStyles()
-  // const[imgSrc, setimgSrc]=useState('')
-  // const handleonmouseOver =(e)=>{
-
+  const handleMouseOver = (e) => {
+    if (e.target.id === 'ico1') e.target.src = fbcolor
+    else if (e.target.id === 'ico2') e.target.src = instacolor
+    else if (e.target.id === 'ico3') e.target.src = linkedincolor
+    else if (e.target.id === 'ico4') e.target.src = twittercolor
+    else if (e.target.id === 'ico5') e.target.src = youtubecolor
+  }
+  const handleMouseOut = (e) => {
+    if (e.target.id === 'ico1') e.target.src = fbwhite
+    else if (e.target.id === 'ico2') e.target.src = instawhite
+    else if (e.target.id === 'ico3') e.target.src = linkedinwhite
+    else if (e.target.id === 'ico4') e.target.src = twitterwhite
+    else if (e.target.id === 'ico5') e.target.src = youtubewhite
   }
   return (
-
-
     <div className={classes.root}>
       <video className="videoTag" autoPlay loop muted>
         <source src={bgvideo} type="video/mp4" />
       </video>
-      {/* 
-      <Grid container align="center" sx={{ paddingTop: 2 }}>
-        <Grid item lg={4}>
-          <img src={uemLogo} alt="UEM" />
-        </Grid>
-        <Grid item lg={4}>
-          <img src={headingLogo} alt="UEM" />
-        </Grid>
-        <Grid item lg={4}>
-          <img src={ureckonLogo} alt="heading" />
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid item>
-          <Grid container justifyContent="space-around" alignItems="center">
-            <Grid item>
-              <div>Login</div>
-            </Grid>
-            <Grid item>
-              <div>More</div>
-            </Grid>
-          </Grid>
-          <Grid container justifyContent="space-around" alignItems="center">
-            <Grid item>
-              <div>Events</div>
-            </Grid>
-            <Grid item>
-              <div>About</div>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>
-            <div>
-              <img src={fbwhite} alt="heading" />
-            </div>
-            <div>
-              <img src={instawhite} alt="heading" />
-            </div>
-            <div>
-              <img src={linkedinwhite} alt="heading" />
-            </div>
-            <div>
-              <img src={twitterwhite} alt="heading" />
-            </div>
-            <div>
-              <img src={youtubewhite} alt="heading" />
-            </div>
-          </Grid>
-        </Grid>
-      </Grid>
-
-      <Grid container align="center" className={classes.footer} sx={{ paddingBottom: 2 }}>
-        <Grid item lg={4}>
-          <div className={classes.sponsored}>Sponsored By</div>
-        </Grid>
-        <Grid item lg={4}>
-          <img src={repubgamers} alt="UEM" />
-        </Grid>
-        <Grid item lg={4}>
-          <img src={asus} alt="UEM" />
-        </Grid>
-      </Grid> */}
 
       {/* for main container */}
       <Grid container>
@@ -132,27 +79,45 @@ function Home() {
                 href="https://m.facebook.com/ureckon.uemk/?refid=52&__tn__=C-R"
                 target="_blank"
               >
-                <img src={fbwhite} alt="heading" />
+                <img
+                  src={fbwhite}
+                  alt="heading"
+                  id="ico1"
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                />
               </a>
             </div>
             <div>
               <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
-                <img src={instawhite} alt="heading" />
+                <img src={instawhite} alt="heading"
+                id="ico2"
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut} />
               </a>
             </div>
             <div>
               <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
-                <img src={linkedinwhite} alt="heading" />
+                <img src={linkedinwhite} alt="heading"
+                id="ico3"
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut} />
               </a>
             </div>
             <div>
               <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
-                <img src={twitterwhite} alt="heading" />
+                <img src={twitterwhite} alt="heading" 
+                id="ico4"
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}/>
               </a>
             </div>
             <div>
               <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
-                <img src={youtubewhite} alt="heading" />
+                <img src={youtubewhite} alt="heading"
+                id="ico5"
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut} />
               </a>
             </div>
           </Grid>
@@ -162,6 +127,7 @@ function Home() {
           direction="row"
           justifyContent="space-around"
           alignItems="flex-end"
+          className={classes.footer}
         >
           <Grid item>
             <div className={classes.sponsored}>Sponsored By</div>
