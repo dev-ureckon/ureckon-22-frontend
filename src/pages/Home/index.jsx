@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { useStyles } from './home.style'
 import Grid from '@mui/material/Grid'
 import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
@@ -17,6 +16,7 @@ import fbcolor from '../../assets/SVGs/facebook icon colored.svg'
 import linkedincolor from '../../assets/SVGs/linkedin logo colored.svg'
 import twittercolor from '../../assets/SVGs/twitter logo colored.svg'
 import youtubecolor from '../../assets/SVGs/youtube logo colored.svg'
+import './fonts.css'
 
 function Home() {
   const classes = useStyles()
@@ -43,7 +43,7 @@ function Home() {
       {/* for main container */}
       <Grid container>
         {/* for Navbar */}
-        <Grid container align="center" sx={{ paddingTop: 5 }}>
+        <Grid container align="center" sx={{ paddingTop: 5, paddingX:20}}>
           <Grid item lg={4}>
             <img src={uemLogo} alt="UEM" />
           </Grid>
@@ -57,18 +57,18 @@ function Home() {
 
         {/* for Menu */}
         <Grid container columns={13}>
-          <Grid item lg={12}>
-            <Grid container alignItems="center">
-              <Grid item lg={6}>
-                Login
+          <Grid item lg={12} sx={{paddingTop:8}}>
+            <Grid className="menufont"  container alignItems="center">
+              <Grid item container justifyContent="center" lg={6}>
+               Login
               </Grid>
-              <Grid item lg={6}>
+              <Grid item container justifyContent="flex-end" lg={6}>
                 More
               </Grid>
-              <Grid item lg={6}>
+              <Grid item container justifyContent="flex-end" lg={6}>
                 Events
               </Grid>
-              <Grid item lg={6}>
+              <Grid item container justifyContent="center" lg={6}>
                 About
               </Grid>
             </Grid>
@@ -126,16 +126,16 @@ function Home() {
           container
           direction="row"
           justifyContent="space-around"
-          alignItems="flex-end"
           className={classes.footer}
+          sx={{paddingX:30}}
         >
-          <Grid item>
-            <div className={classes.sponsored}>Sponsored By</div>
+          <Grid item alignSelf="center">
+            <div className="Sponsor">Sponsored By</div>
           </Grid>
           <Grid item>
             <img src={repubgamers} alt="UEM" />
           </Grid>
-          <Grid item>
+          <Grid item sx={{paddingTop:3}}>
             <img src={asus} alt="UEM" />
           </Grid>
         </Grid>
