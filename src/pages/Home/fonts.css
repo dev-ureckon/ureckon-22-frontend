@@ -22,3 +22,43 @@
     text-decoration: none;
     color: white;
 }
+
+/* .footer{
+    padding-top: 10px;
+} */
+
+
+@media (max-width: 1250px) {
+    .test{
+        display: none;
+    }
+    .test2{
+        display: none;
+    }
+    .test3{
+        display: none;
+    }
+    .test4{
+        display: none;
+    }
+  }
+.test{
+    position: absolute;
+    top: 288px;
+    right: 875px;
+}
+.test2{
+    position: absolute;
+    top: 287px;
+    left: 860px;
+}
+.test3{
+    position: absolute;
+    top: 385px;
+    right: 689px;
+}
+.test4{
+    position: absolute;
+    top: 383px;
+    left: 681px;
+}

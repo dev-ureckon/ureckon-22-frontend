@@ -3,9 +3,5 @@ export const useStyles = makeStyles((theme) => ({
   root: {},
   voot: {
     color: 'black',
-  },
-  footer: {
-    position: 'absolute',
-    bottom: 20,
-  },
+  }
 }))

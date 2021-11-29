@@ -17,6 +17,8 @@ import linkedincolor from '../../assets/SVGs/linkedInColor.svg'
 import twittercolor from '../../assets/SVGs/twitterColor.svg'
 import youtubecolor from '../../assets/SVGs/youtubeColor.svg'
 import './fonts.css'
+import line1 from '../../assets/SVGs/Union.svg'
+import line2 from '../../assets/SVGs/unionTwo.svg'
 
 function Home() {
   const classes = useStyles()
@@ -56,25 +58,53 @@ function Home() {
         </Grid>
 
         {/* for Menu */}
-        <Grid container columns={13}>
+        <Grid container columns={{ lg: 13, xs: 12 }}>
           <Grid item lg={12} sx={{ paddingTop: 8 }}>
             <Grid className="menufont" container alignItems="center">
+              <Grid item container justifyContent="center" lg={6} sm={6}>
+                <a href="" className="menulink">
+                  Login
+                </a>
+                <img className="test" src={line1} alt="line" />
+              </Grid>
+              <Grid
+                item
+                container
+                justifyContent={{ lg: 'flex-end', xs: 'center' }}
+                lg={6}
+              >
+                <img className="test2" src={line2} alt="line" />
+                <a href="" className="menulink">
+                  More..
+                </a>
+              </Grid>
+              <Grid
+                item
+                container
+                justifyContent={{ lg: 'flex-end', xs: 'center' }}
+                lg={6}
+              >
+                <a href="" className="menulink">
+                  Events
+                </a>
+                <img className="test3" src={line1} alt="line" />
+              </Grid>
               <Grid item container justifyContent="center" lg={6}>
-                <a href="" className="menulink">Login</a>
-              </Grid>
-              <Grid item container justifyContent="flex-end" lg={6}>
-              <a href="" className="menulink">More</a>
-              </Grid>
-              <Grid item container justifyContent="flex-end" lg={6}>
-              <a href="" className="menulink">Events</a>
-              </Grid>
-              <Grid item container justifyContent="center" lg={6}>
-              <a href="" className="menulink">About</a>
+                <img className="test4" src={line2} alt="line" />
+                <a href="" className="menulink">
+                  About
+                </a>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
-            <div>
+          <Grid
+            item
+            display="flex"
+            flexDirection={{ lg: 'column', md: 'column', xs: 'row' }}
+            alignItems={{ xs: 'center' }}
+            className="socialicons"
+          >
+            <Grid item>
               <a
                 href="https://m.facebook.com/ureckon.uemk/?refid=52&__tn__=C-R"
                 target="_blank"
@@ -87,8 +117,8 @@ function Home() {
                   onMouseOut={handleMouseOut}
                 />
               </a>
-            </div>
-            <div>
+            </Grid>
+            <Grid item sx={{ my: 1 }}>
               <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
                 <img
                   src={instawhite}
@@ -98,8 +128,8 @@ function Home() {
                   onMouseOut={handleMouseOut}
                 />
               </a>
-            </div>
-            <div>
+            </Grid>
+            <Grid item>
               <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
                 <img
                   src={linkedinwhite}
@@ -109,8 +139,8 @@ function Home() {
                   onMouseOut={handleMouseOut}
                 />
               </a>
-            </div>
-            <div>
+            </Grid>
+            <Grid item sx={{ my: 1 }}>
               <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
                 <img
                   src={twitterwhite}
@@ -120,8 +150,8 @@ function Home() {
                   onMouseOut={handleMouseOut}
                 />
               </a>
-            </div>
-            <div>
+            </Grid>
+            <Grid item>
               <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
                 <img
                   src={youtubewhite}
@@ -131,14 +161,14 @@ function Home() {
                   onMouseOut={handleMouseOut}
                 />
               </a>
-            </div>
+            </Grid>
           </Grid>
         </Grid>
         <Grid
           container
           direction="row"
           justifyContent="space-around"
-          className={classes.footer}
+          className="footer"
           sx={{ paddingX: 30 }}
         >
           <Grid item alignSelf="center">
