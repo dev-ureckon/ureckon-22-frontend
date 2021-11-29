@@ -27,6 +27,24 @@
     padding-top: 10px;
 } */
 
+@media(max-width: 360px)
+{
+    .menufont{
+        padding-left: 42px;
+    }
+    .menusocial{
+        padding-left: 80px;
+    }
+    .socialicons{
+        padding-top: 45px;
+        padding-bottom: 45px;
+        padding-right: 20px;
+    }
+    .iconspad{
+        padding: 5px;
+    }
+    
+}
 
 @media (max-width: 1250px) {
     .test{

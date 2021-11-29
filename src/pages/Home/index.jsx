@@ -43,25 +43,32 @@ function Home() {
       </video>
 
       {/* for main container */}
-      <Grid container>
-        {/* for Navbar */}
-        <Grid container align="center" sx={{ paddingTop: 5, paddingX: 20 }}>
-          <Grid item lg={4}>
-            <img src={uemLogo} alt="UEM" />
+       {/* for Navbar */}
+      <Grid
+          container
+          direction="row"
+          justifyContent="space-around"
+          className="footer"
+          sx={{ paddingX: 30, paddingTop:5 }}
+        >
+          <Grid item alignSelf="center">
+          <img src={uemLogo} alt="UEM" />
           </Grid>
-          <Grid item lg={4}>
-            <img src={headingLogo} alt="UEM" />
+          <Grid item>
+          <img src={headingLogo} alt="UEM" />
           </Grid>
-          <Grid item lg={4}>
-            <img src={ureckonLogo} alt="heading" />
+          <Grid item >
+          <img src={ureckonLogo} alt="heading" />
           </Grid>
         </Grid>
+      <Grid container>
+       
 
         {/* for Menu */}
-        <Grid container columns={{ lg: 13, xs: 12 }}>
+        <Grid container columns={{ lg: 13, xs: 12 }} className="menusocial">
           <Grid item lg={12} sx={{ paddingTop: 8 }}>
             <Grid className="menufont" container alignItems="center">
-              <Grid item container justifyContent="center" lg={6} sm={6}>
+              <Grid item container justifyContent="center" lg={6} sm={6} xs={12}>
                 <a href="" className="menulink">
                   Login
                 </a>
@@ -71,7 +78,7 @@ function Home() {
                 item
                 container
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
-                lg={6}
+                lg={6} xs={12}
               >
                 <img className="test2" src={line2} alt="line" />
                 <a href="" className="menulink">
@@ -82,14 +89,14 @@ function Home() {
                 item
                 container
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
-                lg={6}
+                lg={6} xs={12}
               >
                 <a href="" className="menulink">
                   Events
                 </a>
                 <img className="test3" src={line1} alt="line" />
               </Grid>
-              <Grid item container justifyContent="center" lg={6}>
+              <Grid item container justifyContent="center" lg={6} xs={12}>
                 <img className="test4" src={line2} alt="line" />
                 <a href="" className="menulink">
                   About
@@ -103,6 +110,8 @@ function Home() {
             flexDirection={{ lg: 'column', md: 'column', xs: 'row' }}
             alignItems={{ xs: 'center' }}
             className="socialicons"
+            xs={12}
+            lg={1}
           >
             <Grid item>
               <a
@@ -115,6 +124,7 @@ function Home() {
                   id="ico1"
                   onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
+                  className="iconspad"
                 />
               </a>
             </Grid>
@@ -126,6 +136,7 @@ function Home() {
                   id="ico2"
                   onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
+                  className="iconspad"
                 />
               </a>
             </Grid>
@@ -137,6 +148,7 @@ function Home() {
                   id="ico3"
                   onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
+                  className="iconspad"
                 />
               </a>
             </Grid>
@@ -148,6 +160,7 @@ function Home() {
                   id="ico4"
                   onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
+                  className="iconspad"
                 />
               </a>
             </Grid>
@@ -159,6 +172,7 @@ function Home() {
                   id="ico5"
                   onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
+                  className="iconspad"
                 />
               </a>
             </Grid>
