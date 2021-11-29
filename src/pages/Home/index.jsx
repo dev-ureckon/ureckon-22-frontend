@@ -43,27 +43,25 @@ function Home() {
       </video>
 
       {/* for main container */}
-       {/* for Navbar */}
+      {/* for Navbar */}
       <Grid
-          container
-          direction="row"
-          justifyContent="space-around"
-          className="footer"
-          sx={{ paddingX: 30, paddingTop:5 }}
-        >
-          <Grid item alignSelf="center">
+        container
+        direction="row"
+        justifyContent="space-around"
+        className="footer"
+        sx={{ paddingX: 30, paddingTop: 5 }}
+      >
+        <Grid item alignSelf="center">
           <img src={uemLogo} alt="UEM" />
-          </Grid>
-          <Grid item>
-          <img src={headingLogo} alt="UEM" />
-          </Grid>
-          <Grid item >
-          <img src={ureckonLogo} alt="heading" />
-          </Grid>
         </Grid>
+        <Grid item>
+          <img src={headingLogo} alt="UEM" />
+        </Grid>
+        <Grid item>
+          <img src={ureckonLogo} alt="heading" />
+        </Grid>
+      </Grid>
       <Grid container>
-       
-
         {/* for Menu */}
         <Grid container columns={{ lg: 13, xs: 12 }} className="menusocial">
           <Grid item lg={12} sx={{ paddingTop: 8 }}>
@@ -78,7 +76,8 @@ function Home() {
                 item
                 container
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
-                lg={6} xs={12}
+                lg={6}
+                xs={12}
               >
                 <img className="test2" src={line2} alt="line" />
                 <a href="" className="menulink">
@@ -89,7 +88,8 @@ function Home() {
                 item
                 container
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
-                lg={6} xs={12}
+                lg={6}
+                xs={12}
               >
                 <a href="" className="menulink">
                   Events
