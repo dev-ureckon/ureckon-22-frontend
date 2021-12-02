@@ -100,8 +100,8 @@ function Home() {
                 </a>
                 
               </Grid>
-              <Grid item container justifyContent="center" lg={6} xs={12}>
-                <a href="" className="menulink">
+              <Grid item container justifyContent="center" lg={6} xs={12} sx={{order:2}}>
+                <a href="" className="menulink" >
                   About
                   <div><img className="test4" src={line2} alt="line" /></div>
                 </a>
@@ -194,7 +194,7 @@ function Home() {
             <div className="Sponsor">Sponsored By</div>
           </Grid>
           <Grid item className="headimgcontain">
-            <img src={repubgamers} className="headimage" alt="UEM" />
+            <img src={repubgamers} className="headimage2" alt="UEM" />
           </Grid>
           <Grid item sx={{ paddingTop: 3 }} className="headimgcontain">
             <img src={asus} className="headimage" alt="UEM" />
