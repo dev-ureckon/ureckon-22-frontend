@@ -22,19 +22,89 @@
     text-decoration: none;
     color: white;
 }
+.menupad{
+  padding-top: 62px;
+}
+/* .headcontainer{
+    display: flex;
+    flex-wrap: nowrap;
+} */
 
 /* .footer{
     padding-top: 10px;
 } */
-
+/* .videoTag{
+    filter: brightness(50%);
+    
+} */
+.videoTag{
+       filter: brightness(50%);
+    
+}
 @media(max-width: 360px)
 {
-    .menufont{
-        padding-left: 42px;
+    .menuwithsocial{
+        padding-left: 140px;
     }
-    .menusocial{
-        padding-left: 80px;
+    
+    .iconspad{
+        padding: 5px;
     }
+    .headimage{
+        width: 15vh;
+        height: auto;
+    }
+    .headimage2{
+        width: 12vh;
+        height: auto;
+    }
+    .Sponsor{
+        font-size: 18px;
+
+    }
+    .headimgcontain{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .headimgcontain2{
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .menupad{
+        padding-top: 0px;
+      }
+    
+    
+}
+@media (min-width:361px) and (max-width: 1200px) {
+    .headimage{
+        width: 20vh;
+        height: auto;
+    }
+    .headimage2{
+        width: 12vh;
+        height: auto;
+    }
+    .headimgcontain{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .headimgcontain2{
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width: 1200px) {
+    /* .headimage{
+        width: 15 vh;
+        height: auto;
+    }
+    .headimage2{
+        width: 12vh;
+        height: auto;
+    } */
     .socialicons{
         padding-top: 45px;
         padding-bottom: 45px;
@@ -43,10 +113,6 @@
     .iconspad{
         padding: 5px;
     }
-    
-}
-
-@media (max-width: 1250px) {
     .test{
         display: none;
     }
@@ -61,22 +127,32 @@
     }
   }
 .test{
-    position: absolute;
-    top: 288px;
-    right: 875px;
+    position: relative;
+    /* top: 98px;
+    right: 5px; */
+    bottom: 80px;
 }
 .test2{
-    position: absolute;
+    position:relative;
+    bottom: 80px;
+    right: 40px;
+    /* position: absolute;
     top: 287px;
-    left: 860px;
+    left: 860px; */
 }
 .test3{
-    position: absolute;
+    position: relative;
+    bottom: 80px;
+    left: 30px;
+    /* position: relative;
     top: 385px;
-    right: 689px;
+    right: 689px; */
 }
 .test4{
-    position: absolute;
+    position: relative;
+    bottom: 80px;
+    right: 35px;
+    /* position: absolute;
     top: 383px;
-    left: 681px;
+    left: 681px; */
 }

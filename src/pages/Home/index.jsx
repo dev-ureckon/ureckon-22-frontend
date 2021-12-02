@@ -48,29 +48,31 @@ function Home() {
         container
         direction="row"
         justifyContent="space-around"
-        className="footer"
+        className="headcontainer"
+        flexWrap="nowrap"
         sx={{ paddingX: 30, paddingTop: 5 }}
+        xs={12}
       >
-        <Grid item alignSelf="center">
-          <img src={uemLogo} alt="UEM" />
+        <Grid item alignSelf="center" className="headimgcontain">
+          <img src={uemLogo} className="headimage" alt="UEM"/>
         </Grid>
-        <Grid item>
-          <img src={headingLogo} alt="UEM" />
+        <Grid item className="headimgcontain2">
+          <img src={headingLogo} className="headimage" alt="ureckon" />
         </Grid>
-        <Grid item>
-          <img src={ureckonLogo} alt="heading" />
+        <Grid item className="headimgcontain">
+          <img src={ureckonLogo} className="headimage2" alt="ureckonlogo" />
         </Grid>
       </Grid>
       <Grid container>
         {/* for Menu */}
-        <Grid container columns={{ lg: 13, xs: 12 }} className="menusocial">
-          <Grid item lg={12} sx={{ paddingTop: 8 }}>
+        <Grid container columns={{ lg: 13, sm:12, xs: 12 }} className="menuwithsocial" justifyContent={{md:'center', xs:'center', sm:'center'}}>
+          <Grid item lg={12} className="menupad">
             <Grid className="menufont" container alignItems="center">
-              <Grid item container justifyContent="center" lg={6} sm={6} xs={12}>
+              <Grid item container justifyContent="center" lg={6} xs={12}>
                 <a href="" className="menulink">
                   Login
+                  <div><img className="test" src={line1} alt="line" /></div>
                 </a>
-                <img className="test" src={line1} alt="line" />
               </Grid>
               <Grid
                 item
@@ -79,9 +81,10 @@ function Home() {
                 lg={6}
                 xs={12}
               >
-                <img className="test2" src={line2} alt="line" />
+                
                 <a href="" className="menulink">
                   More..
+                  <div><img className="test2" src={line2} alt="line" /></div>
                 </a>
               </Grid>
               <Grid
@@ -93,13 +96,14 @@ function Home() {
               >
                 <a href="" className="menulink">
                   Events
+                  <div><img className="test3" src={line1} alt="line" /></div>
                 </a>
-                <img className="test3" src={line1} alt="line" />
+                
               </Grid>
               <Grid item container justifyContent="center" lg={6} xs={12}>
-                <img className="test4" src={line2} alt="line" />
                 <a href="" className="menulink">
                   About
+                  <div><img className="test4" src={line2} alt="line" /></div>
                 </a>
               </Grid>
             </Grid>
@@ -107,8 +111,9 @@ function Home() {
           <Grid
             item
             display="flex"
-            flexDirection={{ lg: 'column', md: 'column', xs: 'row' }}
-            alignItems={{ xs: 'center' }}
+            flexDirection={{ lg: 'column', md: 'row', xs: 'row' }}
+            alignItems={{ xs: 'center', md:'center' }}
+            justifyContent={{md:'center', xs:'center', sm:'center'}}
             className="socialicons"
             xs={12}
             lg={1}
@@ -182,17 +187,17 @@ function Home() {
           container
           direction="row"
           justifyContent="space-around"
-          className="footer"
-          sx={{ paddingX: 30 }}
+          sx={{ paddingX: 31 }}
+          flexWrap="nowrap"
         >
           <Grid item alignSelf="center">
             <div className="Sponsor">Sponsored By</div>
           </Grid>
-          <Grid item>
-            <img src={repubgamers} alt="UEM" />
+          <Grid item className="headimgcontain">
+            <img src={repubgamers} className="headimage" alt="UEM" />
           </Grid>
-          <Grid item sx={{ paddingTop: 3 }}>
-            <img src={asus} alt="UEM" />
+          <Grid item sx={{ paddingTop: 3 }} className="headimgcontain">
+            <img src={asus} className="headimage" alt="UEM" />
           </Grid>
         </Grid>
       </Grid>
