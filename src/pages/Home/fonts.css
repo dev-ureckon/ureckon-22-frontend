@@ -25,39 +25,36 @@
 .menupad{
   padding-top: 62px;
 }
-/* .headcontainer{
-    display: flex;
-    flex-wrap: nowrap;
-} */
 
-/* .footer{
-    padding-top: 10px;
-} */
-/* .videoTag{
-    filter: brightness(50%);
-    
-} */
 .videoTag{
        filter: brightness(50%);
     
 }
 @media(max-width: 360px)
 {
+
     .menuwithsocial{
+        padding-top: 45px;
         padding-left: 140px;
     }
     
     .iconspad{
         padding: 5px;
     }
-    .headimage{
-        width: 15vh;
+    .headimage1{
+        width: 14vh;
         height: auto;
     }
     .headimage2{
-        width: 12vh;
+        width: 35vh;
         height: auto;
     }
+    .headimage3{
+        width: 10vh;
+        height: auto;
+    }
+    
+    
 
     .Sponsor{
         font-size: 18px;
@@ -69,7 +66,6 @@
         padding-right: 20px;
     }
     .headimgcontain2{
-        padding-top: 30px;
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -80,12 +76,16 @@
     
 }
 @media (min-width:361px) and (max-width: 1200px) {
-    .headimage{
-        width: 20vh;
+    .headimage1{
+        width: 14vh;
         height: auto;
     }
     .headimage2{
-        width: 12vh;
+        width: 35vh;
+        height: auto;
+    }
+    .headimage3{
+        width: 10vh;
         height: auto;
     }
     .headimgcontain{
@@ -93,7 +93,6 @@
         padding-right: 20px;
     }
     .headimgcontain2{
-        padding-top: 30px;
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -118,14 +117,7 @@
     }
 }
 @media (max-width: 1200px) {
-    /* .headimage{
-        width: 15 vh;
-        height: auto;
-    }
-    .headimage2{
-        width: 12vh;
-        height: auto;
-    } */
+
     .socialicons{
         padding-top: 45px;
         padding-bottom: 45px;

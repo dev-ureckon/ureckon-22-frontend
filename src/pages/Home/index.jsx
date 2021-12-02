@@ -54,13 +54,13 @@ function Home() {
         xs={12}
       >
         <Grid item alignSelf="center" className="headimgcontain">
-          <img src={uemLogo} className="headimage" alt="UEM"/>
+          <img src={uemLogo} className="headimage1" alt="UEM"/>
         </Grid>
         <Grid item className="headimgcontain2">
-          <img src={headingLogo} className="headimage" alt="ureckon" />
+          <img src={headingLogo} className="headimage2" alt="ureckon" />
         </Grid>
         <Grid item className="headimgcontain">
-          <img src={ureckonLogo} className="headimage2" alt="ureckonlogo" />
+          <img src={ureckonLogo} className="headimage3" alt="ureckonlogo" />
         </Grid>
       </Grid>
       <Grid container>
@@ -196,10 +196,10 @@ function Home() {
             <div className="Sponsor">Sponsored By</div>
           </Grid>
           <Grid item className="headimgcontain">
-            <img src={repubgamers} className="headimage2" alt="UEM" />
+            <img src={repubgamers} className="headimage1" alt="UEM" />
           </Grid>
           <Grid item sx={{ paddingTop: 3 }} className="headimgcontain">
-            <img src={asus} className="headimage" alt="UEM" />
+            <img src={asus} className="headimage1" alt="UEM" />
           </Grid>
         </Grid>
       </Grid>
