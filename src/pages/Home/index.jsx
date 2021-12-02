@@ -80,6 +80,7 @@ function Home() {
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
                 lg={6}
                 xs={12}
+                order={{ lg:2, xs:4}}
               >
                 
                 <a href="" className="menulink">
@@ -93,6 +94,7 @@ function Home() {
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
                 lg={6}
                 xs={12}
+                order={{ lg:3, xs:2}}
               >
                 <a href="" className="menulink">
                   Events
@@ -100,7 +102,7 @@ function Home() {
                 </a>
                 
               </Grid>
-              <Grid item container justifyContent="center" lg={6} xs={12} sx={{order:2}}>
+              <Grid item container justifyContent="center" lg={6} xs={12} order={{ lg:4, xs:3}}>
                 <a href="" className="menulink" >
                   About
                   <div><img className="test4" src={line2} alt="line" /></div>
