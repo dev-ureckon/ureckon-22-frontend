@@ -54,7 +54,7 @@ function Home() {
         xs={12}
       >
         <Grid item alignSelf="center" className="headimgcontain">
-          <img src={uemLogo} className="headimage1" alt="UEM"/>
+          <img src={uemLogo} className="headimage1" alt="UEM" />
         </Grid>
         <Grid item className="headimgcontain2">
           <img src={headingLogo} className="headimage2" alt="ureckon" />
@@ -65,13 +65,20 @@ function Home() {
       </Grid>
       <Grid container>
         {/* for Menu */}
-        <Grid container columns={{ lg: 13, sm:12, xs: 12 }} className="menuwithsocial" justifyContent={{md:'center', xs:'center', sm:'center'}}>
+        <Grid
+          container
+          columns={{ lg: 13, sm: 12, xs: 12 }}
+          className="menuwithsocial"
+          justifyContent={{ md: 'center', xs: 'center', sm: 'center' }}
+        >
           <Grid item lg={12} className="menupad">
             <Grid className="menufont" container alignItems="center">
               <Grid item container justifyContent="center" lg={6} xs={12}>
                 <a href="" className="menulink">
                   Login
-                  <div><img className="test" src={line1} alt="line" /></div>
+                  <div>
+                    <img className="test" src={line1} alt="line" />
+                  </div>
                 </a>
               </Grid>
               <Grid
@@ -80,12 +87,13 @@ function Home() {
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
                 lg={6}
                 xs={12}
-                order={{ lg:2, xs:4}}
+                order={{ lg: 2, xs: 4 }}
               >
-                
                 <a href="" className="menulink">
                   More..
-                  <div><img className="test2" src={line2} alt="line" /></div>
+                  <div>
+                    <img className="test2" src={line2} alt="line" />
+                  </div>
                 </a>
               </Grid>
               <Grid
@@ -94,18 +102,28 @@ function Home() {
                 justifyContent={{ lg: 'flex-end', xs: 'center' }}
                 lg={6}
                 xs={12}
-                order={{ lg:3, xs:2}}
+                order={{ lg: 3, xs: 2 }}
               >
                 <a href="" className="menulink">
                   Events
-                  <div><img className="test3" src={line1} alt="line" /></div>
+                  <div>
+                    <img className="test3" src={line1} alt="line" />
+                  </div>
                 </a>
-                
               </Grid>
-              <Grid item container justifyContent="center" lg={6} xs={12} order={{ lg:4, xs:3}}>
-                <a href="" className="menulink" >
+              <Grid
+                item
+                container
+                justifyContent="center"
+                lg={6}
+                xs={12}
+                order={{ lg: 4, xs: 3 }}
+              >
+                <a href="" className="menulink">
                   About
-                  <div><img className="test4" src={line2} alt="line" /></div>
+                  <div>
+                    <img className="test4" src={line2} alt="line" />
+                  </div>
                 </a>
               </Grid>
             </Grid>
@@ -114,8 +132,8 @@ function Home() {
             item
             display="flex"
             flexDirection={{ lg: 'column', md: 'row', xs: 'row' }}
-            alignItems={{ xs: 'center', md:'center' }}
-            justifyContent={{md:'center', xs:'center', sm:'center'}}
+            alignItems={{ xs: 'center', md: 'center' }}
+            justifyContent={{ md: 'center', xs: 'center', sm: 'center' }}
             className="socialicons"
             xs={12}
             lg={1}
