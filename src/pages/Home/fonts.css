@@ -98,10 +98,11 @@
         padding-right: 20px;
     }
 }
-@media (min-width:360px) and  (max-width: 497px) {
+@media (min-width:361px) and  (max-width: 497px) {
     .menuwithsocial{
         padding-left: 105px;
     }
+
 }
 @media (min-width:580px) and  (max-width: 930px) {
     .Sponsor{
