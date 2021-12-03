@@ -38,9 +38,6 @@
         padding-left: 140px;
     }
     
-    .iconspad{
-        padding: 5px;
-    }
     .headimage1{
         width: 14vh;
         height: auto;
@@ -122,9 +119,6 @@
         padding-top: 45px;
         padding-bottom: 45px;
         padding-right: 20px;
-    }
-    .iconspad{
-        padding: 5px;
     }
     .test{
         display: none;

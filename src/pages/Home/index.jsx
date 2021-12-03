@@ -6,36 +6,13 @@ import uemLogo from '../../assets/IMGs/uemLogo.png'
 import repubgamers from '../../assets/IMGs/repubGamers.png'
 import asus from '../../assets/IMGs/asus.png'
 import bgvideo from '../../assets/bgVideo.mp4'
-import fbwhite from '../../assets/SVGs/fbWhite.svg'
-import instawhite from '../../assets/SVGs/instaWhite.svg'
-import linkedinwhite from '../../assets/SVGs/linkedInWhite.svg'
-import twitterwhite from '../../assets/SVGs/twitterWhite.svg'
-import youtubewhite from '../../assets/SVGs/youtubeWhite.svg'
-import instacolor from '../../assets/SVGs/instaColor.svg'
-import fbcolor from '../../assets/SVGs/fbColor.svg'
-import linkedincolor from '../../assets/SVGs/linkedInColor.svg'
-import twittercolor from '../../assets/SVGs/twitterColor.svg'
-import youtubecolor from '../../assets/SVGs/youtubeColor.svg'
 import './fonts.css'
+import './socialicons.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 
 function Home() {
   const classes = useStyles()
-  const handleMouseOver = (e) => {
-    if (e.target.id === 'ico1') e.target.src = fbcolor
-    else if (e.target.id === 'ico2') e.target.src = instacolor
-    else if (e.target.id === 'ico3') e.target.src = linkedincolor
-    else if (e.target.id === 'ico4') e.target.src = twittercolor
-    else if (e.target.id === 'ico5') e.target.src = youtubecolor
-  }
-  const handleMouseOut = (e) => {
-    if (e.target.id === 'ico1') e.target.src = fbwhite
-    else if (e.target.id === 'ico2') e.target.src = instawhite
-    else if (e.target.id === 'ico3') e.target.src = linkedinwhite
-    else if (e.target.id === 'ico4') e.target.src = twitterwhite
-    else if (e.target.id === 'ico5') e.target.src = youtubewhite
-  }
   return (
     <div className={classes.root}>
       <video className="videoTag" autoPlay loop muted>
@@ -143,62 +120,27 @@ function Home() {
                 href="https://m.facebook.com/ureckon.uemk/?refid=52&__tn__=C-R"
                 target="_blank"
               >
-                <img
-                  src={fbwhite}
-                  alt="heading"
-                  id="ico1"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                  className="iconspad"
-                />
+                <div className="facebook"></div>
               </a>
             </Grid>
             <Grid item sx={{ my: 1 }}>
-              <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
-                <img
-                  src={instawhite}
-                  alt="heading"
-                  id="ico2"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                  className="iconspad"
-                />
-              </a>
+                <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
+                <div className="instagram"></div>
+                </a>
             </Grid>
             <Grid item>
               <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
-                <img
-                  src={linkedinwhite}
-                  alt="heading"
-                  id="ico3"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                  className="iconspad"
-                />
+                <div className="linkedin"></div>
               </a>
             </Grid>
             <Grid item sx={{ my: 1 }}>
               <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
-                <img
-                  src={twitterwhite}
-                  alt="heading"
-                  id="ico4"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                  className="iconspad"
-                />
+              <div className="twitter"></div>
               </a>
             </Grid>
             <Grid item>
               <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
-                <img
-                  src={youtubewhite}
-                  alt="heading"
-                  id="ico5"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                  className="iconspad"
-                />
+              <div className="youtube"></div>
               </a>
             </Grid>
           </Grid>
