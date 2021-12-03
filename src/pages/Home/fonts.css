@@ -18,9 +18,15 @@
     text-shadow: -0.5px 0.5px 1px #43C9ED, 0.5px 0.5px 1px #43C9ED;
     line-height: 2em;
 }
+.menulink:hover{
+    
+    text-shadow: 3px 3px 5px #43C9ED;
+}
+
 .menulink{
     text-decoration: none;
     color: white;
+    transition: 0.5s ease;
 }
 .menupad{
   padding-top: 62px;
@@ -135,31 +141,21 @@
   }
 .test{
     position: relative;
-    /* top: 98px;
-    right: 5px; */
-    bottom: 80px;
+    bottom: 82px;
+    left: 5px;
 }
 .test2{
     position:relative;
-    bottom: 80px;
-    right: 40px;
-    /* position: absolute;
-    top: 287px;
-    left: 860px; */
+    bottom: 82px;
+    right: 42px;
 }
 .test3{
     position: relative;
-    bottom: 80px;
-    left: 30px;
-    /* position: relative;
-    top: 385px;
-    right: 689px; */
+    bottom: 82px;
+    left: 25px;
 }
 .test4{
     position: relative;
-    bottom: 80px;
-    right: 35px;
-    /* position: absolute;
-    top: 383px;
-    left: 681px; */
+    bottom: 82px;
+    right: 38px;
 }
