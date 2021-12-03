@@ -124,9 +124,9 @@ function Home() {
               </a>
             </Grid>
             <Grid item sx={{ my: 1 }}>
-                <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
+              <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
                 <div className="instagram"></div>
-                </a>
+              </a>
             </Grid>
             <Grid item>
               <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
@@ -135,12 +135,12 @@ function Home() {
             </Grid>
             <Grid item sx={{ my: 1 }}>
               <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
-              <div className="twitter"></div>
+                <div className="twitter"></div>
               </a>
             </Grid>
             <Grid item>
               <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
-              <div className="youtube"></div>
+                <div className="youtube"></div>
               </a>
             </Grid>
           </Grid>
