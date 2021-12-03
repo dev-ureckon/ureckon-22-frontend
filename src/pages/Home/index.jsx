@@ -22,13 +22,14 @@ function Home() {
 
       {/* for main container */}
       {/* for Navbar */}
+      <Grid sx={{ paddingY:5}}>
       <Grid
         container
         direction="row"
         justifyContent="space-around"
         className="headcontainer"
         flexWrap="nowrap"
-        sx={{ paddingX: 30, paddingTop: 5 }}
+        sx={{ paddingX: 30}}
         xs={12}
       >
         <Grid item alignSelf="center" className="headimgcontain">
@@ -163,6 +164,7 @@ function Home() {
             <img src={asus} className="headimage1" alt="UEM" />
           </Grid>
         </Grid>
+      </Grid>
       </Grid>
     </div>
   )
