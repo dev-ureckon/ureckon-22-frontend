@@ -10,7 +10,7 @@ import './fonts.css'
 import './socialicons.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 function Home() {
   const classes = useStyles()
@@ -52,7 +52,7 @@ function Home() {
           <Grid item lg={12} className="menupad">
             <Grid className="menufont" container alignItems="center">
               <Grid item container justifyContent="center" lg={6} xs={12}>
-                <Link to='' className="menulink">
+                <Link to="" className="menulink">
                   Login
                   <div>
                     <img className="test" src={line1} alt="line" />
@@ -67,7 +67,7 @@ function Home() {
                 xs={12}
                 order={{ lg: 2, xs: 4 }}
               >
-                <Link to='' className="menulink">
+                <Link to="" className="menulink">
                   More..
                   <div>
                     <img className="test2" src={line2} alt="line" />
@@ -82,7 +82,7 @@ function Home() {
                 xs={12}
                 order={{ lg: 3, xs: 2 }}
               >
-                <Link to='' className="menulink">
+                <Link to="" className="menulink">
                   Events
                   <div>
                     <img className="test3" src={line1} alt="line" />
@@ -97,7 +97,7 @@ function Home() {
                 xs={12}
                 order={{ lg: 4, xs: 3 }}
               >
-                <Link to='' className="menulink">
+                <Link to="" className="menulink">
                   About
                   <div>
                     <img className="test4" src={line2} alt="line" />
