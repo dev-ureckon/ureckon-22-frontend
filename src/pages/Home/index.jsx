@@ -1,10 +1,9 @@
 import { useStyles } from './home.style'
+import { useSelector, useDispatch } from 'react-redux'
 import Grid from '@mui/material/Grid'
 import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
 import headingLogo from '../../assets/IMGs/Heading.png'
 import uemLogo from '../../assets/IMGs/uemLogo.png'
-import repubgamers from '../../assets/IMGs/repubGamers.png'
-import asus from '../../assets/IMGs/asus.png'
 import bgvideo from '../../assets/bgVideo.mp4'
 import './fonts.css'
 import './socialicons.css'
@@ -13,9 +12,16 @@ import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
 import { moreFunction } from './home'
 import { backoptions } from './home'
+import { useEffect } from 'react'
+import { getMainSponsors } from '../../redux/apis'
 
 function Home() {
   const classes = useStyles()
+  const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getMainSponsors())
+  }, [])
   return (
     <div className={classes.root}>
       <video className="videoTag" autoPlay loop muted>
@@ -216,23 +222,36 @@ function Home() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid
-            container
-            direction="row"
-            justifyContent="space-around"
-            sx={{ paddingX: 31 }}
-            flexWrap="nowrap"
-          >
-            <Grid item alignSelf="center">
-              <div className="Sponsor">Sponsored By</div>
+          {mainSponsors.length && (
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-around"
+              sx={{ paddingX: 31 }}
+              flexWrap="nowrap"
+            >
+              <Grid item alignSelf="center">
+                <div className="Sponsor">Partnered By</div>
+              </Grid>
+              {/* <Grid item className="headimgcontain">
+                <img src={repubgamers} className="headimage1" alt="UEM" />
+              </Grid>
+              <Grid item sx={{ paddingTop: 3 }} className="headimgcontain">
+                <img src={asus} className="headimage1" alt="UEM" />
+              </Grid> */}
+              {mainSponsors.map((aMainSponsor) => (
+                <Grid item className="headimgcontain">
+                  <img
+                    src={aMainSponsor.sponsorLogo}
+                    height={100}
+                    width={100}
+                    className="headimage1"
+                    alt="UEM"
+                  />
+                </Grid>
+              ))}
             </Grid>
-            <Grid item className="headimgcontain">
-              <img src={repubgamers} className="headimage1" alt="UEM" />
-            </Grid>
-            <Grid item sx={{ paddingTop: 3 }} className="headimgcontain">
-              <img src={asus} className="headimage1" alt="UEM" />
-            </Grid>
-          </Grid>
+          )}
         </Grid>
       </Grid>
     </div>
