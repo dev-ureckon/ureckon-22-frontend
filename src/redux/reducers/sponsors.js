@@ -2,7 +2,7 @@ import {
   FETCH_SPONSORS_ERROR,
   FETCH_SPONSORS_REQUEST,
   FETCH_SPONSORS_SUCCESS,
-} from '../types'
+} from '../constants'
 
 const initialState = {
   loading: false,

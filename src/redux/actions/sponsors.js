@@ -2,7 +2,7 @@ import {
   FETCH_SPONSORS_ERROR,
   FETCH_SPONSORS_REQUEST,
   FETCH_SPONSORS_SUCCESS,
-} from '../types'
+} from '../constants'
 
 export const fetchSponsorRequest = () => ({
   type: FETCH_SPONSORS_REQUEST,
