@@ -23,14 +23,13 @@
 
 .twitter {
   background: url(../../assets/SVGs/twitterWhite.svg) no-repeat;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 45px;
   display: inline-block;
   transition: 0.5s ease;
 }
 .twitter:hover {
   background: url(../../assets/SVGs/twitterColor.svg) no-repeat;
-  width: 52px;
 }
 .linkedin {
   background: url(../../assets/SVGs/linkedInWhite.svg);

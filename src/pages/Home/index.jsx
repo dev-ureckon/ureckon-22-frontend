@@ -245,7 +245,7 @@ function Home() {
                     src={aMainSponsor.sponsorLogo}
                     height={100}
                     width={100}
-                    className="headimage1"
+                    // className="headimage1"
                     alt="UEM"
                   />
                 </Grid>
