@@ -11,10 +11,10 @@ export const fetchSponsorRequest = () => ({
 export const fetchSponsorSuccess = (sponsors, isMain = false) => ({
   type: FETCH_SPONSORS_SUCCESS,
   payload: sponsors,
-  isMain,
+  isMain, // only true if the sponsors being fetched are main sponsors
 })
 
-export const fetchSponsorError = (error) => ({
+export const fetchSponsorError = (error) => ({ // here error is basically the error message
   type: FETCH_SPONSORS_ERROR,
-  payload: error,
+  payload: error, 
 })
