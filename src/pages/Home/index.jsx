@@ -77,7 +77,7 @@ function Home() {
                   order={{ lg: 2, xs: 4 }}
                 >
                   <div onClick={moreFunction}>
-                    <Link to="" className="menulink">
+                    <Link to="" className="menulink" >
                       More..
                       <div>
                         <img className="test2" src={line2} alt="line" />
