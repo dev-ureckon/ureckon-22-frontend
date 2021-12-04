@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux'
+import sponsorReducer from './sponsors'
 
-const rootReducer = combineReducers({})
+const rootReducer = combineReducers({
+  sponsor: sponsorReducer,
+})
 
 export default rootReducer
