@@ -4,8 +4,6 @@ import Grid from '@mui/material/Grid'
 import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
 import headingLogo from '../../assets/IMGs/Heading.png'
 import uemLogo from '../../assets/IMGs/uemLogo.png'
-import repubgamers from '../../assets/IMGs/repubGamers.png'
-import asus from '../../assets/IMGs/asus.png'
 import bgvideo from '../../assets/bgVideo.mp4'
 import './fonts.css'
 import './socialicons.css'
@@ -233,7 +231,7 @@ function Home() {
               flexWrap="nowrap"
             >
               <Grid item alignSelf="center">
-                <div className="Sponsor">Sponsored By</div>
+                <div className="Sponsor">Partnered By</div>
               </Grid>
               {/* <Grid item className="headimgcontain">
                 <img src={repubgamers} className="headimage1" alt="UEM" />
@@ -243,7 +241,13 @@ function Home() {
               </Grid> */}
               {mainSponsors.map((aMainSponsor) => (
                 <Grid item className="headimgcontain">
-                  <img src={aMainSponsor.sponsorLogo} className="headimage1" alt="UEM" />
+                  <img
+                    src={aMainSponsor.sponsorLogo}
+                    height={100}
+                    width={100}
+                    className="headimage1"
+                    alt="UEM"
+                  />
                 </Grid>
               ))}
             </Grid>
