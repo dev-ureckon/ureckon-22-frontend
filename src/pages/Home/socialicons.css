@@ -12,8 +12,8 @@
 
 .facebook {
   background: url(../../assets/SVGs/fbWhite.svg) no-repeat;
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   display: inline-block;
   transition: 0.5s ease;
 }
