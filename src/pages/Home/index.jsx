@@ -11,6 +11,8 @@ import './socialicons.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
+import {moreFunction} from './home'
+import {backoptions} from './home'
 
 function Home() {
   const classes = useStyles()
@@ -50,7 +52,7 @@ function Home() {
           className="menuwithsocial"
           justifyContent={{ md: 'center', xs: 'center', sm: 'center' }}
         >
-          <Grid item lg={12} className="menupad">
+          <Grid item lg={12} className="menupad" id="mainpage">
             <Grid className="menufont" container alignItems="center">
               <Grid item container justifyContent="center" lg={6} xs={12}>
                 <Link to="" className="menulink">
@@ -68,12 +70,15 @@ function Home() {
                 xs={12}
                 order={{ lg: 2, xs: 4 }}
               >
+                <div onClick={moreFunction}>
                 <Link to="" className="menulink">
                   More..
                   <div>
                     <img className="test2" src={line2} alt="line" />
                   </div>
                 </Link>
+                
+                </div>
               </Grid>
               <Grid
                 item
@@ -107,6 +112,73 @@ function Home() {
               </Grid>
             </Grid>
           </Grid>
+
+          {/* -------------------------------------------------------------------------------- */}
+
+          <Grid item lg={12} className="menupad2" id="moreoptions">
+            <Grid className="menufont" container alignItems="center">
+              <Grid item container justifyContent="center" lg={6} xs={12}>
+              
+                <Link to="" className="menulink">
+                  Team
+                  <div>
+                    <img className="test" src={line1} alt="line" />
+                  </div>
+                </Link>
+                
+              </Grid>
+              <Grid
+                item
+                container
+                justifyContent={{ lg: 'flex-end', xs: 'center' }}
+                lg={6}
+                xs={12}
+                order={{ lg: 2, xs: 4 }}
+              >
+                <div onClick={backoptions}>
+                <Link to="" className="menulink">
+                  Back..
+                  <div>
+                    <img className="test2" src={line2} alt="line" />
+                  </div>
+                </Link>
+                </div>
+              </Grid>
+              <Grid
+                item
+                container
+                justifyContent={{ lg: 'flex-end', xs: 'center' }}
+                lg={6}
+                xs={12}
+                order={{ lg: 3, xs: 2 }}
+              >
+                <Link to="" className="menulink">
+                  Contact
+                  <div>
+                    <img className="test5" src={line1} alt="line" />
+                  </div>
+                </Link>
+              </Grid>
+              <Grid
+                item
+                container
+                justifyContent="center"
+                lg={6}
+                xs={12}
+                order={{ lg: 4, xs: 3 }}
+              >
+                <Link to="" className="menulink">
+                  Sponsors
+                  <div>
+                    <img className="test6" src={line2} alt="line" />
+                  </div>
+                </Link>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          {/* ----------------------------------------------------------------------------------------- */}
+
           <Grid
             item
             display="flex"
