@@ -16,7 +16,7 @@ function App() {
         <video className="videoTag" autoPlay loop muted>
           <source src={bgvideo} type="video/mp4" />
         </video>
-        <div style={{ background: '#00000088', minHeight: '100vh', height: '100%' }}>
+        <div style={{ minHeight: '100vh', height: '100%', }}>
           {/* for Navbar */}
           <Header />
           <RouteComponent />

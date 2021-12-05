@@ -22,7 +22,7 @@ function Home() {
     <div className={classes.root}>
       {/* for main container */}
       {/* for Navbar */}
-      <Grid sx={{ paddingY: 0 }}>
+      <Grid sx={{ paddingY: -1 }}>
         <Grid container>
           {/* for Menu */}
           <Grid
