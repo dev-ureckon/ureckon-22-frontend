@@ -1,7 +1,11 @@
 import { useStyles } from './home.style'
 import Grid from '@mui/material/Grid'
+import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
+import headingLogo from '../../assets/IMGs/Heading.png'
+import uemLogo from '../../assets/IMGs/uemLogo.png'
 import repubgamers from '../../assets/IMGs/repubGamers.png'
 import asus from '../../assets/IMGs/asus.png'
+import bgvideo from '../../assets/bgVideo.mp4'
 import fbwhite from '../../assets/SVGs/fbWhite.svg'
 import instawhite from '../../assets/SVGs/instaWhite.svg'
 import linkedinwhite from '../../assets/SVGs/linkedInWhite.svg'
@@ -12,9 +16,9 @@ import fbcolor from '../../assets/SVGs/fbColor.svg'
 import linkedincolor from '../../assets/SVGs/linkedInColor.svg'
 import twittercolor from '../../assets/SVGs/twitterColor.svg'
 import youtubecolor from '../../assets/SVGs/youtubeColor.svg'
+import './fonts.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
-import './home.css'
 
 function Home() {
   const classes = useStyles()
@@ -34,6 +38,29 @@ function Home() {
   }
   return (
     <div className={classes.root}>
+      <video className="videoTag" autoPlay loop muted>
+        <source src={bgvideo} type="video/mp4" />
+      </video>
+
+      {/* for main container */}
+      {/* for Navbar */}
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-around"
+        className="footer"
+        sx={{ paddingX: 30, paddingTop: 5 }}
+      >
+        <Grid item alignSelf="center">
+          <img src={uemLogo} alt="UEM" />
+        </Grid>
+        <Grid item>
+          <img src={headingLogo} alt="UEM" />
+        </Grid>
+        <Grid item>
+          <img src={ureckonLogo} alt="heading" />
+        </Grid>
+      </Grid>
       <Grid container>
         {/* for Menu */}
         <Grid container columns={{ lg: 13, xs: 12 }} className="menusocial">
