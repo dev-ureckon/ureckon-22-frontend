@@ -10,13 +10,8 @@
   top: 0;
   left: 0;
   z-index: -1;
+  filter: brightness(50%);
 }
-/* @media (min-aspect-ratio: 16/9) {
-  .videoTag {
-    width: auto !important;
-    height: 100% !important;
-  }
-} */
 @media (max-aspect-ratio: 16/9) {
   .videoTag {
     width: auto !important;

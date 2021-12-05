@@ -35,16 +35,11 @@
 .menupad2 {
   padding-top: 62px;
 }
-
-.videoTag {
-  filter: brightness(50%);
-}
 @media (max-width: 360px) {
   .menuwithsocial {
     padding-top: 45px;
     padding-left: 140px;
   }
-
   .headimage1 {
     width: 14vh;
     height: auto;
