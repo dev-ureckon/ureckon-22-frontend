@@ -1,0 +1,73 @@
+.Sponsor {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: aliceblue;
+  font-size: 36px;
+}
+.menufont {
+  font-family: 'Blanka', sans-serif;
+  font-size: 48px;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
+  line-height: 2em;
+}
+.menulink {
+  text-decoration: none;
+  color: white;
+}
+
+/* .footer{
+      padding-top: 10px;
+  } */
+
+@media (max-width: 360px) {
+  .menufont {
+    padding-left: 42px;
+  }
+  .menusocial {
+    padding-left: 80px;
+  }
+  .socialicons {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-right: 20px;
+  }
+  .iconspad {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .test {
+    display: none;
+  }
+  .test2 {
+    display: none;
+  }
+  .test3 {
+    display: none;
+  }
+  .test4 {
+    display: none;
+  }
+}
+.test {
+  position: absolute;
+  top: 288px;
+  right: 875px;
+}
+.test2 {
+  position: absolute;
+  top: 287px;
+  left: 860px;
+}
+.test3 {
+  position: absolute;
+  top: 385px;
+  right: 689px;
+}
+.test4 {
+  position: absolute;
+  top: 383px;
+  left: 681px;
+}
