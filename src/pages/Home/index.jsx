@@ -34,7 +34,7 @@ function Home() {
             <Grid item lg={12} className="menupad" id="mainpage">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="" className="menulink">
+                  <Link to="/Login" className="menulink">
                     Login
                     <div>
                       <img className="test" src={line1} alt="line" />
@@ -66,7 +66,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/events" className="menulink">
                     Events
                     <div>
                       <img className="test3" src={line1} alt="line" />
@@ -81,7 +81,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/about" className="menulink">
                     About
                     <div>
                       <img className="test4" src={line2} alt="line" />
@@ -96,7 +96,7 @@ function Home() {
             <Grid item lg={12} className="menupad2" id="moreoptions">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="" className="menulink">
+                  <Link to="/teams" className="menulink">
                     Team
                     <div>
                       <img className="test" src={line1} alt="line" />
@@ -128,7 +128,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/contact" className="menulink">
                     Contact
                     <div>
                       <img className="test5" src={line1} alt="line" />
@@ -143,7 +143,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/sponsers" className="menulink">
                     Sponsors
                     <div>
                       <img className="test6" src={line2} alt="line" />
