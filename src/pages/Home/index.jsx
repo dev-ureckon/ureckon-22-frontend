@@ -2,7 +2,6 @@ import { useStyles } from './home.style'
 import { useSelector, useDispatch } from 'react-redux'
 import Grid from '@mui/material/Grid'
 import './fonts.css'
-import './socialicons.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
@@ -10,6 +9,7 @@ import { moreFunction } from './home'
 import { backoptions } from './home'
 import { useEffect } from 'react'
 import { getMainSponsors } from '../../redux/apis'
+import SocialIcons from '../../components/SocialIcons'
 
 function Home() {
   const classes = useStyles()
@@ -17,12 +17,12 @@ function Home() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getMainSponsors())
-  }, [])
+  }, [dispatch])
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{marginTop: '-2.4rem'}}>
       {/* for main container */}
       {/* for Navbar */}
-      <Grid sx={{ paddingY: -1 }}>
+      <Grid>
         <Grid container>
           {/* for Menu */}
           <Grid
@@ -153,48 +153,12 @@ function Home() {
               </Grid>
             </Grid>
 
-            {/* ----------------------------------------------------------------------------------------- */}
+            {/* ------------------------------------Social Icons----------------------------------------------------- */}
 
-            <Grid
-              item
-              display="flex"
-              flexDirection={{ lg: 'column', md: 'row', xs: 'row' }}
-              alignItems={{ xs: 'center', md: 'center' }}
-              justifyContent={{ md: 'center', xs: 'center', sm: 'center' }}
-              className="socialicons"
-              xs={12}
-              lg={1}
-            >
-              <Grid item>
-                <a
-                  href="https://m.facebook.com/ureckon.uemk/?refid=52&__tn__=C-R"
-                  target="_blank"
-                >
-                  <div className="facebook"></div>
-                </a>
-              </Grid>
-              <Grid item sx={{ my: 1 }}>
-                <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
-                  <div className="instagram"></div>
-                </a>
-              </Grid>
-              <Grid item>
-                <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
-                  <div className="linkedin"></div>
-                </a>
-              </Grid>
-              <Grid item sx={{ my: 1 }}>
-                <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
-                  <div className="twitter"></div>
-                </a>
-              </Grid>
-              <Grid item>
-                <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
-                  <div className="youtube"></div>
-                </a>
-              </Grid>
-            </Grid>
+              <SocialIcons/>
+            {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
           </Grid>
+          {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
           {mainSponsors.length && (
             <Grid
               container
@@ -206,25 +170,19 @@ function Home() {
               <Grid item alignSelf="center">
                 <div className="Sponsor">Partnered By</div>
               </Grid>
-              {/* <Grid item className="headimgcontain">
-                <img src={repubgamers} className="headimage1" alt="UEM" />
-              </Grid>
-              <Grid item sx={{ paddingTop: 3 }} className="headimgcontain">
-                <img src={asus} className="headimage1" alt="UEM" />
-              </Grid> */}
               {mainSponsors.map((aMainSponsor) => (
                 <Grid item className="headimgcontain">
                   <img
                     src={aMainSponsor.sponsorLogo}
                     height={100}
                     width={100}
-                    // className="headimage1"
                     alt="UEM"
                   />
                 </Grid>
               ))}
             </Grid>
           )}
+          {/* ------------------------------------End Main Sponser Icons----------------------------------------------------- */}
         </Grid>
       </Grid>
     </div>

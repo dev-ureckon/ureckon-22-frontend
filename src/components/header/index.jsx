@@ -10,15 +10,15 @@ const Header = () => {
       direction="row"
       justifyContent="space-around"
       className="footer"
-      sx={{ paddingX: 30, paddingTop: 5, marginBottom: '2rem' }}
+      sx={{ paddingX: 30,marginBottom: '2rem' }}
     >
-      <Grid item alignSelf="center">
-        <img src={uemLogo} alt="UEM" />
+      <Grid item alignSelf="center" sx={{ paddingTop: 5 }}>
+        <img src={uemLogo} alt="UEM"  />
       </Grid>
-      <Grid item>
+      <Grid item sx={{ paddingTop: 5 }}>
         <img src={headingLogo} alt="UEM" />
       </Grid>
-      <Grid item>
+      <Grid item sx={{ paddingTop: 5  }}>
         <img src={ureckonLogo} alt="heading" />
       </Grid>
     </Grid>
