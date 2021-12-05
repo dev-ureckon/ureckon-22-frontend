@@ -16,10 +16,6 @@
   color: white;
 }
 
-/* .footer{
-      padding-top: 10px;
-  } */
-
 @media (max-width: 360px) {
   .menufont {
     padding-left: 42px;

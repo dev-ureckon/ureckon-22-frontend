@@ -12,14 +12,13 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        {/* for main container */}
         <video className="videoTag" autoPlay loop muted>
           <source src={bgvideo} type="video/mp4" />
         </video>
         <div style={{ background: '#00000088', minHeight: '100vh', height: '100%' }}>
-          <Header />
-          {/* for main container */}
           {/* for Navbar */}
-
+          <Header />
           <RouteComponent />
         </div>
       </ThemeProvider>
