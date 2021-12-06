@@ -1,12 +1,7 @@
 import { useStyles } from './home.style'
 import { useSelector, useDispatch } from 'react-redux'
 import Grid from '@mui/material/Grid'
-import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
-import headingLogo from '../../assets/IMGs/Heading.png'
-import uemLogo from '../../assets/IMGs/uemLogo.png'
-import bgvideo from '../../assets/bgVideo.mp4'
 import './fonts.css'
-import './socialicons.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
@@ -14,6 +9,7 @@ import { moreFunction } from './home'
 import { backoptions } from './home'
 import { useEffect } from 'react'
 import { getMainSponsors } from '../../redux/apis'
+import SocialIcons from '../../components/SocialIcons'
 
 function Home() {
   const classes = useStyles()
@@ -21,35 +17,12 @@ function Home() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getMainSponsors())
-  }, [])
+  }, [dispatch])
   return (
-    <div className={classes.root}>
-      <video className="videoTag" autoPlay loop muted>
-        <source src={bgvideo} type="video/mp4" />
-      </video>
-
+    <div className={classes.root} style={{ marginTop: '-2.4rem' }}>
       {/* for main container */}
       {/* for Navbar */}
-      <Grid sx={{ paddingY: 5 }}>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-around"
-          className="headcontainer"
-          flexWrap="nowrap"
-          sx={{ paddingX: 30 }}
-          xs={12}
-        >
-          <Grid item alignSelf="center" className="headimgcontain">
-            <img src={uemLogo} className="headimage1" alt="UEM" />
-          </Grid>
-          <Grid item className="headimgcontain2">
-            <img src={headingLogo} className="headimage2" alt="ureckon" />
-          </Grid>
-          <Grid item className="headimgcontain">
-            <img src={ureckonLogo} className="headimage3" alt="ureckonlogo" />
-          </Grid>
-        </Grid>
+      <Grid>
         <Grid container>
           {/* for Menu */}
           <Grid
@@ -61,7 +34,7 @@ function Home() {
             <Grid item lg={12} className="menupad" id="mainpage">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="" className="menulink">
+                  <Link to="/Login" className="menulink">
                     Login
                     <div>
                       <img className="test" src={line1} alt="line" />
@@ -93,7 +66,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/events" className="menulink">
                     Events
                     <div>
                       <img className="test3" src={line1} alt="line" />
@@ -108,7 +81,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/about" className="menulink">
                     About
                     <div>
                       <img className="test4" src={line2} alt="line" />
@@ -123,7 +96,7 @@ function Home() {
             <Grid item lg={12} className="menupad2" id="moreoptions">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="" className="menulink">
+                  <Link to="/teams" className="menulink">
                     Team
                     <div>
                       <img className="test" src={line1} alt="line" />
@@ -155,7 +128,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/contact" className="menulink">
                     Contact
                     <div>
                       <img className="test5" src={line1} alt="line" />
@@ -170,7 +143,7 @@ function Home() {
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="" className="menulink">
+                  <Link to="/sponsers" className="menulink">
                     Sponsors
                     <div>
                       <img className="test6" src={line2} alt="line" />
@@ -180,48 +153,12 @@ function Home() {
               </Grid>
             </Grid>
 
-            {/* ----------------------------------------------------------------------------------------- */}
+            {/* ------------------------------------Social Icons----------------------------------------------------- */}
 
-            <Grid
-              item
-              display="flex"
-              flexDirection={{ lg: 'column', md: 'row', xs: 'row' }}
-              alignItems={{ xs: 'center', md: 'center' }}
-              justifyContent={{ md: 'center', xs: 'center', sm: 'center' }}
-              className="socialicons"
-              xs={12}
-              lg={1}
-            >
-              <Grid item>
-                <a
-                  href="https://m.facebook.com/ureckon.uemk/?refid=52&__tn__=C-R"
-                  target="_blank"
-                >
-                  <div className="facebook"></div>
-                </a>
-              </Grid>
-              <Grid item sx={{ my: 1 }}>
-                <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
-                  <div className="instagram"></div>
-                </a>
-              </Grid>
-              <Grid item>
-                <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
-                  <div className="linkedin"></div>
-                </a>
-              </Grid>
-              <Grid item sx={{ my: 1 }}>
-                <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
-                  <div className="twitter"></div>
-                </a>
-              </Grid>
-              <Grid item>
-                <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
-                  <div className="youtube"></div>
-                </a>
-              </Grid>
-            </Grid>
+            <SocialIcons />
+            {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
           </Grid>
+          {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
           {mainSponsors.length && (
             <Grid
               container
@@ -233,25 +170,19 @@ function Home() {
               <Grid item alignSelf="center">
                 <div className="Sponsor">Partnered By</div>
               </Grid>
-              {/* <Grid item className="headimgcontain">
-                <img src={repubgamers} className="headimage1" alt="UEM" />
-              </Grid>
-              <Grid item sx={{ paddingTop: 3 }} className="headimgcontain">
-                <img src={asus} className="headimage1" alt="UEM" />
-              </Grid> */}
               {mainSponsors.map((aMainSponsor) => (
                 <Grid item className="headimgcontain">
                   <img
                     src={aMainSponsor.sponsorLogo}
                     height={100}
                     width={100}
-                    // className="headimage1"
                     alt="UEM"
                   />
                 </Grid>
               ))}
             </Grid>
           )}
+          {/* ------------------------------------End Main Sponser Icons----------------------------------------------------- */}
         </Grid>
       </Grid>
     </div>

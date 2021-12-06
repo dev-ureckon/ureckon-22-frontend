@@ -1,3 +1,7 @@
+:root {
+  --placeholder-color: rgb(160, 160, 160);
+}
+
 .videoTag {
   object-fit: cover;
   width: 100vw;
@@ -6,7 +10,7 @@
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(50%);
+  filter: brightness(36%);
 }
 @media (max-aspect-ratio: 16/9) {
   .videoTag {
