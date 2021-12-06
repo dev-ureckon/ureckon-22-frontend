@@ -19,7 +19,7 @@ function Home() {
     dispatch(getMainSponsors())
   }, [dispatch])
   return (
-    <div className={classes.root} style={{marginTop: '-2.4rem'}}>
+    <div className={classes.root} style={{ marginTop: '-2.4rem' }}>
       {/* for main container */}
       {/* for Navbar */}
       <Grid>
@@ -155,7 +155,7 @@ function Home() {
 
             {/* ------------------------------------Social Icons----------------------------------------------------- */}
 
-              <SocialIcons/>
+            <SocialIcons />
             {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
           </Grid>
           {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
