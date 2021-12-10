@@ -1,15 +1,9 @@
 import { useState } from 'react'
-import { useNavigate } from "react-router-dom"
-import { Button, Container, Grid, Link } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import Input from '../../components/input'
 
-
-const Register = (props) => {
-  let history = useNavigate();
-
-
+const ForgetPassword = (props) => {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
   })
 
@@ -20,7 +14,7 @@ const Register = (props) => {
   return (
     <Container maxWidth="xl">
       <Grid container spacing={10}>
-        <Grid item lg={6} md={12}>
+        {/* <Grid item lg={6} md={12}>
           <Input
             width="100%"
             label="Name"
@@ -29,7 +23,7 @@ const Register = (props) => {
             value={formData.name}
             onChange={(e) => handleChange(e)}
           />
-        </Grid>
+        </Grid> */}
         <Grid item lg={6} md={12}>
           <Input
             width="100%"
@@ -41,14 +35,8 @@ const Register = (props) => {
           />
         </Grid>
       </Grid>
-
-      <Grid>
-         <Button onClick={()=> {navigate("/forgetPassword");
-        }}>Forget password?</Button>
-      </Grid>
-     
     </Container>
   )
 }
 
-export default Register
+export default ForgetPassword
