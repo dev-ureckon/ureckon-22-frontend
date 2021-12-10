@@ -3,7 +3,7 @@ import { useStyles } from './contact.style'
 
 import { ContactLogic } from './contact'
 
-function Home() {
+function Home () {
   const { foo } = ContactLogic()
   console.log(foo)
   const classes = useStyles()

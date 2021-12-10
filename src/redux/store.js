@@ -8,8 +8,8 @@ const initialState = {
   userSignin: {
     userInfo:
       JSON.parse(localStorage.getItem('userInfo')) ||
-      JSON.parse(sessionStorage.getItem('userInfo')),
-  },
+      JSON.parse(sessionStorage.getItem('userInfo'))
+  }
 }
 
 const middleware = [thunk]

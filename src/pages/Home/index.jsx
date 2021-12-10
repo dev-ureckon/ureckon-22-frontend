@@ -5,13 +5,13 @@ import './fonts.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
-import { moreFunction } from './home'
-import { backoptions } from './home'
+import { moreFunction, backoptions } from './home'
+
 import { useEffect } from 'react'
 import { getMainSponsors } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
-function Home() {
+function Home () {
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
   const dispatch = useDispatch()
@@ -28,16 +28,16 @@ function Home() {
           <Grid
             container
             columns={{ lg: 13, sm: 12, xs: 12 }}
-            className="menuwithsocial"
+            className='menuwithsocial'
             justifyContent={{ md: 'center', xs: 'center', sm: 'center' }}
           >
-            <Grid item lg={12} className="menupad" id="mainpage">
-              <Grid className="menufont" container alignItems="center">
-                <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="/Login" className="menulink">
+            <Grid item lg={12} className='menupad' id='mainpage'>
+              <Grid className='menufont' container alignItems='center'>
+                <Grid item container justifyContent='center' lg={6} xs={12}>
+                  <Link to='/Login' className='menulink'>
                     Login
                     <div>
-                      <img className="test" src={line1} alt="line" />
+                      <img className='test' src={line1} alt='line' />
                     </div>
                   </Link>
                 </Grid>
@@ -50,10 +50,10 @@ function Home() {
                   order={{ lg: 2, xs: 4 }}
                 >
                   <div onClick={moreFunction}>
-                    <Link to="" className="menulink">
+                    <Link to='' className='menulink'>
                       More..
                       <div>
-                        <img className="test2" src={line2} alt="line" />
+                        <img className='test2' src={line2} alt='line' />
                       </div>
                     </Link>
                   </div>
@@ -66,25 +66,25 @@ function Home() {
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
                 >
-                  <Link to="/events" className="menulink">
+                  <Link to='/events' className='menulink'>
                     Events
                     <div>
-                      <img className="test3" src={line1} alt="line" />
+                      <img className='test3' src={line1} alt='line' />
                     </div>
                   </Link>
                 </Grid>
                 <Grid
                   item
                   container
-                  justifyContent="center"
+                  justifyContent='center'
                   lg={6}
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="/about" className="menulink">
+                  <Link to='/about' className='menulink'>
                     About
                     <div>
-                      <img className="test4" src={line2} alt="line" />
+                      <img className='test4' src={line2} alt='line' />
                     </div>
                   </Link>
                 </Grid>
@@ -93,13 +93,13 @@ function Home() {
 
             {/* -------------------------------------------------------------------------------- */}
 
-            <Grid item lg={12} className="menupad2" id="moreoptions">
-              <Grid className="menufont" container alignItems="center">
-                <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="/teams" className="menulink">
+            <Grid item lg={12} className='menupad2' id='moreoptions'>
+              <Grid className='menufont' container alignItems='center'>
+                <Grid item container justifyContent='center' lg={6} xs={12}>
+                  <Link to='/teams' className='menulink'>
                     Team
                     <div>
-                      <img className="test" src={line1} alt="line" />
+                      <img className='test' src={line1} alt='line' />
                     </div>
                   </Link>
                 </Grid>
@@ -112,10 +112,10 @@ function Home() {
                   order={{ lg: 2, xs: 4 }}
                 >
                   <div onClick={backoptions}>
-                    <Link to="" className="menulink">
+                    <Link to='' className='menulink'>
                       Back..
                       <div>
-                        <img className="test2" src={line2} alt="line" />
+                        <img className='test2' src={line2} alt='line' />
                       </div>
                     </Link>
                   </div>
@@ -128,25 +128,25 @@ function Home() {
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
                 >
-                  <Link to="/contact" className="menulink">
+                  <Link to='/contact' className='menulink'>
                     Contact
                     <div>
-                      <img className="test5" src={line1} alt="line" />
+                      <img className='test5' src={line1} alt='line' />
                     </div>
                   </Link>
                 </Grid>
                 <Grid
                   item
                   container
-                  justifyContent="center"
+                  justifyContent='center'
                   lg={6}
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="/sponsers" className="menulink">
+                  <Link to='/sponsers' className='menulink'>
                     Sponsors
                     <div>
-                      <img className="test6" src={line2} alt="line" />
+                      <img className='test6' src={line2} alt='line' />
                     </div>
                   </Link>
                 </Grid>
@@ -162,21 +162,21 @@ function Home() {
           {mainSponsors.length && (
             <Grid
               container
-              direction="row"
-              justifyContent="space-around"
+              direction='row'
+              justifyContent='space-around'
               sx={{ paddingX: 31 }}
-              flexWrap="nowrap"
+              flexWrap='nowrap'
             >
-              <Grid item alignSelf="center">
-                <div className="Sponsor">Partnered By</div>
+              <Grid item alignSelf='center'>
+                <div className='Sponsor'>Partnered By</div>
               </Grid>
               {mainSponsors.map((aMainSponsor) => (
-                <Grid item className="headimgcontain">
+                <Grid item className='headimgcontain'>
                   <img
                     src={aMainSponsor.sponsorLogo}
                     height={100}
                     width={100}
-                    alt="UEM"
+                    alt='UEM'
                   />
                 </Grid>
               ))}

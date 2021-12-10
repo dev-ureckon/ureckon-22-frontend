@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import sponsorReducer from './sponsors'
 
 const rootReducer = combineReducers({
-  sponsor: sponsorReducer,
+  sponsor: sponsorReducer
 })
 
 export default rootReducer
