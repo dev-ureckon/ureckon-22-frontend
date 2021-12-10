@@ -52,6 +52,7 @@ const Input = (props) => {
         />
         <input
           placeholder={placeholder}
+          required
           name={name}
           value={value}
           type={type}

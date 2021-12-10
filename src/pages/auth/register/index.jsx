@@ -17,79 +17,103 @@ const Register = (props) => {
   })
 
   const handleChange = (e) => {
-    setFormData((f) => ({ ...f, [e.target.name]: e.target.value }))
+    setFormData((f) => ({
+      ...f,
+      [e.target.name]: e.target.value,
+      [e.target.email]: e.target.value,
+      [e.target.number]: e.target.value,
+      [e.target.password]: e.target.value,
+      [e.target.collegeName]: e.target.value,
+      [e.target.gender]: e.target.value,
+    }))
   }
 
   return (
     <div className={classes.root}>
-       <Container>
-      <Grid container spacing={10}>
-      <br/><br/>
-        <Grid item lg={6} md={12} sm={12}>
-          <Input
-            width="100%"
-            label="Name"
-            placeholder="John Doe"
-            name="name"
-            value={formData.name}
-            onChange={(e) => handleChange(e)}
-          />
-          <Input
-            width="100%"
-            label="Phone No."
-            placeholder="Input your number here.."
-            name="number"
-            type="number"
-            value={formData.number}
-            onChange={(e) => handleChange(e)}
-          />
-          <Input
-            width="100%"
-            label="Password"
-            placeholder=""
-            name="password"
-            type="password"
-            value={formData.password}
-            onChange={(e) => handleChange(e)}
-          />
-        </Grid>
-        <br/><br/>
-        <Grid item lg={6} md={12}>
-          <Input
-            width="100%"
-            label="Email"
-            placeholder="John Doe"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={(e) => handleChange(e)}
-          />
-          <Input
-            width="100%"
-            label="School/College name"
-            placeholder="John Doe"
-            name="collegeName"
-            value={formData.collegeName}
-            onChange={(e) => handleChange(e)}
-          />
-          <Input
-            width="100%"
-            label="Gender"
-            placeholder="John Doe"
-            name="email"
-            value={formData.gender}
-            onChange={(e) => handleChange(e)}
-          />
-        </Grid>
-      </Grid>
-      <Typography align="center">
-      <Button variant="outlined" className={classes.submitButton}>Register</Button>
-      </Typography>
-
-      <Typography align="center" variant="h5" color="primary" className={classes.socialAuth}>
-           Register With: <SocialAuth/>
-      </Typography>
-    </Container>
+      <Container>
+        <from
+          onSubmit={(e) => {
+            e.preventDefault()
+            console.log(e,'Form Submitted')   // not working
+          }}
+          noValidate
+        >
+          <Grid container spacing={10}>
+            <br />
+            <br />
+            <Grid item lg={6} md={12} sm={12}>
+              <Input
+                width="100%"
+                label="Name"
+                placeholder="John Doe"
+                name="name"
+                value={formData.name}
+                onChange={(e) => handleChange(e)}
+              />
+              <Input
+                width="100%"
+                label="Phone No."
+                placeholder="Input your number here.."
+                name="number"
+                type="number"
+                value={formData.number}
+                onChange={(e) => handleChange(e)}
+              />
+              <Input
+                width="100%"
+                label="Password"
+                placeholder=""
+                name="password"
+                type="password"
+                value={formData.password}
+                onChange={(e) => handleChange(e)}
+              />
+            </Grid>
+            <br />
+            <br />
+            <Grid item lg={6} md={12}>
+              <Input
+                width="100%"
+                label="Email"
+                placeholder="John Doe"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => handleChange(e)}
+              />
+              <Input
+                width="100%"
+                label="School/College name"
+                placeholder="John Doe"
+                name="collegeName"
+                value={formData.collegeName}
+                onChange={(e) => handleChange(e)}
+              />
+              <Input
+                width="100%"
+                label="Gender"
+                placeholder="John Doe"
+                name="gender"
+                value={formData.gender}
+                onChange={(e) => handleChange(e)}
+              />
+            </Grid>
+          </Grid>
+          <Typography align="center">
+            <Button type="submit" variant="outlined" className={classes.submitButton}>
+              Register
+            </Button>
+          </Typography>
+        </from>
+        <Typography
+          align="center"
+          variant="h5"
+          color="primary"
+          className={classes.socialAuth}
+        >
+          Register With: <SocialAuth />
+        </Typography>
+      </Container>
     </div>
   )
 }

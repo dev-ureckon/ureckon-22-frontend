@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = `https://sincon.herokuapp.com/admin`;
+const url = ""
 
 const config = {
     headers: {
