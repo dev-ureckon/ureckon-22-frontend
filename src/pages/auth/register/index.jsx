@@ -10,6 +10,10 @@ const Register = (props) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    number: '',
+    password: '',
+    collegeName: '',
+    gender: '',
   })
 
   const handleChange = (e) => {
