@@ -52,7 +52,6 @@ const Input = (props) => {
         />
         <input
           placeholder={placeholder}
-          required
           name={name}
           value={value}
           type={type}
@@ -72,6 +71,7 @@ const Input = (props) => {
             fontFamily: "'IBM Plex Sans', sans-serif",
             fontWeight: 500
           }}
+          required
         />
       </div>
     </div>

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Contact from './pages/Contact'
-import Register from './pages/auth/register'
+import Register from './pages/auth/Register'
 
 function RouteComponent () {
   return (

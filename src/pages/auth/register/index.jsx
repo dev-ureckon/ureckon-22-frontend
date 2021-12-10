@@ -28,15 +28,16 @@ const Register = (props) => {
     }))
   }
 
+  
+
   return (
     <div className={classes.root}>
       <Container>
-        <from
+        <form
           onSubmit={(e) => {
             e.preventDefault()
             console.log(e,'Form Submitted')   // not working
           }}
-          noValidate
         >
           <Grid container spacing={10}>
             <br />
@@ -104,7 +105,7 @@ const Register = (props) => {
               Register
             </Button>
           </Typography>
-        </from>
+        </form>
         <Typography
           align="center"
           variant="h5"

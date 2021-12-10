@@ -13,3 +13,7 @@ export const loginUser = (email, password) =>
 
 export const registerUser = (name, email, password) =>
     axios.post(`${url}/register`, { name, email, password }, config);
+
+ export const signUpSocial = (idToken) => {
+     console.log(idToken);
+ }   
