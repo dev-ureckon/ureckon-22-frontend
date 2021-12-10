@@ -5,8 +5,13 @@ import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
 
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import {userRegister} from '../../../redux/actions'
+
 const Register = (props) => {
   const classes = useStyles()
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,7 +33,10 @@ const Register = (props) => {
     }))
   }
 
-  
+  const handleSubmit = (e) => {
+    dispatch(userRegister(formData));
+    console.log(formData.gender);
+  }
 
   return (
     <div className={classes.root}>
@@ -36,7 +44,7 @@ const Register = (props) => {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            console.log(e,'Form Submitted')   // not working
+            handleSubmit(e)
           }}
         >
           <Grid container spacing={10}>
@@ -93,7 +101,7 @@ const Register = (props) => {
               <Input
                 width="100%"
                 label="Gender"
-                placeholder="John Doe"
+                placeholder="Male"
                 name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}
