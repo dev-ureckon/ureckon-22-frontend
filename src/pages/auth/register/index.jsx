@@ -1,58 +1,13 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
 import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
-
 import { useStyles } from '../auth.style.js'
+
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
-
-//Redux
-import { useDispatch, useSelector } from 'react-redux'
-import { userRegister } from '../../../redux/actions'
+import { RegisterLogic } from './Register.js'
 
 const Register = (props) => {
   const classes = useStyles()
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    number: '',
-    password: '',
-    collegeName: '',
-    gender: '',
-  })
-
-  const handleChange = (e) => {
-    setFormData((f) => ({
-      ...f,
-      [e.target.name]: e.target.value,
-      [e.target.email]: e.target.value,
-      [e.target.number]: e.target.value,
-      [e.target.password]: e.target.value,
-      [e.target.collegeName]: e.target.value,
-      [e.target.gender]: e.target.value,
-    }))
-  }
-  //getting state from reducer
-  const { data, error, loading } = useSelector((state) => state.userRegister)
-  console.log(data, error, loading)
-  const handleSubmit = (e) => {
-      dispatch(
-        userRegister(
-          formData.email,
-          formData.password,
-          formData.name,
-          formData.collegeName,
-          formData.number,
-          formData.gender
-        )
-      )
-  }
-  //If user is already logged in Do not show this page
-  useEffect(() => {
-    if (data) navigate('/')
-  }, [data, navigate])
+  const { handleChange, formData, error, loading, handleSubmit } = RegisterLogic()
 
   return (
     <div className={classes.root}>
@@ -141,7 +96,12 @@ const Register = (props) => {
             </Grid>
           </Grid>
           <Typography align="center">
-            <Button type="submit" variant="contained" color='secondary' className={classes.submitButton}>
+            <Button
+              type="submit"
+              variant="contained"
+              color="secondary"
+              className={classes.submitButton}
+            >
               Register
             </Button>
           </Typography>
@@ -152,7 +112,17 @@ const Register = (props) => {
           color="primary"
           className={classes.socialAuth}
         >
-          Register With: <SocialAuth />
+          <Grid container>
+            <Grid item sm={4}>
+              {' '}
+              <Typography align="center" variant="h5" color="primary">
+                Register With:{' '}
+              </Typography>
+            </Grid>
+            <Grid item sm={6}>
+              <SocialAuth />
+            </Grid>
+          </Grid>
         </Typography>
       </Container>
     </div>
