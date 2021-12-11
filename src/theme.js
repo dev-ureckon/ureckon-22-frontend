@@ -6,7 +6,10 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#ffffff', // Text colour
-      secondary: '#43c9ed' // secondary txt colour
+      secondary: '#001013' // secondary txt colour
+    },
+    secondary:{
+      main: '#032e37'
     }
   },
   // Typpography for MUI theme

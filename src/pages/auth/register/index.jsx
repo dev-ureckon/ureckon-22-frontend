@@ -141,7 +141,7 @@ const Register = (props) => {
             </Grid>
           </Grid>
           <Typography align="center">
-            <Button type="submit" variant="outlined" className={classes.submitButton}>
+            <Button type="submit" variant="contained" color='secondary' className={classes.submitButton}>
               Register
             </Button>
           </Typography>

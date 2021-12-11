@@ -15,8 +15,8 @@ function RouteComponent () {
           <Route path='/' element={<Home />} />
           <Route path='/register' element={<AvoidAuth><Register /></AvoidAuth>} />
           <Route path='/login' element={<AvoidAuth><Login /></AvoidAuth>} />
-          <Route path='/contact' element={<Contact />} />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </>
