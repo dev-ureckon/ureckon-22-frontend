@@ -3,7 +3,7 @@ import { useStyles } from './contact.style'
 
 import { ContactLogic } from './contact'
 
-function Home () {
+function Contact() {
   const { foo } = ContactLogic()
   console.log(foo)
   const classes = useStyles()
@@ -11,4 +11,4 @@ function Home () {
   return <div className={classes.root}>Contact Page</div>
 }
 
-export default Home
+export default Contact

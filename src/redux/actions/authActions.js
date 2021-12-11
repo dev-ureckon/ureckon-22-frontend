@@ -10,20 +10,23 @@ import {
 import { loginUser, registerUser } from '../apis';
 
 // user register action
-export const userRegister = (name, email, password) => async (dispatch) => {
+export const userRegister = (email, password, name, college, phone, gender) => async (dispatch) => {
     try {
         dispatch({
             type: USER_REGISTER_REQUEST,
         });
-        const { data } = await registerUser(name, email, password);
+        const {data}  = await registerUser(email, password, name, college, phone, gender);
+        console.log(data);
         dispatch({
             type: USER_REGISTER_SUCCESS,
             payload: data,
         });
+        localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
+        console.log(error.response.data.message);
         dispatch({
             type: USER_REGISTER_FAILED,
-            payload: error,
+            payload: error.response.data.message,
         });
     }
 };

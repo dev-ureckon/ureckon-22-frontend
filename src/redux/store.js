@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 
 const initialState = {
-  userSignin: {
+  userLogin: {
     userInfo:
       JSON.parse(localStorage.getItem('userInfo')) ||
       JSON.parse(sessionStorage.getItem('userInfo'))

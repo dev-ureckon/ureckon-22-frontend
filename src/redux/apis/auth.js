@@ -1,19 +1,26 @@
-import axios from 'axios';
+import axios from '../../axios/axiosInstance'
 
-const url = ""
+const url = '/auth/participant'
 
 const config = {
-    headers: {
-        'Content-Type': 'application/json',
-    },
-};
+  headers: {
+    'Content-Type': 'application/json',
+  },
+}
 
 export const loginUser = (email, password) =>
-    axios.post(`${url}/login`, { email, password }, config);
+  axios.post(`${url}/login`, { email, password }, config)
 
-export const registerUser = (name, email, password) =>
-    axios.post(`${url}/register`, { name, email, password }, config);
 
- export const signUpSocial = (idToken) => {
-     console.log(idToken);
- }   
+export const registerUser = async (email, password, name, college, phone, gender) => {
+  const data = await axios.post(
+    `${url}/register`,
+    { email, password, name, college, phone, gender },
+    config
+  )
+  return data
+}
+
+export const signUpSocial = (idToken) => {
+  console.log(idToken)
+}

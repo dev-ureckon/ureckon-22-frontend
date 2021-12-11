@@ -1,17 +1,19 @@
-import { useState } from 'react'
-import { Button, Container, Grid, Typography } from '@mui/material'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router'
+import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 
 import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
 
 //Redux
-import { useDispatch, useSelector } from 'react-redux';
-import {userRegister} from '../../../redux/actions'
+import { useDispatch, useSelector } from 'react-redux'
+import { userRegister } from '../../../redux/actions'
 
 const Register = (props) => {
   const classes = useStyles()
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,15 +34,45 @@ const Register = (props) => {
       [e.target.gender]: e.target.value,
     }))
   }
-
+  //getting state from reducer
+  const { data, error, loading } = useSelector((state) => state.userRegister)
+  console.log(data, error, loading)
   const handleSubmit = (e) => {
-    dispatch(userRegister(formData));
-    console.log(formData.gender);
+      dispatch(
+        userRegister(
+          formData.email,
+          formData.password,
+          formData.name,
+          formData.collegeName,
+          formData.number,
+          formData.gender
+        )
+      )
   }
+  //If user is already logged in Do not show this page
+  useEffect(() => {
+    if (data) navigate('/')
+  }, [data, navigate])
 
   return (
     <div className={classes.root}>
       <Container>
+        {loading && (
+          <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
+        )}
+        {error && (
+          <>
+            <Alert
+              style={{ marginTop: '8px', width: '100%' }}
+              variant="filled"
+              severity="error"
+            >
+              {error}
+            </Alert>
+            <br />
+            <br />
+          </>
+        )}
         <form
           onSubmit={(e) => {
             e.preventDefault()
@@ -54,7 +86,7 @@ const Register = (props) => {
               <Input
                 width="100%"
                 label="Name"
-                placeholder="John Doe"
+                placeholder="Your Name"
                 name="name"
                 value={formData.name}
                 onChange={(e) => handleChange(e)}
@@ -62,7 +94,7 @@ const Register = (props) => {
               <Input
                 width="100%"
                 label="Phone No."
-                placeholder="Input your number here.."
+                placeholder="Your number here.."
                 name="number"
                 type="number"
                 value={formData.number}
@@ -71,7 +103,7 @@ const Register = (props) => {
               <Input
                 width="100%"
                 label="Password"
-                placeholder=""
+                placeholder="*********"
                 name="password"
                 type="password"
                 value={formData.password}
@@ -84,7 +116,7 @@ const Register = (props) => {
               <Input
                 width="100%"
                 label="Email"
-                placeholder="John Doe"
+                placeholder="name@example.com"
                 name="email"
                 type="email"
                 value={formData.email}
@@ -93,7 +125,7 @@ const Register = (props) => {
               <Input
                 width="100%"
                 label="School/College name"
-                placeholder="John Doe"
+                placeholder="UEM"
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
