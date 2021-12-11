@@ -14,7 +14,7 @@ const Login = (props) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   //getting state from reducer
-  const { data, error, loading } = useSelector((state) => state.userLogin)
+  const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
   const [formData, setFormData] = useState({
     email: '',
@@ -30,8 +30,8 @@ const Login = (props) => {
 
   //If user is already logged in Do not show this page
   useEffect(() => {
-    if (data) navigate('/')
-  }, [data, navigate])
+    if (userInfo) navigate('/')
+  }, [userInfo, navigate, loading])
 
   const handleSubmit = (e) => {
     dispatch(userLogin(formData.email, formData.password))
@@ -79,6 +79,7 @@ const Login = (props) => {
             placeholder="*********"
             name="password"
             value={formData.password}
+            type="password"
             onChange={(e) => handleChange(e)}
           />
           <Grid container>

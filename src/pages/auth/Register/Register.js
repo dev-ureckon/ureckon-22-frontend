@@ -24,7 +24,7 @@ export const RegisterLogic = () => {
     }))
   }
   //getting state from reducer
-  const { data, error, loading } = useSelector((state) => state.userRegister)
+  const { userInfo, error, loading } = useSelector((state) => state.userRegister)
   const handleSubmit = (e) => {
     dispatch(
       userRegister(
@@ -39,8 +39,8 @@ export const RegisterLogic = () => {
   }
   //If user is already logged in Do not show this page
   useEffect(() => {
-    if (data) navigate('/')
-  }, [data, navigate])
+    if (userInfo) navigate('/')
+  }, [userInfo, navigate, loading])
 
   return {
     handleChange,
