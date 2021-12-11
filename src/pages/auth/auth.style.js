@@ -9,7 +9,6 @@ export const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     width: '181px',
     height: '50px',
-    //background: url(./images/login\ button.svg);
     backgroundSize: "cover",
     border: 0,
     outline: "none",
@@ -19,18 +18,18 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: '20px',
   },
   submitButtonLogin: {
-    margin: '0rem auto',
+    margin: '1rem auto',
     fontFamily: 'ibm-pxel-sans',
     textTransform: "uppercase",
     width: '181px',
     height: '50px',
+    backgroundSize: "cover",
     border: 0,
     outline: "none",
     color: "#fff",
     fontStyle: "normal",
     fontWeight: 500,
     fontSize: '20px',
-    background: theme.palette.primary.secondary
   },
   socialAuth:{
 
