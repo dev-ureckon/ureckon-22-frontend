@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { Button, Container, Grid, Typography } from '@mui/material'
-
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
@@ -8,11 +8,14 @@ import SocialAuth from '../../../components/SocialAuth/index.jsx'
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { userLogin } from '../../../redux/actions'
-import { Link } from 'react-router-dom'
 
 const Login = (props) => {
   const classes = useStyles()
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  //getting state from reducer
+  const { data, error, loading } = useSelector((state) => state.userLogin)
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -26,13 +29,34 @@ const Login = (props) => {
     }))
   }
 
+  //If user is already logged in Do not show this page
+  useEffect(() => {
+    if (data) navigate('/')
+  }, [data, navigate])
+
   const handleSubmit = (e) => {
-    dispatch(userLogin(formData))
+    dispatch(userLogin(formData.email, formData.password))
   }
 
   return (
     <div className={classes.root}>
       <Container maxWidth="xs">
+        {loading && (
+          <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
+        )}
+        {error && (
+          <>
+            <Alert
+              style={{ marginTop: '8px', width: '100%' }}
+              variant="filled"
+              severity="error"
+            >
+              {error}
+            </Alert>
+            <br />
+            <br />
+          </>
+        )}
         <form
           onSubmit={(e) => {
             e.preventDefault()

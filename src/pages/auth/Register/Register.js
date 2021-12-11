@@ -30,7 +30,6 @@ export const RegisterLogic = () => {
   }
   //getting state from reducer
   const { data, error, loading } = useSelector((state) => state.userRegister)
-  console.log(data, error, loading)
   const handleSubmit = (e) => {
     dispatch(
       userRegister(
