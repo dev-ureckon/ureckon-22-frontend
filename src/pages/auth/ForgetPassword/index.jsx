@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Container, Grid } from '@mui/material'
-import Input from '../../components/input'
+import Input from '../../../components/input'
 
 const ForgetPassword = (props) => {
   const [formData, setFormData] = useState({
