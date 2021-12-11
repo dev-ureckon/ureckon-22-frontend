@@ -11,7 +11,6 @@ const config = {
 export const loginUser = (email, password) =>
   axios.post(`${url}/login`, { email, password }, config)
 
-
 export const registerUser = async (email, password, name, college, phone, gender) => {
   const data = await axios.post(
     `${url}/register`,

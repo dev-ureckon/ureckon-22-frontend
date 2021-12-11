@@ -6,33 +6,33 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#ffffff', // Text colour
-      secondary: '#001013' // secondary txt colour
+      secondary: '#001013', // secondary txt colour
     },
-    secondary:{
-      main: '#032e37'
-    }
+    secondary: {
+      main: '#032e37',
+    },
   },
   // Typpography for MUI theme
   typography: {
     // global font config
-    fontFamily: ' '
+    fontFamily: ' ',
   },
   props: {
     MuiTooltip: {
-      arrow: true
-    }
+      arrow: true,
+    },
   },
   shape: {
-    borderRadius: 5
+    borderRadius: 5,
   },
   overrides: {
     MuiStepper: {
       root: {
         background: 'none',
-        border: 'none'
-      }
-    }
-  }
+        border: 'none',
+      },
+    },
+  },
 })
 
 export default responsiveFontSizes(theme)

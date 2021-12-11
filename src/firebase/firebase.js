@@ -7,24 +7,21 @@ import 'firebase/storage'
 import 'firebase/auth'
 import { signUpSocialUser } from '../redux/actions'
 
-
-
 // we create a React Context, for this to be accessible
 // from a component later
 const FirebaseContext = createContext(null)
 export { FirebaseContext }
 
-
 /*eslint-disable */
 export default ({ children }) => {
-    let firebase = {
-      app: null,
-      auth: null,
-      storage: null
-    }
+  let firebase = {
+    app: null,
+    auth: null,
+    storage: null,
+  }
 
-    const dispatch = useDispatch()
-    // check if firebase app has been initialized previously
+  const dispatch = useDispatch()
+  // check if firebase app has been initialized previously
   // if not, initialize with the config we saved earlier
   if (!app.apps.length) {
     app.initializeApp(firebaseConfig)
@@ -35,15 +32,9 @@ export default ({ children }) => {
       api: {
         googleSignIn,
         facebookSignIp,
-      }
+      },
     }
   }
-
-
-
-
-
-
 
   // Oauth with google SignIn
   function googleSignIn() {
@@ -89,7 +80,7 @@ export default ({ children }) => {
           err: errorCode,
           message: errorMessage,
           email: email,
-          credential: credential
+          credential: credential,
         })
         return errorMessage
       })
@@ -138,9 +129,9 @@ export default ({ children }) => {
           err: errorCode,
           message: errorMessage,
           email: email,
-          credential: credential
+          credential: credential,
         })
         return errorMessage
       })
   }
-}    
+}
