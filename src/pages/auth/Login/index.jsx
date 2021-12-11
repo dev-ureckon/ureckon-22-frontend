@@ -24,8 +24,7 @@ const Login = (props) => {
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
-      [e.target.email]: e.target.value,
-      [e.target.password]: e.target.value,
+      [e.target.name]: e.target.value,
     }))
   }
 

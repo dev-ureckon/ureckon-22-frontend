@@ -21,11 +21,6 @@ export const RegisterLogic = () => {
     setFormData((f) => ({
       ...f,
       [e.target.name]: e.target.value,
-      [e.target.email]: e.target.value,
-      [e.target.number]: e.target.value,
-      [e.target.password]: e.target.value,
-      [e.target.collegeName]: e.target.value,
-      [e.target.gender]: e.target.value,
     }))
   }
   //getting state from reducer
