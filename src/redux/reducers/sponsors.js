@@ -1,14 +1,14 @@
 import {
   FETCH_SPONSORS_ERROR,
   FETCH_SPONSORS_REQUEST,
-  FETCH_SPONSORS_SUCCESS
+  FETCH_SPONSORS_SUCCESS,
 } from '../constants'
 
 const initialState = {
   loading: false,
   error: '',
   mainSponsors: [], // Only the main sponsors of Ureckon
-  sponsors: [] // All the sponsors of Ureckon sorted by order
+  sponsors: [], // All the sponsors of Ureckon sorted by order
 }
 
 const sponsorReducer = (state = initialState, action) => {
@@ -19,13 +19,13 @@ const sponsorReducer = (state = initialState, action) => {
     case FETCH_SPONSORS_REQUEST:
       return {
         ...state,
-        loading: true
+        loading: true,
       }
     case FETCH_SPONSORS_SUCCESS:
       const newState = {
         ...state,
         loading: true,
-        error: ''
+        error: '',
       }
       if (isMain) newState.mainSponsors = payload
       else newState.sponsors = payload
@@ -34,7 +34,7 @@ const sponsorReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: payload
+        error: payload,
       }
     default:
       return state

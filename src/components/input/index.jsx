@@ -26,7 +26,7 @@ const Input = (props) => {
           lineHeight: '1rem',
           letterSpacing: '0.1em',
           textShadow: '-1px 1px 5px #0DB3B3, 1px 1px 5px #0DB3B3',
-          textTransform: 'uppercase'
+          textTransform: 'uppercase',
         }}
       >
         {label}
@@ -35,19 +35,19 @@ const Input = (props) => {
         ref={ref}
         style={{
           position: 'relative',
-          width
+          width,
         }}
       >
         <img
           src={InputImg}
-          alt=''
+          alt=""
           style={{
             width: '95%',
             height: '95%',
             position: 'absolute',
             top: '50%',
             transform: 'translateY(-50%)',
-            left: 0
+            left: 0,
           }}
         />
         <input
@@ -69,7 +69,7 @@ const Input = (props) => {
             color: 'white',
             paddingLeft: '10px',
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontWeight: 500
+            fontWeight: 500,
           }}
           required
         />
