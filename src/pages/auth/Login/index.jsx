@@ -1,42 +1,13 @@
-import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
-
-//Redux
-import { useDispatch, useSelector } from 'react-redux'
-import { userLogin } from '../../../redux/actions'
+import { LoginLogic } from './Login.js'
 
 const Login = (props) => {
   const classes = useStyles()
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  //getting state from reducer
-  const { userInfo, error, loading } = useSelector((state) => state.userLogin)
-
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  })
-
-  const handleChange = (e) => {
-    setFormData((f) => ({
-      ...f,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  //If user is already logged in Do not show this page
-  useEffect(() => {
-    if (userInfo) navigate('/')
-  }, [userInfo, navigate, loading])
-
-  const handleSubmit = (e) => {
-    dispatch(userLogin(formData.email, formData.password))
-  }
-
+const {handleChange, handleSubmit, formData, loading, error} = LoginLogic()
   return (
     <div className={classes.root}>
       <Container maxWidth="xs">
