@@ -36,7 +36,6 @@ export const RegisterLogic = () => {
     )
   }
 
-
   return {
     handleChange,
     formData,

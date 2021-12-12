@@ -30,11 +30,14 @@ function RouteComponent() {
               </AvoidAuth>
             }
           />
-          <Route path="/complete-profile" element={
-            <AvoidAuth>
-              <CompleteProfile />
-            </AvoidAuth>
-          } />
+          <Route
+            path="/complete-profile"
+            element={
+              <AvoidAuth>
+                <CompleteProfile />
+              </AvoidAuth>
+            }
+          />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
