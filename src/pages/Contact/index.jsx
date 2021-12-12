@@ -35,8 +35,8 @@ function Contact() {
     }
   }
 
-  // const { foo } = ContactLogic()
-  // console.log(foo)
+  const { foo } = ContactLogic()
+  console.log(foo)
   const classes = useStyles()
 
   return <div className={classes.root}>Contact Page</div>
