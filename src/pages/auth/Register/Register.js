@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useState } from 'react'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,7 +6,6 @@ import { userRegister } from '../../../redux/actions'
 
 export const RegisterLogic = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,7 +22,7 @@ export const RegisterLogic = () => {
     }))
   }
   //getting state from reducer
-  const { userInfo, error, loading } = useSelector((state) => state.userRegister)
+  const { error, loading } = useSelector((state) => state.userLogin)
   const handleSubmit = (e) => {
     dispatch(
       userRegister(
@@ -37,10 +35,7 @@ export const RegisterLogic = () => {
       )
     )
   }
-  //If user is already logged in Do not show this page
-  useEffect(() => {
-    if (userInfo) navigate('/')
-  }, [userInfo, navigate, loading])
+
 
   return {
     handleChange,

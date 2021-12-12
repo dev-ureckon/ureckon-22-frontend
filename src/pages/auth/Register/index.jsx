@@ -5,7 +5,7 @@ import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { RegisterLogic } from './Register.js'
 
-const Register = (props) => {
+const Register = () => {
   const isMobile = window.innerWidth <= 768
 
   const classes = useStyles()

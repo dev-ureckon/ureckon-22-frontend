@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useState } from 'react'
 
 //Redux
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 export const CompleteProfileLogic = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  // const dispatch = useDispatch()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,18 +21,11 @@ export const CompleteProfileLogic = () => {
   }
 
   //getting state from reducer
-  const { userInfo, error, loading } = useSelector((state) => state.userRegister)
+  const { error, loading } = useSelector((state) => state.userLogin)
 
   const handleSubmit = (e) => {
     console.log("submitted");
   }
-
-  //If user is already logged in Do not show this page
-  useEffect(() => {
-    if (userInfo && userInfo.alreadyRegistered) {
-      navigate('/')
-    }
-  }, [userInfo, navigate, loading])
 
   return {
     handleChange,

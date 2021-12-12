@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
@@ -8,7 +7,7 @@ import { LoginLogic } from './login.js'
 
 const Login = () => {
   const classes = useStyles()
-  const { isMobile, dispatch, formData, setFormData, handleChange, handleSubmit, loading, error } = LoginLogic();
+  const { isMobile, formData, handleChange, handleSubmit, loading, error } = LoginLogic();
 
   return (
     <div className={classes.root}>

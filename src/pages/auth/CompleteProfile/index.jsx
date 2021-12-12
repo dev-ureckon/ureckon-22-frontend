@@ -2,13 +2,10 @@ import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui
 import { useStyles } from '../auth.style.js'
 
 import Input from '../../../components/input'
-import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { CompleteProfileLogic } from './completeProfile'
 import { Link } from 'react-router-dom'
 
-const Register = (props) => {
-  const isMobile = window.innerWidth <= 768
-
+const Register = () => {
   const classes = useStyles()
   const { handleChange, formData, error, loading, handleSubmit } = CompleteProfileLogic()
 
