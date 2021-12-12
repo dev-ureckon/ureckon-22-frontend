@@ -8,7 +8,8 @@ app.initializeApp(firebaseConfig)
 // Oauth with google SignIn
 export function googleSignIn(dispatch) {
   var provider = new app.auth.GoogleAuthProvider()
-  return app.auth()
+  return app
+    .auth()
     .signInWithPopup(provider)
     .then((result) => {
       var credential = result.credential
@@ -22,8 +23,9 @@ export function googleSignIn(dispatch) {
       console.log(user)
 
       // get token
-      app.auth().currentUser
-        .getIdToken(/* forceRefresh */ true)
+      app
+        .auth()
+        .currentUser.getIdToken(/* forceRefresh */ true)
         .then(function (idToken) {
           console.log('CHEKING ID TOKEN', idToken)
           // Send token and other details to your backend via HTTPS
@@ -56,7 +58,8 @@ export function googleSignIn(dispatch) {
 // Oauth with Facebook Sign up
 export function facebookSignIn(dispatch) {
   var provider = new app.auth.FacebookAuthProvider()
-  return app.auth()
+  return app
+    .auth()
     .signInWithPopup(provider)
     .then((result) => {
       /** @type {firebase.auth.OAuthCredential} */
@@ -72,8 +75,9 @@ export function facebookSignIn(dispatch) {
       console.log(user)
 
       // get token
-      app.auth().currentUser
-        .getIdToken(/* forceRefresh */ true)
+      app
+        .auth()
+        .currentUser.getIdToken(/* forceRefresh */ true)
         .then(function (idToken) {
           // Send token and other details to your backend via HTTPS
           dispatch(signUpSocialUser(idToken))
