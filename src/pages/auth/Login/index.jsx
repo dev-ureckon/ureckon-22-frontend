@@ -8,7 +8,16 @@ import { LoginLogic } from './login.js'
 
 const Login = () => {
   const classes = useStyles()
-  const { isMobile, dispatch, formData, setFormData, handleChange, handleSubmit, loading, error } = LoginLogic();
+  const {
+    isMobile,
+    dispatch,
+    formData,
+    setFormData,
+    handleChange,
+    handleSubmit,
+    loading,
+    error,
+  } = LoginLogic()
 
   return (
     <div className={classes.root}>

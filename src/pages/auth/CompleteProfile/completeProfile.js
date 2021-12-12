@@ -26,7 +26,7 @@ export const CompleteProfileLogic = () => {
   const { userInfo, error, loading } = useSelector((state) => state.userRegister)
 
   const handleSubmit = (e) => {
-    console.log("submitted");
+    console.log('submitted')
   }
 
   //If user is already logged in Do not show this page
