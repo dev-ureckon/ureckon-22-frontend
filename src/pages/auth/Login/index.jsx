@@ -10,9 +10,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { userLogin } from '../../../redux/actions'
 
 const Login = (props) => {
+  const isMobile = window.innerWidth <= 768;
+
   const classes = useStyles()
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   //getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
@@ -39,7 +42,7 @@ const Login = (props) => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="xs">
+      <Container maxWidth="sm">
         {loading && (
           <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
@@ -103,24 +106,18 @@ const Login = (props) => {
             </Button>
           </Typography>
         </form>
-        <Typography
-          align="center"
-          variant="h5"
-          color="primary"
-          className={classes.socialAuth}
-        >
-          <Grid container spacing={6}>
-            <Grid item sm={5}>
-              {' '}
-              <Typography align="center" variant="h5" color="primary">
-                Login With:{' '}
-              </Typography>
-            </Grid>
-            <Grid item sm={6}>
-              <SocialAuth />
-            </Grid>
+
+        <Grid justifyContent="flex-end" container>
+          <Grid item sm={3} xs={12}>
+            {' '}
+            <Typography align={isMobile ? "center" : "right"} variant="h5" color="primary">
+              Login With:{' '}
+            </Typography>
           </Grid>
-        </Typography>
+          <Grid item justifyContent="center" sm={8} xs={12}>
+            <SocialAuth />
+          </Grid>
+        </Grid>
         <Typography color={'primary'} variant="h6" align="center">
           Don't Have an account?{' '}
           <Link to="/register">
