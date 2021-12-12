@@ -27,7 +27,9 @@ export const LoginLogic = () => {
 
     //If user is already logged in Do not show this page
     useEffect(() => {
-        if (userInfo) navigate('/')
+        if (userInfo) {
+            navigate('/')
+        }
     }, [userInfo, navigate, loading])
 
     const handleSubmit = (e) => {
