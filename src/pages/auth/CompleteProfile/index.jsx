@@ -57,7 +57,6 @@ const Register = () => {
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
               />
-
             </Grid>
             <br />
             <br />
@@ -85,7 +84,7 @@ const Register = () => {
           </Grid>
           <br />
           <Grid container justifyContent={'center'}>
-            <Grid item sm={12} xs={12} md={6} >
+            <Grid item sm={12} xs={12} md={6}>
               <Input
                 width="100%"
                 label="Gender"

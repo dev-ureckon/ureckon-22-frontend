@@ -24,7 +24,7 @@ export const CompleteProfileLogic = () => {
   const { error, loading } = useSelector((state) => state.userLogin)
 
   const handleSubmit = (e) => {
-    console.log("submitted");
+    console.log('submitted')
   }
 
   return {

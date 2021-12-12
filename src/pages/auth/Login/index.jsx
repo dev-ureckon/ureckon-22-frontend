@@ -7,7 +7,7 @@ import { LoginLogic } from './login.js'
 
 const Login = () => {
   const classes = useStyles()
-  const { isMobile, formData, handleChange, handleSubmit, loading, error } = LoginLogic();
+  const { isMobile, formData, handleChange, handleSubmit, loading, error } = LoginLogic()
 
   return (
     <div className={classes.root}>
