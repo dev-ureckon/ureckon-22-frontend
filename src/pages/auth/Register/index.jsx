@@ -6,7 +6,7 @@ import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { RegisterLogic } from './Register.js'
 
 const Register = (props) => {
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768
 
   const classes = useStyles()
   const { handleChange, formData, error, loading, handleSubmit } = RegisterLogic()
@@ -112,7 +112,11 @@ const Register = (props) => {
         <Grid spacing={1} justifyContent="center" container>
           <Grid item xs={12} sm={4}>
             {' '}
-            <Typography variant="h5" align={isMobile ? "center" : "right"} color="primary">
+            <Typography
+              variant="h5"
+              align={isMobile ? 'center' : 'right'}
+              color="primary"
+            >
               Register With:{' '}
             </Typography>
           </Grid>

@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { userLogin } from '../../../redux/actions'
 
 const Login = (props) => {
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768
 
   const classes = useStyles()
   const dispatch = useDispatch()
@@ -110,7 +110,11 @@ const Login = (props) => {
         <Grid justifyContent="flex-end" container>
           <Grid item sm={3} xs={12}>
             {' '}
-            <Typography align={isMobile ? "center" : "right"} variant="h5" color="primary">
+            <Typography
+              align={isMobile ? 'center' : 'right'}
+              variant="h5"
+              color="primary"
+            >
               Login With:{' '}
             </Typography>
           </Grid>

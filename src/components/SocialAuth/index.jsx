@@ -13,11 +13,11 @@ const facebookAuth = async () => {
 }
 
 function SocialAuth() {
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768
 
   return (
-    <div style={{ margin: isMobile ? '0': '-1rem 0 1rem 1rem' }}>
-      <Grid container justifyContent={isMobile ? "center" : "flex-start"} spacing={1}>
+    <div style={{ margin: isMobile ? '0' : '-1rem 0 1rem 1rem' }}>
+      <Grid container justifyContent={isMobile ? 'center' : 'flex-start'} spacing={1}>
         <Grid item xs={2}>
           <img
             src={googleIcon}
