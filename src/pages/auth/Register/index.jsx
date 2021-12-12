@@ -106,24 +106,18 @@ const Register = (props) => {
             </Button>
           </Typography>
         </form>
-        <Typography
-          align="center"
-          variant="h5"
-          color="primary"
-          className={classes.socialAuth}
-        >
-          <Grid container>
-            <Grid item sm={4}>
-              {' '}
-              <Typography align="center" variant="h5" color="primary">
-                Register With:{' '}
-              </Typography>
-            </Grid>
-            <Grid item sm={6}>
-              <SocialAuth />
-            </Grid>
+
+        <Grid spacing={1} justifyContent="center" container>
+          <Grid item sm={4} >
+            {' '}
+            <Typography variant="h5" align='right' color="primary">
+              Register With:{' '}
+            </Typography>
           </Grid>
-        </Typography>
+          <Grid item justifyContent="center" sm={5}>
+            <SocialAuth />
+          </Grid>
+        </Grid>
       </Container>
     </div>
   )

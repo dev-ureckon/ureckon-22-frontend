@@ -1,4 +1,6 @@
 import { Grid } from '@mui/material'
+import googleIcon from "../../assets/SVGs/googleIcon.svg"
+import facebookIcon from "../../assets/SVGs/facebookIcon.svg"
 
 // Google Authentication
 const googleAuth = async () => {
@@ -12,13 +14,13 @@ const facebookAuth = async () => {
 
 function SocialAuth() {
   return (
-    <div style={{ margin: '0' }}>
-      <Grid container justifyContent="center" spacing={1}>
+    <div style={{ margin: '-1rem 0 1rem 1rem' }}>
+      <Grid container spacing={1}>
         <Grid item xs={2} alignItems="center">
-          Google Login <img src="" alt="" onClick={googleAuth} />
+          <img src={googleIcon} style={{ cursor: 'pointer' }} alt="googleIcon" onClick={googleAuth} />
         </Grid>
         <Grid item xs={2} alignItems="center">
-          FB Login <img src="" alt="" onClick={facebookAuth} />
+          <img src={facebookIcon} style={{ cursor: 'pointer' }} alt="facebookIcon" onClick={facebookAuth} />
         </Grid>
       </Grid>
     </div>
