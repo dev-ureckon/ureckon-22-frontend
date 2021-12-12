@@ -16,7 +16,7 @@ function Home() {
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
   const dispatch = useDispatch()
 
-  const { isAuthenticated } = useSelector((state) => state.userLogin)
+  const { userInfo } = useSelector((state) => state.userLogin)
 
   useEffect(() => {
     dispatch(getMainSponsors())
@@ -37,7 +37,7 @@ function Home() {
             <Grid item lg={12} className="menupad" id="mainpage">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  {isAuthenticated ? (
+                  {userInfo ? (
                     <Link to="/Profile" className="menulink">
                       Profile
                       <div>
