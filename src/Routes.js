@@ -14,24 +14,9 @@ function RouteComponent() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/register"
-            element={
-              <Register />
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <Login />
-            }
-          />
-          <Route
-            path="/complete-profile"
-            element={
-              <CompleteProfile />
-            }
-          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/complete-profile" element={<CompleteProfile />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

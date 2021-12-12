@@ -11,7 +11,7 @@ import {
   USER_REGISTER_SUCCESS,
 } from '../constants'
 import { loginUser, registerUser, signUpSocial } from '../apis/auth'
-import { completeProfile } from "../apis/authManagement"
+import { completeProfile } from '../apis/authManagement'
 
 // user register action
 export const userRegister =
@@ -94,16 +94,16 @@ export const completeProfileAction =
         type: USER_COMPLETE_PROFILE_REQUEST,
       })
       const { data } = await completeProfile(phone, college, gender, accessToken)
-      console.log(data);
+      console.log(data)
       dispatch({
         type: USER_COMPLETE_PROFILE_SUCCESS,
         payload: data,
       })
 
-      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'))
       userInfo.alreadyRegistered = true
       localStorage.setItem('userInfo', JSON.stringify(userInfo))
-      navigate("/")
+      navigate('/')
     } catch (error) {
       dispatch({
         type: USER_COMPLETE_PROFILE_FAILED,

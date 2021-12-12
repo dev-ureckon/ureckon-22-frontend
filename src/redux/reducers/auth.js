@@ -74,8 +74,6 @@ export const userRegisterReducer = (
   }
 }
 
-
-
 // Complete Profile Reducer
 export const userCompleteProfileReducer = (
   state = {

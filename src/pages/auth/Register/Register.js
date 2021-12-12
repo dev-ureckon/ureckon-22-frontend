@@ -17,11 +17,10 @@ export const RegisterLogic = () => {
     gender: '',
   })
 
-
   //getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
-  //If user is already logged in Do not show this page 
+  //If user is already logged in Do not show this page
   // or redirect to complete - profile page if not already registered with social auth
   useEffect(() => {
     if (userInfo && !userInfo.alreadyRegistered) {
@@ -30,7 +29,6 @@ export const RegisterLogic = () => {
       navigate('/dashboard')
     }
   }, [userInfo, navigate, loading])
-
 
   const handleChange = (e) => {
     setFormData((f) => ({

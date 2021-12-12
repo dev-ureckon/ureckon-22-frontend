@@ -19,16 +19,15 @@ export const CompleteProfileLogic = () => {
   //getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
-  //If user is already logged in Do not show this page 
+  //If user is already logged in Do not show this page
   // or redirect to complete - profile page if not already registered with social auth
   useEffect(() => {
     if (userInfo && !userInfo.alreadyRegistered) {
-      navigate("/complete-profile")
-    }
-    else if (userInfo) {
-      navigate("/dashboard")
+      navigate('/complete-profile')
+    } else if (userInfo) {
+      navigate('/dashboard')
     } else {
-      navigate("/")
+      navigate('/')
     }
   }, [userInfo, navigate, loading])
 
@@ -41,7 +40,15 @@ export const CompleteProfileLogic = () => {
 
   const handleSubmit = (e) => {
     console.log('submitted')
-    dispatch(completeProfileAction(formData.number, formData.collegeName, formData.gender, userInfo.accessToken, navigate))
+    dispatch(
+      completeProfileAction(
+        formData.number,
+        formData.collegeName,
+        formData.gender,
+        userInfo.accessToken,
+        navigate
+      )
+    )
   }
 
   return {

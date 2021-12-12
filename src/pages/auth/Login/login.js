@@ -5,48 +5,47 @@ import { useNavigate } from 'react-router-dom'
 import { userLogin } from '../../../redux/actions'
 
 export const LoginLogic = () => {
-    const isMobile = window.innerWidth <= 768
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+  const isMobile = window.innerWidth <= 768
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-    const [formData, setFormData] = useState({
-        email: '',
-        password: '',
-    })
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  })
 
-    //getting state from reducer
-    const { userInfo, error, loading } = useSelector((state) => state.userLogin)
+  //getting state from reducer
+  const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
-    //If user is already logged in Do not show this page 
-    // or redirect to complete - profile page if not already registered with social auth
-    useEffect(() => {
-        if (userInfo && !userInfo.alreadyRegistered) {
-            navigate('/complete-profile')
-        } else if (userInfo) {
-            navigate('/dashboard')
-        }
-    }, [userInfo, navigate, loading])
-
-
-    const handleChange = (e) => {
-        setFormData((f) => ({
-            ...f,
-            [e.target.name]: e.target.value,
-        }))
+  //If user is already logged in Do not show this page
+  // or redirect to complete - profile page if not already registered with social auth
+  useEffect(() => {
+    if (userInfo && !userInfo.alreadyRegistered) {
+      navigate('/complete-profile')
+    } else if (userInfo) {
+      navigate('/dashboard')
     }
+  }, [userInfo, navigate, loading])
 
-    const handleSubmit = (e) => {
-        dispatch(userLogin(formData.email, formData.password))
-    }
+  const handleChange = (e) => {
+    setFormData((f) => ({
+      ...f,
+      [e.target.name]: e.target.value,
+    }))
+  }
 
-    return {
-        isMobile,
-        dispatch,
-        formData,
-        setFormData,
-        handleChange,
-        handleSubmit,
-        loading,
-        error,
-    }
+  const handleSubmit = (e) => {
+    dispatch(userLogin(formData.email, formData.password))
+  }
+
+  return {
+    isMobile,
+    dispatch,
+    formData,
+    setFormData,
+    handleChange,
+    handleSubmit,
+    loading,
+    error,
+  }
 }
