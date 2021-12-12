@@ -8,6 +8,7 @@ import {
   USER_REGISTER_SUCCESS,
 } from '../constants'
 import { loginUser, registerUser } from '../apis'
+import { signUpSocial } from '../apis/auth'
 
 // user register action
 export const userRegister =
@@ -61,14 +62,10 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
     dispatch({
       type: USER_LOGIN_REQUEST,
     })
-    const config = {
-      'Content-Type': 'application/json',
-    }
-    const body = {
-      idToken: idToken,
-    }
 
-    const { data } = await dispatch({
+    const { data } = await signUpSocial(idToken)
+
+    dispatch({
       type: USER_LOGIN_SUCCESS,
       payload: data,
     })
