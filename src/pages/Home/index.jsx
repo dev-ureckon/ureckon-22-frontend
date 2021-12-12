@@ -15,6 +15,9 @@ function Home() {
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
   const dispatch = useDispatch()
+
+  const { isAuthenticated } = useSelector((state) => state.userLogin)
+
   useEffect(() => {
     dispatch(getMainSponsors())
   }, [dispatch])
@@ -34,12 +37,21 @@ function Home() {
             <Grid item lg={12} className="menupad" id="mainpage">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="/Login" className="menulink">
-                    Login
-                    <div>
-                      <img className="test" src={line1} alt="line" />
-                    </div>
-                  </Link>
+                  {isAuthenticated ? (
+                    <Link to="/Profile" className="menulink">
+                      Profile
+                      <div>
+                        <img className="test" src={line1} alt="line" />
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link to="/Login" className="menulink">
+                      Login
+                      <div>
+                        <img className="test" src={line1} alt="line" />
+                      </div>
+                    </Link>
+                  )}
                 </Grid>
                 <Grid
                   item
