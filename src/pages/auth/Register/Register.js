@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
@@ -6,6 +7,7 @@ import { userRegister } from '../../../redux/actions'
 
 export const RegisterLogic = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,14 +17,28 @@ export const RegisterLogic = () => {
     gender: '',
   })
 
+
+  //getting state from reducer
+  const { userInfo, error, loading } = useSelector((state) => state.userLogin)
+
+  //If user is already logged in Do not show this page 
+  // or redirect to complete - profile page if not already registered with social auth
+  useEffect(() => {
+    if (userInfo && !userInfo.alreadyRegistered) {
+      navigate('/complete-profile')
+    } else if (userInfo) {
+      navigate('/dashboard')
+    }
+  }, [userInfo, navigate, loading])
+
+
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
       [e.target.name]: e.target.value,
     }))
   }
-  //getting state from reducer
-  const { error, loading } = useSelector((state) => state.userLogin)
+
   const handleSubmit = (e) => {
     dispatch(
       userRegister(
