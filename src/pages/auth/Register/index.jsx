@@ -108,9 +108,9 @@ const Register = (props) => {
         </form>
 
         <Grid spacing={1} justifyContent="center" container>
-          <Grid item sm={4} >
+          <Grid item sm={4}>
             {' '}
-            <Typography variant="h5" align='right' color="primary">
+            <Typography variant="h5" align="right" color="primary">
               Register With:{' '}
             </Typography>
           </Grid>
