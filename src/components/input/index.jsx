@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
 
 const Input = (props) => {
-  const { width = '400px', label, placeholder, name, value, onChange, type } = props
+  const { width = '400px', label, placeholder, name, value, onChange, type, page } = props
 
   const ref = useRef(null)
 
@@ -56,7 +56,7 @@ const Input = (props) => {
           value={value}
           type={type}
           onChange={(e) => onChange(e)}
-          disabled={name === "name" || name === "email" && true}
+          disabled={(name === "name" || name === "email") && page === "complete-profile" ? true: false}
           style={{
             width: '90%',
             left: '5%',

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router'
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { userRegister } from '../../../redux/actions'
+import swal from 'sweetalert'
 
 export const RegisterLogic = () => {
   const dispatch = useDispatch()
@@ -20,7 +21,7 @@ export const RegisterLogic = () => {
   //getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userRegister)
 
-  //If user is already logged in Do not show this page
+  // If user is already logged in Do not show this page
   // or redirect to complete - profile page if not already registered with social auth
   useEffect(() => {
     if (
@@ -30,7 +31,7 @@ export const RegisterLogic = () => {
     ) {
       navigate('/complete-profile')
     } else if (userInfo) {
-      navigate('/')
+        navigate('/')
     }
   }, [userInfo, navigate, loading])
 

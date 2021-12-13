@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import swal from 'sweetalert'
 import { userLogin } from '../../../redux/actions'
 
 export const LoginLogic = () => {
@@ -27,7 +28,7 @@ export const LoginLogic = () => {
     ) {
       navigate('/complete-profile')
     } else if (userInfo) {
-      navigate('/')
+        navigate('/')
     }
   }, [userInfo, navigate, loading])
 
