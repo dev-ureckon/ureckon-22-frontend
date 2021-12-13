@@ -76,6 +76,11 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
       type: USER_LOGIN_SUCCESS,
       payload: data,
     })
+    
+     dispatch({
+      type: USER_REGISTER_SUCCESS,
+      payload: data,
+    })
     swal('Success', "Successfully Logged in", "success")
 
     // save auth details to local
