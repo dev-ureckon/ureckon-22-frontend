@@ -56,6 +56,7 @@ const Input = (props) => {
           value={value}
           type={type}
           onChange={(e) => onChange(e)}
+          disabled={name === "name" || name === "email" && true}
           style={{
             width: '90%',
             left: '5%',

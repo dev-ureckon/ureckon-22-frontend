@@ -9,7 +9,6 @@ export function AvoidAuth({ children }) {
   const { userInfo } = useSelector((state) => state.userLogin)
 
   if (userInfo && !userInfo.alreadyRegistered) {
-    console.log('gh')
     return <Navigate to="/complete-profile" />
   } else if (userInfo) {
     return <Navigate to="/" />
