@@ -56,7 +56,11 @@ const Input = (props) => {
           value={value}
           type={type}
           onChange={(e) => onChange(e)}
-          disabled={(name === "name" || name === "email") && page === "complete-profile" ? true: false}
+          disabled={
+            (name === 'name' || name === 'email') && page === 'complete-profile'
+              ? true
+              : false
+          }
           style={{
             width: '90%',
             left: '5%',

@@ -27,7 +27,7 @@ export const userRegister =
         type: USER_REGISTER_SUCCESS,
         payload: data,
       })
-      swal("Success", "Successfully Logged in", "success")
+      swal('Success', 'Successfully Logged in', 'success')
 
       localStorage.setItem('userInfo', JSON.stringify(data))
     } catch (error) {
@@ -50,7 +50,7 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
       type: USER_LOGIN_SUCCESS,
       payload: data,
     })
-    swal("Success", "Successfully Logged in", "success")
+    swal('Success', 'Successfully Logged in', 'success')
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
     dispatch({
@@ -76,7 +76,7 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
       type: USER_LOGIN_SUCCESS,
       payload: data,
     })
-    swal('Success', "Successfully Logged in", "success")
+    swal('Success', 'Successfully Logged in', 'success')
 
     // save auth details to local
     localStorage.setItem('userInfo', JSON.stringify(data))
@@ -108,7 +108,7 @@ export const completeProfileAction =
       const userInfo = JSON.parse(localStorage.getItem('userInfo'))
       userInfo.alreadyRegistered = true
       localStorage.setItem('userInfo', JSON.stringify(userInfo))
-      swal("Success", "Succes updated complete Profile", "success").then(() => {
+      swal('Success', 'Succes updated complete Profile', 'success').then(() => {
         navigate('/')
       })
     } catch (error) {
