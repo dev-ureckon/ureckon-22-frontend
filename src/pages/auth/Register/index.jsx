@@ -91,7 +91,7 @@ const Register = () => {
               variant="contained"
               color="secondary"
               className={classes.submitButton}
-              className='authFont'
+              className="authFont"
             >
               Register
             </Button>
@@ -105,7 +105,7 @@ const Register = () => {
               variant="h5"
               align={isMobile ? 'center' : 'right'}
               color="primary"
-              className='authFont'
+              className="authFont"
             >
               Register With:{' '}
             </Typography>
