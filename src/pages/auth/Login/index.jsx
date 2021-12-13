@@ -47,7 +47,7 @@ const Login = () => {
             <Grid item sm={7}></Grid>
             <Grid item sm={5}>
               <Link to={'/forget-password'}>
-                <Typography align="right" color="primary" className='authFont'>
+                <Typography align="right" color="primary" className="authFont">
                   forget password?
                 </Typography>
               </Link>
@@ -59,7 +59,7 @@ const Login = () => {
               variant="contained"
               color="secondary"
               className={classes.submitButtonLogin}
-              className='authFont'
+              className="authFont"
             >
               Login
             </Button>
@@ -73,7 +73,7 @@ const Login = () => {
               align={isMobile ? 'center' : 'right'}
               variant="h5"
               color="primary"
-              className='authFont'
+              className="authFont"
             >
               Login With:{' '}
             </Typography>
@@ -82,10 +82,12 @@ const Login = () => {
             <SocialAuth />
           </Grid>
         </Grid>
-        <Typography color={'primary'} variant="h6" align="center" className='authFont'>
+        <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
           <Link to="/register">
-            <b style={{ color: '#fff' }} className='authFont'>Register Here !</b>
+            <b style={{ color: '#fff' }} className="authFont">
+              Register Here !
+            </b>
           </Link>
         </Typography>
       </Container>
