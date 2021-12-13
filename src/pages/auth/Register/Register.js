@@ -31,7 +31,7 @@ export const RegisterLogic = () => {
     ) {
       navigate('/complete-profile')
     } else if (userInfo) {
-        navigate('/')
+      navigate('/')
     }
   }, [userInfo, navigate, loading])
 

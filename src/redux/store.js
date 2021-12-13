@@ -9,7 +9,7 @@ const initialState = {
       JSON.parse(localStorage.getItem('userInfo')) ||
       JSON.parse(sessionStorage.getItem('userInfo')),
   },
-   userRegister: {
+  userRegister: {
     userInfo:
       JSON.parse(localStorage.getItem('userInfo')) ||
       JSON.parse(sessionStorage.getItem('userInfo')),

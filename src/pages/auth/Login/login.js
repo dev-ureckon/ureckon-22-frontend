@@ -28,7 +28,7 @@ export const LoginLogic = () => {
     ) {
       navigate('/complete-profile')
     } else if (userInfo) {
-        navigate('/')
+      navigate('/')
     }
   }, [userInfo, navigate, loading])
 
