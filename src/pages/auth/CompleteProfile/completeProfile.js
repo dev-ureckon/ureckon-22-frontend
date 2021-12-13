@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { completeProfileAction } from '../../../redux/actions'
-import swal from "sweetalert"
+import swal from 'sweetalert'
 
 export const CompleteProfileLogic = () => {
   const dispatch = useDispatch()
@@ -35,11 +35,10 @@ export const CompleteProfileLogic = () => {
     }
   }, [userInfo, navigate, loading])
 
-
-  // show error message 
+  // show error message
   useEffect(() => {
     if (error) {
-      swal("Error", error, "error");
+      swal('Error', error, 'error')
     }
   }, [error])
 
