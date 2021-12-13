@@ -26,7 +26,7 @@ export const CompleteProfileLogic = () => {
       navigate('/complete-profile')
     } else if (userInfo) {
       navigate('/')
-    } 
+    }
   }, [userInfo, navigate, loading])
 
   const handleChange = (e) => {
