@@ -1,4 +1,4 @@
-import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
+import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
 
 import Input from '../../../components/input'
@@ -6,7 +6,7 @@ import { CompleteProfileLogic } from './completeProfile'
 
 const Register = () => {
   const classes = useStyles()
-  const { handleChange, formData, error, loading, handleSubmit } = CompleteProfileLogic()
+  const { handleChange, formData, loading, handleSubmit } = CompleteProfileLogic()
 
   return (
     <div className={classes.root}>
@@ -14,19 +14,7 @@ const Register = () => {
         {loading && (
           <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
-        {error && (
-          <>
-            <Alert
-              style={{ marginTop: '8px', width: '100%' }}
-              variant="filled"
-              severity="error"
-            >
-              {error}
-            </Alert>
-            <br />
-            <br />
-          </>
-        )}
+
         <form
           onSubmit={(e) => {
             e.preventDefault()
