@@ -22,7 +22,7 @@ export const CompleteProfileLogic = () => {
   //If user is already logged in Do not show this page
   // or redirect to complete - profile page if not already registered with social auth
   useEffect(() => {
-    if (userInfo && !userInfo.alreadyRegistered) {
+    if (userInfo && userInfo.alreadyRegistered !== undefined && !userInfo.alreadyRegistered) {
       navigate('/complete-profile')
     } else if (userInfo) {
       navigate('/')
