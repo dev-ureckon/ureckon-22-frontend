@@ -23,7 +23,7 @@ export const LoginLogic = () => {
     if (userInfo && !userInfo.alreadyRegistered) {
       navigate('/complete-profile')
     } else if (userInfo) {
-      navigate('/dashboard')
+      navigate('/')
     }
   }, [userInfo, navigate, loading])
 

@@ -25,10 +25,8 @@ export const CompleteProfileLogic = () => {
     if (userInfo && !userInfo.alreadyRegistered) {
       navigate('/complete-profile')
     } else if (userInfo) {
-      navigate('/dashboard')
-    } else {
       navigate('/')
-    }
+    } 
   }, [userInfo, navigate, loading])
 
   const handleChange = (e) => {

@@ -3,7 +3,6 @@ import { useStyles } from '../auth.style.js'
 
 import Input from '../../../components/input'
 import { CompleteProfileLogic } from './completeProfile'
-import { Link } from 'react-router-dom'
 
 const Register = () => {
   const classes = useStyles()
@@ -106,13 +105,6 @@ const Register = () => {
             </Button>
           </Typography>
         </form>
-
-        <Typography color={'primary'} variant="h6" align="center">
-          Already have an account?{' '}
-          <Link to="/login">
-            <b style={{ color: '#fff' }}>Login Here !</b>
-          </Link>
-        </Typography>
       </Container>
     </div>
   )
