@@ -8,7 +8,7 @@ import { completeProfileAction } from '../../../redux/actions'
 export const CompleteProfileLogic = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  
+
   //getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
@@ -19,7 +19,6 @@ export const CompleteProfileLogic = () => {
     collegeName: '',
     gender: '',
   })
-
 
   //If user is already logged in Do not show this page
   // or redirect to complete - profile page if not already registered with social auth
