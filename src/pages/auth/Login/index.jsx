@@ -4,6 +4,7 @@ import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { LoginLogic } from './login.js'
+import './login.css'
 
 const Login = () => {
   const classes = useStyles()
@@ -37,7 +38,7 @@ const Login = () => {
           <Input
             width="100%"
             label="Email"
-            placeholder="djBravo@champions.wi"
+            placeholder="name@email.com"
             name="email"
             type="email"
             value={formData.email}
@@ -58,7 +59,7 @@ const Login = () => {
             <Grid item sm={7}></Grid>
             <Grid item sm={5}>
               <Link to={'/forget-password'}>
-                <Typography align="right" color="primary">
+                <Typography align="right" color="primary" className='authFont'>
                   forget password?
                 </Typography>
               </Link>
@@ -70,6 +71,7 @@ const Login = () => {
               variant="contained"
               color="secondary"
               className={classes.submitButtonLogin}
+              className='authFont'
             >
               Login
             </Button>
@@ -83,6 +85,7 @@ const Login = () => {
               align={isMobile ? 'center' : 'right'}
               variant="h5"
               color="primary"
+              className='authFont'
             >
               Login With:{' '}
             </Typography>
@@ -91,10 +94,10 @@ const Login = () => {
             <SocialAuth />
           </Grid>
         </Grid>
-        <Typography color={'primary'} variant="h6" align="center">
+        <Typography color={'primary'} variant="h6" align="center" className='authFont'>
           Don't Have an account?{' '}
           <Link to="/register">
-            <b style={{ color: '#fff' }}>Register Here !</b>
+            <b style={{ color: '#fff' }} className='authFont'>Register Here !</b>
           </Link>
         </Typography>
       </Container>
