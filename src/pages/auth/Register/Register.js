@@ -35,6 +35,13 @@ export const RegisterLogic = () => {
     }
   }, [userInfo, navigate, loading])
 
+  // show error message
+  useEffect(() => {
+    if (error) {
+      swal('Error', error, 'error')
+    }
+  }, [error])
+
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,

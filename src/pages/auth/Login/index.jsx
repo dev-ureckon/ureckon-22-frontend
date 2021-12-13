@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
+import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
@@ -8,7 +8,7 @@ import './login.css'
 
 const Login = () => {
   const classes = useStyles()
-  const { isMobile, formData, handleChange, handleSubmit, loading, error } = LoginLogic()
+  const { isMobile, formData, handleChange, handleSubmit, loading } = LoginLogic()
 
   return (
     <div className={classes.root}>
@@ -16,19 +16,7 @@ const Login = () => {
         {loading && (
           <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
-        {error && (
-          <>
-            <Alert
-              style={{ marginTop: '8px', width: '100%' }}
-              variant="filled"
-              severity="error"
-            >
-              {error}
-            </Alert>
-            <br />
-            <br />
-          </>
-        )}
+
         <form
           onSubmit={(e) => {
             e.preventDefault()

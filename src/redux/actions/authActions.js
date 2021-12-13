@@ -27,6 +27,11 @@ export const userRegister =
         type: USER_REGISTER_SUCCESS,
         payload: data,
       })
+
+      dispatch({
+        type: USER_LOGIN_SUCCESS,
+        payload: data,
+      })
       swal('Success', 'Successfully Logged in', 'success')
 
       localStorage.setItem('userInfo', JSON.stringify(data))
