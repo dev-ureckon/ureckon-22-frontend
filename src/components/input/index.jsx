@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
 
 const Input = (props) => {
-  const { width = '400px', label, placeholder, name, value, onChange } = props
+  const { width = '400px', label, placeholder, name, value, onChange, type } = props
 
   const ref = useRef(null)
 
@@ -14,7 +14,7 @@ const Input = (props) => {
   }, [window.innerWidth])
 
   return (
-    <div style={{ width, height: '100%' }}>
+    <div style={{ width, height: '40%' }}>
       <p
         style={{
           color: 'white',
@@ -23,7 +23,7 @@ const Input = (props) => {
           fontWeight: 400,
           fontSize: '1.5625rem',
           paddingLeft: '7px',
-          lineHeight: '1.875rem',
+          lineHeight: '1rem',
           letterSpacing: '0.1em',
           textShadow: '-1px 1px 5px #0DB3B3, 1px 1px 5px #0DB3B3',
           textTransform: 'uppercase',
@@ -42,8 +42,8 @@ const Input = (props) => {
           src={InputImg}
           alt=""
           style={{
-            width: '100%',
-            height: '100%',
+            width: '95%',
+            height: '95%',
             position: 'absolute',
             top: '50%',
             transform: 'translateY(-50%)',
@@ -54,6 +54,7 @@ const Input = (props) => {
           placeholder={placeholder}
           name={name}
           value={value}
+          type={type}
           onChange={(e) => onChange(e)}
           style={{
             width: '90%',
@@ -70,6 +71,7 @@ const Input = (props) => {
             fontFamily: "'IBM Plex Sans', sans-serif",
             fontWeight: 500,
           }}
+          required
         />
       </div>
     </div>

@@ -1,17 +1,20 @@
 import { createTheme, responsiveFontSizes } from '@mui/material'
 
-//For custon theme in MUI
+// For custon theme in MUI
 const theme = createTheme({
   // color pallete for MUI theme
   palette: {
     primary: {
-      main: '#ffffff', //Text colour
-      secondary: '#43c9ed', //secondary txt colour
+      main: '#ffffff', // Text colour
+      secondary: '#001013', // secondary txt colour
+    },
+    secondary: {
+      main: '#032e37',
     },
   },
   // Typpography for MUI theme
   typography: {
-    //global font config
+    // global font config
     fontFamily: ' ',
   },
   props: {
