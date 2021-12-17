@@ -1,28 +1,52 @@
+import { useState, useEffect, forwardRef } from 'react'
 import { useStyles } from './home.style'
 import { useSelector, useDispatch } from 'react-redux'
-import Grid from '@mui/material/Grid'
+import { Modal, Grid, Slide, Backdrop } from '@mui/material'
 import './fonts.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
 import { moreFunction, backoptions } from './home'
 
-import { useEffect } from 'react'
 import { getMainSponsors } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
+import Announcements from '../../components/announcement/index.jsx'
+import './home.animation.css'
+
 function Home() {
+  const [open, setOpen] = useState(false)
+
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
   const dispatch = useDispatch()
 
   const { userInfo } = useSelector((state) => state.userLogin)
 
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
+  // const Transition = forwardRef(function Transition(props, ref) {
+  //   return <Slide direction="up" ref={ref} {...props} />
+  // })
+
   useEffect(() => {
     dispatch(getMainSponsors())
   }, [dispatch])
   return (
     <div className={classes.root} style={{ marginTop: '-2.4rem' }}>
+      {/* Announcement Modal */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        // closeAfterTransition
+        // BackdropComponent={Backdrop}
+        // BackdropProps={{
+        //   timeout: 500,
+        // }}
+      >
+        <Announcements open={open} handleClose={handleClose} />
+      </Modal>
       {/* for main container */}
       {/* for Navbar */}
       <Grid>
@@ -93,10 +117,29 @@ function Home() {
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
+                  <div
+                    className="menulink"
+                    style={{ cursor: 'pointer' }}
+                    onClick={handleOpen}
+                  >
+                    Announcements
+                    <div>
+                      <img className="test4" src={line2} alt="line" />
+                    </div>
+                  </div>
+                </Grid>
+                <Grid
+                  item
+                  container
+                  justifyContent="center"
+                  lg={12}
+                  xs={12}
+                  order={{ lg: 5, xs: 4 }}
+                >
                   <Link to="/about" className="menulink">
                     About
                     <div>
-                      <img className="test4" src={line2} alt="line" />
+                      <img className="test5" src={line2} alt="line" />
                     </div>
                   </Link>
                 </Grid>

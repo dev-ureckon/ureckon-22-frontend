@@ -142,7 +142,7 @@
 .test {
   position: relative;
   bottom: 82px;
-  left: 5px;
+  left: 50px;
 }
 .test2 {
   position: relative;
@@ -160,9 +160,9 @@
   right: 38px;
 }
 .test5{
-    position: relative;
+  position: relative;
   bottom: 82px;
-  left: 78px;
+  right: 50px;
 }
 .test6{
     position: relative;
