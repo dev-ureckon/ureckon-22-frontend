@@ -6,6 +6,7 @@ import './app.css'
 import RouteComponent from './Routes'
 import bgvideo from './assets/bgVideo.mp4'
 import Header from './components/header'
+import ToastBar from './components/Toast/ToastBar'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           {/* for Navbar */}
           <Header />
           <RouteComponent />
+          <ToastBar />
         </div>
       </ThemeProvider>
     </>

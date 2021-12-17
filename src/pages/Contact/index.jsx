@@ -5,6 +5,8 @@ import { ContactLogic, createNewContact } from './contact'
 import { Container, Grid } from '@mui/material'
 import Input from '../../components/input'
 import Button from '../../components/button'
+import { useDispatch } from 'react-redux'
+import { showToastTimer } from '../../redux/actions/toast'
 
 function Contact() {
   // State for storing contact form data
@@ -18,6 +20,7 @@ function Contact() {
     'This is a sample message'
   )
 
+  const dispatch = useDispatch()
   // Contact form submit handler
   // TODO: Inserting the below handler after completion of UI
   const handleFormSubmit = async (event) => {
@@ -34,6 +37,9 @@ function Contact() {
         resetEmail()
         resetSubject()
         resetMessage()
+        dispatch(showToastTimer(msg, 'success'))
+      } else {
+        dispatch(showToastTimer('Encountered error while saving contact', 'error'))
       }
     }
   }

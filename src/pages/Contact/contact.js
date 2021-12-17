@@ -14,6 +14,6 @@ export const createNewContact = async (contactData) => {
     const response = await axios.post('/contact', contactData)
     return response.data
   } catch (error) {
-    return error
+    return error.response.data
   }
 }
