@@ -5,8 +5,8 @@ export const useStyles = makeStyles((theme) => ({
     color: 'black',
   },
   modal: {
-    position: 'absolute',
-    top: '10%',
+    position: 'fixed',
+    top: '0%',
     left: '10%',
     overflow: 'scroll',
     height: '100%',
