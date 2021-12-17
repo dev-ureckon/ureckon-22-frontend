@@ -1,6 +1,7 @@
 import { useState, useEffect, forwardRef } from 'react'
 import { useStyles } from './home.style'
 import { useSelector, useDispatch } from 'react-redux'
+import { Transition } from 'react-transition-group'
 import { Modal, Grid, Slide, Backdrop } from '@mui/material'
 import './fonts.css'
 import line1 from '../../assets/SVGs/Union.svg'
@@ -16,6 +17,7 @@ import './home.animation.css'
 
 function Home() {
   const [open, setOpen] = useState(false)
+  const [inProp, setInProp] = useState(false)
 
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
@@ -25,6 +27,20 @@ function Home() {
 
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+
+  const duration = 300
+
+  const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
+  }
+
+  const transitionStyles = {
+    entering: { opacity: 1 },
+    entered: { opacity: 1 },
+    exiting: { opacity: 0 },
+    exited: { opacity: 0 },
+  }
 
   // const Transition = forwardRef(function Transition(props, ref) {
   //   return <Slide direction="up" ref={ref} {...props} />
@@ -36,17 +52,29 @@ function Home() {
   return (
     <div className={classes.root} style={{ marginTop: '-2.4rem' }}>
       {/* Announcement Modal */}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        // closeAfterTransition
-        // BackdropComponent={Backdrop}
-        // BackdropProps={{
-        //   timeout: 500,
-        // }}
-      >
-        <Announcements open={open} handleClose={handleClose} />
-      </Modal>
+      <Transition in={inProp} timeout={500}>
+        {(state) => (
+          <div
+            style={{
+              ...defaultStyle,
+              ...transitionStyles[state],
+            }}
+          >
+            <Modal
+              open={open}
+              onClose={handleClose}
+              // closeAfterTransition
+              // BackdropComponent={Backdrop}
+              // BackdropProps={{
+              //   timeout: 500,
+              // }}
+            >
+              <Announcements open={open} handleClose={handleClose} />
+            </Modal>
+          </div>
+        )}
+      </Transition>
+
       {/* for main container */}
       {/* for Navbar */}
       <Grid>
@@ -120,7 +148,10 @@ function Home() {
                   <div
                     className="menulink"
                     style={{ cursor: 'pointer' }}
-                    onClick={handleOpen}
+                    onClick={() => {
+                      handleOpen()
+                      setInProp(true)
+                    }}
                   >
                     Announcements
                     <div>
