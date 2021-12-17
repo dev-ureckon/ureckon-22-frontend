@@ -6,6 +6,7 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'column',
     marginTop: '2rem',
+    cursor: 'pointer',
   },
   frame: {
     background:

@@ -30,7 +30,7 @@ const Announcement = ({ open, handleClose }) => {
               />
             </Grid>
             {newsfeed.map((card, i) => (
-              <Card key={i} />
+              <Card key={i} {...card} />
             ))}
             <Grid item xs={12} className={classes.btnWrapper}>
               <Button variant="contained" className={classes.btn} onClick={handleClose}>
