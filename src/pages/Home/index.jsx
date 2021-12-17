@@ -63,6 +63,7 @@ function Home() {
             <Modal
               open={open}
               onClose={handleClose}
+              className={classes.modal}
               // closeAfterTransition
               // BackdropComponent={Backdrop}
               // BackdropProps={{
@@ -129,6 +130,7 @@ function Home() {
                   lg={6}
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
+                  className={classes.events}
                 >
                   <Link to="/events" className="menulink">
                     Events
@@ -144,6 +146,7 @@ function Home() {
                   lg={6}
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
+                  className={classes.announcements}
                 >
                   <div
                     className="menulink"
@@ -168,7 +171,7 @@ function Home() {
                   order={{ lg: 5, xs: 4 }}
                 >
                   <Link to="/about" className="menulink">
-                    About
+                    About Us
                     <div>
                       <img className="test5" src={line2} alt="line" />
                     </div>
@@ -185,7 +188,7 @@ function Home() {
                   <Link to="/teams" className="menulink">
                     Team
                     <div>
-                      <img className="test" src={line1} alt="line" />
+                      <img className="test8" src={line1} alt="line" />
                     </div>
                   </Link>
                 </Grid>
@@ -217,7 +220,7 @@ function Home() {
                   <Link to="/contact" className="menulink">
                     Contact
                     <div>
-                      <img className="test5" src={line1} alt="line" />
+                      <img className="test7" src={line1} alt="line" />
                     </div>
                   </Link>
                 </Grid>

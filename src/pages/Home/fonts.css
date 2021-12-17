@@ -169,3 +169,15 @@
     bottom: 82px;
     right: 30px;
 }
+
+.test7{
+  position: relative;
+  bottom: 82px;
+  left: 80px;
+}
+
+.test8{
+  position: relative;
+  bottom: 82px;
+  right: 20px;
+}

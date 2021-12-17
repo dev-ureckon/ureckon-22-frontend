@@ -4,4 +4,20 @@ export const useStyles = makeStyles((theme) => ({
   voot: {
     color: 'black',
   },
+  modal: {
+    position: 'absolute',
+    top: '10%',
+    left: '10%',
+    overflow: 'scroll',
+    height: '100%',
+    display: 'block',
+  },
+  '@media (min-width: 1440px)': {
+    events: {
+      marginLeft: '-8rem',
+    },
+    announcements: {
+      marginLeft: '8rem',
+    },
+  },
 }))
