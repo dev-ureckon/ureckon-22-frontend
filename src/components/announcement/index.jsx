@@ -1,14 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Grid, Typography, Button, Fade } from '@mui/material'
 import { useStyles } from './announcement.style'
 import './announcement.font.css'
 import UnionPointer from '../../assets/SVGs/unionTwo.svg'
 import Frame from '../../assets/SVGs/Frame.svg'
 import Card from './card/index.jsx'
+import { getAllNewsfeed } from '../../redux/apis'
 
 const Announcement = ({ open, handleClose }) => {
   const classes = useStyles()
-
+  const dispatch = useDispatch()
+  const newsfeed = useSelector((state) => state.news.newsfeed)
+  useEffect(() => {
+    dispatch(getAllNewsfeed())
+  }, [])
   const cardArr = [0, 1, 2, 3]
   return (
     <Fade in={open}>
@@ -23,8 +29,8 @@ const Announcement = ({ open, handleClose }) => {
                 alt="Union"
               />
             </Grid>
-            {cardArr.map((card, i) => (
-              <Card key={i} />
+            {newsfeed.map((card, i) => (
+              <Card key={i} {...card} />
             ))}
             <Grid item xs={12} className={classes.btnWrapper}>
               <Button variant="contained" className={classes.btn} onClick={handleClose}>
