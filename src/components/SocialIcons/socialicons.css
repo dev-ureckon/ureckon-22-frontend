@@ -7,7 +7,7 @@
 }
 
 .instagram:hover {
-  background: url(../../assets/SVGs/instaColor.svg);
+  background: url(../../assets/SVGs/instagram_active.svg);
 }
 
 .facebook {
@@ -53,19 +53,19 @@
 }
 
 @media (max-width: 1200px) {
-    .facebook{
-        margin: 5px;
-    }
-    .instagram{
-        margin: 5px;
-    }
-    .linkedin{
-        margin: 5px;
-    }
-    .twitter{
-        margin: 5px;
-    }
-    .youtube{
-        margin: 5px;
-    }
+  .facebook {
+    margin: 5px;
+  }
+  .instagram {
+    margin: 5px;
+  }
+  .linkedin {
+    margin: 5px;
+  }
+  .twitter {
+    margin: 5px;
+  }
+  .youtube {
+    margin: 5px;
+  }
 }
