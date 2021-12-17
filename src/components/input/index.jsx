@@ -12,6 +12,7 @@ const Input = (props) => {
     value,
     onChange,
     type,
+    required = true,
   } = props
 
   const ref = useRef(null)
@@ -59,6 +60,7 @@ const Input = (props) => {
             transform: 'translateY(-50%)',
             left: 0,
           }}
+          required={required}
         />
         {size === 'big' && (
           <textarea
@@ -83,6 +85,7 @@ const Input = (props) => {
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontWeight: 500,
             }}
+            required={required}
           >
             asdf
           </textarea>
@@ -110,7 +113,7 @@ const Input = (props) => {
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontWeight: 500,
             }}
-            required
+            required={required}
           />
         )}
       </div>

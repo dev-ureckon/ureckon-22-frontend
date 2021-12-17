@@ -11,14 +11,10 @@ import { showToastTimer } from '../../redux/actions/toast'
 function Contact() {
   // State for storing contact form data
   // TODO: Inserting the below state and handleChange values for the different form inputs
-  const [name, handleNameChange, resetName] = useInputState('ABC XYZ')
-  const [email, handleEmailChange, resetEmail] = useInputState('abc@gmail.com')
-  const [subject, handleSubjectChange, resetSubject] = useInputState(
-    'This is a sample contact'
-  )
-  const [message, handleMessageChange, resetMessage] = useInputState(
-    'This is a sample message'
-  )
+  const [name, handleNameChange, resetName] = useInputState('')
+  const [email, handleEmailChange, resetEmail] = useInputState('')
+  const [subject, handleSubjectChange, resetSubject] = useInputState('')
+  const [message, handleMessageChange, resetMessage] = useInputState('')
 
   const dispatch = useDispatch()
   // Contact form submit handler
@@ -70,7 +66,8 @@ function Contact() {
             <Input
               width="100%"
               label="Email"
-              placeholder="abc@gmail.com"
+              placeholder="Your email"
+              type="email"
               value={email}
               onChange={(e) => handleEmailChange(e)}
             />
@@ -79,7 +76,7 @@ function Contact() {
             <Input
               width="100%"
               label="Subject"
-              placeholder="What's your question?"
+              placeholder="Subject"
               value={subject}
               onChange={(e) => handleSubjectChange(e)}
             />
