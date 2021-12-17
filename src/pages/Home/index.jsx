@@ -94,14 +94,14 @@ function Home() {
                     <Link to="/Profile" className="menulink">
                       Profile
                       <div>
-                        <img className="test" src={line1} alt="line" />
+                        <img className="test1" src={line1} alt="line" />
                       </div>
                     </Link>
                   ) : (
                     <Link to="/Login" className="menulink">
                       Login
                       <div>
-                        <img className="test" src={line1} alt="line" />
+                        <img className="test0" src={line1} alt="line" />
                       </div>
                     </Link>
                   )}

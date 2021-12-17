@@ -139,7 +139,11 @@
   }
 
 }
-.test {
+.test0 {
+  position: relative;
+  bottom: 82px;
+}
+.test1 {
   position: relative;
   bottom: 82px;
   left: 50px;
