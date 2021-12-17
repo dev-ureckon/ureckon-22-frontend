@@ -16,5 +16,5 @@ export const showToastTimer =
     dispatch(showToast(message, toastType))
     setTimeout(() => {
       dispatch(clearToast())
-    }, timeOut)
+    }, timeOut) // After timeOut seconds the Toast message should disappear
   }

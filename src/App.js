@@ -21,6 +21,7 @@ function App() {
           {/* for Navbar */}
           <Header />
           <RouteComponent />
+          {/* For the Toast messages that are to be shown */}
           <ToastBar />
         </div>
       </ThemeProvider>
