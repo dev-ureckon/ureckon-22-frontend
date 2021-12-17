@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
 
 const Input = (props) => {
-  const { width = '400px', label, placeholder, name, value, onChange, type } = props
+  const { width = '400px', label, placeholder, name, value, onChange, type, page } = props
 
   const ref = useRef(null)
 
@@ -11,7 +11,7 @@ const Input = (props) => {
       const w = ref.current.parentElement.offsetWidth
       ref.current.style.height = `${0.214 * w}px`
     }
-  }, [window.innerWidth])
+  }, [])
 
   return (
     <div style={{ width, height: '40%' }}>
@@ -56,6 +56,11 @@ const Input = (props) => {
           value={value}
           type={type}
           onChange={(e) => onChange(e)}
+          disabled={
+            (name === 'name' || name === 'email') && page === 'complete-profile'
+              ? true
+              : false
+          }
           style={{
             width: '90%',
             left: '5%',

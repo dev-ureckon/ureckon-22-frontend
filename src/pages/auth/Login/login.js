@@ -1,27 +1,24 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
-
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
-import { userRegister } from '../../../redux/actions'
+import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert'
+import { userLogin } from '../../../redux/actions'
 
-export const RegisterLogic = () => {
+export const LoginLogic = () => {
+  const isMobile = window.innerWidth <= 768
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
-    number: '',
     password: '',
-    collegeName: '',
-    gender: '',
   })
 
   //getting state from reducer
-  const { userInfo, error, loading } = useSelector((state) => state.userRegister)
+  const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
-  // If user is already logged in Do not show this page
+  //If user is already logged in Do not show this page
   // or redirect to complete - profile page if not already registered with social auth
   useEffect(() => {
     if (
@@ -50,23 +47,17 @@ export const RegisterLogic = () => {
   }
 
   const handleSubmit = (e) => {
-    dispatch(
-      userRegister(
-        formData.email,
-        formData.password,
-        formData.name,
-        formData.collegeName,
-        formData.number,
-        formData.gender
-      )
-    )
+    dispatch(userLogin(formData.email, formData.password))
   }
 
   return {
-    handleChange,
+    isMobile,
+    dispatch,
     formData,
-    error,
-    loading,
+    setFormData,
+    handleChange,
     handleSubmit,
+    loading,
+    error,
   }
 }

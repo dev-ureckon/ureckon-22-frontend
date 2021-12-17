@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
   },
   submitButton: {
-    margin: '5rem auto',
+    margin: '3rem auto',
     fontFamily: 'ibm-pxel-sans',
     textTransform: 'uppercase',
     width: '181px',

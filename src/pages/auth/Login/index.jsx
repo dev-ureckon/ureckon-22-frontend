@@ -1,32 +1,22 @@
 import { Link } from 'react-router-dom'
-import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
+import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
-import { LoginLogic } from './Login.js'
+import { LoginLogic } from './login.js'
+import './login.css'
 
-const Login = (props) => {
+const Login = () => {
   const classes = useStyles()
-const {handleChange, handleSubmit, formData, loading, error} = LoginLogic()
+  const { isMobile, formData, handleChange, handleSubmit, loading } = LoginLogic()
+
   return (
     <div className={classes.root}>
-      <Container maxWidth="xs">
+      <Container maxWidth="sm">
         {loading && (
           <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
-        {error && (
-          <>
-            <Alert
-              style={{ marginTop: '8px', width: '100%' }}
-              variant="filled"
-              severity="error"
-            >
-              {error}
-            </Alert>
-            <br />
-            <br />
-          </>
-        )}
+
         <form
           onSubmit={(e) => {
             e.preventDefault()
@@ -36,7 +26,7 @@ const {handleChange, handleSubmit, formData, loading, error} = LoginLogic()
           <Input
             width="100%"
             label="Email"
-            placeholder="djBravo@champions.wi"
+            placeholder="name@email.com"
             name="email"
             type="email"
             value={formData.email}
@@ -57,7 +47,7 @@ const {handleChange, handleSubmit, formData, loading, error} = LoginLogic()
             <Grid item sm={7}></Grid>
             <Grid item sm={5}>
               <Link to={'/forget-password'}>
-                <Typography align="right" color="primary">
+                <Typography align="right" color="primary" className="authFont">
                   forget password?
                 </Typography>
               </Link>
@@ -69,33 +59,35 @@ const {handleChange, handleSubmit, formData, loading, error} = LoginLogic()
               variant="contained"
               color="secondary"
               className={classes.submitButtonLogin}
+              className="authFont"
             >
               Login
             </Button>
           </Typography>
         </form>
-        <Typography
-          align="center"
-          variant="h5"
-          color="primary"
-          className={classes.socialAuth}
-        >
-          <Grid container spacing={6}>
-            <Grid item sm={5}>
-              {' '}
-              <Typography align="center" variant="h5" color="primary">
-                Login With:{' '}
-              </Typography>
-            </Grid>
-            <Grid item sm={6}>
-              <SocialAuth />
-            </Grid>
+
+        <Grid justifyContent="flex-end" container>
+          <Grid item sm={3} xs={12}>
+            {' '}
+            <Typography
+              align={isMobile ? 'center' : 'right'}
+              variant="h5"
+              color="primary"
+              className="authFont"
+            >
+              Login With:{' '}
+            </Typography>
           </Grid>
-        </Typography>
-        <Typography color={'primary'} variant="h6" align="center">
+          <Grid item justifyContent="center" sm={8} xs={12}>
+            <SocialAuth />
+          </Grid>
+        </Grid>
+        <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
           <Link to="/register">
-            <b style={{ color: '#fff' }}>Register Here !</b>
+            <b style={{ color: '#fff' }} className="authFont">
+              Register Here !
+            </b>
           </Link>
         </Typography>
       </Container>
