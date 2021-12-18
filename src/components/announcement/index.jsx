@@ -25,9 +25,11 @@ const Announcement = ({ open, handleClose }) => {
                 alt="Union"
               />
             </Grid>
-            {newsfeed.map((card, i) => (
-              <Card key={i} {...card} />
-            ))}
+            {newsfeed.length !== 0 ? (
+              newsfeed.map((card, i) => <Card key={i} {...card} />)
+            ) : (
+              <Card headline="No announcements to show" />
+            )}
             <Grid item xs={12} className={classes.btnWrapper}>
               <Button variant="contained" className={classes.btn} onClick={handleClose}>
                 Back
