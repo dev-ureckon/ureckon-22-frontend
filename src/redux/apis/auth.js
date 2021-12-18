@@ -25,3 +25,28 @@ export const signUpSocial = async (idToken) => {
   const data = await axios.post(`${url}/auth-social-user`, { idToken }, config)
   return data
 }
+
+// API call for requesting password reset
+export const requestPasswordReset = (email) => async (dispatch, getState) => {
+  const currentState = getState()
+  const { accessToken } = currentState.userLogin.userInfo
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + accessToken,
+    },
+  }
+  try {
+    const response = await axios.post(
+      `${url}/resetPassword`,
+      {
+        email,
+      },
+      config
+    )
+    const actualData = response.data
+    return actualData
+  } catch (error) {
+    return error.response.data
+  }
+}
