@@ -18,28 +18,41 @@ function SocialIcons() {
           <a
             href="https://m.facebook.com/ureckon.uemk/?refid=52&__tn__=C-R"
             target="_blank"
+            rel="noreferrer"
           >
-            <div className="facebook"></div>
+            <div className="facebook" />
           </a>
         </Grid>
         <Grid item sx={{ my: 1 }}>
-          <a href="https://www.instagram.com/ureckon.uemk/" target="_blank">
-            <div className="instagram"></div>
+          <a
+            href="https://www.instagram.com/ureckon.uemk/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="instagram" />
           </a>
         </Grid>
         <Grid item>
-          <a href="https://www.linkedin.com/company/ureckon/" target="_blank">
-            <div className="linkedin"></div>
+          <a
+            href="https://www.linkedin.com/company/ureckon/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="linkedin" />
           </a>
         </Grid>
         <Grid item sx={{ my: 1 }}>
-          <a href="https://twitter.com/Ureckon_Uemk" target="_blank">
-            <div className="twitter"></div>
+          <a href="https://twitter.com/Ureckon_Uemk" target="_blank" rel="noreferrer">
+            <div className="twitter" />
           </a>
         </Grid>
         <Grid item>
-          <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
-            <div className="youtube"></div>
+          <a
+            href="https://www.youtube.com/c/UreckonUEMKolkata"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="youtube" />
           </a>
         </Grid>
       </Grid>
