@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Grid, Typography, Button, Fade } from '@mui/material'
 import { useStyles } from './announcement.style'
 import './announcement.font.css'
@@ -10,11 +10,7 @@ import { getAllNewsfeed } from '../../redux/apis'
 
 const Announcement = ({ open, handleClose }) => {
   const classes = useStyles()
-  const dispatch = useDispatch()
   const newsfeed = useSelector((state) => state.news.newsfeed)
-  useEffect(() => {
-    dispatch(getAllNewsfeed())
-  }, [])
   const cardArr = [0, 1, 2, 3]
   return (
     <Fade in={open}>

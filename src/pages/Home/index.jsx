@@ -9,7 +9,7 @@ import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
 import { moreFunction, backoptions } from './home'
 
-import { getMainSponsors } from '../../redux/apis'
+import { getMainSponsors, getAllNewsfeed } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
 import Announcements from '../../components/announcement/index.jsx'
@@ -48,6 +48,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(getMainSponsors())
+    dispatch(getAllNewsfeed())
   }, [dispatch])
   return (
     <div className={classes.root} style={{ marginTop: '-2.4rem' }}>
