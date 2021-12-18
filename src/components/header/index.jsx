@@ -10,16 +10,16 @@ const Header = () => {
       direction="row"
       justifyContent="space-around"
       className="footer"
-      sx={{ paddingX: 30, marginBottom: '2rem' }}
+      style={{ paddingX: 30, margin: '2rem 0' }}
     >
-      <Grid item alignSelf="center" sx={{ paddingTop: 5 }}>
-        <img src={uemLogo} alt="UEM" />
+      <Grid item alignSelf="center" style={{ paddingTop: 5 }}>
+        <img src={uemLogo} style={{ width: '100%', height: 'auto' }} alt="UEM" />
       </Grid>
-      <Grid item sx={{ paddingTop: 5 }}>
-        <img src={headingLogo} alt="UEM" />
+      <Grid item style={{ paddingTop: 5 }}>
+        <img src={headingLogo} style={{ width: '100%', height: 'auto' }} alt="UEM" />
       </Grid>
-      <Grid item sx={{ paddingTop: 5 }}>
-        <img src={ureckonLogo} alt="heading" />
+      <Grid item style={{ paddingTop: 5 }}>
+        <img src={ureckonLogo} style={{ width: '100%', height: 'auto' }} alt="heading" />
       </Grid>
     </Grid>
   )
