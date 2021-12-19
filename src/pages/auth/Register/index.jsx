@@ -6,6 +6,8 @@ import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { RegisterLogic } from './Register.js'
 
 import './register.css'
+import Dropdown from '../../../components/Dropdown'
+
 
 const Register = () => {
   const isMobile = window.innerWidth <= 768
@@ -77,7 +79,7 @@ const Register = () => {
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
               />
-              <Input
+              <Dropdown
                 width="100%"
                 label="Gender"
                 placeholder="Male"

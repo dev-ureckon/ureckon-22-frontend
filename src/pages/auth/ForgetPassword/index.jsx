@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Container, Grid } from '@mui/material'
 import Input from '../../../components/input'
-
+import SubmitButton from '../../../components/SubmitButton'
 const ForgetPassword = (props) => {
   const [formData, setFormData] = useState({
     email: '',
@@ -24,6 +24,9 @@ const ForgetPassword = (props) => {
             onChange={(e) => handleChange(e)}
           />
         </Grid>
+      </Grid>
+      <Grid>
+        <SubmitButton />
       </Grid>
     </Container>
   )
