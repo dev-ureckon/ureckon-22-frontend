@@ -117,10 +117,10 @@ const Dropdown = (props) => {
             }}
             required={required}
           >
-            <MenuItem>Male</MenuItem>
-            <MenuItem>Female</MenuItem>
-            <MenuItem>Others</MenuItem>
-            <MenuItem>Prefer not to say</MenuItem>
+            <MenuItem value="male">Male</MenuItem>
+            <MenuItem value="female">Female</MenuItem>
+            <MenuItem value="others">Others</MenuItem>
+            <MenuItem value="prefer not to say">Prefer not to say</MenuItem>
           </Select>
         </FormControl>
       </div>
