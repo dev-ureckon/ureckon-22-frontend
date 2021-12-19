@@ -119,6 +119,12 @@
     padding-bottom: 45px;
     padding-right: 20px;
   }
+  .test0 {
+    display: none;
+  }
+  .test1 {
+    display: none;
+  }
   .test {
     display: none;
   }
