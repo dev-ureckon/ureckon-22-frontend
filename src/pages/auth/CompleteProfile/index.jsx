@@ -4,7 +4,7 @@ import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import { CompleteProfileLogic } from './completeProfile'
 
-const Register = () => {
+const CompleteProfile = () => {
   const classes = useStyles()
   const { handleChange, formData, loading, handleSubmit } = CompleteProfileLogic()
 
@@ -32,7 +32,7 @@ const Register = () => {
                 name="name"
                 value={formData.name}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
+                disabled={true}
               />
               <br />
               <br />
@@ -44,7 +44,6 @@ const Register = () => {
                 type="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
               />
             </Grid>
             <br />
@@ -58,7 +57,7 @@ const Register = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
+                disabled={true}
               />
               <br />
               <br />
@@ -69,7 +68,6 @@ const Register = () => {
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
               />
             </Grid>
           </Grid>
@@ -83,7 +81,6 @@ const Register = () => {
                 name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
               />
             </Grid>
           </Grid>
@@ -103,4 +100,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default CompleteProfile

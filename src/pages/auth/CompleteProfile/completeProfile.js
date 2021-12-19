@@ -30,7 +30,7 @@ export const CompleteProfileLogic = () => {
       !userInfo.alreadyRegistered
     ) {
       navigate('/complete-profile')
-    } else if (userInfo) {
+    } else {
       navigate('/')
     }
   }, [userInfo, navigate, loading])
