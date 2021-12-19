@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
   },
   container: {
-    maxWidth: '40rem',
+    maxWidth: '53rem',
     border: '1px solid black',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
