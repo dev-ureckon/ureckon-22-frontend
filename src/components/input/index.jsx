@@ -60,7 +60,6 @@ const Input = (props) => {
             transform: 'translateY(-50%)',
             left: 0,
           }}
-          required={required}
         />
         {size === 'big' && (
           <textarea
