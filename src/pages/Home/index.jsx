@@ -15,8 +15,7 @@ import SocialIcons from '../../components/SocialIcons'
 import Announcements from '../../components/announcement/index.jsx'
 import './home.animation.css'
 
-function Home() {
-  const [open, setOpen] = useState(false)
+function Home({ open, setOpen, handleOpen, handleClose }) {
   const [inProp, setInProp] = useState(false)
 
   const classes = useStyles()
@@ -24,9 +23,6 @@ function Home() {
   const dispatch = useDispatch()
 
   const { userInfo } = useSelector((state) => state.userLogin)
-
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
 
   const duration = 300
 
