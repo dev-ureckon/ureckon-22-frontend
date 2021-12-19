@@ -63,8 +63,8 @@ const CompleteProfile = () => {
               <br />
               <Input
                 width="100%"
-                label="Your School/College name"
-                placeholder="UEM"
+                label="School/College name"
+                placeholder="Your School/College name"
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
