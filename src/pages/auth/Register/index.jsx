@@ -82,7 +82,7 @@ const Register = () => {
               <Dropdown
                 width="100%"
                 label="Gender"
-                placeholder="Male"
+                placeholder="Select Gender"
                 name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}
