@@ -28,12 +28,9 @@ export const signUpSocial = async (idToken) => {
 
 // API call for requesting password reset
 export const requestPasswordReset = (email) => async (dispatch, getState) => {
-  const currentState = getState()
-  const { accessToken } = currentState.userLogin.userInfo
   const config = {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + accessToken,
     },
   }
   try {
