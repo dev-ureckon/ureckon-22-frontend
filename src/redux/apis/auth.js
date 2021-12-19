@@ -28,11 +28,6 @@ export const signUpSocial = async (idToken) => {
 
 // API call for requesting password reset
 export const requestPasswordReset = (email) => async (dispatch, getState) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }
   try {
     const response = await axios.post(
       `${url}/resetPassword`,
