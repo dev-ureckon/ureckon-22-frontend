@@ -1,24 +1,9 @@
-import { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import { Container, Grid } from '@mui/material'
 import Input from '../../../components/input'
-import { requestPasswordReset } from '../../../redux/apis'
+import { ForgotPasswordLogic } from './forgotPassword'
 
 const ForgetPassword = (props) => {
-  const dispatch = useDispatch()
-
-  const [formData, setFormData] = useState({
-    email: '',
-  })
-
-  const handleChange = (e) => {
-    setFormData((f) => ({ ...f, [e.target.name]: e.target.value }))
-  }
-
-  // Handler function for submiting the form data and requesting password reset
-  const handleFormSubmit = (event) => {
-    dispatch(requestPasswordReset(formData.email))
-  }
+  const { handleChange, formData, loading, handleFormSubmit } = ForgotPasswordLogic()
 
   return (
     <Container maxWidth="xl">
@@ -26,7 +11,8 @@ const ForgetPassword = (props) => {
         <Grid item lg={12} md={12}>
           <Input
             width="100%"
-            label="Enter Email ID"
+            label="Your Email"
+            type="email"
             placeholder="John Doe"
             name="email"
             value={formData.email}
