@@ -3,6 +3,7 @@ import { useStyles } from '../auth.style.js'
 
 import Input from '../../../components/input'
 import { CompleteProfileLogic } from './completeProfile'
+import Dropdown from '../../../components/Dropdown/index.jsx'
 
 const CompleteProfile = () => {
   const classes = useStyles()
@@ -39,9 +40,8 @@ const CompleteProfile = () => {
               <Input
                 width="100%"
                 label="Phone No."
-                placeholder="Your number here.."
+                placeholder="Your Number"
                 name="number"
-                type="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
               />
@@ -63,7 +63,7 @@ const CompleteProfile = () => {
               <br />
               <Input
                 width="100%"
-                label="School/College name"
+                label="Your School/College name"
                 placeholder="UEM"
                 name="collegeName"
                 value={formData.collegeName}
@@ -74,10 +74,10 @@ const CompleteProfile = () => {
           <br />
           <Grid container justifyContent={'center'}>
             <Grid item sm={12} xs={12} md={6}>
-              <Input
+              <Dropdown
                 width="100%"
                 label="Gender"
-                placeholder="Male"
+                placeholder="Gender"
                 name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}

@@ -26,7 +26,7 @@ const Login = () => {
           <Input
             width="100%"
             label="Email"
-            placeholder="name@email.com"
+            placeholder="Your Email"
             name="email"
             type="email"
             value={formData.email}
