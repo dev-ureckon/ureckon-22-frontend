@@ -4,7 +4,7 @@ import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import { CompleteProfileLogic } from './completeProfile'
 
-const Register = () => {
+const CompleteProfile = () => {
   const classes = useStyles()
   const { handleChange, formData, loading, handleSubmit } = CompleteProfileLogic()
 
@@ -100,4 +100,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default CompleteProfile
