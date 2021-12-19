@@ -14,6 +14,7 @@ import SocialIcons from '../../components/SocialIcons'
 
 import Announcements from '../../components/announcement/index.jsx'
 import './home.animation.css'
+import '../../app.css'
 
 function Home({ open, setOpen, handleOpen, handleClose }) {
   const [inProp, setInProp] = useState(false)
@@ -56,6 +57,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               ...defaultStyle,
               ...transitionStyles[state],
             }}
+            className="modal"
           >
             <Modal
               open={open}

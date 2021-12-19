@@ -5,12 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     color: 'black',
   },
   modal: {
-    position: 'fixed',
-    top: '0%',
-    left: '10%',
     overflow: 'scroll',
-    height: '100%',
-    display: 'block',
   },
   '@media (min-width: 1440px)': {
     events: {
