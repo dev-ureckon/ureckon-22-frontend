@@ -14,4 +14,3 @@ export {
 } from './newsfeed'
 
 export { SHOW_TOAST, CLEAR_TOAST } from './toast'
-
