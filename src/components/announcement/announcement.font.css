@@ -1,0 +1,29 @@
+.header {
+    font-family: Blanka;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    text-shadow: -0.5px 0.5px 1px #43C9ED, 0.5px 0.5px 1px #43C9ED;
+}
+
+.cardHeader {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.cardDesc {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: justify;
+    color: #FFFFFF;
+}
