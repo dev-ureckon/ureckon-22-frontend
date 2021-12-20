@@ -7,6 +7,7 @@ import './app.css'
 import RouteComponent from './Routes'
 import bgvideo from './assets/bgVideo.mp4'
 import Header from './components/header'
+import ToastBar from './components/Toast/ToastBar'
 
 function App() {
   const [open, setOpen] = useState(false)
@@ -31,6 +32,8 @@ function App() {
             handleOpen={handleOpen}
             handleClose={handleClose}
           />
+          {/* For the Toast messages that are to be shown */}
+          <ToastBar />
         </div>
       </ThemeProvider>
     </>

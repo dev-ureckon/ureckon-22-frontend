@@ -7,3 +7,5 @@ export {
   fetchNewsfeedSuccess,
   fetchNewsfeedError,
 } from './newsfeed'
+
+export { showToast, clearToast, showToastTimer } from './toast'
