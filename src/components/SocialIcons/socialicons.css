@@ -39,7 +39,7 @@
   transition: 0.5s ease;
 }
 .linkedin:hover {
-  background: url(../../assets/SVGs/linkedInColor.svg);
+  background: url(../../assets/SVGs/linkedin_active.svg);
 }
 .youtube {
   background: url(../../assets/SVGs/youtubeWhite.svg) no-repeat;
