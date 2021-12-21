@@ -1,13 +1,13 @@
 .instagram {
-  background: url(../../assets/SVGs/instaWhite.svg);
-  width: 50px;
-  height: 50px;
+  background: url(../../assets/SVGs/instaNew.svg);
+  width: 40px;
+  height: 40px;
   display: inline-block;
   transition: 0.5s ease;
 }
 
 .instagram:hover {
-  background: url(../../assets/SVGs/instaColor.svg);
+  background: url(../../assets/SVGs/instagram_active.svg);
 }
 
 .facebook {
@@ -32,14 +32,14 @@
   background: url(../../assets/SVGs/twitterColor.svg) no-repeat;
 }
 .linkedin {
-  background: url(../../assets/SVGs/linkedInWhite.svg);
-  width: 50px;
-  height: 50px;
+  background: url(../../assets/SVGs/linkedinNew.svg);
+  width: 40px;
+  height: 40px;
   display: inline-block;
   transition: 0.5s ease;
 }
 .linkedin:hover {
-  background: url(../../assets/SVGs/linkedInColor.svg);
+  background: url(../../assets/SVGs/linkedin_active.svg);
 }
 .youtube {
   background: url(../../assets/SVGs/youtubeWhite.svg) no-repeat;
@@ -53,19 +53,19 @@
 }
 
 @media (max-width: 1200px) {
-    .facebook{
-        margin: 5px;
-    }
-    .instagram{
-        margin: 5px;
-    }
-    .linkedin{
-        margin: 5px;
-    }
-    .twitter{
-        margin: 5px;
-    }
-    .youtube{
-        margin: 5px;
-    }
+  .facebook {
+    margin: 5px;
+  }
+  .instagram {
+    margin: 5px;
+  }
+  .linkedin {
+    margin: 5px;
+  }
+  .twitter {
+    margin: 5px;
+  }
+  .youtube {
+    margin: 5px;
+  }
 }
