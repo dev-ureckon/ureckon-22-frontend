@@ -33,9 +33,9 @@ const Input = (props) => {
           margin: 0,
           fontFamily: "'Blanka', sans-serif",
           fontWeight: 400,
-          fontSize: '1.525rem',
+          fontSize: '1.5625rem',
           paddingLeft: '7px',
-          lineHeight: '1.2rem',
+          lineHeight: '1rem',
           letterSpacing: '0.1em',
           textShadow: '-1px 1px 5px #0DB3B3, 1px 1px 5px #0DB3B3',
           textTransform: 'uppercase',
@@ -62,30 +62,6 @@ const Input = (props) => {
             left: 0,
           }}
         />
-        <input
-          placeholder={placeholder}
-          name={name}
-          value={value}
-          type={type}
-          onChange={(e) => onChange(e)}
-          disabled={disabled}
-          style={{
-            width: '90%',
-            left: '5%',
-            height: '30%',
-            top: '33%',
-            position: 'relative',
-            background: 'transparent',
-            border: 'none',
-            outline: 'none',
-            fontSize: '1.5625rem',
-            color: 'white',
-            paddingLeft: '10px',
-            fontFamily: "'IBM Plex Sans', sans-serif",
-            fontWeight: 500,
-          }}
-          required
-        />
         {size === 'big' && (
           <textarea
             placeholder={placeholder}
@@ -110,6 +86,7 @@ const Input = (props) => {
               fontWeight: 500,
             }}
             required={required}
+            disabled={disabled}
           >
             asdf
           </textarea>
@@ -138,6 +115,7 @@ const Input = (props) => {
               fontWeight: 500,
             }}
             required={required}
+            disabled={disabled}
           />
         )}
       </div>
