@@ -7,7 +7,7 @@ import { RegisterLogic } from './Register.js'
 
 import './register.css'
 import Dropdown from '../../../components/Dropdown'
-
+import SubmitButton from '../../../components/SubmitButton'
 const Register = () => {
   const isMobile = window.innerWidth <= 768
 
@@ -90,18 +90,19 @@ const Register = () => {
           <Typography align="center">
             <Button
               type="submit"
-              variant="contained"
+              variant="text"
               color="secondary"
               className={classes.submitButton}
               className="authFont"
+              style={{marginTop: "4rem"}}
             >
-              Register
+              <SubmitButton label={"Register"}/>
             </Button>
           </Typography>
         </form>
-
-        <Grid spacing={1} justifyContent="center" container>
-          <Grid item xs={12} sm={4}>
+<Typography align="center">
+        <Grid spacing={2} style={{margin: "2rem auto"}} spacing={2} container>
+          <Grid item xs={12} sm={5}>
             {' '}
             <Typography
               variant="h5"
@@ -112,10 +113,11 @@ const Register = () => {
               Register With:{' '}
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={5}>
+          <Grid item xs={12} sm={4}>
             <SocialAuth />
           </Grid>
         </Grid>
+        </Typography>        
       </Container>
     </div>
   )
