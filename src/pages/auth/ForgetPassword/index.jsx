@@ -26,7 +26,7 @@ const ForgetPassword = (props) => {
         </Grid>
       </Grid>
       <Grid>
-        <SubmitButton label={"Submit"}/>
+        <SubmitButton label={'Submit'} />
       </Grid>
     </Container>
   )

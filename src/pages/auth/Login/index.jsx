@@ -61,28 +61,28 @@ const Login = () => {
               color="secondary"
               className={classes.submitButtonLogin}
             >
-              <SubmitButton label={"Login"}/>
+              <SubmitButton label={'Login'} />
             </Button>
           </Typography>
         </form>
-<Typography align="center">
-        <Grid container spacing={3} style={{margin: "1.5rem auto"}}>
-          <Grid item sm={4} xs={12} justifyContent="center">
-            {' '}
-            <Typography
-              align={isMobile ? 'right' : 'center'}
-              variant="h5"
-              color="primary"
-              className="authFont"
-            >
-              Login With:{' '}
-            </Typography>
+        <Typography align="center">
+          <Grid container spacing={3} style={{ margin: '1.5rem auto' }}>
+            <Grid item sm={4} xs={12} justifyContent="center">
+              {' '}
+              <Typography
+                align={isMobile ? 'right' : 'center'}
+                variant="h5"
+                color="primary"
+                className="authFont"
+              >
+                Login With:{' '}
+              </Typography>
+            </Grid>
+            <Grid item justifyContent="center" sm={7} xs={12}>
+              <SocialAuth />
+            </Grid>
           </Grid>
-          <Grid item justifyContent="center" sm={7} xs={12}>
-            <SocialAuth />
-          </Grid>
-        </Grid>
-</Typography>        
+        </Typography>
         <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
           <Link to="/register">

@@ -1,10 +1,10 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
-import { styled } from '@mui/system';
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled'
+import { styled } from '@mui/system'
 
 const ButtonRoot = React.forwardRef(function ButtonRoot(props, ref) {
-  const { children, ...other } = props;
+  const { children, ...other } = props
 
   return (
     <svg width="150" height="50" {...other} ref={ref}>
@@ -14,29 +14,23 @@ const ButtonRoot = React.forwardRef(function ButtonRoot(props, ref) {
         <div className="content">{children}</div>
       </foreignObject>
     </svg>
-  );
-});
+  )
+})
 
 ButtonRoot.propTypes = {
   children: PropTypes.node,
-};
+}
 
 const CustomButtonRoot = styled(ButtonRoot)(
   ({ theme }) => `
   overflow: visible;
   cursor: pointer;
-  --main-color: ${
-    theme.palette.mode === 'dark' ? 'rgb(25,118,210)' : '#cbdae7'
-  };
+  --main-color: ${theme.palette.mode === 'dark' ? 'rgb(25,118,210)' : '#cbdae7'};
   --hover-color: ${
-    theme.palette.mode === 'dark'
-      ? 'rgba(25,118,210,0.04)'
-      : 'rgba(144,202,249,0.08)'
+    theme.palette.mode === 'dark' ? 'rgba(25,118,210,0.04)' : 'rgba(144,202,249,0.08)'
   };
   --active-color: ${
-    theme.palette.mode === 'dark'
-      ? 'rgba(25,118,210,0.12)'
-      : 'rgba(144,202,249,0.24)'
+    theme.palette.mode === 'dark' ? 'rgba(25,118,210,0.12)' : 'rgba(144,202,249,0.24)'
   };
 
   & polygon {
@@ -101,14 +95,14 @@ const CustomButtonRoot = styled(ButtonRoot)(
     & svg {
       margin: 0 5px;
     }
-  }`,
-);
+  }`
+)
 
 const SvgButton = React.forwardRef(function SvgButton(props, ref) {
-  return <ButtonUnstyled {...props} component={CustomButtonRoot} ref={ref} />;
-});
+  return <ButtonUnstyled {...props} component={CustomButtonRoot} ref={ref} />
+})
 
 export default function UnstyledButtonCustom(props) {
-  const {label} = props
-  return <SvgButton>{label}</SvgButton>;
+  const { label } = props
+  return <SvgButton>{label}</SvgButton>
 }
