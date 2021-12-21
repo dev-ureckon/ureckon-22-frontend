@@ -5,6 +5,7 @@ import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { LoginLogic } from './login.js'
 import './login.css'
+import SubmitButton from '../../../components/SubmitButton'
 
 const Login = () => {
   const classes = useStyles()
@@ -56,12 +57,12 @@ const Login = () => {
           <Typography align="center">
             <Button
               type="submit"
-              variant="contained"
+              variant="text"
               color="secondary"
               className={classes.submitButtonLogin}
               className="authFont"
             >
-              Login
+              <SubmitButton label={"Login"}/>
             </Button>
           </Typography>
         </form>
