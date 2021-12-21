@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Register from './pages/auth/Register'
 import Login from './pages/auth/Login/index.jsx'
 import ForgetPassword from './pages/auth/ForgetPassword'
+import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
