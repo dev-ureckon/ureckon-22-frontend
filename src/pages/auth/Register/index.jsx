@@ -6,6 +6,7 @@ import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { RegisterLogic } from './Register.js'
 
 import './register.css'
+import Dropdown from '../../../components/Dropdown'
 
 const Register = () => {
   const isMobile = window.innerWidth <= 768
@@ -41,9 +42,8 @@ const Register = () => {
               <Input
                 width="100%"
                 label="Phone No."
-                placeholder="Your number here.."
+                placeholder="Your Number"
                 name="number"
-                type="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
               />
@@ -63,7 +63,7 @@ const Register = () => {
               <Input
                 width="100%"
                 label="Email"
-                placeholder="name@example.com"
+                placeholder="Your Email"
                 name="email"
                 type="email"
                 value={formData.email}
@@ -71,16 +71,16 @@ const Register = () => {
               />
               <Input
                 width="100%"
-                label="School/College name"
+                label="Your School/College name"
                 placeholder="UEM"
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
               />
-              <Input
+              <Dropdown
                 width="100%"
                 label="Gender"
-                placeholder="Male"
+                placeholder="Gender"
                 name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}

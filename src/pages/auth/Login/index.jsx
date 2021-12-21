@@ -26,7 +26,7 @@ const Login = () => {
           <Input
             width="100%"
             label="Email"
-            placeholder="name@email.com"
+            placeholder="Your Email"
             name="email"
             type="email"
             value={formData.email}
@@ -48,7 +48,7 @@ const Login = () => {
             <Grid item sm={5}>
               <Link to={'/forget-password'}>
                 <Typography align="right" color="primary" className="authFont">
-                  forget password?
+                  Forgot password?
                 </Typography>
               </Link>
             </Grid>
