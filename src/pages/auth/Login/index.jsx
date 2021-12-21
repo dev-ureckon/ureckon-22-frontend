@@ -65,9 +65,9 @@ const Login = () => {
             </Button>
           </Typography>
         </form>
-
-        <Grid justifyContent="flex-end" container>
-          <Grid item sm={3} xs={12}>
+<Typography align="center">
+        <Grid justifyContent="flex-end" container spacing={2} style={{margin: "1.5rem auto"}}>
+          <Grid item sm={4} xs={12}>
             {' '}
             <Typography
               align={isMobile ? 'center' : 'right'}
@@ -78,10 +78,11 @@ const Login = () => {
               Login With:{' '}
             </Typography>
           </Grid>
-          <Grid item justifyContent="center" sm={8} xs={12}>
+          <Grid item justifyContent="center" sm={7} xs={12}>
             <SocialAuth />
           </Grid>
         </Grid>
+</Typography>        
         <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
           <Link to="/register">
