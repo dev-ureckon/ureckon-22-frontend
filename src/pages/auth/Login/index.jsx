@@ -60,18 +60,17 @@ const Login = () => {
               variant="text"
               color="secondary"
               className={classes.submitButtonLogin}
-              className="authFont"
             >
               <SubmitButton label={"Login"}/>
             </Button>
           </Typography>
         </form>
 <Typography align="center">
-        <Grid justifyContent="flex-end" container spacing={2} style={{margin: "1.5rem auto"}}>
-          <Grid item sm={4} xs={12}>
+        <Grid container spacing={3} style={{margin: "1.5rem auto"}}>
+          <Grid item sm={4} xs={12} justifyContent="center">
             {' '}
             <Typography
-              align={isMobile ? 'center' : 'right'}
+              align={isMobile ? 'right' : 'center'}
               variant="h5"
               color="primary"
               className="authFont"

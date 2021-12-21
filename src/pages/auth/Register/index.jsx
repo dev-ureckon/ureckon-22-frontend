@@ -30,7 +30,7 @@ const Register = () => {
           <Grid container spacing={10}>
             <br />
             <br />
-            <Grid item lg={6} md={12} sm={12}>
+            <Grid item lg={6} md={12}>
               <Input
                 width="100%"
                 label="Name"
@@ -71,8 +71,8 @@ const Register = () => {
               />
               <Input
                 width="100%"
-                label="Your School/College name"
-                placeholder="UEM"
+                label="School/College name"
+                placeholder="e.g: UEM"
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
@@ -93,31 +93,30 @@ const Register = () => {
               variant="text"
               color="secondary"
               className={classes.submitButton}
-              className="authFont"
-              style={{marginTop: "4rem"}}
+              style={{ marginTop: '4rem' }}
             >
-              <SubmitButton label={"Register"}/>
+              <SubmitButton label={'Register'} />
             </Button>
           </Typography>
         </form>
-<Typography align="center">
-        <Grid spacing={2} style={{margin: "2rem auto"}} spacing={2} container>
-          <Grid item xs={12} sm={5}>
-            {' '}
-            <Typography
-              variant="h5"
-              align={isMobile ? 'center' : 'right'}
-              color="primary"
-              className="authFont"
-            >
-              Register With:{' '}
-            </Typography>
+        <Typography align="center">
+          <Grid spacing={2} style={{ margin: '1rem auto' }} container>
+            <Grid item xs={12} sm={5}>
+              {' '}
+              <Typography
+                variant="h5"
+                align={isMobile ? 'center' : 'right'}
+                color="primary"
+                className="authFont"
+              >
+                Register With:{' '}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <SocialAuth />
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <SocialAuth />
-          </Grid>
-        </Grid>
-        </Typography>        
+        </Typography>
       </Container>
     </div>
   )
