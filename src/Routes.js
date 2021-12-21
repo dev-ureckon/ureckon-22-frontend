@@ -5,8 +5,7 @@ import Register from './pages/auth/Register'
 import Login from './pages/auth/Login/index.jsx'
 import ForgetPassword from './pages/auth/ForgetPassword'
 import Contact from './pages/Contact/index.jsx'
-import CompleteProfile from './pages/auth/CompleteProfile/index.jsx'
-//import { AvoidAuth } from './components/utils/AvoidAuth.js'
+import { AvoidAuth } from './components/utils/AvoidAuth.js'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
@@ -40,7 +39,6 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </AvoidAuth>
             }
           />
-          <Route path="/complete-profile" element={<CompleteProfile />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
