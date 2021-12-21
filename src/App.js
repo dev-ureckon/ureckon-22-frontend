@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
 import theme from './theme'
@@ -9,6 +10,11 @@ import Header from './components/header'
 import ToastBar from './components/Toast/ToastBar'
 
 function App() {
+  const [open, setOpen] = useState(false)
+
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -17,10 +23,15 @@ function App() {
         <video className="videoTag" autoPlay loop muted>
           <source src={bgvideo} type="video/mp4" />
         </video>
-        <div style={{ minHeight: '100vh', height: '100%' }}>
+        <div style={{ minHeight: '100vh', height: '100%', opacity: open ? '0.5' : '' }}>
           {/* for Navbar */}
           <Header />
-          <RouteComponent />
+          <RouteComponent
+            open={open}
+            setOpen={setOpen}
+            handleOpen={handleOpen}
+            handleClose={handleClose}
+          />
           {/* For the Toast messages that are to be shown */}
           <ToastBar />
         </div>
