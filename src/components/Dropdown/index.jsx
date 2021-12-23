@@ -75,22 +75,9 @@ const Dropdown = (props) => {
             left: '3%',
           }}
         >
-          <InputLabel
-            style={{
-              border: 'none',
-              outline: 'none',
-              fontSize: '1.5625rem',
-              color: 'grey',
-              paddingLeft: '10px',
-              textAlign: 'left',
-              fontFamily: "'IBM Plex Sans', sans-serif",
-            }}
-          >
-            Gender
-          </InputLabel>
           <Select
-            label="Gender"
-            placeholder={placeholder}
+           inputProps={{ 'aria-label': 'Without label' }}
+            displayEmpty
             name={name}
             value={value}
             type={type}
@@ -109,8 +96,13 @@ const Dropdown = (props) => {
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontWeight: 500,
             }}
+            color='secondary'
+            variant="outlined"
             required={required}
           >
+          <MenuItem value="" disabled >
+            <em style={{color: 'grey'}}>Gender</em>
+          </MenuItem>
             <MenuItem value="male">Male</MenuItem>
             <MenuItem value="female">Female</MenuItem>
             <MenuItem value="others">Others</MenuItem>
