@@ -76,7 +76,7 @@ const Dropdown = (props) => {
           }}
         >
           <Select
-           inputProps={{ 'aria-label': 'Without label' }}
+            inputProps={{ 'aria-label': 'Without label' }}
             displayEmpty
             name={name}
             value={value}
@@ -96,13 +96,13 @@ const Dropdown = (props) => {
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontWeight: 500,
             }}
-            color='secondary'
+            color="secondary"
             variant="outlined"
             required={required}
           >
-          <MenuItem value="" disabled >
-            <em style={{color: 'grey'}}>Gender</em>
-          </MenuItem>
+            <MenuItem value="" disabled>
+              <em style={{ color: 'grey' }}>Gender</em>
+            </MenuItem>
             <MenuItem value="male">Male</MenuItem>
             <MenuItem value="female">Female</MenuItem>
             <MenuItem value="others">Others</MenuItem>
