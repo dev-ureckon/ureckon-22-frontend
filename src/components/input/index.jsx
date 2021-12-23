@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
 import InputBigImg from '../../assets/SVGs/input_big.svg'
+import './input.css'
 
 const Input = (props) => {
   const {
