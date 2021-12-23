@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router'
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { userRegister } from '../../../redux/actions'
+import swal from 'sweetalert'
 
 export const RegisterLogic = () => {
   const dispatch = useDispatch()
@@ -17,14 +18,38 @@ export const RegisterLogic = () => {
     gender: '',
   })
 
+  //getting state from reducer
+  const { userInfo, error, loading } = useSelector((state) => state.userRegister)
+
+  // If user is already logged in Do not show this page
+  // or redirect to complete - profile page if not already registered with social auth
+  useEffect(() => {
+    if (userInfo) {
+      if (userInfo.alreadyRegistered !== undefined && !userInfo.alreadyRegistered) {
+        navigate('/complete-profile')
+      } else if (
+        (userInfo.alreadyRegistered !== undefined && userInfo.alreadyRegistered) ||
+        userInfo.alreadyRegistered === undefined
+      ) {
+        navigate('/')
+      }
+    }
+  }, [userInfo, navigate, loading])
+
+  // show error message
+  useEffect(() => {
+    if (error) {
+      swal('Error', error, 'error')
+    }
+  }, [error])
+
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
       [e.target.name]: e.target.value,
     }))
   }
-  //getting state from reducer
-  const { userInfo, error, loading } = useSelector((state) => state.userRegister)
+
   const handleSubmit = (e) => {
     dispatch(
       userRegister(
@@ -37,10 +62,6 @@ export const RegisterLogic = () => {
       )
     )
   }
-  //If user is already logged in Do not show this page
-  useEffect(() => {
-    if (userInfo) navigate('/')
-  }, [userInfo, navigate, loading])
 
   return {
     handleChange,

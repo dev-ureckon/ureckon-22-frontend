@@ -1,44 +1,15 @@
-import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { Alert, Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
+import { LoginLogic } from './login.js'
+import './login.css'
+import SubmitButton from '../../../components/SubmitButton'
 
-//Redux
-import { useDispatch, useSelector } from 'react-redux'
-import { userLogin } from '../../../redux/actions'
-
-const Login = (props) => {
-  const isMobile = window.innerWidth <= 768
-
+const Login = () => {
   const classes = useStyles()
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  //getting state from reducer
-  const { userInfo, error, loading } = useSelector((state) => state.userLogin)
-
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  })
-
-  const handleChange = (e) => {
-    setFormData((f) => ({
-      ...f,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  //If user is already logged in Do not show this page
-  useEffect(() => {
-    if (userInfo) navigate('/')
-  }, [userInfo, navigate, loading])
-
-  const handleSubmit = (e) => {
-    dispatch(userLogin(formData.email, formData.password))
-  }
+  const { isMobile, formData, handleChange, handleSubmit, loading } = LoginLogic()
 
   return (
     <div className={classes.root}>
@@ -46,19 +17,7 @@ const Login = (props) => {
         {loading && (
           <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
-        {error && (
-          <>
-            <Alert
-              style={{ marginTop: '8px', width: '100%' }}
-              variant="filled"
-              severity="error"
-            >
-              {error}
-            </Alert>
-            <br />
-            <br />
-          </>
-        )}
+
         <form
           onSubmit={(e) => {
             e.preventDefault()
@@ -68,7 +27,7 @@ const Login = (props) => {
           <Input
             width="100%"
             label="Email"
-            placeholder="djBravo@champions.wi"
+            placeholder="Your Email"
             name="email"
             type="email"
             value={formData.email}
@@ -89,8 +48,8 @@ const Login = (props) => {
             <Grid item sm={7}></Grid>
             <Grid item sm={5}>
               <Link to={'/forget-password'}>
-                <Typography align="right" color="primary">
-                  forget password?
+                <Typography align="right" color="primary" className="authFont">
+                  Forgot password?
                 </Typography>
               </Link>
             </Grid>
@@ -98,34 +57,38 @@ const Login = (props) => {
           <Typography align="center">
             <Button
               type="submit"
-              variant="contained"
+              variant="text"
               color="secondary"
               className={classes.submitButtonLogin}
             >
-              Login
+              <SubmitButton label={'Login'} />
             </Button>
           </Typography>
         </form>
-
-        <Grid justifyContent="flex-end" container>
-          <Grid item sm={3} xs={12}>
-            {' '}
-            <Typography
-              align={isMobile ? 'center' : 'right'}
-              variant="h5"
-              color="primary"
-            >
-              Login With:{' '}
-            </Typography>
+        <Typography align="center">
+          <Grid container spacing={3} style={{ margin: '1.5rem auto' }}>
+            <Grid item sm={4} xs={12} justifyContent="center">
+              {' '}
+              <Typography
+                align={isMobile ? 'right' : 'center'}
+                variant="h5"
+                color="primary"
+                className="authFont"
+              >
+                Login With:{' '}
+              </Typography>
+            </Grid>
+            <Grid item justifyContent="center" sm={7} xs={12}>
+              <SocialAuth />
+            </Grid>
           </Grid>
-          <Grid item justifyContent="center" sm={8} xs={12}>
-            <SocialAuth />
-          </Grid>
-        </Grid>
-        <Typography color={'primary'} variant="h6" align="center">
+        </Typography>
+        <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
           <Link to="/register">
-            <b style={{ color: '#fff' }}>Register Here !</b>
+            <b style={{ color: '#fff' }} className="authFont">
+              Register Here !
+            </b>
           </Link>
         </Typography>
       </Container>

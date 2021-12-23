@@ -1,12 +1,11 @@
+import * as React from 'react'
 import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
-import InputBigImg from '../../assets/SVGs/input_big.svg'
-import './input.css'
+import { Select, FormControl, MenuItem, InputLabel } from '@mui/material'
 
-const Input = (props) => {
+const Dropdown = (props) => {
   const {
     width = '400px',
-    size = 'small',
     label,
     placeholder,
     name,
@@ -16,18 +15,18 @@ const Input = (props) => {
     disabled = false,
     required = true,
   } = props
-
   const ref = useRef(null)
 
   useEffect(() => {
     if (ref.current) {
       const w = ref.current.parentElement.offsetWidth
-      ref.current.style.height = `${(size === 'big' ? 0.529 : 0.214) * w}px`
+      ref.current.style.height = `${0.214 * w}px`
     }
   }, [])
 
   return (
     <div style={{ width, height: '40%' }}>
+      {/* title  */}
       <p
         style={{
           color: 'white',
@@ -44,6 +43,8 @@ const Input = (props) => {
       >
         {label}
       </p>
+
+      {/* the input image box */}
       <div
         ref={ref}
         style={{
@@ -52,7 +53,7 @@ const Input = (props) => {
         }}
       >
         <img
-          src={size === 'big' ? InputBigImg : InputImg}
+          src={InputImg}
           alt=""
           style={{
             width: '95%',
@@ -63,48 +64,27 @@ const Input = (props) => {
             left: 0,
           }}
         />
-        {size === 'big' && (
-          <textarea
-            placeholder={placeholder}
-            name={name}
-            value={value}
-            type={type}
-            onChange={(e) => onChange(e)}
-            style={{
-              width: '86%',
-              left: '4%',
-              height: '68%',
-              top: '15%',
-              resize: 'none',
-              position: 'relative',
-              background: 'transparent',
-              border: 'none',
-              outline: 'none',
-              fontSize: '1.5625rem',
-              color: 'white',
-              paddingLeft: '10px',
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontWeight: 500,
-            }}
-            required={required}
-            disabled={disabled}
-          >
-            asdf
-          </textarea>
-        )}
 
-        {size === 'small' && (
-          <input
-            placeholder={placeholder}
+        {/* dropdown input start */}
+
+        <FormControl
+          fullWidth
+          style={{
+            outline: 'none',
+            top: '17%',
+            left: '3%',
+          }}
+        >
+          <Select
+            inputProps={{ 'aria-label': 'Without label' }}
+            displayEmpty
             name={name}
             value={value}
             type={type}
             onChange={(e) => onChange(e)}
+            disabled={disabled}
             style={{
-              width: '85%',
-              left: '5%',
-              height: '30%',
-              top: '33%',
+              width: '89%',
               position: 'relative',
               background: 'transparent',
               border: 'none',
@@ -112,16 +92,26 @@ const Input = (props) => {
               fontSize: '1.5625rem',
               color: 'white',
               paddingLeft: '10px',
+              textAlign: 'left',
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontWeight: 500,
             }}
+            color="secondary"
+            variant="outlined"
             required={required}
-            disabled={disabled}
-          />
-        )}
+          >
+            <MenuItem value="" disabled>
+              <em style={{ color: 'grey' }}>Gender</em>
+            </MenuItem>
+            <MenuItem value="male">Male</MenuItem>
+            <MenuItem value="female">Female</MenuItem>
+            <MenuItem value="others">Others</MenuItem>
+            <MenuItem value="prefer not to say">Prefer not to say</MenuItem>
+          </Select>
+        </FormControl>
       </div>
     </div>
   )
 }
 
-export default Input
+export default Dropdown

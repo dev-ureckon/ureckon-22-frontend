@@ -1,4 +1,7 @@
 import {
+  USER_COMPLETE_PROFILE_FAILED,
+  USER_COMPLETE_PROFILE_REQUEST,
+  USER_COMPLETE_PROFILE_SUCCESS,
   USER_LOGIN_FAILED,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -62,6 +65,37 @@ export const userRegisterReducer = (
         error: null,
       }
     case USER_REGISTER_FAILED:
+      return {
+        loading: false,
+        error: action.payload,
+      }
+    default:
+      return state
+  }
+}
+
+// Complete Profile Reducer
+export const userCompleteProfileReducer = (
+  state = {
+    loading: false,
+    error: null,
+    data: null,
+  },
+  action
+) => {
+  switch (action.type) {
+    case USER_COMPLETE_PROFILE_REQUEST:
+      return {
+        loading: true,
+        error: null,
+      }
+    case USER_COMPLETE_PROFILE_SUCCESS:
+      return {
+        loading: false,
+        data: action.payload,
+        error: null,
+      }
+    case USER_COMPLETE_PROFILE_FAILED:
       return {
         loading: false,
         error: action.payload,

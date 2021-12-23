@@ -1,4 +1,7 @@
 import {
+  USER_COMPLETE_PROFILE_FAILED,
+  USER_COMPLETE_PROFILE_REQUEST,
+  USER_COMPLETE_PROFILE_SUCCESS,
   USER_LOGIN_FAILED,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -7,7 +10,9 @@ import {
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
 } from '../constants'
-import { loginUser, registerUser } from '../apis'
+import { loginUser, registerUser, signUpSocial } from '../apis/auth'
+import { completeProfile } from '../apis/authManagement'
+import swal from 'sweetalert'
 
 // user register action
 export const userRegister =
@@ -22,6 +27,13 @@ export const userRegister =
         type: USER_REGISTER_SUCCESS,
         payload: data,
       })
+
+      dispatch({
+        type: USER_LOGIN_SUCCESS,
+        payload: data,
+      })
+      swal('Success', 'Successfully Logged in', 'success')
+
       localStorage.setItem('userInfo', JSON.stringify(data))
     } catch (error) {
       console.log(error.response.data.message)
@@ -43,6 +55,7 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
       type: USER_LOGIN_SUCCESS,
       payload: data,
     })
+    swal('Success', 'Successfully Logged in', 'success')
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
     dispatch({
@@ -61,17 +74,19 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
     dispatch({
       type: USER_LOGIN_REQUEST,
     })
-    const config = {
-      'Content-Type': 'application/json',
-    }
-    const body = {
-      idToken: idToken,
-    }
 
-    const { data } = await dispatch({
+    const { data } = await signUpSocial(idToken)
+
+    dispatch({
       type: USER_LOGIN_SUCCESS,
       payload: data,
     })
+
+    dispatch({
+      type: USER_REGISTER_SUCCESS,
+      payload: data,
+    })
+    swal('Success', 'Successfully Logged in', 'success')
 
     // save auth details to local
     localStorage.setItem('userInfo', JSON.stringify(data))
@@ -85,6 +100,37 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
     })
   }
 }
+
+// completeProfile of auth user
+export const completeProfileAction =
+  (phone, college, gender, accessToken, navigate) => async (dispatch) => {
+    try {
+      dispatch({
+        type: USER_COMPLETE_PROFILE_REQUEST,
+      })
+      const { data } = await completeProfile(phone, college, gender, accessToken)
+      console.log(data)
+      dispatch({
+        type: USER_COMPLETE_PROFILE_SUCCESS,
+        payload: data,
+      })
+
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      userInfo.alreadyRegistered = true
+      localStorage.setItem('userInfo', JSON.stringify(userInfo))
+      swal('Success', 'Succes updated complete Profile', 'success').then(() => {
+        navigate('/')
+      })
+    } catch (error) {
+      dispatch({
+        type: USER_COMPLETE_PROFILE_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      })
+    }
+  }
 
 // logout action
 export const userLogout = () => (dispatch) => {

@@ -2,17 +2,12 @@ import { Button, Container, Grid, LinearProgress, Typography } from '@mui/materi
 import { useStyles } from '../auth.style.js'
 
 import Input from '../../../components/input'
-import SocialAuth from '../../../components/SocialAuth/index.jsx'
-import { RegisterLogic } from './Register.js'
+import { CompleteProfileLogic } from './completeProfile'
+import Dropdown from '../../../components/Dropdown/index.jsx'
 
-import './register.css'
-import Dropdown from '../../../components/Dropdown'
-import SubmitButton from '../../../components/SubmitButton'
-const Register = () => {
-  const isMobile = window.innerWidth <= 768
-
+const CompleteProfile = () => {
   const classes = useStyles()
-  const { handleChange, formData, loading, handleSubmit } = RegisterLogic()
+  const { handleChange, formData, loading, handleSubmit } = CompleteProfileLogic()
 
   return (
     <div className={classes.root}>
@@ -30,7 +25,7 @@ const Register = () => {
           <Grid container spacing={10}>
             <br />
             <br />
-            <Grid item lg={6} md={12}>
+            <Grid item lg={6} md={12} sm={12}>
               <Input
                 width="100%"
                 label="Name"
@@ -38,22 +33,16 @@ const Register = () => {
                 name="name"
                 value={formData.name}
                 onChange={(e) => handleChange(e)}
+                disabled={true}
               />
+              <br />
+              <br />
               <Input
                 width="100%"
                 label="Phone No."
                 placeholder="Your Number"
                 name="number"
                 value={formData.number}
-                onChange={(e) => handleChange(e)}
-              />
-              <Input
-                width="100%"
-                label="Password"
-                placeholder="*********"
-                name="password"
-                type="password"
-                value={formData.password}
                 onChange={(e) => handleChange(e)}
               />
             </Grid>
@@ -63,20 +52,28 @@ const Register = () => {
               <Input
                 width="100%"
                 label="Email"
-                placeholder="Your Email"
+                placeholder="name@example.com"
                 name="email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
+                disabled={true}
               />
+              <br />
+              <br />
               <Input
                 width="100%"
                 label="School/College name"
-                placeholder="e.g: UEM"
+                placeholder="Your School/College name"
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
               />
+            </Grid>
+          </Grid>
+          <br />
+          <Grid container justifyContent={'center'}>
+            <Grid item sm={12} xs={12} md={6}>
               <Dropdown
                 width="100%"
                 label="Gender"
@@ -90,36 +87,17 @@ const Register = () => {
           <Typography align="center">
             <Button
               type="submit"
-              variant="text"
+              variant="contained"
               color="secondary"
               className={classes.submitButton}
-              style={{ marginTop: '4rem' }}
             >
-              <SubmitButton label={'Register'} />
+              Submit
             </Button>
           </Typography>
         </form>
-        <Typography align="center">
-          <Grid spacing={2} style={{ margin: '1rem auto' }} container>
-            <Grid item xs={12} sm={5}>
-              {' '}
-              <Typography
-                variant="h5"
-                align={isMobile ? 'center' : 'right'}
-                color="primary"
-                className="authFont"
-              >
-                Register With:{' '}
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <SocialAuth />
-            </Grid>
-          </Grid>
-        </Typography>
       </Container>
     </div>
   )
 }
 
-export default Register
+export default CompleteProfile

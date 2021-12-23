@@ -20,6 +20,8 @@ export const registerUser = async (email, password, name, college, phone, gender
   return data
 }
 
-export const signUpSocial = (idToken) => {
+export const signUpSocial = async (idToken) => {
   console.log(idToken)
+  const data = await axios.post(`${url}/auth-social-user`, { idToken }, config)
+  return data
 }

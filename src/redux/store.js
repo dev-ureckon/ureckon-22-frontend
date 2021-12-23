@@ -9,6 +9,11 @@ const initialState = {
       JSON.parse(localStorage.getItem('userInfo')) ||
       JSON.parse(sessionStorage.getItem('userInfo')),
   },
+  userRegister: {
+    userInfo:
+      JSON.parse(localStorage.getItem('userInfo')) ||
+      JSON.parse(sessionStorage.getItem('userInfo')),
+  },
 }
 
 const composeEnhancers =
