@@ -1,17 +1,13 @@
-import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Grid, Typography, Button, Fade } from '@mui/material'
+import { Grid, Button, Fade } from '@mui/material'
 import { useStyles } from './announcement.style'
 import './announcement.font.css'
 import UnionPointer from '../../assets/SVGs/unionTwo.svg'
-import Frame from '../../assets/SVGs/Frame.svg'
 import Card from './card/index.jsx'
-import { getAllNewsfeed } from '../../redux/apis'
 
 const Announcement = ({ open, handleClose }) => {
   const classes = useStyles()
   const newsfeed = useSelector((state) => state.news.newsfeed)
-  const cardArr = [0, 1, 2, 3]
   return (
     <Fade in={open}>
       <div className={classes.root}>

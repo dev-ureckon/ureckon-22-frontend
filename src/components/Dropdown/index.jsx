@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
-import { Select, FormControl, MenuItem, InputLabel } from '@mui/material'
+import { Select, FormControl, MenuItem } from '@mui/material'
 
 const Dropdown = (props) => {
   const {
     width = '400px',
     label,
-    placeholder,
     name,
     value,
     onChange,

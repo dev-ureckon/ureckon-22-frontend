@@ -1,11 +1,11 @@
 import React from 'react'
-import { Grid, Typography } from '@mui/material'
+import { Grid } from '@mui/material'
 import { useStyles } from './card.styles'
 import './card.font.css'
 import Frame from '../../../assets/SVGs/Frame.svg'
 
 const Card = (props) => {
-  const { headline, content, link, appearAt } = props
+  const { headline, content, link } = props
   const classes = useStyles()
   return (
     <Grid

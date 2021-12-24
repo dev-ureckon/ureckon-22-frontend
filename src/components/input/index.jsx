@@ -24,7 +24,7 @@ const Input = (props) => {
       const w = ref.current.parentElement.offsetWidth
       ref.current.style.height = `${(size === 'big' ? 0.529 : 0.214) * w}px`
     }
-  }, [])
+  }, [size])
 
   return (
     <div style={{ width, height: '40%' }}>

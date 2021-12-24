@@ -1,7 +1,6 @@
 import React from 'react'
-import { useStyles } from './contact.style'
 import { useInputState } from '../../hooks/useInputState'
-import { ContactLogic, createNewContact } from './contact'
+import { createNewContact } from './contact'
 import { Container, Grid } from '@mui/material'
 import Input from '../../components/input'
 import Button from '../../components/button'
@@ -39,10 +38,6 @@ function Contact() {
       }
     }
   }
-
-  const { foo } = ContactLogic()
-  console.log(foo)
-  const classes = useStyles()
 
   return (
     <Container>
