@@ -1,4 +1,6 @@
 // All API's for sponsors
 export { getAllSponsors, getMainSponsors } from './sponsors'
-export { loginUser, registerUser } from './auth.js'
+export { loginUser, registerUser, requestPasswordReset } from './auth.js'
+// All API's for Participant Management
+export { completeProfile, setNewPassword } from './authManagement'
 export { getAllNewsfeed } from './newsfeed'

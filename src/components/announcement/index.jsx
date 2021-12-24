@@ -14,7 +14,7 @@ const Announcement = ({ open, handleClose }) => {
         <div className={classes.container}>
           <Grid container className={classes.contentWrapper}>
             <Grid item xs={12} className={classes.headerWrapper}>
-              <div className="header">Announcements</div>
+              <div className="header">News</div>
               <img
                 src={UnionPointer}
                 style={{ marginRight: '15rem', marginTop: '-1rem' }}
@@ -24,7 +24,7 @@ const Announcement = ({ open, handleClose }) => {
             {newsfeed.length !== 0 ? (
               newsfeed.map((card, i) => <Card key={i} {...card} />)
             ) : (
-              <Card headline="No announcements to show" />
+              <Card headline="No News to show" />
             )}
             <Grid item xs={12} className={classes.btnWrapper}>
               <Button variant="contained" className={classes.btn} onClick={handleClose}>

@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     events: {
       marginLeft: '-8rem',
     },
-    announcements: {
+    News: {
       marginLeft: '8rem',
     },
   },

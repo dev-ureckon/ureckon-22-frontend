@@ -47,7 +47,7 @@ const Login = () => {
           <Grid container>
             <Grid item sm={7}></Grid>
             <Grid item sm={5}>
-              <Link to={'/forget-password'}>
+              <Link to={'/forgot-password'}>
                 <Typography align="right" color="primary" className="authFont">
                   Forgot password?
                 </Typography>

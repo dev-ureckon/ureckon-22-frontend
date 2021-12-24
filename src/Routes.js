@@ -4,7 +4,7 @@ import ScrollToTop from './ScrollToTop.js'
 import Home from './pages/Home'
 import Register from './pages/auth/Register'
 import Login from './pages/auth/Login/index.jsx'
-import ForgetPassword from './pages/auth/ForgetPassword'
+import ForgotPassword from './pages/auth/ForgotPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
@@ -53,10 +53,10 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route
-            path="/forget-password"
+            path="/forgot-password"
             element={
               <ReverseAuthProtectedRoute>
-                <ForgetPassword />
+                <ForgotPassword />
               </ReverseAuthProtectedRoute>
             }
           />

@@ -1,3 +1,4 @@
+import swal from 'sweetalert'
 import axios from '../../axios/axiosInstance'
 
 const url = '/auth/participant'
@@ -24,4 +25,24 @@ export const signUpSocial = async (idToken) => {
   console.log(idToken)
   const data = await axios.post(`${url}/auth-social-user`, { idToken }, config)
   return data
+}
+
+// API call for requesting password reset
+export const requestPasswordReset = (email) => async (dispatch, getState) => {
+  try {
+    console.log(email)
+    const response = await axios.post(
+      `${url}/resetPassword`,
+      {
+        email,
+      },
+      config
+    )
+    swal('Success', 'Reset Password mail sent', 'success')
+    const actualData = response.data
+    return actualData
+  } catch (error) {
+    swal('Error', 'Error sending reset password email', 'error')
+    return error.response.data
+  }
 }

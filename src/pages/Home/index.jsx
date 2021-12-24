@@ -12,7 +12,7 @@ import { moreFunction, backoptions } from './home'
 import { getMainSponsors, getAllNewsfeed } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
-import Announcements from '../../components/announcement/index.jsx'
+import News from '../../components/announcement/index.jsx'
 import './home.animation.css'
 import '../../app.css'
 
@@ -69,7 +69,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               //   timeout: 500,
               // }}
             >
-              <Announcements open={open} handleClose={handleClose} />
+              <News open={open} handleClose={handleClose} />
             </Modal>
           </div>
         )}
@@ -145,7 +145,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                   lg={6}
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
-                  className={classes.announcements}
+                  className={classes.News}
                 >
                   <div
                     className="menulink"
@@ -155,7 +155,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                       setInProp(true)
                     }}
                   >
-                    Announcements
+                    News
                     <div>
                       <img className="test4" src={line2} alt="line" />
                     </div>
