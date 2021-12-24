@@ -32,8 +32,9 @@ export const ForgotPasswordLogic = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault()
     dispatch(requestPasswordReset(formData.email))
+    setFormData({ email: '' })
   }
-  
+
   return {
     handleChange,
     formData,
