@@ -8,12 +8,11 @@ import ForgetPassword from './pages/auth/ForgetPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 
-
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
     <>
       <BrowserRouter>
-      <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route
             path="/"
