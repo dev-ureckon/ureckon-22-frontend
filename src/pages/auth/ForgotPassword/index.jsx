@@ -1,6 +1,6 @@
 import { Container, Grid, Typography, Button } from '@mui/material'
 import { useStyles } from '../auth.style.js'
-import SubmitButton from "../../../components/SubmitButton"
+import SubmitButton from '../../../components/SubmitButton'
 
 import Input from '../../../components/input'
 import { ForgotPasswordLogic } from './forgotPassword'
