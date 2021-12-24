@@ -6,9 +6,9 @@ import Login from './pages/auth/Login/index.jsx'
 import ForgetPassword from './pages/auth/ForgetPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
-import ReverseAuthProtectedRoute from './components/utils/ReverseAuthProtectedRoute'
-import AuthProtectedRoute from './components/utils/AuthProtectedRoute'
-import CompleteProfileAccess from './components/utils/CompleteProfileAccess'
+import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
+import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
+import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
