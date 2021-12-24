@@ -15,35 +15,27 @@ const ForgotPassword = (props) => {
         handleFormSubmit(e)
       }}
     >
-      <Container maxWidth="xl">
-        <Grid container spacing={10}>
-          <Grid item lg={12} md={12}>
-            <Input
-              width="100%"
-              label="Your Email"
-              type="email"
-              placeholder="John Doe"
-              name="email"
-              value={formData.email}
-              onChange={(e) => handleChange(e)}
-            />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <Typography align="center">
-              <Button
-                type="submit"
-                variant="text"
-                color="secondary"
-                className={classes.submitButtonLogin}
-              >
-                <SubmitButton label={'Submit'} />
-              </Button>
-            </Typography>
-          </Grid>
-        </Grid>
+      <Container maxWidth="sm">
+        <Input
+          width="100%"
+          label="Your Email"
+          type="email"
+          placeholder="John Doe"
+          name="email"
+          value={formData.email}
+          onChange={(e) => handleChange(e)}
+        />
+        <br />
+        <Typography align="center">
+          <Button
+            type="submit"
+            variant="text"
+            color="secondary"
+            className={classes.submitButtonLogin}
+          >
+            <SubmitButton label={'Submit'} />
+          </Button>
+        </Typography>
       </Container>
     </form>
   )
