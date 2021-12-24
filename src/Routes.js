@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollToTop from './ScrollToTop.js'
 
 import Home from './pages/Home'
 import Register from './pages/auth/Register'
@@ -7,10 +8,12 @@ import ForgetPassword from './pages/auth/ForgetPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 
+
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route
             path="/"
