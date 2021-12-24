@@ -111,8 +111,8 @@ export const completeProfileAction =
       const { data } = await completeProfile(phone, college, gender, accessToken)
       console.log(data)
       dispatch({
-        type: USER_COMPLETE_PROFILE_SUCCESS,
-        payload: data,
+        type: USER_LOGIN_SUCCESS,
+        payload: { ...data, alreadyRegistered: true },
       })
 
       const userInfo = JSON.parse(localStorage.getItem('userInfo'))

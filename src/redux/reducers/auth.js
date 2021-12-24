@@ -79,7 +79,7 @@ export const userCompleteProfileReducer = (
   state = {
     loading: false,
     error: null,
-    data: null,
+    userInfo: null,
   },
   action
 ) => {
@@ -92,7 +92,7 @@ export const userCompleteProfileReducer = (
     case USER_COMPLETE_PROFILE_SUCCESS:
       return {
         loading: false,
-        data: action.payload,
+        userInfo: action.payload,
         error: null,
       }
     case USER_COMPLETE_PROFILE_FAILED:
