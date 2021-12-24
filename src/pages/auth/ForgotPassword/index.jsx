@@ -1,5 +1,6 @@
 import { Container, Grid, Typography, Button } from '@mui/material'
 import { useStyles } from '../auth.style.js'
+import SubmitButton from "../../../components/SubmitButton"
 
 import Input from '../../../components/input'
 import { ForgotPasswordLogic } from './forgotPassword'
@@ -11,7 +12,6 @@ const ForgotPassword = (props) => {
   return (
     <form
       onSubmit={(e) => {
-        e.preventDefault()
         handleFormSubmit(e)
       }}
     >
@@ -35,11 +35,11 @@ const ForgotPassword = (props) => {
             <Typography align="center">
               <Button
                 type="submit"
-                variant="contained"
+                variant="text"
                 color="secondary"
-                className={classes.submitButton}
+                className={classes.submitButtonLogin}
               >
-                Submit
+                <SubmitButton label={'Submit'} />
               </Button>
             </Typography>
           </Grid>

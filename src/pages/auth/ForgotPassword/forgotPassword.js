@@ -29,9 +29,11 @@ export const ForgotPasswordLogic = () => {
   }
 
   // Handler function for submiting the form data and requesting password reset
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
     dispatch(requestPasswordReset(formData.email))
   }
+  
   return {
     handleChange,
     formData,
