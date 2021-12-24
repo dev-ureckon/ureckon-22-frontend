@@ -6,7 +6,8 @@ import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { RegisterLogic } from './Register.js'
 
 import './register.css'
-
+import Dropdown from '../../../components/Dropdown'
+import SubmitButton from '../../../components/SubmitButton'
 const Register = () => {
   const isMobile = window.innerWidth <= 768
 
@@ -29,7 +30,7 @@ const Register = () => {
           <Grid container spacing={10}>
             <br />
             <br />
-            <Grid item lg={6} md={12} sm={12}>
+            <Grid item lg={6} md={12}>
               <Input
                 width="100%"
                 label="Name"
@@ -41,9 +42,8 @@ const Register = () => {
               <Input
                 width="100%"
                 label="Phone No."
-                placeholder="Your number here.."
+                placeholder="Your Number"
                 name="number"
-                type="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
               />
@@ -63,7 +63,7 @@ const Register = () => {
               <Input
                 width="100%"
                 label="Email"
-                placeholder="name@example.com"
+                placeholder="Your Email"
                 name="email"
                 type="email"
                 value={formData.email}
@@ -72,15 +72,15 @@ const Register = () => {
               <Input
                 width="100%"
                 label="School/College name"
-                placeholder="UEM"
+                placeholder="e.g: UEM"
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
               />
-              <Input
+              <Dropdown
                 width="100%"
                 label="Gender"
-                placeholder="Male"
+                placeholder="Gender"
                 name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}
@@ -90,32 +90,33 @@ const Register = () => {
           <Typography align="center">
             <Button
               type="submit"
-              variant="contained"
+              variant="text"
               color="secondary"
               className={classes.submitButton}
-              className="authFont"
+              style={{ marginTop: '4rem' }}
             >
-              Register
+              <SubmitButton label={'Register'} />
             </Button>
           </Typography>
         </form>
-
-        <Grid spacing={1} justifyContent="center" container>
-          <Grid item xs={12} sm={4}>
-            {' '}
-            <Typography
-              variant="h5"
-              align={isMobile ? 'center' : 'right'}
-              color="primary"
-              className="authFont"
-            >
-              Register With:{' '}
-            </Typography>
+        <Typography align="center">
+          <Grid spacing={2} style={{ margin: '1rem auto' }} container>
+            <Grid item xs={12} sm={5}>
+              {' '}
+              <Typography
+                variant="h5"
+                align={isMobile ? 'center' : 'right'}
+                color="primary"
+                className="authFont"
+              >
+                Register With:{' '}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <SocialAuth />
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={5}>
-            <SocialAuth />
-          </Grid>
-        </Grid>
+        </Typography>
       </Container>
     </div>
   )

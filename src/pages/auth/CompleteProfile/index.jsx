@@ -3,8 +3,9 @@ import { useStyles } from '../auth.style.js'
 
 import Input from '../../../components/input'
 import { CompleteProfileLogic } from './completeProfile'
+import Dropdown from '../../../components/Dropdown/index.jsx'
 
-const Register = () => {
+const CompleteProfile = () => {
   const classes = useStyles()
   const { handleChange, formData, loading, handleSubmit } = CompleteProfileLogic()
 
@@ -32,19 +33,17 @@ const Register = () => {
                 name="name"
                 value={formData.name}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
+                disabled={true}
               />
               <br />
               <br />
               <Input
                 width="100%"
                 label="Phone No."
-                placeholder="Your number here.."
+                placeholder="Your Number"
                 name="number"
-                type="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
               />
             </Grid>
             <br />
@@ -58,32 +57,30 @@ const Register = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
+                disabled={true}
               />
               <br />
               <br />
               <Input
                 width="100%"
                 label="School/College name"
-                placeholder="UEM"
+                placeholder="Your School/College name"
                 name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
               />
             </Grid>
           </Grid>
           <br />
           <Grid container justifyContent={'center'}>
             <Grid item sm={12} xs={12} md={6}>
-              <Input
+              <Dropdown
                 width="100%"
                 label="Gender"
-                placeholder="Male"
+                placeholder="Gender"
                 name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}
-                page="complete-profile"
               />
             </Grid>
           </Grid>
@@ -103,4 +100,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default CompleteProfile

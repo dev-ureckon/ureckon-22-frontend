@@ -1,25 +1,80 @@
+import { useState, useEffect } from 'react'
 import { useStyles } from './home.style'
 import { useSelector, useDispatch } from 'react-redux'
-import Grid from '@mui/material/Grid'
+import { Transition } from 'react-transition-group'
+import { Modal, Grid } from '@mui/material'
 import './fonts.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
 import { moreFunction, backoptions } from './home'
 
-import { useEffect } from 'react'
-import { getMainSponsors } from '../../redux/apis'
+import { getMainSponsors, getAllNewsfeed } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
-function Home() {
+import Announcements from '../../components/announcement/index.jsx'
+import './home.animation.css'
+import '../../app.css'
+
+function Home({ open, setOpen, handleOpen, handleClose }) {
+  const [inProp, setInProp] = useState(false)
+
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
   const dispatch = useDispatch()
+
+  const { userInfo } = useSelector((state) => state.userLogin)
+
+  const duration = 300
+
+  const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
+  }
+
+  const transitionStyles = {
+    entering: { opacity: 1 },
+    entered: { opacity: 1 },
+    exiting: { opacity: 0 },
+    exited: { opacity: 0 },
+  }
+
+  // const Transition = forwardRef(function Transition(props, ref) {
+  //   return <Slide direction="up" ref={ref} {...props} />
+  // })
+
   useEffect(() => {
     dispatch(getMainSponsors())
+    dispatch(getAllNewsfeed())
   }, [dispatch])
   return (
     <div className={classes.root} style={{ marginTop: '-2.4rem' }}>
+      {/* Announcement Modal */}
+      <Transition in={inProp} timeout={500}>
+        {(state) => (
+          <div
+            style={{
+              ...defaultStyle,
+              ...transitionStyles[state],
+            }}
+            className="modal"
+          >
+            <Modal
+              open={open}
+              onClose={handleClose}
+              className={classes.modal}
+            // closeAfterTransition
+            // BackdropComponent={Backdrop}
+            // BackdropProps={{
+            //   timeout: 500,
+            // }}
+            >
+              <Announcements open={open} handleClose={handleClose} />
+            </Modal>
+          </div>
+        )}
+      </Transition>
+
       {/* for main container */}
       {/* for Navbar */}
       <Grid>
@@ -34,12 +89,21 @@ function Home() {
             <Grid item lg={12} className="menupad" id="mainpage">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="/Login" className="menulink">
-                    Login
-                    <div>
-                      <img className="test" src={line1} alt="line" />
-                    </div>
-                  </Link>
+                  {userInfo ? (
+                    <Link to="/profile" className="menulink">
+                      Profile
+                      <div>
+                        <img className="test1" src={line1} alt="line" />
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link to="/login" className="menulink">
+                      Login
+                      <div>
+                        <img className="test0" src={line1} alt="line" />
+                      </div>
+                    </Link>
+                  )}
                 </Grid>
                 <Grid
                   item
@@ -65,6 +129,7 @@ function Home() {
                   lg={6}
                   xs={12}
                   order={{ lg: 3, xs: 2 }}
+                  className={classes.events}
                 >
                   <Link to="/events" className="menulink">
                     Events
@@ -80,11 +145,34 @@ function Home() {
                   lg={6}
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
+                  className={classes.announcements}
                 >
-                  <Link to="/about" className="menulink">
-                    About
+                  <div
+                    className="menulink"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      handleOpen()
+                      setInProp(true)
+                    }}
+                  >
+                    Announcements
                     <div>
                       <img className="test4" src={line2} alt="line" />
+                    </div>
+                  </div>
+                </Grid>
+                <Grid
+                  item
+                  container
+                  justifyContent="center"
+                  lg={12}
+                  xs={12}
+                  order={{ lg: 5, xs: 4 }}
+                >
+                  <Link to="/about" className="menulink">
+                    About Us
+                    <div>
+                      <img className="test5" src={line2} alt="line" />
                     </div>
                   </Link>
                 </Grid>
@@ -99,7 +187,7 @@ function Home() {
                   <Link to="/teams" className="menulink">
                     Team
                     <div>
-                      <img className="test" src={line1} alt="line" />
+                      <img className="test8" src={line1} alt="line" />
                     </div>
                   </Link>
                 </Grid>
@@ -131,7 +219,7 @@ function Home() {
                   <Link to="/contact" className="menulink">
                     Contact
                     <div>
-                      <img className="test5" src={line1} alt="line" />
+                      <img className="test7" src={line1} alt="line" />
                     </div>
                   </Link>
                 </Grid>

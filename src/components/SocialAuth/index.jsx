@@ -10,7 +10,7 @@ function SocialAuth() {
   return (
     <div style={{ margin: isMobile ? '0' : '-1rem 0 1rem 1rem' }}>
       <Grid container justifyContent={isMobile ? 'center' : 'flex-start'} spacing={1}>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <img
             src={googleIcon}
             style={{ cursor: 'pointer' }}

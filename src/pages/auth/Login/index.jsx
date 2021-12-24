@@ -5,6 +5,7 @@ import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
 import { LoginLogic } from './login.js'
 import './login.css'
+import SubmitButton from '../../../components/SubmitButton'
 
 const Login = () => {
   const classes = useStyles()
@@ -26,7 +27,7 @@ const Login = () => {
           <Input
             width="100%"
             label="Email"
-            placeholder="name@email.com"
+            placeholder="Your Email"
             name="email"
             type="email"
             value={formData.email}
@@ -48,7 +49,7 @@ const Login = () => {
             <Grid item sm={5}>
               <Link to={'/forgot-password'}>
                 <Typography align="right" color="primary" className="authFont">
-                  forget password?
+                  Forgot password?
                 </Typography>
               </Link>
             </Grid>
@@ -56,32 +57,32 @@ const Login = () => {
           <Typography align="center">
             <Button
               type="submit"
-              variant="contained"
+              variant="text"
               color="secondary"
               className={classes.submitButtonLogin}
-              className="authFont"
             >
-              Login
+              <SubmitButton label={'Login'} />
             </Button>
           </Typography>
         </form>
-
-        <Grid justifyContent="flex-end" container>
-          <Grid item sm={3} xs={12}>
-            {' '}
-            <Typography
-              align={isMobile ? 'center' : 'right'}
-              variant="h5"
-              color="primary"
-              className="authFont"
-            >
-              Login With:{' '}
-            </Typography>
+        <Typography align="center">
+          <Grid container spacing={3} style={{ margin: '1.5rem auto' }}>
+            <Grid item sm={4} xs={12} justifyContent="center">
+              {' '}
+              <Typography
+                align={isMobile ? 'right' : 'center'}
+                variant="h5"
+                color="primary"
+                className="authFont"
+              >
+                Login With:{' '}
+              </Typography>
+            </Grid>
+            <Grid item justifyContent="center" sm={7} xs={12}>
+              <SocialAuth />
+            </Grid>
           </Grid>
-          <Grid item justifyContent="center" sm={8} xs={12}>
-            <SocialAuth />
-          </Grid>
-        </Grid>
+        </Typography>
         <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
           <Link to="/register">

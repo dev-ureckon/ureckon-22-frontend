@@ -1,19 +1,12 @@
-// Component to scroll the page to top when route has been chaged
-import React, { useEffect, Fragment } from 'react'
-import { withRouter } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
-function ScrollToTop({ history, children }) {
+export default function ScrollToTop() {
+  const { pathname } = useLocation()
+
   useEffect(() => {
-    const unlisten = history.listen(() => {
-      window.scrollTo(0, 0)
-    })
-    return () => {
-      unlisten()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    window.scrollTo(0, 0)
+  }, [pathname])
 
-  return <>{children}</>
+  return null
 }
-
-export default withRouter(ScrollToTop)
