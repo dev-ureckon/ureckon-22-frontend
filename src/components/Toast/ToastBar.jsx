@@ -12,13 +12,14 @@ export default function ToastBar() {
   const dispatch = useDispatch()
   const { isShowing, message, toastType } = useSelector((state) => state.toast)
 
-  const handleClose = (event, reason) => {
+  const handleClose = (reason) => {
     if (reason === 'clickaway') {
       return
     }
     dispatch(clearToast())
   }
 
+  // eslint-disable-next-line
   const action = (
     <React.Fragment>
       <Button color="secondary" size="small" onClick={handleClose}>

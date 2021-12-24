@@ -1,13 +1,13 @@
-import { Container, Grid, Typography, Button } from '@mui/material'
+import { Container, Typography, Button } from '@mui/material'
 import { useStyles } from '../auth.style.js'
 import SubmitButton from '../../../components/SubmitButton'
 
 import Input from '../../../components/input'
 import { ForgotPasswordLogic } from './forgotPassword'
 
-const ForgotPassword = (props) => {
+const ForgotPassword = () => {
   const classes = useStyles()
-  const { handleChange, formData, loading, handleFormSubmit } = ForgotPasswordLogic()
+  const { handleChange, formData, handleFormSubmit } = ForgotPasswordLogic()
 
   return (
     <form
