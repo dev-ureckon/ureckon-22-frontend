@@ -42,6 +42,7 @@ export const requestPasswordReset = (email) => async (dispatch, getState) => {
     const actualData = response.data
     return actualData
   } catch (error) {
+    swal('Error', 'Error sending reset password email', 'error')
     return error.response.data
   }
 }
