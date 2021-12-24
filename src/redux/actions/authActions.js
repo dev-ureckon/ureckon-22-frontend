@@ -114,14 +114,23 @@ export const completeProfileAction =
         type: USER_LOGIN_SUCCESS,
         payload: { ...data, alreadyRegistered: true },
       })
+      dispatch({
+        type: USER_COMPLETE_PROFILE_SUCCESS,
+        payload: { ...data, alreadyRegistered: true },
+      })
 
       const userInfo = JSON.parse(localStorage.getItem('userInfo'))
       userInfo.alreadyRegistered = true
       localStorage.setItem('userInfo', JSON.stringify(userInfo))
-      swal('Success', 'Succes updated complete Profile', 'success').then(() => {
-        navigate('/')
-      })
+      swal('Success', 'Successfully updated Profile', 'success')
     } catch (error) {
+      dispatch({
+        type: USER_LOGIN_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      })
       dispatch({
         type: USER_COMPLETE_PROFILE_FAILED,
         payload:
