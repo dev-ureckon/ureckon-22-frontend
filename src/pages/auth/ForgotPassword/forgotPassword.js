@@ -33,7 +33,7 @@ export const ForgotPasswordLogic = () => {
     e.preventDefault()
     dispatch(requestPasswordReset(formData.email))
   }
-  
+
   return {
     handleChange,
     formData,

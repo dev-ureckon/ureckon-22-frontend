@@ -30,7 +30,7 @@ export const signUpSocial = async (idToken) => {
 // API call for requesting password reset
 export const requestPasswordReset = (email) => async (dispatch, getState) => {
   try {
-    console.log(email);
+    console.log(email)
     const response = await axios.post(
       `${url}/resetPassword`,
       {
