@@ -7,6 +7,9 @@ import Login from './pages/auth/Login/index.jsx'
 import ForgetPassword from './pages/auth/ForgetPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
+import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
+import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
+import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
@@ -25,10 +28,47 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               />
             }
           />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/complete-profile" element={<CompleteProfile />} />
-          <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route
+            path="/register"
+            element={
+              <ReverseAuthProtectedRoute>
+                <Register />
+              </ReverseAuthProtectedRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <ReverseAuthProtectedRoute>
+                <Login />
+              </ReverseAuthProtectedRoute>
+            }
+          />
+          <Route
+            path="/complete-profile"
+            element={
+              <CompleteProfileAccess>
+                <CompleteProfile />
+              </CompleteProfileAccess>
+            }
+          />
+          <Route
+            path="/forget-password"
+            element={
+              <ReverseAuthProtectedRoute>
+                <ForgetPassword />
+              </ReverseAuthProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <AuthProtectedRoute>
+                <h2>Profile component here</h2>
+              </AuthProtectedRoute>
+            }
+          />
+
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>

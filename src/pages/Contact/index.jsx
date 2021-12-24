@@ -4,20 +4,21 @@ import { createNewContact } from './contact'
 import { Container, Grid } from '@mui/material'
 import Input from '../../components/input'
 import Button from '../../components/button'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions/toast'
 
 function Contact() {
-  // State for storing contact form data
-  // TODO: Inserting the below state and handleChange values for the different form inputs
-  const [name, handleNameChange, resetName] = useInputState('')
-  const [email, handleEmailChange, resetEmail] = useInputState('')
+  // If user is logged in autofill name and email
+  const { userInfo } = useSelector((state) => state.userLogin)
+
+  // States for storing contact form data
+  const [name, handleNameChange, resetName] = useInputState(userInfo?.name || '')
+  const [email, handleEmailChange, resetEmail] = useInputState(userInfo?.email || '')
   const [subject, handleSubjectChange, resetSubject] = useInputState('')
   const [message, handleMessageChange, resetMessage] = useInputState('')
 
   const dispatch = useDispatch()
   // Contact form submit handler
-  // TODO: Inserting the below handler after completion of UI
   const handleFormSubmit = async (event) => {
     event.preventDefault()
     if (name && email && subject && message) {
@@ -28,10 +29,15 @@ function Contact() {
         message,
       })
       if (success) {
-        resetName()
-        resetEmail()
-        resetSubject()
-        resetMessage()
+        if (userInfo) {
+          resetSubject()
+          resetMessage()
+        } else {
+          resetName()
+          resetEmail()
+          resetSubject()
+          resetMessage()
+        }
         dispatch(showToastTimer(msg, 'success'))
       } else {
         dispatch(showToastTimer('Encountered error while saving contact', 'error'))
@@ -55,6 +61,7 @@ function Contact() {
               placeholder="Your Name"
               value={name}
               onChange={(e) => handleNameChange(e)}
+              disabled={userInfo ? true : false}
             />
           </Grid>
           <Grid item lg={6} md={12} sm={12}>
@@ -65,6 +72,7 @@ function Contact() {
               type="email"
               value={email}
               onChange={(e) => handleEmailChange(e)}
+              disabled={userInfo ? true : false}
             />
           </Grid>
           <Grid item lg={6} md={12} sm={12}>

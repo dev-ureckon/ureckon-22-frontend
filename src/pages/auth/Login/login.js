@@ -25,14 +25,7 @@ export const LoginLogic = () => {
   //If user is already logged in Do not show this page
   useEffect(() => {
     if (userInfo) {
-      if (userInfo.alreadyRegistered !== undefined && !userInfo.alreadyRegistered) {
-        navigate('/complete-profile')
-      } else if (
-        (userInfo.alreadyRegistered !== undefined && userInfo.alreadyRegistered) ||
-        userInfo.alreadyRegistered === undefined
-      ) {
-        navigate('/')
-      }
+      navigate('/profile')
     }
   }, [userInfo, navigate, loading])
 

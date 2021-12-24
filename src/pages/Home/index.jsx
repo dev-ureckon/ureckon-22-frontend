@@ -90,14 +90,14 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
                   {userInfo ? (
-                    <Link to="/Profile" className="menulink">
+                    <Link to="/profile" className="menulink">
                       Profile
                       <div>
                         <img className="test1" src={line1} alt="line" />
                       </div>
                     </Link>
                   ) : (
-                    <Link to="/Login" className="menulink">
+                    <Link to="/login" className="menulink">
                       Login
                       <div>
                         <img className="test0" src={line1} alt="line" />

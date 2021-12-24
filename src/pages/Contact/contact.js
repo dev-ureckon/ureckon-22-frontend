@@ -1,11 +1,7 @@
 import axios from '../../axios/axiosInstance'
 
 export const ContactLogic = () => {
-  function foo() {
-    return 0
-  }
-
-  return { foo }
+  return {}
 }
 
 // Controller for creating new contact

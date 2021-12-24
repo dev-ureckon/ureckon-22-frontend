@@ -25,14 +25,7 @@ export const RegisterLogic = () => {
   // or redirect to complete - profile page if not already registered with social auth
   useEffect(() => {
     if (userInfo) {
-      if (userInfo.alreadyRegistered !== undefined && !userInfo.alreadyRegistered) {
-        navigate('/complete-profile')
-      } else if (
-        (userInfo.alreadyRegistered !== undefined && userInfo.alreadyRegistered) ||
-        userInfo.alreadyRegistered === undefined
-      ) {
-        navigate('/')
-      }
+      navigate('/profile')
     }
   }, [userInfo, navigate, loading])
 
