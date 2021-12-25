@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { completeProfileAction } from '../../../redux/actions'
-import swal from 'sweetalert'
+import { completeProfileAction, showToastTimer } from '../../../redux/actions'
+// import swal from 'sweetalert'
 
 export const CompleteProfileLogic = () => {
   const dispatch = useDispatch()
@@ -32,7 +32,8 @@ export const CompleteProfileLogic = () => {
   // show error message
   useEffect(() => {
     if (error) {
-      swal('Error', error, 'error')
+      // swal('Error', error, 'error')
+      dispatch(showToastTimer(error, 'error'))
     }
   }, [error])
 

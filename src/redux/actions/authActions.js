@@ -38,6 +38,7 @@ export const userRegister =
       localStorage.setItem('userInfo', JSON.stringify(data))
     } catch (error) {
       console.log(error.response.data.message)
+      dispatch(showToastTimer(error.response.data.message, 'error'))
       dispatch({
         type: USER_REGISTER_FAILED,
         payload: error.response.data.message,
@@ -60,6 +61,7 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
     dispatch(showToastTimer('Successfully Logged in', 'success'))
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
+    dispatch(showToastTimer(error.response.data.message, 'error'))
     dispatch({
       type: USER_LOGIN_FAILED,
       payload:
@@ -93,6 +95,7 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
     // save auth details to local
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
+    dispatch(showToastTimer(error.response.data.message, 'error'))
     dispatch({
       type: USER_LOGIN_FAILED,
       payload:
@@ -127,6 +130,7 @@ export const completeProfileAction =
       // swal('Success', 'Successfully updated Profile', 'success')
       dispatch(showToastTimer('Successfully updated Profile', 'success'))
     } catch (error) {
+      dispatch(showToastTimer(error.response.data.message, 'error'))
       dispatch({
         type: USER_LOGIN_FAILED,
         payload:
