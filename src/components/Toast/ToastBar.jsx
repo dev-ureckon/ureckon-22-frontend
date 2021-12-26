@@ -37,7 +37,11 @@ export default function ToastBar() {
 
   return (
     <div>
-      <Snackbar open={isShowing} onClose={handleClose}>
+      <Snackbar
+        open={isShowing}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
         <Alert onClose={handleClose} severity={toastType} sx={{ width: '100%' }}>
           {message}
         </Alert>

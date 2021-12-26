@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
-import { userRegister } from '../../../redux/actions'
-import swal from 'sweetalert'
+import { userRegister, showToastTimer } from '../../../redux/actions'
+// import swal from 'sweetalert'
 
 export const RegisterLogic = () => {
   const dispatch = useDispatch()
@@ -32,7 +32,8 @@ export const RegisterLogic = () => {
   // show error message
   useEffect(() => {
     if (error) {
-      swal('Error', error, 'error')
+      // swal('Error', error, 'error')
+      dispatch(showToastTimer(error, 'error'))
     }
   }, [error])
 

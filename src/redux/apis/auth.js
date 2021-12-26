@@ -1,5 +1,6 @@
-import swal from 'sweetalert'
+// import swal from 'sweetalert'
 import axios from '../../axios/axiosInstance'
+import { showToastTimer } from '../actions'
 
 const url = '/auth/participant'
 
@@ -38,11 +39,13 @@ export const requestPasswordReset = (email) => async (dispatch, getState) => {
       },
       config
     )
-    swal('Success', 'Reset Password mail sent', 'success')
+    // swal('Success', 'Reset Password mail sent', 'success')
+    dispatch(showToastTimer('Reset Password mail sent', 'success'))
     const actualData = response.data
     return actualData
   } catch (error) {
-    swal('Error', 'Error sending reset password email', 'error')
+    // swal('Error', 'Error sending reset password email', 'error')
+    dispatch(showToastTimer('Error sending reset password email', 'error'))
     return error.response.data
   }
 }

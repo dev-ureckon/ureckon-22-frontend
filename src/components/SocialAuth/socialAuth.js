@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux'
-import swal from 'sweetalert'
+// import swal from 'sweetalert'
 import { googleSignIn, facebookSignIn } from '../../firebase/firebase'
+import { showToastTimer } from '../../redux/actions'
 
 const SocialAuthLogic = () => {
   const dispatch = useDispatch()
@@ -10,7 +11,8 @@ const SocialAuthLogic = () => {
     console.log('Google login')
     const errorMessage = await googleSignIn(dispatch)
     if (errorMessage) {
-      swal('Error', errorMessage, 'error')
+      // swal('Error', errorMessage, 'error')
+      dispatch(showToastTimer(errorMessage, 'error'))
     }
   }
 
@@ -18,7 +20,8 @@ const SocialAuthLogic = () => {
   const facebookAuth = async () => {
     const errorMessage = await facebookSignIn(dispatch)
     if (errorMessage) {
-      swal('Error', errorMessage, 'error')
+      // swal('Error', errorMessage, 'error')
+      dispatch(showToastTimer(errorMessage, 'error'))
     }
   }
 
