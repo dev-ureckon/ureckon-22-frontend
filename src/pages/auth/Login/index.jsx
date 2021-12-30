@@ -18,7 +18,10 @@ const Login = () => {
           <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
 
-        <form
+
+      
+        <form 
+        style={{paddingLeft: "24px"}}
           onSubmit={(e) => {
             e.preventDefault()
             handleSubmit(e)
@@ -48,7 +51,7 @@ const Login = () => {
             <Grid item sm={7}></Grid>
             <Grid item sm={5}>
               <Link to={'/forgot-password'}>
-                <Typography align="right" color="primary" className="authFont">
+                <Typography style={{paddingLeft: "11px"}} align="right" color="primary" className="authFont">
                   Forgot password?
                 </Typography>
               </Link>

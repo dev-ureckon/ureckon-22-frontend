@@ -98,7 +98,7 @@
 }
 @media (min-width: 200px) and (max-width: 497px) {
   .menuwithsocial {
-    /* padding-left: 120px; */
+    padding-left: 0px;
   }
 }
 @media (min-width: 580px) and (max-width: 930px) {

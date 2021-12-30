@@ -22,6 +22,7 @@ const Register = () => {
         )}
 
         <form
+        style={{paddingLeft: "26px"}}
           onSubmit={(e) => {
             e.preventDefault()
             handleSubmit(e)
