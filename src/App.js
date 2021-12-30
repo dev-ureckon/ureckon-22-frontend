@@ -23,7 +23,7 @@ function App() {
         <video className="videoTag" autoPlay loop muted>
           <source src={bgvideo} type="video/mp4" />
         </video>
-        <div style={{ minHeight: '100vh', height: '100%', opacity: open ? '0.5' : '' }}>
+        <div className="nav1" style={{ minHeight: '100vh', height: '100%', opacity: open ? '0.5' : '' }}>
           {/* for Navbar */}
           <Header />
           <RouteComponent

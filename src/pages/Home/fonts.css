@@ -38,7 +38,6 @@
 @media (max-width: 360px) {
   .menuwithsocial {
     padding-top: 45px;
-    padding-left: 140px;
   }
   .headimage1 {
     width: 14vh;
@@ -97,9 +96,9 @@
     padding-right: 20px;
   }
 }
-@media (min-width: 361px) and (max-width: 497px) {
+@media (min-width: 200px) and (max-width: 497px) {
   .menuwithsocial {
-    padding-left: 105px;
+    /* padding-left: 120px; */
   }
 }
 @media (min-width: 580px) and (max-width: 930px) {
@@ -143,7 +142,6 @@
   .test6 {
     display: none;
   }
-
 }
 .test0 {
   position: relative;
@@ -169,24 +167,24 @@
   bottom: 82px;
   right: 38px;
 }
-.test5{
+.test5 {
   position: relative;
   bottom: 82px;
   right: 50px;
 }
-.test6{
-    position: relative;
-    bottom: 82px;
-    right: 30px;
+.test6 {
+  position: relative;
+  bottom: 82px;
+  right: 30px;
 }
 
-.test7{
+.test7 {
   position: relative;
   bottom: 82px;
   left: 80px;
 }
 
-.test8{
+.test8 {
   position: relative;
   bottom: 82px;
   right: 20px;

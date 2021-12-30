@@ -254,6 +254,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               justifyContent="space-around"
               sx={{ paddingX: 31 }}
               flexWrap="nowrap"
+              alignItems={{}}
             >
               <Grid item alignSelf="center">
                 <div className="Sponsor">Partnered By</div>
