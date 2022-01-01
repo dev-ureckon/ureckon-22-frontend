@@ -1,0 +1,29 @@
+name: Analyze
+on:
+  push:
+    branches:
+      - '**' # or the name of your main branch
+jobs:
+  build:
+    name: Analyze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Configure Sonar branch
+        run: |
+          branch=${{ github.ref }}
+          branch=${branch#refs/heads/}
+          echo Setting branch name: $branch
+          echo  "" >> sonar-project.properties 
+          echo "sonar.branch.name=$branch" >> sonar-project.properties
+          echo Sonar configuration:
+          cat sonar-project.properties
+      - uses: docker://sonarsource/sonar-scanner-cli:latest
+        with:
+          Dsonar.branch.name: ${GITHUB_REF##*/}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
