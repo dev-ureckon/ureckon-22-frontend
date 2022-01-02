@@ -9,10 +9,7 @@ import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
 import { moreFunction, backoptions } from './home'
 
-import {
-  getMainSponsors,
-  getAllNewsfeed,
-} from '../../redux/apis'
+import { getMainSponsors, getAllNewsfeed } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
 import News from '../../components/announcement/index.jsx'
