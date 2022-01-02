@@ -5,13 +5,6 @@ import uemk from '../../assets/IMGs/uemk_image.png'
 import Button from '@mui/material/Button'
 import line1 from '../../assets/SVGs/Union.svg'
 
-const commonStyles = {
-  bgcolor: 'background.paper',
-  m: 1,
-  border: 1,
-  width: '5rem',
-  height: '5rem',
-}
 
 function About() {
   return (
@@ -54,7 +47,7 @@ function About() {
         </Grid>
         <Grid item>
           <div>
-            <img src={uemk} alt="UEM building" />
+            <img className='uembuilding' src={uemk} alt="UEM building" />
           </div>
         </Grid>
       </Grid>
