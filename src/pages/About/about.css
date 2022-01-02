@@ -17,7 +17,7 @@
   color: white;
   text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
   line-height: 3em;
-  font-size: 18px;
+  font-size: 22px;
   letter-spacing: 0.1em;
 }
 .contactbutton {
@@ -37,4 +37,9 @@
     border: 3px solid;
     border-radius: 8px;
     border-color: #43c9ed;
+}
+@media (max-width: 490px){
+    .underlines{
+        display: none;
+    }
 }

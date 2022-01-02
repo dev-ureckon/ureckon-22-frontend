@@ -53,13 +53,13 @@ function About() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid item marginTop={'28px'}>
           <div>
             <img className='uembuilding' src={uemk} alt="UEM building" />
           </div>
         </Grid>
       </Grid>
-      <Grid paddingTop={'30px'}>
+      <Grid paddingTop={'50px'} paddingBottom={'30px'}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Link to="/contact" style={{ textDecoration: 'none' }}>
           <Button
