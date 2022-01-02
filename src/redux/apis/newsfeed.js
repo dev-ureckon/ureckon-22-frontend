@@ -10,7 +10,6 @@ export const getAllNewsfeed = () => async (dispatch) => {
   try {
     const response = await axios.get('/news/feed')
     const actualData = response.data
-    console.log(actualData)
     dispatch(fetchNewsfeedSuccess(actualData))
   } catch (error) {
     dispatch(fetchNewsfeedError(error.message))
