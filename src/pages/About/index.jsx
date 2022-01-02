@@ -1,10 +1,18 @@
 import React from 'react'
 import { Container, containerClasses, Grid } from '@mui/material'
 import './about.css'
+import './about.js'
 import uemk from '../../assets/IMGs/uemk_image.png'
 import Button from '@mui/material/Button'
 import line1 from '../../assets/SVGs/Union.svg'
+import { Link } from 'react-router-dom'
 
+function changeBackground(e) {
+  e.target.style.background = '#171717' ;
+}
+function changeBackground2(e) {
+  e.target.style.background = '#222222' ;
+}
 
 function About() {
   return (
@@ -51,11 +59,14 @@ function About() {
           </div>
         </Grid>
       </Grid>
-      <Grid paddingTop={'20px'}>
+      <Grid paddingTop={'30px'}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Link to="/contact" style={{ textDecoration: 'none' }}>
           <Button
             className="contactbutton"
             variant="contained"
+            onMouseOver={changeBackground}
+            onMouseOut={changeBackground2}
             style={{
               borderRadius: '5px',
               backgroundColor: '#222222',
@@ -66,6 +77,7 @@ function About() {
           >
             Contact Us
           </Button>
+        </Link>  
         </div>
       </Grid>
     </Container>
