@@ -2,6 +2,8 @@ import {
   FETCH_USER_PROFILE_REQUEST,
   FETCH_USER_PROFILE_SUCCESS,
   FETCH_USER_PROFILE_ERROR,
+  UPDATE_USER_PROFILE_REQUEST,
+  UPDATE_USER_PROFILE_SUCCESS,
 } from '../constants'
 
 const initialState = {
@@ -35,6 +37,20 @@ const userProfileReducer = (state = initialState, action) => {
         userInfo: null,
         authProvider: null,
         registeredEvents: [],
+      }
+    case UPDATE_USER_PROFILE_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      }
+    case UPDATE_USER_PROFILE_SUCCESS:
+      return {
+        loading: false,
+        error: '',
+        userInfo: {
+          ...state.userInfo,
+          ...payload,
+        },
       }
     default:
       return state

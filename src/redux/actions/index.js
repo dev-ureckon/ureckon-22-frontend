@@ -17,4 +17,6 @@ export {
   fetchUserProfileRequest,
   fetchUserProfileSuccess,
   fetchUserProfileError,
+  updateUserProfileRequest,
+  updateUserProfileSuccess,
 } from './profile'

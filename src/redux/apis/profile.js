@@ -4,6 +4,8 @@ import {
   fetchUserProfileSuccess,
   fetchUserProfileError,
   showToastTimer,
+  updateUserProfileRequest,
+  updateUserProfileSuccess,
 } from '../actions'
 
 export const getUserProfile = () => async (dispatch, getState) => {
@@ -21,5 +23,29 @@ export const getUserProfile = () => async (dispatch, getState) => {
   } catch (error) {
     dispatch(showToastTimer('Error while fetching user profile, try again!', 'error'))
     dispatch(fetchUserProfileError(error))
+  }
+}
+
+export const updateUserProfile = (updatedProfileData) => async (dispatch, getState) => {
+  dispatch(updateUserProfileRequest())
+  const currentState = getState()
+  const { accessToken } = currentState.userLogin.userInfo
+  try {
+    const response = await axios.put(
+      '/participant/management/profile',
+      {
+        ...updatedProfileData,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    )
+    const actualData = response.data
+    dispatch(updateUserProfileSuccess(actualData))
+    dispatch(showToastTimer('Succesfully updated profile', 'success'))
+  } catch (error) {
+    dispatch(showToastTimer('Error while updating user profile, try again!', 'error'))
   }
 }

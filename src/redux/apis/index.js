@@ -6,4 +6,4 @@ export { completeProfile, setNewPassword } from './authManagement'
 // All API's for newsfeed panel
 export { getAllNewsfeed } from './newsfeed'
 // All API's for user profile and it's associated operations
-export { getUserProfile } from './profile'
+export { getUserProfile, updateUserProfile } from './profile'
