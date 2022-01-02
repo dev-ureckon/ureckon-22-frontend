@@ -111,3 +111,21 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
     )
   }
 }
+
+// API for unregisering from a particular event (can only be performed from the team leader)
+// Takes the registration id of that particular event as argument
+export const unregisterFromEvent = (regId) => async (dispatch, getState) => {
+  const currentState = getState()
+  const { accessToken } = currentState.userLogin.userInfo
+  try {
+    const response = await axios.delete(`/events/${regId}/unregister`, {
+      headers: {
+        Authorization: accessToken,
+      },
+    })
+    const { msg } = response.data
+    dispatch(showToastTimer(msg, 'success'))
+  } catch (error) {
+    dispatch(showToastTimer('Error while unregistering from event, try again!', 'error'))
+  }
+}
