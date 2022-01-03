@@ -8,10 +8,10 @@ import line1 from '../../assets/SVGs/Union.svg'
 import { Link } from 'react-router-dom'
 
 function changeBackground(e) {
-  e.target.style.background = '#171717' ;
+  e.target.style.background = '#171717'
 }
 function changeBackground2(e) {
-  e.target.style.background = '#222222' ;
+  e.target.style.background = '#222222'
 }
 
 function About() {
@@ -53,31 +53,31 @@ function About() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item lg={6} md={6} sm={12} className='buildingcontainer'>
+        <Grid item lg={6} md={6} sm={12} className="buildingcontainer">
           <div>
-            <img className='uembuilding' src={uemk} alt="UEM building" />
+            <img className="uembuilding" src={uemk} alt="UEM building" />
           </div>
         </Grid>
       </Grid>
       <Grid paddingTop={'50px'} paddingBottom={'30px'}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Link to="/contact" style={{ textDecoration: 'none' }}>
-          <Button
-            className="contactbutton"
-            variant="contained"
-            onMouseOver={changeBackground}
-            onMouseOut={changeBackground2}
-            style={{
-              borderRadius: '5px',
-              backgroundColor: '#222222',
-              width: '228px',
-              height: '49px',
-              color: 'white',
-            }}
-          >
-            Contact Us
-          </Button>
-        </Link>  
+          <Link to="/contact" style={{ textDecoration: 'none' }}>
+            <Button
+              className="contactbutton"
+              variant="contained"
+              onMouseOver={changeBackground}
+              onMouseOut={changeBackground2}
+              style={{
+                borderRadius: '5px',
+                backgroundColor: '#222222',
+                width: '228px',
+                height: '49px',
+                color: 'white',
+              }}
+            >
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </Grid>
     </Container>
