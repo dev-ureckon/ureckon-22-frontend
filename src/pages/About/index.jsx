@@ -1,7 +1,6 @@
 import React from 'react'
-import { Container, containerClasses, Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import './about.css'
-import './about.js'
 import uemk from '../../assets/IMGs/uemk_image.png'
 import Button from '@mui/material/Button'
 import line1 from '../../assets/SVGs/Union.svg'
