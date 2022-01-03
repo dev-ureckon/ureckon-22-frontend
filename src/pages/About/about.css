@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Blanka';
+  src: url('../../assets/FONTs/Blanka-Regular.otf') format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500&display=swap');
+
+.whitetext {
+  color: white;
+  line-height: 23px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+}
+.blankaa {
+  font-family: 'Blanka', sans-serif;
+  color: white;
+  text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
+  line-height: 3em;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+}
+.contactbutton {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+}
+.underlines {
+  position: relative;
+  bottom: -9px;
+  left: -155px;
+}
+.uembuilding{
+    padding: 10px;
+    border: 3px solid;
+    border-radius: 8px;
+    border-color: #43c9ed;
+}
+.buildingcontainer{
+  align-self: center;
+  justify-content: center;
+}
+@media (max-width: 1063px){
+    .underlines{
+        display: none;
+    }
+    .uembuilding{
+      height: 30vw;
+      width: auto;
+    }
+}
+@media (max-width: 899px){
+  .uembuilding{
+    height: 72vw;
+    width: auto;
+  }
+}

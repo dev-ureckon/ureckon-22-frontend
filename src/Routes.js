@@ -7,6 +7,7 @@ import Login from './pages/auth/Login/index.jsx'
 import ForgotPassword from './pages/auth/ForgotPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
+import About from './pages/About/index.jsx'
 import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
 import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
@@ -70,6 +71,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
           />
 
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </>
