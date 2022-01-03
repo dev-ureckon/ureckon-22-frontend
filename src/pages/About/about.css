@@ -38,8 +38,22 @@
     border-radius: 8px;
     border-color: #43c9ed;
 }
-@media (max-width: 490px){
+.buildingcontainer{
+  align-self: center;
+  justify-content: center;
+}
+@media (max-width: 1063px){
     .underlines{
         display: none;
     }
+    .uembuilding{
+      height: 30vw;
+      width: auto;
+    }
+}
+@media (max-width: 899px){
+  .uembuilding{
+    height: 72vw;
+    width: auto;
+  }
 }

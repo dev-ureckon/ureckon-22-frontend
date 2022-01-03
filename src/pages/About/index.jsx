@@ -17,8 +17,8 @@ function changeBackground2(e) {
 function About() {
   return (
     <Container>
-      <Grid container spacing={10}>
-        <Grid item lg={6} md={12} sm={12}>
+      <Grid container spacing={12}>
+        <Grid item lg={6} md={6} sm={12}>
           <Grid container>
             <Grid lg={12}>
               <div className="blankaa">
@@ -53,7 +53,7 @@ function About() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item marginTop={'28px'}>
+        <Grid item lg={6} md={6} sm={12} className='buildingcontainer'>
           <div>
             <img className='uembuilding' src={uemk} alt="UEM building" />
           </div>
