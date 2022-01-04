@@ -4,7 +4,6 @@ export const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
   },
   submitButton: {
-    
     margin: '3rem auto',
     fontFamily: 'ibm-pxel-sans, sans-serif',
     textTransform: 'uppercase',
@@ -17,10 +16,9 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: '#222222',
     width: '228px',
     height: '49px',
-    color: 'white'
+    color: 'white',
   },
   submitButtonLogin: {
-    
     margin: '1rem auto',
     fontFamily: 'ibm-pxel-sans, sans-serif',
     textTransform: 'uppercase',
@@ -33,7 +31,7 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: '#222222',
     width: '228px',
     height: '49px',
-    color: 'white'
+    color: 'white',
   },
   socialAuth: {},
 }))
