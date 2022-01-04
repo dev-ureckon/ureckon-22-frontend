@@ -248,28 +248,29 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
           </Grid>
           {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
           {mainSponsors.length && (
-            <Grid
-              container
-              direction="row"
-              justifyContent="space-around"
-              sx={{ paddingX: 31 }}
-              flexWrap="nowrap"
-              alignItems={{}}
+            <div
+              style={{
+                overflowX: 'auto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexWrap: 'nowrap',
+                margin: '0 auto',
+              }}
             >
-              <Grid item alignSelf="center">
-                <div className="Sponsor">Partnered By</div>
-              </Grid>
+              <div className="Sponsor" style={{ marginRight: '3rem' }}>
+                Partnered By
+              </div>
               {mainSponsors.map((aMainSponsor) => (
-                <Grid item className="headimgcontain">
-                  <img
-                    src={aMainSponsor.sponsorLogo}
-                    height={100}
-                    width={100}
-                    alt="UEM"
-                  />
-                </Grid>
+                <img
+                  src={aMainSponsor.sponsorLogo}
+                  height={100}
+                  width={100}
+                  style={{ margin: '0 1.5rem' }}
+                  alt="UEM"
+                />
               ))}
-            </Grid>
+            </div>
           )}
           {/* ------------------------------------End Main Sponser Icons----------------------------------------------------- */}
         </Grid>
