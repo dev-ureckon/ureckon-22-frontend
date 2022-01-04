@@ -14,9 +14,8 @@ export { showToast, clearToast, showToastTimer } from './toast'
 
 // All actions for user profile operations
 export {
-  fetchUserProfileRequest,
+  userProfileRequest,
   fetchUserProfileSuccess,
   fetchUserProfileError,
-  updateUserProfileRequest,
   updateUserProfileSuccess,
 } from './profile'

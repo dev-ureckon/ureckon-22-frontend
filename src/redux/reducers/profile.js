@@ -1,8 +1,7 @@
 import {
-  FETCH_USER_PROFILE_REQUEST,
+  USER_PROFILE_REQUEST,
   FETCH_USER_PROFILE_SUCCESS,
   FETCH_USER_PROFILE_ERROR,
-  UPDATE_USER_PROFILE_REQUEST,
   UPDATE_USER_PROFILE_SUCCESS,
 } from '../constants'
 
@@ -14,10 +13,11 @@ const initialState = {
   registeredEvents: [],
 }
 
-const userProfileReducer = (state = initialState, action) => {
+const userProfileReducer = (state = initialState, action = {}) => {
   const { type, payload } = action
   switch (type) {
-    case FETCH_USER_PROFILE_REQUEST:
+    // Whenever any API is called for the user profile then this action gets executed
+    case USER_PROFILE_REQUEST:
       return {
         ...state,
         loading: true,
@@ -37,11 +37,6 @@ const userProfileReducer = (state = initialState, action) => {
         userInfo: null,
         authProvider: null,
         registeredEvents: [],
-      }
-    case UPDATE_USER_PROFILE_REQUEST:
-      return {
-        ...state,
-        loading: true,
       }
     case UPDATE_USER_PROFILE_SUCCESS:
       return {

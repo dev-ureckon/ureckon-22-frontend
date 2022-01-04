@@ -1,17 +1,16 @@
 import axios from '../../axios/axiosInstance'
 import {
-  fetchUserProfileRequest,
   fetchUserProfileSuccess,
   fetchUserProfileError,
   showToastTimer,
-  updateUserProfileRequest,
   updateUserProfileSuccess,
+  userProfileRequest,
 } from '../actions'
 
 const commonProfileUrl = `/participant/management/profile`
 
 export const getUserProfile = () => async (dispatch, getState) => {
-  dispatch(fetchUserProfileRequest())
+  dispatch(userProfileRequest())
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
   try {
@@ -29,7 +28,7 @@ export const getUserProfile = () => async (dispatch, getState) => {
 }
 
 export const updateUserProfile = (updatedProfileData) => async (dispatch, getState) => {
-  dispatch(updateUserProfileRequest())
+  dispatch(userProfileRequest())
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
   try {
@@ -77,19 +76,15 @@ export const updateUserPassword =
   }
 
 export const updateUserProfilePic = (file) => async (dispatch, getState) => {
-  dispatch(updateUserProfileRequest())
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
   try {
     const formData = new FormData()
     formData.append('file', file)
-    const { success, file_link } = await axios.post(
-      `${commonProfileUrl}/upload`,
-      formData,
-      {
-        headers: { Authorization: accessToken },
-      }
-    )
+    const { file_link } = await axios.post(`${commonProfileUrl}/upload`, formData, {
+      headers: { Authorization: accessToken },
+    })
+    dispatch(userProfileRequest())
     const { message, profilePic } = await axios.put(
       `${commonProfileUrl}/profilepic`,
       {
