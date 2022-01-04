@@ -23,7 +23,7 @@ function SocialIcons() {
             <div className="facebook" />
           </a>
         </Grid>
-        <Grid item  sx={{ my: 1}}>
+        <Grid item sx={{ my: 1 }}>
           <a
             href="https://www.instagram.com/ureckon.uemk/"
             target="_blank"
@@ -41,7 +41,7 @@ function SocialIcons() {
             <div className="linkedin" />
           </a>
         </Grid>
-        <Grid item sx={{ my: 1}}>
+        <Grid item sx={{ my: 1 }}>
           <a href="https://twitter.com/Ureckon_Uemk" target="_blank" rel="noreferrer">
             <div className="twitter" />
           </a>
