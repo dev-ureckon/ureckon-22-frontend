@@ -14,7 +14,7 @@ function SocialIcons() {
         xs={12}
         lg={1}
       >
-        <Grid item sx={{ marginBottom: '2rem' }}>
+        <Grid item>
           <a
             href="https://m.facebook.com/ureckon.uemk/?refid=52&__tn__=C-R"
             target="_blank"
@@ -23,7 +23,7 @@ function SocialIcons() {
             <div className="facebook" />
           </a>
         </Grid>
-        <Grid item sx={{ my: 1, marginBottom: '2rem' }}>
+        <Grid item  sx={{ my: 1}}>
           <a
             href="https://www.instagram.com/ureckon.uemk/"
             target="_blank"
@@ -32,7 +32,7 @@ function SocialIcons() {
             <div className="instagram" />
           </a>
         </Grid>
-        <Grid item sx={{ marginBottom: '2rem' }}>
+        <Grid item>
           <a
             href="https://www.linkedin.com/company/ureckon/"
             target="_blank"
@@ -41,12 +41,12 @@ function SocialIcons() {
             <div className="linkedin" />
           </a>
         </Grid>
-        <Grid item sx={{ my: 1, marginBottom: '2rem' }}>
+        <Grid item sx={{ my: 1}}>
           <a href="https://twitter.com/Ureckon_Uemk" target="_blank" rel="noreferrer">
             <div className="twitter" />
           </a>
         </Grid>
-        <Grid item sx={{ marginBottom: '2rem' }}>
+        <Grid item>
           <a
             href="https://www.youtube.com/c/UreckonUEMKolkata"
             target="_blank"

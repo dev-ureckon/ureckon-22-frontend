@@ -69,3 +69,20 @@
     margin: 15px;
   }
 }
+@media (min-width: 1200px) {
+  .facebook {
+    margin-bottom: 2rem;
+  }
+  .instagram {
+    margin-bottom: 2rem;
+  }
+  .linkedin {
+    margin-bottom: 2rem;
+  }
+  .twitter {
+    margin-bottom: 2rem;
+  }
+  .youtube {
+    margin-bottom: 2rem;
+  }
+}
