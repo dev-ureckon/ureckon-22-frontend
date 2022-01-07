@@ -2,7 +2,10 @@
   font-family: 'IBM Plex Sans', sans-serif;
   color: aliceblue;
   font-size: 36px;
-  margin-right: 3rem;
+  margin-left: 5rem;
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'center';
 }
 .menufont {
   font-family: 'Blanka', sans-serif;
