@@ -1,5 +1,6 @@
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import { useStyles } from '../auth.style.js'
+import { Link } from 'react-router-dom'
 
 import Input from '../../../components/input'
 import SocialAuth from '../../../components/SocialAuth/index.jsx'
@@ -117,6 +118,14 @@ const Register = () => {
               <SocialAuth />
             </Grid>
           </Grid>
+        </Typography>
+        <Typography color={'primary'} variant="h6" align="center" className="authFont">
+          Already Have an account?{' '}
+          <Link to="/login">
+            <b style={{ color: '#fff' }} className="authFont">
+              Login !
+            </b>
+          </Link>
         </Typography>
       </Container>
     </div>
