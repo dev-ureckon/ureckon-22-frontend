@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     marginLeft: '5rem',
     marginBottom: '1rem',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   SponsorImg: {
     overflowX: 'auto',

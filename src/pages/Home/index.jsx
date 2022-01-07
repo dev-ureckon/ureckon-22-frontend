@@ -64,11 +64,11 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               open={open}
               onClose={handleClose}
               className={classes.modal}
-            // closeAfterTransition
-            // BackdropComponent={Backdrop}
-            // BackdropProps={{
-            //   timeout: 500,
-            // }}
+              // closeAfterTransition
+              // BackdropComponent={Backdrop}
+              // BackdropProps={{
+              //   timeout: 500,
+              // }}
             >
               <News open={open} handleClose={handleClose} />
             </Modal>
@@ -248,14 +248,10 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
           </Grid>
 
-          <div className={classes.Sponsor} >
-            Partnered By
-          </div>
+          <div className={classes.Sponsor}>Partnered By</div>
           {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
           {mainSponsors.length && (
-            <div
-              className={classes.SponsorImg}
-            >
+            <div className={classes.SponsorImg}>
               {mainSponsors.map((aMainSponsor) => (
                 <img
                   src={aMainSponsor.sponsorLogo}
