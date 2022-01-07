@@ -39,28 +39,7 @@
   .menuwithsocial {
     padding-top: 45px;
   }
-  .headimage1 {
-    width: 14vh;
-    height: auto;
-  }
-  .headimage2 {
-    width: 35vh;
-    height: auto;
-  }
-  .headimage3 {
-    width: 10vh;
-    height: auto;
-  }
-
-  .Sponsor {
-    font-size: 18px;
-    width: 125px;
-  }
   .headimgcontain {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .headimgcontain2 {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -70,28 +49,9 @@
   .menupad2 {
     padding-top: 0px;
   }
-  .headcontainer {
-    padding-top: 25px;
-  }
 }
 @media (min-width: 361px) and (max-width: 1200px) {
-  .headimage1 {
-    width: 14vh;
-    height: auto;
-  }
-  .headimage2 {
-    width: 35vh;
-    height: auto;
-  }
-  .headimage3 {
-    width: 10vh;
-    height: auto;
-  }
   .headimgcontain {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .headimgcontain2 {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -101,91 +61,4 @@
     padding-left: 0px;
   }
 }
-@media (min-width: 580px) and (max-width: 930px) {
-  .Sponsor {
-    width: 235px;
-  }
-}
-@media (min-width: 361px) and (max-width: 579px) {
-  .Sponsor {
-    font-size: 24px;
-    width: 150px;
-  }
-}
-@media (max-width: 1200px) {
-  .socialicons {
-    padding-top: 45px;
-    padding-bottom: 45px;
-    padding-right: 20px;
-  }
-  .test0 {
-    display: none;
-  }
-  .test1 {
-    display: none;
-  }
-  .test {
-    display: none;
-  }
-  .test2 {
-    display: none;
-  }
-  .test3 {
-    display: none;
-  }
-  .test4 {
-    display: none;
-  }
-  .test5 {
-    display: none;
-  }
-  .test6 {
-    display: none;
-  }
-}
-.test0 {
-  position: relative;
-  bottom: 82px;
-}
-.test1 {
-  position: relative;
-  bottom: 82px;
-  left: 50px;
-}
-.test2 {
-  position: relative;
-  bottom: 82px;
-  right: 42px;
-}
-.test3 {
-  position: relative;
-  bottom: 82px;
-  left: 25px;
-}
-.test4 {
-  position: relative;
-  bottom: 82px;
-  right: 38px;
-}
-.test5 {
-  position: relative;
-  bottom: 82px;
-  right: 50px;
-}
-.test6 {
-  position: relative;
-  bottom: 82px;
-  right: 30px;
-}
 
-.test7 {
-  position: relative;
-  bottom: 82px;
-  left: 80px;
-}
-
-.test8 {
-  position: relative;
-  bottom: 82px;
-  right: 20px;
-}

@@ -4,17 +4,18 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   submitButton: {
     margin: '5rem auto',
-    fontFamily: 'ibm-pxel-sans',
+    fontFamily: 'ibm-plex-sans, sans-serif',
     textTransform: 'uppercase',
-    width: '181px',
-    height: '50px',
     backgroundSize: 'cover',
-    border: 0,
     outline: 'none',
-    color: '#fff',
     fontStyle: 'normal',
     fontWeight: 500,
-    fontSize: '20px',
+    fontSize: '16px',
+    borderRadius: '5px',
+    backgroundColor: '#222222',
+    width: '228px',
+    height: '49px',
+    color: 'white',
   },
 }))
 
