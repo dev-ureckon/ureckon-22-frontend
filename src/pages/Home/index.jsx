@@ -112,7 +112,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                   justifyContent={{ lg: 'flex-end', xs: 'center' }}
                   lg={6}
                   xs={12}
-                  order={{ lg: 2, xs: 4 }}
+                  order={{ lg: 2, xs: 5 }}
                 >
                   <div onClick={moreFunction}>
                     <Link to="" className="menulink">
