@@ -252,7 +252,6 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               style={{
                 overflowX: 'auto',
                 display: 'flex',
-                justifyContent: 'center',
                 alignItems: 'center',
                 flexWrap: 'nowrap',
                 margin: '0 auto',
