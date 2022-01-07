@@ -53,7 +53,7 @@ function Contact() {
           handleFormSubmit(e)
         }}
       >
-        <Grid container spacing={{lg:10, xs:4}}>
+        <Grid container spacing={{ lg: 10, xs: 4 }}>
           <Grid item lg={6} md={12} sm={12}>
             <Input
               width="100%"

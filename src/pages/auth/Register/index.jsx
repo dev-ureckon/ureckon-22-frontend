@@ -29,7 +29,7 @@ const Register = () => {
             handleSubmit(e)
           }}
         >
-          <Grid container spacing={{xs:8, sm: 13, md:12, lg:10}}>
+          <Grid container spacing={{ xs: 8, sm: 13, md: 12, lg: 10 }}>
             <br />
             <br />
             <Grid item lg={6} md={6} sm={12} xs={12}>
