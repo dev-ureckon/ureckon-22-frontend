@@ -8,10 +8,8 @@ export const useStyles = makeStyles((theme) => ({
     fontFamily: 'IBM Plex Sans, sans- serif',
     color: 'aliceblue',
     fontSize: '36px',
-    marginLeft: '5rem',
+    marginLeft: '6rem',
     marginBottom: '1rem',
-    display: 'flex',
-    justifyContent: 'center',
   },
   SponsorImg: {
     overflowX: 'auto',
