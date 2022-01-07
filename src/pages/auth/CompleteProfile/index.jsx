@@ -22,7 +22,7 @@ const CompleteProfile = () => {
             handleSubmit(e)
           }}
         >
-          <Grid container spacing={{xs:5, sm:1, md:6, lg:10}}>
+          <Grid container spacing={{ xs: 5, sm: 1, md: 6, lg: 10 }}>
             <br />
             <br />
             <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -72,7 +72,7 @@ const CompleteProfile = () => {
             </Grid>
           </Grid>
           <br />
-          <Grid container justifyContent={'center'} pt={{xs:2, lg:0, md:0, sm:0}}>
+          <Grid container justifyContent={'center'} pt={{ xs: 2, lg: 0, md: 0, sm: 0 }}>
             <Grid item sm={12} xs={12} md={6}>
               <Dropdown
                 width="100%"

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#222222',
     width: '228px',
     height: '49px',
-    color: 'white'
+    color: 'white',
   },
 }))
 
