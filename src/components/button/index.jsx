@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   submitButton: {
     margin: '5rem auto',
-    fontFamily: 'ibm-pxel-sans, sans-serif',
+    fontFamily: 'ibm-plex-sans, sans-serif',
     textTransform: 'uppercase',
     backgroundSize: 'cover',
     outline: 'none',
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#222222',
     width: '228px',
     height: '49px',
-    color: 'white',
+    color: 'white'
   },
 }))
 

@@ -28,10 +28,10 @@ const Register = () => {
             handleSubmit(e)
           }}
         >
-          <Grid container spacing={10}>
+          <Grid container spacing={{xs:8, sm: 13, md:12, lg:10}}>
             <br />
             <br />
-            <Grid item lg={6} md={12}>
+            <Grid item lg={6} md={6} sm={12} xs={12}>
               <Input
                 width="100%"
                 label="Name"
@@ -60,7 +60,7 @@ const Register = () => {
             </Grid>
             <br />
             <br />
-            <Grid item lg={6} md={12}>
+            <Grid item sm={12} md={6} lg={6} xs={12}>
               <Input
                 width="100%"
                 label="Email"
@@ -72,7 +72,7 @@ const Register = () => {
               />
               <Input
                 width="100%"
-                label="School/College name"
+                label="School/College"
                 placeholder="e.g: UEM"
                 name="collegeName"
                 value={formData.collegeName}
@@ -88,7 +88,7 @@ const Register = () => {
               />
             </Grid>
           </Grid>
-          <Typography align="center">
+          <Typography align="center" pt={5}>
             <Button
               type="submit"
               variant="text"
