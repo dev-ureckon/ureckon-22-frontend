@@ -24,9 +24,13 @@
   font-family: 'IBM Plex Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 22px;
+  margin: 5rem auto;
+  text-transform: uppercase;
+  background-size: cover;
+  outline: none;
 }
+
 .underlines {
   position: relative;
   bottom: -9px;

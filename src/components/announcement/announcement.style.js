@@ -34,7 +34,7 @@ export const useStyles = makeStyles((theme) => ({
     height: '43px',
     background: '#222222',
     borderRadius: '5px',
-    fontFamily: 'IBM Plex Sans',
+    fontFamily: 'ibm-plex-sans, sans-serif',
     fontstyle: 'normal',
     fontWeight: '500',
     fontSize: '20px',

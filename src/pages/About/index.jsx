@@ -7,7 +7,7 @@ import line1 from '../../assets/SVGs/Union.svg'
 import { Link } from 'react-router-dom'
 
 function changeBackground(e) {
-  e.target.style.background = '#171717'
+  e.target.style.background = '#022026'
 }
 function changeBackground2(e) {
   e.target.style.background = '#222222'
