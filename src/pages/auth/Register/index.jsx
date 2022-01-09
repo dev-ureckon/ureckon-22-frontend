@@ -121,7 +121,7 @@ const Register = () => {
         </Typography>
         <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Already Have an account?{' '}
-          <Link to="/login">
+          <Link to="/login" style={{ color: '#FFF' }}>
             <b style={{ color: '#fff' }} className="authFont">
               Login !
             </b>
