@@ -40,14 +40,13 @@ export const ProfileLogic = () => {
         }
     }, [error, dispatch])
 
-
     // fetch user profile details
     useEffect(() => {
         dispatch(getUserProfile())
     }, [dispatch])
 
     const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
-    console.log(fetchedUserDetails);
+
     useEffect(() => {
         if (fetchedUserDetails) {
             setFormData({
@@ -61,13 +60,6 @@ export const ProfileLogic = () => {
         }
     }, [fetchedUserDetails])
 
-    // show error message
-    useEffect(() => {
-        if (error) {
-            // swal('Error', error, 'error')
-            dispatch(showToastTimer(error, 'error'))
-        }
-    }, [error, dispatch])
 
     const handleChange = (e) => {
         setFormData((f) => ({
