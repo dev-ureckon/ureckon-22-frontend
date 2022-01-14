@@ -3,6 +3,7 @@ import { Button, Container, Grid, LinearProgress, Typography } from '@mui/materi
 import Input from '../../components/input'
 import { ProfileLogic } from './profile.js'
 
+// import profilePicBg from "../../assets/SVGs/profilePicBg.svg"
 import './profile.css'
 import Dropdown from '../../components/Dropdown'
 import SubmitButton from '../../components/SubmitButton'
@@ -17,6 +18,23 @@ const Profile = () => {
                 {loading && (
                     <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
                 )}
+
+                <Grid container justifyContent={'center'} alignItems={'center'}>
+                    <Grid item lg={3} sm={12}>
+                        <img className='profilePicBg' src={formData.profilePic} width={'160'} alt="profile pic bg" />
+                    </Grid>
+                    <Grid item lg={4} sm={12}>
+                        <Typography className='profileName' variant='h3' pt={5}>
+                            {formData.name}
+                        </Typography>
+                        <Typography variant='subtitle' className='ureckonId' pt={5}>
+                            <b>Ureckon ID</b>: 43776898
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                <br />
+                <br />
 
                 <form
                     style={{ paddingLeft: '26px' }}

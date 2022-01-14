@@ -18,6 +18,7 @@ export const ProfileLogic = () => {
         password: '',
         collegeName: '',
         gender: '',
+        profilePic: ''
     })
 
     //getting state from reducer
@@ -46,7 +47,7 @@ export const ProfileLogic = () => {
     }, [dispatch])
 
     const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
-
+    console.log(fetchedUserDetails);
     useEffect(() => {
         if (fetchedUserDetails) {
             setFormData({
@@ -54,7 +55,8 @@ export const ProfileLogic = () => {
                 email: fetchedUserDetails.email,
                 collegeName: fetchedUserDetails.college,
                 gender: fetchedUserDetails.gender,
-                number: fetchedUserDetails.phone
+                number: fetchedUserDetails.phone,
+                profilePic: fetchedUserDetails.profilePic
             })
         }
     }, [fetchedUserDetails])

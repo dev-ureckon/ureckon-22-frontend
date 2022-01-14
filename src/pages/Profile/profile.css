@@ -9,6 +9,23 @@
   font-weight: 500;
 }
 
+.profilePicBg {
+  background-image: url(../../assets/SVGs/profilePicBg.svg);
+  background-size: cover;
+}
+
+.profileName {
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.ureckonId {
+  color: white;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
 .submitButton {
   margin: '5rem auto';
   font-family: 'ibm-plex-sans, sans-serif';
