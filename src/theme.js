@@ -15,11 +15,6 @@ const theme = createTheme({
       main: '#032e37',
     },
   },
-  // Typpography for MUI theme
-  typography: {
-    // global font config
-    fontFamily: ' ',
-  },
   props: {
     MuiTooltip: {
       arrow: true,
