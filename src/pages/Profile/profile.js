@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router'
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions'
-import { updateUserProfile } from '../../redux/apis'
+import { getUserProfile, updateUserProfile } from '../../redux/apis'
 // import swal from 'sweetalert'
 
 export const ProfileLogic = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -37,6 +38,27 @@ export const ProfileLogic = () => {
             dispatch(showToastTimer(error, 'error'))
         }
     }, [error, dispatch])
+
+
+    // fetch user profile details
+    useEffect(() => {
+        dispatch(getUserProfile())
+    }, [dispatch])
+
+    const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
+
+    useEffect(() => {
+        if (fetchedUserDetails) {
+            setFormData({
+                name: fetchedUserDetails.name,
+                email: fetchedUserDetails.email,
+                collegeName: fetchedUserDetails.college,
+                gender: fetchedUserDetails.gender,
+                number: fetchedUserDetails.phone
+            })
+        }
+    }, [fetchedUserDetails])
+
 
     const handleChange = (e) => {
         setFormData((f) => ({
