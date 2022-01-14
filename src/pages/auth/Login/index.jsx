@@ -48,7 +48,7 @@ const Login = () => {
           <Grid container>
             <Grid item sm={7}></Grid>
             <Grid item sm={5}>
-              <Link to={'/forgot-password'}>
+              <Link to={'/forgot-password'} style={{ color: '#FFF' }}>
                 <Typography
                   style={{ paddingLeft: '11px' }}
                   align="right"
@@ -91,7 +91,7 @@ const Login = () => {
         </Typography>
         <Typography color={'primary'} variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
-          <Link to="/register">
+          <Link to="/register" style={{ color: '#FFF' }}>
             <b style={{ color: '#fff' }} className="authFont">
               Register Here !
             </b>

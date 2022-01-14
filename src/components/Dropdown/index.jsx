@@ -34,7 +34,7 @@ const Dropdown = (props) => {
           fontWeight: 400,
           fontSize: '1.5625rem',
           paddingLeft: '7px',
-          lineHeight: '1rem',
+          lineHeight: '2rem',
           letterSpacing: '0.1em',
           textShadow: '-1px 1px 5px #0DB3B3, 1px 1px 5px #0DB3B3',
           textTransform: 'uppercase',

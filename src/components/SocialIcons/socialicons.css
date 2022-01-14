@@ -54,18 +54,35 @@
 
 @media (max-width: 1200px) {
   .facebook {
-    margin: 5px;
+    margin: 15px;
   }
   .instagram {
-    margin: 5px;
+    margin: 15px;
   }
   .linkedin {
-    margin: 5px;
+    margin: 15px;
   }
   .twitter {
-    margin: 5px;
+    margin: 15px;
   }
   .youtube {
-    margin: 5px;
+    margin: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .facebook {
+    margin-bottom: 2rem;
+  }
+  .instagram {
+    margin-bottom: 2rem;
+  }
+  .linkedin {
+    margin-bottom: 2rem;
+  }
+  .twitter {
+    margin-bottom: 2rem;
+  }
+  .youtube {
+    margin-bottom: 2rem;
   }
 }

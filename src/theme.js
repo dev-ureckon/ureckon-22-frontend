@@ -2,6 +2,9 @@ import { createTheme, responsiveFontSizes } from '@mui/material'
 
 // For custon theme in MUI
 const theme = createTheme({
+  typography: {
+    fontFamily: "'IBM Plex Sans', sans-serif",
+  },
   // color pallete for MUI theme
   palette: {
     primary: {

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Transition } from 'react-transition-group'
 import { Modal, Grid } from '@mui/material'
 import './fonts.css'
+import './home.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
@@ -246,30 +247,21 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             <SocialIcons />
             {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
           </Grid>
+
+          <div className={classes.Sponsor}>Partnered By</div>
           {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
           {mainSponsors.length && (
-            <Grid
-              container
-              direction="row"
-              justifyContent="space-around"
-              sx={{ paddingX: 31 }}
-              flexWrap="nowrap"
-              alignItems={{}}
-            >
-              <Grid item alignSelf="center">
-                <div className="Sponsor">Partnered By</div>
-              </Grid>
+            <div className={classes.SponsorImg}>
               {mainSponsors.map((aMainSponsor) => (
-                <Grid item className="headimgcontain">
-                  <img
-                    src={aMainSponsor.sponsorLogo}
-                    height={100}
-                    width={100}
-                    alt="UEM"
-                  />
-                </Grid>
+                <img
+                  src={aMainSponsor.sponsorLogo}
+                  height={100}
+                  width={100}
+                  style={{ margin: '0 1.5rem' }}
+                  alt="UEM"
+                />
               ))}
-            </Grid>
+            </div>
           )}
           {/* ------------------------------------End Main Sponser Icons----------------------------------------------------- */}
         </Grid>
