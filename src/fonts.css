@@ -3,3 +3,8 @@
   src: url('./assets/FONTs/Blanka-Regular.otf') format('opentype');
 }
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500&display=swap');
+
+html,
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
