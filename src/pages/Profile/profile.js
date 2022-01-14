@@ -59,14 +59,6 @@ export const ProfileLogic = () => {
         }
     }, [fetchedUserDetails])
 
-
-    const handleChange = (e) => {
-        setFormData((f) => ({
-            ...f,
-            [e.target.name]: e.target.value,
-        }))
-    }
-
     // show error message
     useEffect(() => {
         if (error) {
