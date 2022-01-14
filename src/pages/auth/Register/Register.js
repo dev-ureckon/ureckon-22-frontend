@@ -35,7 +35,7 @@ export const RegisterLogic = () => {
       // swal('Error', error, 'error')
       dispatch(showToastTimer(error, 'error'))
     }
-  }, [error])
+  }, [error, dispatch])
 
   const handleChange = (e) => {
     setFormData((f) => ({

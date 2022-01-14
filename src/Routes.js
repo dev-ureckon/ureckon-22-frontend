@@ -8,6 +8,8 @@ import ForgotPassword from './pages/auth/ForgotPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 import About from './pages/About/index.jsx'
+import Profile from './pages/Profile/index.jsx'
+
 import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
 import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
@@ -65,7 +67,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/profile"
             element={
               <AuthProtectedRoute>
-                <h2>Profile component here</h2>
+                <Profile />
               </AuthProtectedRoute>
             }
           />
