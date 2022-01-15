@@ -13,7 +13,7 @@ const Profile = () => {
   // const isMobile = window.innerWidth <= 768
   const { handleChange, formData, loading, handleSubmit, handleDisbandTeam } =
     ProfileLogic()
-  const { registeredEvents } = useSelector((state) => state.userProfile)
+  const { registeredEvents, authProvider } = useSelector((state) => state.userProfile)
 
   return (
     <>
@@ -77,15 +77,17 @@ const Profile = () => {
                   value={formData.number}
                   onChange={(e) => handleChange(e)}
                 />
-                <Input
-                  width="100%"
-                  label="Password"
-                  placeholder="*********"
-                  name="password"
-                  type="password"
-                  value={formData.password}
-                  onChange={(e) => handleChange(e)}
-                />
+                {authProvider && (
+                  <Input
+                    width="100%"
+                    label="Password"
+                    placeholder="*********"
+                    name="password"
+                    type="password"
+                    value={formData.password}
+                    onChange={(e) => handleChange(e)}
+                  />
+                )}
               </Grid>
               <br />
               <br />
