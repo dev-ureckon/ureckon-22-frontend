@@ -30,7 +30,7 @@ const EventCards = ({ event }) => {
           </Button>
           <Button
             type="submit"
-            variant="text"
+            variant="outlined"
             color="secondary"
             className={classes.disbandButton}
           >

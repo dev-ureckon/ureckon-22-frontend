@@ -5,14 +5,13 @@ export const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     width: '181px',
     height: '50px',
-    backgroundSize: 'cover',
-    backgroundColor: 'red',
+    border: '2.6px solid #ED1B24',
     outline: 'none',
     color: '#fff',
     fontSize: 'normal',
     fontWeight: 500,
     '&:hover': {
-      backgroundColor: 'red',
+      backgroundColor: '#ED1B24',
     },
     '@media (max-width: 550px)': {
       marginTop: '2rem',
