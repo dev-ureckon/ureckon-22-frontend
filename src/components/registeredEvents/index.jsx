@@ -1,10 +1,8 @@
-import { useSelector } from 'react-redux'
 import line1 from '../../assets/SVGs/Union.svg'
 import './registeredEvents.styles.css'
 import EventCards from './eventCards/index.jsx'
 
-const RegisteredEvents = ({ handleDisbandTeam }) => {
-  const { registeredEvents } = useSelector((state) => state.userProfile)
+const RegisteredEvents = ({ handleDisbandTeam, registeredEvents }) => {
   return (
     <>
       <div className="container">

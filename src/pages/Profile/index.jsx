@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import RegisteredEvents from '../../components/registeredEvents/index.jsx'
 import Input from '../../components/input'
@@ -12,6 +13,7 @@ const Profile = () => {
   // const isMobile = window.innerWidth <= 768
   const { handleChange, formData, loading, handleSubmit, handleDisbandTeam } =
     ProfileLogic()
+  const { registeredEvents } = useSelector((state) => state.userProfile)
 
   return (
     <>
@@ -127,7 +129,12 @@ const Profile = () => {
               </Button>
             </Typography>
           </form>
-          <RegisteredEvents handleDisbandTeam={handleDisbandTeam} />
+          {registeredEvents.length > 0 && (
+            <RegisteredEvents
+              handleDisbandTeam={handleDisbandTeam}
+              registeredEvents={registeredEvents}
+            />
+          )}
         </Container>
       </div>
     </>
