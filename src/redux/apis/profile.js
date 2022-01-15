@@ -114,7 +114,7 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
 export const unregisterFromEvent = (regId) => async (dispatch, getState) => {
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
-  console.log(accessToken);
+  console.log(accessToken)
   try {
     const response = await axios.delete(`/events/${regId}/unregister`, {
       headers: {

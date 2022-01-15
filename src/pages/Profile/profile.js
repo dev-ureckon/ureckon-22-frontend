@@ -9,94 +9,89 @@ import { unregisterFromEvent } from '../../redux/apis/profile'
 // import swal from 'sweetalert'
 
 export const ProfileLogic = () => {
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        number: '',
-        password: '',
-        collegeName: '',
-        gender: '',
-        profilePic: '',
-    })
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    password: '',
+    collegeName: '',
+    gender: '',
+    profilePic: '',
+  })
 
-    //getting state from reducer
-    const { userInfo, error, loading } = useSelector((state) => state.userRegister)
+  //getting state from reducer
+  const { userInfo, error, loading } = useSelector((state) => state.userRegister)
 
-    // If user is already logged in Do not show this page
-    // or redirect to complete - profile page if not already registered with social auth
-    useEffect(() => {
-        if (userInfo) {
-            navigate('/profile')
-        }
-    }, [userInfo, navigate, loading])
-
-    // show error message
-    useEffect(() => {
-        if (error) {
-            // swal('Error', error, 'error')
-            dispatch(showToastTimer(error, 'error'))
-        }
-    }, [error, dispatch])
-
-    // fetch user profile details
-    useEffect(() => {
-        dispatch(getUserProfile())
-    }, [dispatch])
-
-    const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
-
-    useEffect(() => {
-        if (fetchedUserDetails) {
-            setFormData({
-                name: fetchedUserDetails.name,
-                email: fetchedUserDetails.email,
-                collegeName: fetchedUserDetails.college,
-                number: fetchedUserDetails.phone,
-                profilePic: fetchedUserDetails.profilePic,
-                gender:
-                    fetchedUserDetails.gender.charAt(0).toUpperCase() +
-                    fetchedUserDetails.gender.slice(1).toLowerCase(),
-            })
-        }
-    }, [fetchedUserDetails])
-
-    const handleChange = (e) => {
-        setFormData((f) => ({
-            ...f,
-            [e.target.name]: e.target.value,
-        }))
+  // If user is already logged in Do not show this page
+  // or redirect to complete - profile page if not already registered with social auth
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/profile')
     }
+  }, [userInfo, navigate, loading])
 
-    const handleSubmit = (e) => {
-        dispatch(
-            updateUserProfile({
-                name: formData.name,
-                college: formData.collegeName,
-                phone: formData.number,
-                gender: formData.gender,
-            })
-        )
+  // show error message
+  useEffect(() => {
+    if (error) {
+      // swal('Error', error, 'error')
+      dispatch(showToastTimer(error, 'error'))
     }
+  }, [error, dispatch])
 
+  // fetch user profile details
+  useEffect(() => {
+    dispatch(getUserProfile())
+  }, [dispatch])
 
+  const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
 
-    const handleDisbandTeam = (regId) => {
-        dispatch(
-            unregisterFromEvent(regId)
-        )
+  useEffect(() => {
+    if (fetchedUserDetails) {
+      setFormData({
+        name: fetchedUserDetails.name,
+        email: fetchedUserDetails.email,
+        collegeName: fetchedUserDetails.college,
+        number: fetchedUserDetails.phone,
+        profilePic: fetchedUserDetails.profilePic,
+        gender:
+          fetchedUserDetails.gender.charAt(0).toUpperCase() +
+          fetchedUserDetails.gender.slice(1).toLowerCase(),
+      })
     }
+  }, [fetchedUserDetails])
 
+  const handleChange = (e) => {
+    setFormData((f) => ({
+      ...f,
+      [e.target.name]: e.target.value,
+    }))
+  }
 
-    return {
-        handleChange,
-        formData,
-        error,
-        loading,
-        handleSubmit,
-        userInfo,
-        handleDisbandTeam
-    }
+  const handleSubmit = (e) => {
+    dispatch(
+      updateUserProfile({
+        name: formData.name,
+        college: formData.collegeName,
+        phone: formData.number,
+        gender: formData.gender,
+      })
+    )
+  }
+
+  const handleDisbandTeam = (regId) => {
+    dispatch(unregisterFromEvent(regId))
+  }
+
+  return {
+    handleChange,
+    formData,
+    error,
+    loading,
+    handleSubmit,
+    userInfo,
+    handleDisbandTeam,
+  }
 }
