@@ -77,7 +77,7 @@ const Profile = () => {
                   value={formData.number}
                   onChange={(e) => handleChange(e)}
                 />
-                {authProvider && (
+                {authProvider === 'password' && (
                   <Input
                     width="100%"
                     label="Password"
