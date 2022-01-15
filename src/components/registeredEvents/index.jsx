@@ -3,7 +3,7 @@ import line1 from '../../assets/SVGs/Union.svg'
 import './registeredEvents.styles.css'
 import EventCards from './eventCards/index.jsx'
 
-const RegisteredEvents = () => {
+const RegisteredEvents = ({ handleDisbandTeam }) => {
   const { registeredEvents } = useSelector((state) => state.userProfile)
   return (
     <>
@@ -16,7 +16,9 @@ const RegisteredEvents = () => {
         </div>
       </div>
       {registeredEvents &&
-        registeredEvents.map((event, key) => <EventCards event={event} />)}
+        registeredEvents.map((event, key) => (
+          <EventCards handleDisbandTeam={handleDisbandTeam} event={event} />
+        ))}
     </>
   )
 }

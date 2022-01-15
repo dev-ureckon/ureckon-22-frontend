@@ -10,7 +10,7 @@ import SubmitButton from '../../components/SubmitButton'
 
 const Profile = () => {
   // const isMobile = window.innerWidth <= 768
-  const { handleChange, formData, loading, handleSubmit } = ProfileLogic()
+  const { handleChange, formData, loading, handleSubmit, handleDisbandTeam } = ProfileLogic()
 
   return (
     <>
@@ -126,7 +126,7 @@ const Profile = () => {
               </Button>
             </Typography>
           </form>
-          <RegisteredEvents />
+          <RegisteredEvents handleDisbandTeam={handleDisbandTeam} />
         </Container>
       </div>
     </>

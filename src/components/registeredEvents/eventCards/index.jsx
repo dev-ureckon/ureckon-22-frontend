@@ -3,7 +3,7 @@ import './eventCards.style.css'
 import SubmitButton from '../../SubmitButton'
 import { useStyles } from './eventCards.style.js'
 
-const EventCards = ({ event }) => {
+const EventCards = ({ event, handleDisbandTeam }) => {
   const classes = useStyles()
 
   return (
@@ -33,6 +33,7 @@ const EventCards = ({ event }) => {
             variant="outlined"
             color="secondary"
             className={classes.disbandButton}
+            onClick={() => handleDisbandTeam(event._id)}
           >
             Disband team
           </Button>

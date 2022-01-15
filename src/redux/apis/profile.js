@@ -82,7 +82,9 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
     const formData = new FormData()
     formData.append('file', file)
     const { file_link } = await axios.post(`${commonProfileUrl}/upload`, formData, {
-      headers: { Authorization: accessToken },
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
     })
     dispatch(userProfileRequest())
     const { message, profilePic } = await axios.put(
@@ -112,10 +114,11 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
 export const unregisterFromEvent = (regId) => async (dispatch, getState) => {
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
+  console.log(accessToken);
   try {
     const response = await axios.delete(`/events/${regId}/unregister`, {
       headers: {
-        Authorization: accessToken,
+        Authorization: `Bearer ${accessToken}`,
       },
     })
     const { msg } = response.data
