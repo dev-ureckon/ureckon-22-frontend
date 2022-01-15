@@ -84,5 +84,6 @@ export const ProfileLogic = () => {
     error,
     loading,
     handleSubmit,
+    userInfo,
   }
 }
