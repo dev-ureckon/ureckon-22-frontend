@@ -100,6 +100,7 @@ const Profile = () => {
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleChange(e)}
+                  disabled={true}
                 />
                 <Input
                   width="100%"
