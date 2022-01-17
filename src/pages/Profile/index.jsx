@@ -4,7 +4,8 @@ import RegisteredEvents from '../../components/registeredEvents/index.jsx'
 import Input from '../../components/input'
 import { ProfileLogic } from './profile.js'
 
-// import profilePicBg from "../../assets/SVGs/profilePicBg.svg"
+import profilePicBg from '../../assets/SVGs/profilePicBg.svg'
+import editProfileImage from '../../assets/IMGs/edit-profile-image.png'
 import './profile.css'
 import Dropdown from '../../components/Dropdown'
 import SubmitButton from '../../components/SubmitButton'
@@ -25,12 +26,19 @@ const Profile = () => {
 
           <Grid container justifyContent={'center'} alignItems={'center'}>
             <Grid item lg={3} sm={12}>
-              <img
-                className="profilePicBg"
-                src={formData.profilePic}
-                width={'160'}
-                alt="profile pic bg"
-              />
+              <div style={{ position: 'relative' }}>
+                <img src={profilePicBg} alt="profile-pic-bg" className="profilePicBg" />
+                <img
+                  src={editProfileImage}
+                  alt="edit-profile"
+                  className="profilePic editProfilePic"
+                />
+                <img
+                  className="profilePic"
+                  src={formData.profilePic}
+                  alt="profile pic bg"
+                />
+              </div>
             </Grid>
             <Grid item lg={4} sm={12}>
               <Typography

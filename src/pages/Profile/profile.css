@@ -10,8 +10,32 @@
 }
 
 .profilePicBg {
-  background-image: url(../../assets/SVGs/profilePicBg.svg);
-  background-size: cover;
+  width: 68.5%;
+}
+
+.profilePic:hover.editProfilePic {
+  opacity: 1;
+}
+
+.profilePic {
+  width: 64%;
+  mask: url(../../assets/IMGs/profile-image-container.png) center/contain no-repeat;
+  position: absolute;
+  top: 8px;
+  left: 7px;
+}
+
+.editProfilePic {
+  width: 72%;
+  mask: url(../../assets/IMGs/profile-image-container.png) center/contain no-repeat;
+  position: absolute;
+  top: 7px;
+  left: -4px;
+  background-color: black;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.2s opacity ease;
+  cursor: pointer;
 }
 
 .profileName {
