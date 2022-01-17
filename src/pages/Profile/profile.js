@@ -3,12 +3,15 @@ import { useNavigate } from 'react-router'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
-import { userRegister, showToastTimer } from '../../../redux/actions'
+import { showToastTimer } from '../../redux/actions'
+import { getUserProfile, updateUserProfile } from '../../redux/apis'
+import { unregisterFromEvent } from '../../redux/apis/profile'
 // import swal from 'sweetalert'
 
-export const RegisterLogic = () => {
+export const ProfileLogic = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +19,7 @@ export const RegisterLogic = () => {
     password: '',
     collegeName: '',
     gender: '',
+    profilePic: '',
   })
 
   //getting state from reducer
@@ -37,6 +41,28 @@ export const RegisterLogic = () => {
     }
   }, [error, dispatch])
 
+  // fetch user profile details
+  useEffect(() => {
+    dispatch(getUserProfile())
+  }, [dispatch])
+
+  const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
+
+  useEffect(() => {
+    if (fetchedUserDetails) {
+      setFormData({
+        name: fetchedUserDetails.name,
+        email: fetchedUserDetails.email,
+        collegeName: fetchedUserDetails.college,
+        number: fetchedUserDetails.phone,
+        profilePic: fetchedUserDetails.profilePic,
+        gender:
+          fetchedUserDetails.gender.charAt(0).toUpperCase() +
+          fetchedUserDetails.gender.slice(1).toLowerCase(),
+      })
+    }
+  }, [fetchedUserDetails])
+
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
@@ -46,15 +72,17 @@ export const RegisterLogic = () => {
 
   const handleSubmit = (e) => {
     dispatch(
-      userRegister(
-        formData.email,
-        formData.password,
-        formData.name,
-        formData.collegeName,
-        formData.number,
-        formData.gender
-      )
+      updateUserProfile({
+        name: formData.name,
+        college: formData.collegeName,
+        phone: formData.number,
+        gender: formData.gender,
+      })
     )
+  }
+
+  const handleDisbandTeam = (regId) => {
+    dispatch(unregisterFromEvent(regId))
   }
 
   return {
@@ -63,5 +91,7 @@ export const RegisterLogic = () => {
     error,
     loading,
     handleSubmit,
+    userInfo,
+    handleDisbandTeam,
   }
 }

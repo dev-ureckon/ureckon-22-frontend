@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+.root {
+  min-height: '100vh';
+}
+
+.authFont {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+}
+
+.profilePicBg {
+  background-image: url(../../assets/SVGs/profilePicBg.svg);
+  background-size: cover;
+}
+
+.profileName {
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.ureckonId {
+  color: white;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.submitButton {
+  margin: '5rem auto';
+  font-family: 'ibm-plex-sans, sans-serif';
+  text-transform: 'uppercase';
+  width: '181px';
+  height: '50px';
+  background-size: 'cover';
+  border: 0;
+  outline: 'none';
+  color: '#fff';
+  font-size: 'normal';
+  font-weight: 500;
+  font-size: '16px';
+}
