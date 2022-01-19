@@ -5,6 +5,7 @@ import {
   showToastTimer,
   updateUserProfileSuccess,
   userProfileRequest,
+  
 } from '../actions'
 
 const commonProfileUrl = `/participant/management/profile`
@@ -121,8 +122,10 @@ export const unregisterFromEvent = (regId) => async (dispatch, getState) => {
         Authorization: `Bearer ${accessToken}`,
       },
     })
-    const { msg } = response.data
-    dispatch(showToastTimer(msg, 'success'))
+    //const { msg } = response.data
+    dispatch(showToastTimer(response.data.msg, 'success'))
+    //dispatch(userProfileRequest())
+    window.location.reload()
   } catch (error) {
     dispatch(showToastTimer('Error while unregistering from event, try again!', 'error'))
   }
