@@ -5,7 +5,6 @@ import {
   showToastTimer,
   updateUserProfileSuccess,
   userProfileRequest,
-  
 } from '../actions'
 
 const commonProfileUrl = `/participant/management/profile`
