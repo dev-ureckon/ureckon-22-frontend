@@ -87,10 +87,9 @@ export const ProfileLogic = () => {
 
   const handleEditProfilePic = (e) => {
     const image = e.target.files[0]
-    console.log(image);
+    console.log(image)
     dispatch(updateUserProfilePic(image))
   }
-
 
   return {
     handleChange,
@@ -99,6 +98,7 @@ export const ProfileLogic = () => {
     loading,
     handleSubmit,
     userInfo,
-    handleDisbandTeam, handleEditProfilePic
+    handleDisbandTeam,
+    handleEditProfilePic,
   }
 }
