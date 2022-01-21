@@ -99,6 +99,6 @@ export const ProfileLogic = () => {
     loading,
     handleSubmit,
     userInfo,
-    handleDisbandTeam, handleEditProfilePic
+    handleDisbandTeam, handleEditProfilePic,fetchedUserDetails
   }
 }

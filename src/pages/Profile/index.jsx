@@ -12,7 +12,7 @@ import SubmitButton from '../../components/SubmitButton'
 
 const Profile = () => {
   // const isMobile = window.innerWidth <= 768
-  const { handleChange, formData, loading, handleSubmit, handleDisbandTeam, handleEditProfilePic } =
+  const { handleChange, formData, loading, handleSubmit, handleDisbandTeam, handleEditProfilePic,fetchedUserDetails } =
     ProfileLogic()
   const { registeredEvents, authProvider } = useSelector((state) => state.userProfile)
 
@@ -65,7 +65,7 @@ const Profile = () => {
                 {formData.name}
               </Typography>
               <Typography variant="subtitle" className="ureckonId" pt={5}>
-                <b>Ureckon ID</b>: 43776898
+                <b>Ureckon ID</b>: {fetchedUserDetails && fetchedUserDetails.userId}
               </Typography>
             </Grid>
           </Grid>
