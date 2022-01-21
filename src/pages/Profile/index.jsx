@@ -140,7 +140,7 @@ const Profile = () => {
               </Button>
             </Typography>
           </form>
-          {registeredEvents.length > 0 && (
+          {registeredEvents && registeredEvents.length > 0 && (
             <RegisteredEvents
               handleDisbandTeam={handleDisbandTeam}
               registeredEvents={registeredEvents}

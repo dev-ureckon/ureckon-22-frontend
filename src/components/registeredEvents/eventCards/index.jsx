@@ -25,9 +25,9 @@ const EventCards = ({ event, handleDisbandTeam }) => {
           </div>
         </div>
         <div className="btn-wrapper">
-          <Button type="submit" variant="text" color="secondary" className="eventButton">
+          {/*          <Button type="submit" variant="text" color="secondary" className="eventButton">
             <SubmitButton label={'View Event'} />
-          </Button>
+  </Button>*/}
           <Button
             type="submit"
             variant="outlined"
