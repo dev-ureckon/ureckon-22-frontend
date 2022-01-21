@@ -111,7 +111,7 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
 
 // API for unregisering from a particular event (can only be performed from the team leader)
 // Takes the registration id of that particular event as argument
-export const unregisterFromEvent = (regId) => async (dispatch, getState) => {
+export const unregisterFromEvent = (regId, setCounter, counter) => async (dispatch, getState) => {
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
   console.log(accessToken)
@@ -121,10 +121,8 @@ export const unregisterFromEvent = (regId) => async (dispatch, getState) => {
         Authorization: `Bearer ${accessToken}`,
       },
     })
-    //const { msg } = response.data
     dispatch(showToastTimer(response.data.msg, 'success'))
-    //dispatch(userProfileRequest())
-    window.location.reload()
+    setCounter(counter+1)
   } catch (error) {
     dispatch(showToastTimer('Error while unregistering from event, try again!', 'error'))
   }

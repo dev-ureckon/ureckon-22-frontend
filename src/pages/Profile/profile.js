@@ -21,6 +21,7 @@ export const ProfileLogic = () => {
     gender: '',
     profilePic: '',
   })
+  const [counter, setCounter] = useState(1)
 
   //getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userRegister)
@@ -31,7 +32,7 @@ export const ProfileLogic = () => {
     if (userInfo) {
       navigate('/profile')
     }
-  }, [userInfo, navigate, loading])
+  }, [userInfo, navigate, loading, counter])
 
   // show error message
   useEffect(() => {
@@ -39,12 +40,12 @@ export const ProfileLogic = () => {
       // swal('Error', error, 'error')
       dispatch(showToastTimer(error, 'error'))
     }
-  }, [error, dispatch])
+  }, [error, dispatch, counter])
 
   // fetch user profile details
   useEffect(() => {
     dispatch(getUserProfile())
-  }, [dispatch])
+  }, [dispatch, counter])
 
   const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
 
@@ -61,7 +62,7 @@ export const ProfileLogic = () => {
           fetchedUserDetails.gender.slice(1).toLowerCase(),
       })
     }
-  }, [fetchedUserDetails])
+  }, [fetchedUserDetails, counter])
 
   const handleChange = (e) => {
     setFormData((f) => ({
@@ -82,7 +83,7 @@ export const ProfileLogic = () => {
   }
 
   const handleDisbandTeam = (regId) => {
-    dispatch(unregisterFromEvent(regId))
+    dispatch(unregisterFromEvent(regId, setCounter, counter))
   }
 
   const handleEditProfilePic = (e) => {

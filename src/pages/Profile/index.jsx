@@ -11,9 +11,15 @@ import Dropdown from '../../components/Dropdown'
 import SubmitButton from '../../components/SubmitButton'
 
 const Profile = () => {
-  // const isMobile = window.innerWidth <= 768
-  const { handleChange, formData, loading, handleSubmit, handleDisbandTeam, handleEditProfilePic,fetchedUserDetails } =
-    ProfileLogic()
+  const {
+    handleChange,
+    formData,
+    loading,
+    handleSubmit,
+    handleDisbandTeam,
+    handleEditProfilePic,
+    fetchedUserDetails,
+  } = ProfileLogic()
   const { registeredEvents, authProvider } = useSelector((state) => state.userProfile)
 
   return (
