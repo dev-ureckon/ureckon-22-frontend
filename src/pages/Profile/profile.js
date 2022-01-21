@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions'
 import { getUserProfile, updateUserProfile } from '../../redux/apis'
-import { unregisterFromEvent } from '../../redux/apis/profile'
+import { unregisterFromEvent, updateUserProfilePic } from '../../redux/apis/profile'
 // import swal from 'sweetalert'
 
 export const ProfileLogic = () => {
@@ -85,6 +85,13 @@ export const ProfileLogic = () => {
     dispatch(unregisterFromEvent(regId))
   }
 
+  const handleEditProfilePic = (e) => {
+    const image = e.target.files[0]
+    console.log(image);
+    dispatch(updateUserProfilePic(image))
+  }
+
+
   return {
     handleChange,
     formData,
@@ -92,6 +99,6 @@ export const ProfileLogic = () => {
     loading,
     handleSubmit,
     userInfo,
-    handleDisbandTeam,
+    handleDisbandTeam, handleEditProfilePic
   }
 }

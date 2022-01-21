@@ -12,7 +12,7 @@ import SubmitButton from '../../components/SubmitButton'
 
 const Profile = () => {
   // const isMobile = window.innerWidth <= 768
-  const { handleChange, formData, loading, handleSubmit, handleDisbandTeam } =
+  const { handleChange, formData, loading, handleSubmit, handleDisbandTeam, handleEditProfilePic } =
     ProfileLogic()
   const { registeredEvents, authProvider } = useSelector((state) => state.userProfile)
 
@@ -24,21 +24,36 @@ const Profile = () => {
             <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
           )}
 
+          {/* Edit profile Pic */}
+          <form encType="multipart/form-data" action="">
+            <input
+              id="editProfilePicForm"
+              name="editProfilePicForm"
+              type="file"
+              onChange={(event) => handleEditProfilePic(event)}
+              hidden
+              multiple="false"
+              accept=".png .jpeg .jpg"
+            />
+          </form>
+
           <Grid container justifyContent={'center'} alignItems={'center'}>
             <Grid item lg={3} sm={12}>
-              <div style={{ position: 'relative' }}>
-                <img src={profilePicBg} alt="profile-pic-bg" className="profilePicBg" />
-                <img
-                  src={editProfileImage}
-                  alt="edit-profile"
-                  className="profilePic editProfilePic"
-                />
-                <img
-                  className="profilePic"
-                  src={formData.profilePic}
-                  alt="profile pic bg"
-                />
-              </div>
+              <label htmlFor="editProfilePicForm">
+                <div style={{ position: 'relative' }}>
+                  <img src={profilePicBg} alt="profile-pic-bg" className="profilePicBg" />
+                  <img
+                    src={editProfileImage}
+                    alt="edit-profile"
+                    className="profilePic editProfilePic"
+                  />
+                  <img
+                    className="profilePic"
+                    src={formData.profilePic}
+                    alt="profile pic bg"
+                  />
+                </div>
+              </label>
             </Grid>
             <Grid item lg={4} sm={12}>
               <Typography

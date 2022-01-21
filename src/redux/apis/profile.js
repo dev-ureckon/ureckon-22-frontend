@@ -81,7 +81,7 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
   try {
     const formData = new FormData()
     formData.append('file', file)
-    const { file_link } = await axios.post(`${commonProfileUrl}/upload`, formData, {
+    const { file_link } = await axios.post(`/common/upload`, formData, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -93,7 +93,7 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
         profile_url: file_link,
       },
       {
-        headers: { Authorization: accessToken },
+        headers: { Authorization: `Bearer ${accessToken}` },
       }
     )
     dispatch(
