@@ -44,7 +44,7 @@ const Profile = () => {
           </form>
 
           <Grid container justifyContent={'center'} alignItems={'center'}>
-            <Grid item lg={3} sm={12}>
+            <Grid item lg={3} sm={4} md={3} xs={7}>
               <label htmlFor="editProfilePicForm">
                 <div style={{ position: 'relative' }}>
                   <img src={profilePicBg} alt="profile-pic-bg" className="profilePicBg" />
@@ -61,16 +61,16 @@ const Profile = () => {
                 </div>
               </label>
             </Grid>
-            <Grid item lg={4} sm={12}>
+            <Grid item lg={4} sm={4} md={4} xs={4}>
               <Typography
                 className="profileName"
                 variant="h4"
-                pb={5}
                 sx={{ fontWeight: 'bold' }}
+                pb={{xs:1, sm:4, md:4, lg:5}}
               >
                 {formData.name}
               </Typography>
-              <Typography variant="subtitle" className="ureckonId" pt={5}>
+              <Typography variant="subtitle" className="ureckonId">
                 <b>Ureckon ID</b>: {fetchedUserDetails && fetchedUserDetails.userId}
               </Typography>
             </Grid>
@@ -86,7 +86,7 @@ const Profile = () => {
               handleSubmit(e)
             }}
           >
-            <Grid container spacing={{ xs: 8, sm: 13, md: 12, lg: 10 }}>
+            <Grid container spacing={{ xs: 0, sm: 3, md: 12, lg: 10 }}>
               <br />
               <br />
               <Grid item lg={6} md={6} sm={12} xs={12}>
@@ -98,6 +98,7 @@ const Profile = () => {
                   value={formData.name}
                   onChange={(e) => handleChange(e)}
                 />
+                <br />
                 <Input
                   width="100%"
                   label="Phone No."

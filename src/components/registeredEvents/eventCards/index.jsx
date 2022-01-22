@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Grid, Container } from '@mui/material'
 import './eventCards.style.css'
 import SubmitButton from '../../SubmitButton'
 import { useStyles } from './eventCards.style.js'
@@ -7,11 +7,13 @@ const EventCards = ({ event, handleDisbandTeam }) => {
   const classes = useStyles()
 
   return (
-    <div className="card-container">
-      <div className="card">
-        <div className="event">
-          <img src={event.event.icon} alt="event-logo" style={{ width: '30%' }}></img>
-          <div className="event-details">
+    <Container className="card-container">
+      <Grid className="card">
+          <Grid item lg={3} md={3} sm={4} xs={8} xl={5}>
+            <img src={event.event.icon} alt="event-logo" className="eventImg"></img>
+          </Grid>
+
+          <Grid item className="event-details" lg={5} md={5} sm={4} xs={12}>
             <div style={{ color: 'white', fontWeight: 'bold', fontSize: '25px' }}>
               {event.event.eventName}
             </div>
@@ -22,24 +24,25 @@ const EventCards = ({ event, handleDisbandTeam }) => {
               <span style={{ fontWeight: 'bold' }}>Team:</span>{' '}
               {event && event.teamMembers.map((member) => member.name).join(', ')}
             </div>
-          </div>
-        </div>
-        <div className="btn-wrapper">
-          <Button type="submit" variant="text" color="secondary" className="eventButton">
-            <SubmitButton label={'View Event'} />
-          </Button>
-          <Button
-            type="submit"
-            variant="outlined"
-            color="secondary"
-            className={classes.disbandButton}
-            onClick={() => handleDisbandTeam(event._id)}
-          >
-            Disband team
-          </Button>
-        </div>
-      </div>
-    </div>
+          </Grid>
+          <Grid item>
+            <div className="btn-wrapper">
+              <Button type="submit" variant="text" color="secondary" className="eventButton">
+                <SubmitButton label={'View Event'} />
+              </Button>
+              <Button
+                type="submit"
+                variant="outlined"
+                color="secondary"
+                className={classes.disbandButton}
+                onClick={() => handleDisbandTeam(event._id)}
+              >
+                Disband team
+              </Button>
+            </div>
+          </Grid>
+      </Grid>
+    </Container>
   )
 }
 

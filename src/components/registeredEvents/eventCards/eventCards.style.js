@@ -13,8 +13,8 @@ export const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: '#ED1B24',
     },
-    '@media (max-width: 550px)': {
-      marginTop: '2rem',
+    '@media (max-width: 900px)': {
+      marginTop: '1rem',
     },
   },
 }))
