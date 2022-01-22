@@ -66,7 +66,7 @@ const Profile = () => {
                 className="profileName"
                 variant="h4"
                 sx={{ fontWeight: 'bold' }}
-                pb={{xs:1, sm:4, md:4, lg:5}}
+                pb={{ xs: 1, sm: 4, md: 4, lg: 5 }}
               >
                 {formData.name}
               </Typography>
