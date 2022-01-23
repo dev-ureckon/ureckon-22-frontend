@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
 import InputBigImg from '../../assets/SVGs/input_big.svg'
+import InputRedImg from '../../assets/SVGs/input_red.svg'
 import './input.css'
 
 const Input = (props) => {
@@ -15,6 +16,7 @@ const Input = (props) => {
     type,
     disabled = false,
     required = true,
+    variant,
   } = props
 
   const ref = useRef(null)
@@ -52,7 +54,7 @@ const Input = (props) => {
         }}
       >
         <img
-          src={size === 'big' ? InputBigImg : InputImg}
+          src={size === 'big' ? InputBigImg : variant === 'red' ? InputRedImg : InputImg}
           alt=""
           style={{
             width: '95%',

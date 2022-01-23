@@ -3,7 +3,7 @@ import { Button, Container, Grid, LinearProgress, Typography } from '@mui/materi
 import RegisteredEvents from '../../components/registeredEvents/index.jsx'
 import Input from '../../components/input'
 import { ProfileLogic } from './profile.js'
-
+import PasswordModal from '../../components/passwordModal/index.jsx'
 import profilePicBg from '../../assets/SVGs/profilePicBg.svg'
 import editProfileImage from '../../assets/IMGs/edit-profile-image.png'
 import './profile.css'
@@ -26,6 +26,7 @@ const Profile = () => {
     <>
       <div className="root">
         <Container>
+          <PasswordModal />
           {loading && (
             <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
           )}
