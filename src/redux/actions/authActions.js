@@ -12,7 +12,7 @@ import {
 } from '../constants'
 import { loginUser, registerUser, signUpSocial } from '../apis/auth'
 import { showToastTimer } from '../actions'
-import { completeProfile } from '../apis/authManagement'
+import { completeProfile, completeProfileWithEmail } from '../apis/authManagement'
 // import swal from 'sweetalert'
 
 // user register action
@@ -107,13 +107,16 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
 }
 
 // completeProfile of auth user
+// if email is passed in the arguments then we call completeProfileWithEmail
+// otherwise we go with completeProfile
 export const completeProfileAction =
-  (phone, college, gender, accessToken, navigate) => async (dispatch) => {
+  (phone, college, gender, accessToken, navigate, email = null) => async (dispatch) => {
     try {
       dispatch({
         type: USER_COMPLETE_PROFILE_REQUEST,
       })
-      const { data } = await completeProfile(phone, college, gender, accessToken)
+      if (email) const { data } = await completeProfileWithEmail(email, phone, college, gender, accessToken)
+      else const { data } = await completeProfile(phone, college, gender, accessToken)
       console.log(data)
       dispatch({
         type: USER_LOGIN_SUCCESS,
