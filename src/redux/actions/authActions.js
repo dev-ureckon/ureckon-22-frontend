@@ -115,8 +115,14 @@ export const completeProfileAction =
       dispatch({
         type: USER_COMPLETE_PROFILE_REQUEST,
       })
-      if (email) const { data } = await completeProfileWithEmail(email, phone, college, gender, accessToken)
-      else const { data } = await completeProfile(phone, college, gender, accessToken)
+      let responseData;
+      if (email) {
+        responseData = await completeProfileWithEmail(email, phone, college, gender, accessToken)
+      }
+      else {
+        responseData = await completeProfile(phone, college, gender, accessToken)
+      }
+      const { data } = responseData;
       console.log(data)
       dispatch({
         type: USER_LOGIN_SUCCESS,
