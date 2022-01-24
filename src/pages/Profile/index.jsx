@@ -117,7 +117,7 @@ const Profile = () => {
                   onChange={(e) => handleChange(e)}
                 />
                 {authProvider === 'password' && (
-                  <div>
+                  <div className="pwd-field">
                     <Input
                       width="100%"
                       label="Password"
@@ -136,16 +136,19 @@ const Profile = () => {
               <br />
               <br />
               <Grid item sm={12} md={6} lg={6} xs={12}>
-                <Input
-                  width="100%"
-                  label="Email"
-                  placeholder="Your Email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleChange(e)}
-                  disabled={true}
-                />
+                <div className="email-field">
+                  <Input
+                    width="100%"
+                    label="Email"
+                    placeholder="Your Email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleChange(e)}
+                    disabled={true}
+                  />
+                </div>
+
                 <Input
                   width="100%"
                   label="School/College"
