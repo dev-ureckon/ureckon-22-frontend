@@ -116,35 +116,28 @@ export const completeProfileAction =
       dispatch({
         type: USER_COMPLETE_PROFILE_REQUEST,
       })
+      let responseData
       if (email) {
-        const { data } = await completeProfileWithEmail(
+        responseData = await completeProfileWithEmail(
           email,
           phone,
           college,
           gender,
           accessToken
         )
-
-        dispatch({
-          type: USER_LOGIN_SUCCESS,
-          payload: { ...data, alreadyRegistered: true },
-        })
-        dispatch({
-          type: USER_COMPLETE_PROFILE_SUCCESS,
-          payload: { ...data, alreadyRegistered: true },
-        })
       } else {
-        const { data } = await completeProfile(phone, college, gender, accessToken)
-        console.log(data)
-        dispatch({
-          type: USER_LOGIN_SUCCESS,
-          payload: { ...data, alreadyRegistered: true },
-        })
-        dispatch({
-          type: USER_COMPLETE_PROFILE_SUCCESS,
-          payload: { ...data, alreadyRegistered: true },
-        })
+        responseData = await completeProfile(phone, college, gender, accessToken)
       }
+      const { data } = responseData
+      console.log(data)
+      dispatch({
+        type: USER_LOGIN_SUCCESS,
+        payload: { ...data, alreadyRegistered: true },
+      })
+      dispatch({
+        type: USER_COMPLETE_PROFILE_SUCCESS,
+        payload: { ...data, alreadyRegistered: true },
+      })
 
       const userInfo = JSON.parse(localStorage.getItem('userInfo'))
       userInfo.alreadyRegistered = true
