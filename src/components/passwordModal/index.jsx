@@ -1,14 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { updateUserPassword } from '../../redux/apis/profile'
 import Input from '../input/index.jsx'
 import SubmitButton from '../SubmitButton/index.jsx'
 import './passwordModal.style.css'
 
-const PasswordModal = () => {
+const PasswordModal = ({ showPasswordModal, setShowPasswordModal }) => {
   const [formData, setFormData] = useState({
     oldPassword: '',
     newPassword: '',
     retypedPassword: '',
   })
+
+  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     setFormData((f) => ({
@@ -16,9 +20,31 @@ const PasswordModal = () => {
       [e.target.name]: e.target.value,
     }))
   }
+
+  const modalRef = useRef(null)
+
+  // useEffect(() => {
+  //   const handler = (event) => {
+  //     if (!modalRef.current.contains(event.target)) {
+  //       setShowPasswordModal(false)
+  //     }
+  //   }
+  //   window.addEventListener('click', handler)
+  //   return () => window.removeEventListener('click', handler)
+  // }, [])
+
+  const handleSubmit = () => {
+    dispatch(updateUserPassword(formData.oldPassword, formData.newPassword))
+    setShowPasswordModal(false)
+  }
+
   return (
     <div className="modalBackground">
-      <div className="modalContainer">
+      <form className="modalContainer" ref={modalRef} onSubmit={handleSubmit}>
+        <div className="modalClose" onClick={() => setShowPasswordModal(false)}>
+          {' '}
+          X{' '}
+        </div>
         <Input
           width="100%"
           label="Old Password"
@@ -55,7 +81,7 @@ const PasswordModal = () => {
         <div className="btn-container">
           <SubmitButton label={'Update'} />
         </div>
-      </div>
+      </form>
     </div>
   )
 }

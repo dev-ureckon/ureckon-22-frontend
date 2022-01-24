@@ -67,3 +67,22 @@
   font-weight: 500;
   font-size: '16px';
 }
+
+.pwd-txt {
+  cursor: pointer;
+  position: relative;
+  top: 1rem;
+  left: 1rem;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 20px;
+  text-align: right;    
+  color: #FFFFFF;
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 0px;
+}

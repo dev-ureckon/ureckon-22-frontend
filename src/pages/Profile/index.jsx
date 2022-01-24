@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import RegisteredEvents from '../../components/registeredEvents/index.jsx'
@@ -22,11 +23,18 @@ const Profile = () => {
   } = ProfileLogic()
   const { registeredEvents, authProvider } = useSelector((state) => state.userProfile)
 
+  const [showPasswordModal, setShowPasswordModal] = useState(false)
+
   return (
     <>
       <div className="root">
         <Container>
-          <PasswordModal />
+          {showPasswordModal && (
+            <PasswordModal
+              showPasswordModal={showPasswordModal}
+              setShowPasswordModal={setShowPasswordModal}
+            />
+          )}
           {loading && (
             <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
           )}
@@ -109,15 +117,20 @@ const Profile = () => {
                   onChange={(e) => handleChange(e)}
                 />
                 {authProvider === 'password' && (
-                  <Input
-                    width="100%"
-                    label="Password"
-                    placeholder="*********"
-                    name="password"
-                    type="password"
-                    value={formData.password}
-                    onChange={(e) => handleChange(e)}
-                  />
+                  <div>
+                    <Input
+                      width="100%"
+                      label="Password"
+                      placeholder="*********"
+                      name="password"
+                      type="password"
+                      value={formData.password}
+                      onChange={(e) => handleChange(e)}
+                    />
+                    <span className="pwd-txt" onClick={() => setShowPasswordModal(true)}>
+                      Change Password
+                    </span>
+                  </div>
                 )}
               </Grid>
               <br />
