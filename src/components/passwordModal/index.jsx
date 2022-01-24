@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
+import { Button } from '@mui/material'
 import { updateUserPassword } from '../../redux/apis/profile'
 import Input from '../input/index.jsx'
 import SubmitButton from '../SubmitButton/index.jsx'
@@ -78,9 +79,15 @@ const PasswordModal = ({ showPasswordModal, setShowPasswordModal }) => {
           <span className="alert-txt">Passwords does not match</span>
         )}
 
-        <div className="btn-container">
-          <SubmitButton label={'Update'} />
-        </div>
+        <Button
+          type="submit"
+          variant="text"
+          color="secondary"
+          className="btn-container"
+          style={{ marginTop: '4rem' }}
+        >
+          <SubmitButton label={'Save Changes'} />
+        </Button>
       </form>
     </div>
   )
