@@ -54,10 +54,7 @@ export default function Team() {
                                       href={teamData.social.facebook}
                                       className={classes.anchor}
                                     >
-                                      <FacebookIcon
-                                        
-                                        className={classes.socialIcon}
-                                      />
+                                      <FacebookIcon className={classes.socialIcon} />
                                     </a>
                                   </>
                                 ) : (
@@ -69,10 +66,7 @@ export default function Team() {
                                       href={teamData.social.linkedIn}
                                       className={classes.anchor}
                                     >
-                                      <LinkedInIcon
-                                        
-                                        className={classes.socialIcon}
-                                      />
+                                      <LinkedInIcon className={classes.socialIcon} />
                                     </a>
                                   </>
                                 ) : (
@@ -83,10 +77,7 @@ export default function Team() {
                                     href={teamData.social.twitter}
                                     className={classes.anchor}
                                   >
-                                    <TwitterIcon
-                                      
-                                      className={classes.socialIcon}
-                                    />
+                                    <TwitterIcon className={classes.socialIcon} />
                                   </a>
                                 ) : (
                                   <></>
