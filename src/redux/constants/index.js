@@ -1,4 +1,3 @@
-// All constants for sponsor reducer
 export {
   FETCH_SPONSORS_REQUEST,
   FETCH_SPONSORS_SUCCESS,
@@ -14,3 +13,4 @@ export {
 } from './newsfeed'
 
 export { SHOW_TOAST, CLEAR_TOAST } from './toast'
+export * from './teams.js'
