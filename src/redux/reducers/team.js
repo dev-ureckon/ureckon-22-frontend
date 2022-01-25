@@ -1,8 +1,4 @@
-import {
-  FETCH_TEAMS_REQUEST,
-  FETCH_TEAMS_SUCCESS,
-  FETCH_TEAMS_ERROR
-} from '../constants'
+import { FETCH_TEAMS_REQUEST, FETCH_TEAMS_SUCCESS, FETCH_TEAMS_ERROR } from '../constants'
 
 const initialState = {
   loading: false,
@@ -25,7 +21,7 @@ const teamsReducer = (state = initialState, action) => {
         loading: false,
         error: '',
       }
-    case  FETCH_TEAMS_ERROR:
+    case FETCH_TEAMS_ERROR:
       return {
         teams: [],
         loading: false,

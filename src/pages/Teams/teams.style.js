@@ -6,24 +6,25 @@ export const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     top: '75%',
   },
-  teamMember_image:{
+  teamMember_image: {
     color: '#fff',
     height: '272px',
     position: 'relative',
-borderRadius: '0'
+    borderRadius: '0',
   },
-  teamMember_social:{
+  teamMember_social: {
     color: '#fff',
     background: theme.palette.secondary.purple,
     margin: '0 auto',
-    borderRadius: '0'
+    borderRadius: '0',
   },
-  socialIcon:{
+  socialIcon: {
     margin: '0.1rem 0.5rem',
     color: theme.palette.primary,
-    borderRadius: '0'
+    borderRadius: '0',
   },
-  anchor:{
-    textDecoration: 'none', color: '#fff'
-  }
+  anchor: {
+    textDecoration: 'none',
+    color: '#fff',
+  },
 }))
