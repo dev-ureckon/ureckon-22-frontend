@@ -74,9 +74,6 @@ const theme = createTheme({
       red: '#ED1B24',
       purple: '#2A3B97',
     },
-    error: {
-      main: ' #dd5e27',
-    },
     warning: { main: '#F49320' }, //yellow
     success: { main: '#0DB3B3' }, //green
   },
