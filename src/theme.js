@@ -75,7 +75,7 @@ const theme = createTheme({
       purple: '#2A3B97',
     },
     error: {
-      main: 'linear-gradient(to right, #DD5E27, #E53D26)',
+      main: ' #dd5e27',
     },
     warning: { main: '#F49320' }, //yellow
     success: { main: '#0DB3B3' }, //green
