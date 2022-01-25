@@ -81,7 +81,9 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
   try {
     const formData = new FormData()
     formData.append('file', file)
-    const { data:{file_link} } = await axios.post(`/common/upload`, formData, {
+    const {
+      data: { file_link },
+    } = await axios.post(`/common/upload`, formData, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -111,19 +113,22 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
 
 // API for unregisering from a particular event (can only be performed from the team leader)
 // Takes the registration id of that particular event as argument
-export const unregisterFromEvent = (regId, setCounter, counter) => async (dispatch, getState) => {
-  const currentState = getState()
-  const { accessToken } = currentState.userLogin.userInfo
-  console.log(accessToken)
-  try {
-    const response = await axios.delete(`/events/${regId}/unregister`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    })
-    dispatch(showToastTimer(response.data.msg, 'success'))
-    setCounter(counter+1)
-  } catch (error) {
-    dispatch(showToastTimer('Error while unregistering from event, try again!', 'error'))
+export const unregisterFromEvent =
+  (regId, setCounter, counter) => async (dispatch, getState) => {
+    const currentState = getState()
+    const { accessToken } = currentState.userLogin.userInfo
+    console.log(accessToken)
+    try {
+      const response = await axios.delete(`/events/${regId}/unregister`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+      dispatch(showToastTimer(response.data.msg, 'success'))
+      setCounter(counter + 1)
+    } catch (error) {
+      dispatch(
+        showToastTimer('Error while unregistering from event, try again!', 'error')
+      )
+    }
   }
-}

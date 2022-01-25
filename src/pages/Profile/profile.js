@@ -7,7 +7,6 @@ import { showToastTimer } from '../../redux/actions'
 import { getUserProfile, updateUserProfile } from '../../redux/apis'
 import { unregisterFromEvent, updateUserProfilePic } from '../../redux/apis/profile'
 
-
 export const ProfileLogic = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -88,10 +87,9 @@ export const ProfileLogic = () => {
 
   const handleEditProfilePic = (e) => {
     const image = e.target.files[0]
-    console.log(image);
+    console.log(image)
     dispatch(updateUserProfilePic(image))
   }
-
 
   return {
     handleChange,
@@ -100,6 +98,8 @@ export const ProfileLogic = () => {
     loading,
     handleSubmit,
     userInfo,
-    handleDisbandTeam, handleEditProfilePic,fetchedUserDetails
+    handleDisbandTeam,
+    handleEditProfilePic,
+    fetchedUserDetails,
   }
 }
