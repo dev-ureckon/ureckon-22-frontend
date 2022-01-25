@@ -9,7 +9,7 @@ import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 import About from './pages/About/index.jsx'
 import Profile from './pages/Profile/index.jsx'
-
+import Sponsor from './pages/sponsor/index.jsx'
 import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
 import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
@@ -71,6 +71,8 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </AuthProtectedRoute>
             }
           />
+          <Route path="/sponsers" element={<Sponsor />} />
+
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
