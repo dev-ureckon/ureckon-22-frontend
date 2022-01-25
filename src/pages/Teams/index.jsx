@@ -46,26 +46,51 @@ export default function Team() {
                               <Typography variant="subtitle2" align="center">
                                 Email: {teamData.email}
                               </Typography>
+                              {console.log(teamData.social)}
                               <Typography variant="subtitle2" align="center">
-                                {' '}
-                                <a href={teamData.social.facebook}>
-                                  <FacebookIcon
-                                    fontSize="small"
-                                    className={classes.socialIcon}
-                                  />
-                                </a>{' '}
-                                <a href={teamData.social.linkedIn}>
-                                  <LinkedInIcon
-                                    fontSize="small"
-                                    className={classes.socialIcon}
-                                  />
-                                </a>{' '}
-                                <a href={teamData.social.twitter}>
-                                  <TwitterIcon
-                                    fontSize="small"
-                                    className={classes.socialIcon}
-                                  />
-                                </a>{' '}
+                                {teamData.social && teamData.social.facebook ? (
+                                  <>
+                                    <a
+                                      href={teamData.social.facebook}
+                                      className={classes.anchor}
+                                    >
+                                      <FacebookIcon
+                                        
+                                        className={classes.socialIcon}
+                                      />
+                                    </a>
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                                {teamData.social && teamData.social.linkedIn ? (
+                                  <>
+                                    <a
+                                      href={teamData.social.linkedIn}
+                                      className={classes.anchor}
+                                    >
+                                      <LinkedInIcon
+                                        
+                                        className={classes.socialIcon}
+                                      />
+                                    </a>
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                                {teamData.social && teamData.social.twitter ? (
+                                  <a
+                                    href={teamData.social.twitter}
+                                    className={classes.anchor}
+                                  >
+                                    <TwitterIcon
+                                      
+                                      className={classes.socialIcon}
+                                    />
+                                  </a>
+                                ) : (
+                                  <></>
+                                )}
                               </Typography>
                             </Paper>
                           </Card>

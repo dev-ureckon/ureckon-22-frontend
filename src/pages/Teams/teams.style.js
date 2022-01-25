@@ -17,6 +17,10 @@ export const useStyles = makeStyles((theme) => ({
     margin: '0 auto'
   },
   socialIcon:{
-    margin: '0.1rem 0.5rem'
+    margin: '0.1rem 0.5rem',
+    color: theme.palette.primary,
+  },
+  anchor:{
+    textDecoration: 'none', color: '#fff'
   }
 }))
