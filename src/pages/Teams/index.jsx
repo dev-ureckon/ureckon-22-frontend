@@ -19,14 +19,20 @@ export default function Team() {
       {teamData &&
         teamData.team &&
         teamData.team.map((item, index) => {
-          let expand = false;
-          (index === 0 || index === 1) ? expand = true : expand= false 
-          console.log(expand, index);
+          let expand = false
+          index === 0 || index === 1 ? (expand = true) : (expand = false)
+          console.log(expand, index)
           return (
             <div key={index}>
-              <Accordion style={{ background: '#fff0' }} defaultExpanded={expand} TransitionProps={{ unmountOnExit: true }}>
+              <Accordion
+                style={{ background: '#fff0' }}
+                defaultExpanded={expand}
+                TransitionProps={{ unmountOnExit: true }}
+              >
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon fontSize='large' style={{ color: '#fff' }} />}
+                  expandIcon={
+                    <ExpandMoreIcon fontSize="large" style={{ color: '#fff' }} />
+                  }
                   aria-controls="panel1a-content"
                   id={index}
                 >
@@ -62,7 +68,10 @@ export default function Team() {
                                 </Paper>
                                 <Paper className={classes.teamMember_social}>
                                   <Typography variant="subtitle2" align="center">
-                                    <a href={teamMemberData.email} className={classes.anchor}>
+                                    <a
+                                      href={teamMemberData.email}
+                                      className={classes.anchor}
+                                    >
                                       Email: {teamMemberData.email}
                                     </a>
                                   </Typography>
