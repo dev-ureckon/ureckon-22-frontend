@@ -20,12 +20,13 @@ export default function Team() {
         teamData.team &&
         teamData.team.map((item, index) => {
           let expand = false;
-          (index === 0 || 1) ? expand = true : expand= false 
+          (index === 0 || index === 1) ? expand = true : expand= false 
+          console.log(expand, index);
           return (
             <div key={index}>
-              <Accordion style={{ background: '#fff0' }} defaultExpanded={expand}>
+              <Accordion style={{ background: '#fff0' }} defaultExpanded={expand} TransitionProps={{ unmountOnExit: true }}>
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon style={{ color: '#fff' }} />}
+                  expandIcon={<ExpandMoreIcon fontSize='large' style={{ color: '#fff' }} />}
                   aria-controls="panel1a-content"
                   id={index}
                 >
