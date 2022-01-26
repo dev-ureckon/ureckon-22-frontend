@@ -53,6 +53,7 @@ export default function Team() {
                                 teamMemberData.social.facebook ? (
                                   <>
                                     <a
+                                    target="_blank"
                                       href={teamMemberData.social.facebook}
                                       className={classes.anchor}
                                     >
@@ -66,6 +67,7 @@ export default function Team() {
                                 teamMemberData.social.linkedIn ? (
                                   <>
                                     <a
+                                    target="_blank"
                                       href={teamMemberData.social.linkedIn}
                                       className={classes.anchor}
                                     >
@@ -78,6 +80,7 @@ export default function Team() {
                                 {teamMemberData.social &&
                                 teamMemberData.social.twitter ? (
                                   <a
+                                  target="_blank"
                                     href={teamMemberData.social.twitter}
                                     className={classes.anchor}
                                   >
