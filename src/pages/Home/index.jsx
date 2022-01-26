@@ -185,7 +185,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             <Grid item lg={12} className="menupad2" id="moreoptions">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="/teams" className="menulink">
+                  <Link to="/team" className="menulink">
                     Team
                     <div>
                       <img className="test8" src={line1} alt="line" />
