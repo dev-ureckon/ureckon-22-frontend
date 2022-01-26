@@ -46,14 +46,16 @@ export default function Team() {
                             </Paper>
                             <Paper className={classes.teamMember_social}>
                               <Typography variant="subtitle2" align="center">
-                                Email: {teamMemberData.email}
+                                <a href={teamMemberData.email}>
+                                  Email: {teamMemberData.email}
+                                </a>
                               </Typography>
                               <Typography variant="subtitle2" align="center">
                                 {teamMemberData.social &&
                                 teamMemberData.social.facebook ? (
                                   <>
                                     <a
-                                    target="_blank"
+                                      target="_blank"
                                       href={teamMemberData.social.facebook}
                                       className={classes.anchor}
                                     >
@@ -67,7 +69,7 @@ export default function Team() {
                                 teamMemberData.social.linkedIn ? (
                                   <>
                                     <a
-                                    target="_blank"
+                                      target="_blank"
                                       href={teamMemberData.social.linkedIn}
                                       className={classes.anchor}
                                     >
@@ -80,7 +82,7 @@ export default function Team() {
                                 {teamMemberData.social &&
                                 teamMemberData.social.twitter ? (
                                   <a
-                                  target="_blank"
+                                    target="_blank"
                                     href={teamMemberData.social.twitter}
                                     className={classes.anchor}
                                   >
