@@ -18,11 +18,16 @@ const EventCards = ({ event, handleDisbandTeam }) => {
             {event.event.eventName}
           </div>
           <div style={{ color: 'white' }}>
+            <span style={{ fontWeight: 'bold' }}>Team Name:</span> {event.teamName}
+          </div>
+          <div style={{ color: 'white' }}>
             <span style={{ fontWeight: 'bold' }}>Lead:</span> {event.leader.name}
           </div>
           <div style={{ color: 'white' }}>
             <span style={{ fontWeight: 'bold' }}>Team:</span>{' '}
-            {event && event.teamMembers.map((member) => member.name).join(', ')}
+            {event && event.teamMembers.length
+              ? event.teamMembers.map((member) => member.name).join(', ')
+              : 'None'}
           </div>
         </Grid>
         <Grid item>
