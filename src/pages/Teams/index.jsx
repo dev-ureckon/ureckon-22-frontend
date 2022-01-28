@@ -9,6 +9,7 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import EmailIcon from '@mui/icons-material/Email';
 
 export default function Team() {
   const { teamData } = TeamsLogic()
@@ -62,11 +63,10 @@ export default function Team() {
                                 </Paper>
                                 <Paper className={classes.teamMember_social}>
                                   <Typography variant="subtitle2" align="center">
-                                    <a href={teamMemberData.email} className={classes.anchor}>
-                                      Email: {teamMemberData.email}
+                                    <a href={`mailto:${teamMemberData.email}`} className={classes.anchor}>
+                                    <EmailIcon className={classes.socialIcon}/>
                                     </a>
-                                  </Typography>
-                                  <Typography variant="subtitle2" align="center">
+
                                     {teamMemberData.social &&
                                     teamMemberData.social.facebook ? (
                                       <>
@@ -123,3 +123,7 @@ export default function Team() {
     </Container>
   )
 }
+
+
+
+

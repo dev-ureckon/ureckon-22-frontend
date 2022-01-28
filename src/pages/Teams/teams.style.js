@@ -17,6 +17,7 @@ export const useStyles = makeStyles((theme) => ({
     background: theme.palette.secondary.purple,
     margin: '0 auto',
     borderRadius: '0',
+    padding: '0.6rem 0 0 0',
   },
   socialIcon: {
     margin: '0.1rem 0.5rem',
