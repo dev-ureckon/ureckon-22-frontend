@@ -33,7 +33,7 @@ const ForgotPassword = () => {
             color="secondary"
             className={classes.submitButtonLogin}
           >
-            <SubmitButton label={'Submit'} />
+            <SubmitButton label="Submit" />
           </Button>
         </Typography>
       </Container>

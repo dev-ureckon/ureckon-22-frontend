@@ -97,7 +97,7 @@ const Register = () => {
               className={classes.submitButton}
               style={{ marginTop: '4rem' }}
             >
-              <SubmitButton label={'Register'} />
+              <SubmitButton label="Register" />
             </Button>
           </Typography>
         </form>
@@ -119,7 +119,7 @@ const Register = () => {
             </Grid>
           </Grid>
         </Typography>
-        <Typography color={'primary'} variant="h6" align="center" className="authFont">
+        <Typography color="primary" variant="h6" align="center" className="authFont">
           Already Have an account?{' '}
           <Link to="/login" style={{ color: '#FFF' }}>
             <b style={{ color: '#fff' }} className="authFont">

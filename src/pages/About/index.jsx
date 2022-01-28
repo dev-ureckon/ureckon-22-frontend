@@ -58,7 +58,7 @@ function About() {
           </div>
         </Grid>
       </Grid>
-      <Grid paddingTop={'50px'} paddingBottom={'30px'}>
+      <Grid paddingTop="50px" paddingBottom="30px">
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Link to="/contact" style={{ textDecoration: 'none' }}>
             <Button
