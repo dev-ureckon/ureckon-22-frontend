@@ -9,7 +9,7 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import EmailIcon from '@mui/icons-material/Email';
+import EmailIcon from '@mui/icons-material/Email'
 
 export default function Team() {
   const { teamData } = TeamsLogic()
@@ -20,14 +20,20 @@ export default function Team() {
       {teamData &&
         teamData.team &&
         teamData.team.map((item, index) => {
-          let expand = false;
-          (index === 0 || index === 1) ? expand = true : expand= false 
-          console.log(expand, index);
+          let expand = false
+          index === 0 || index === 1 ? (expand = true) : (expand = false)
+          console.log(expand, index)
           return (
             <div key={index}>
-              <Accordion style={{ background: '#fff0' }} defaultExpanded={expand} TransitionProps={{ unmountOnExit: true }}>
+              <Accordion
+                style={{ background: '#fff0' }}
+                defaultExpanded={expand}
+                TransitionProps={{ unmountOnExit: true }}
+              >
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon fontSize='large' style={{ color: '#fff' }} />}
+                  expandIcon={
+                    <ExpandMoreIcon fontSize="large" style={{ color: '#fff' }} />
+                  }
                   aria-controls="panel1a-content"
                   id={index}
                 >
@@ -63,8 +69,11 @@ export default function Team() {
                                 </Paper>
                                 <Paper className={classes.teamMember_social}>
                                   <Typography variant="subtitle2" align="center">
-                                    <a href={`mailto:${teamMemberData.email}`} className={classes.anchor}>
-                                    <EmailIcon className={classes.socialIcon}/>
+                                    <a
+                                      href={`mailto:${teamMemberData.email}`}
+                                      className={classes.anchor}
+                                    >
+                                      <EmailIcon className={classes.socialIcon} />
                                     </a>
 
                                     {teamMemberData.social &&
@@ -123,7 +132,3 @@ export default function Team() {
     </Container>
   )
 }
-
-
-
-
