@@ -19,7 +19,7 @@ const Register = () => {
     <div className={classes.root}>
       <Container>
         {loading && (
-          <LinearProgress style={{ margin: '4px auto', top: 0 }} color='primary' />
+          <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
 
         <form
@@ -34,27 +34,27 @@ const Register = () => {
             <br />
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Input
-                width='100%'
-                label='Name'
-                placeholder='Your Name'
-                name='name'
+                width="100%"
+                label="Name"
+                placeholder="Your Name"
+                name="name"
                 value={formData.name}
                 onChange={(e) => handleChange(e)}
               />
               <Input
-                width='100%'
-                label='Phone No.'
-                placeholder='Your Number'
-                name='number'
+                width="100%"
+                label="Phone No."
+                placeholder="Your Number"
+                name="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
               />
               <Input
-                width='100%'
-                label='Password'
-                placeholder='*********'
-                name='password'
-                type='password'
+                width="100%"
+                label="Password"
+                placeholder="*********"
+                name="password"
+                type="password"
                 value={formData.password}
                 onChange={(e) => handleChange(e)}
               />
@@ -63,53 +63,53 @@ const Register = () => {
             <br />
             <Grid item sm={12} md={6} lg={6} xs={12}>
               <Input
-                width='100%'
-                label='Email'
-                placeholder='Your Email'
-                name='email'
-                type='email'
+                width="100%"
+                label="Email"
+                placeholder="Your Email"
+                name="email"
+                type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
               />
               <Input
-                width='100%'
-                label='School/College'
-                placeholder='e.g: UEM'
-                name='collegeName'
+                width="100%"
+                label="School/College"
+                placeholder="e.g: UEM"
+                name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
               />
               <Dropdown
-                width='100%'
-                label='Gender'
-                placeholder='Gender'
-                name='gender'
+                width="100%"
+                label="Gender"
+                placeholder="Gender"
+                name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}
               />
             </Grid>
           </Grid>
-          <Typography align='center' pt={5}>
+          <Typography align="center" pt={5}>
             <Button
-              type='submit'
-              variant='text'
-              color='secondary'
+              type="submit"
+              variant="text"
+              color="secondary"
               className={classes.submitButton}
               style={{ marginTop: '4rem' }}
             >
-              <SubmitButton label='Register' />
+              <SubmitButton label="Register" />
             </Button>
           </Typography>
         </form>
-        <Typography align='center'>
+        <Typography align="center">
           <Grid spacing={2} style={{ margin: '1rem auto' }} container>
             <Grid item xs={12} sm={5}>
               {' '}
               <Typography
-                variant='h5'
+                variant="h5"
                 align={isMobile ? 'center' : 'right'}
-                color='primary'
-                className='authFont'
+                color="primary"
+                className="authFont"
               >
                 Register With:{' '}
               </Typography>
@@ -119,10 +119,10 @@ const Register = () => {
             </Grid>
           </Grid>
         </Typography>
-        <Typography color='primary' variant='h6' align='center' className='authFont'>
+        <Typography color="primary" variant="h6" align="center" className="authFont">
           Already Have an account?{' '}
-          <Link to='/login' style={{ color: '#FFF' }}>
-            <b style={{ color: '#fff' }} className='authFont'>
+          <Link to="/login" style={{ color: '#FFF' }}>
+            <b style={{ color: '#fff' }} className="authFont">
               Login !
             </b>
           </Link>

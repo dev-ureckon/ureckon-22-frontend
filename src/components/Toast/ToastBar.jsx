@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { clearToast } from '../../redux/actions/toast'
 import MuiAlert from '@mui/material/Alert'
 
-export default function ToastBar () {
+export default function ToastBar() {
   const dispatch = useDispatch()
   const { isShowing, message, toastType } = useSelector((state) => state.toast)
 
@@ -22,17 +22,17 @@ export default function ToastBar () {
   // eslint-disable-next-line
   const action = (
     <>
-      <Button color='secondary' size='small' onClick={handleClose}>
+      <Button color="secondary" size="small" onClick={handleClose}>
         UNDO
       </Button>
-      <IconButton size='small' aria-label='close' color='inherit' onClick={handleClose}>
-        <CloseIcon fontSize='small' />
+      <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+        <CloseIcon fontSize="small" />
       </IconButton>
     </>
   )
 
-  const Alert = React.forwardRef(function Alert (props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
   })
 
   return (

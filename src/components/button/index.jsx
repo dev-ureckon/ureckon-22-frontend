@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#222222',
     width: '228px',
     height: '49px',
-    color: 'white'
-  }
+    color: 'white',
+  },
 }))
 
 const Button = (props) => {
@@ -24,9 +24,9 @@ const Button = (props) => {
   const { children } = props
   return (
     <MUIButton
-      type='submit'
-      variant='contained'
-      color='secondary'
+      type="submit"
+      variant="contained"
+      color="secondary"
       className={classes.submitButton}
     >
       {children}

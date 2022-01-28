@@ -9,7 +9,7 @@ import bgvideo from './assets/bgVideo.mp4'
 import Header from './components/header'
 import ToastBar from './components/Toast/ToastBar'
 
-function App () {
+function App() {
   const [open, setOpen] = useState(false)
 
   const handleOpen = () => setOpen(true)
@@ -20,11 +20,11 @@ function App () {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {/* for main container */}
-        <video className='videoTag' autoPlay loop muted>
-          <source src={bgvideo} type='video/mp4' />
+        <video className="videoTag" autoPlay loop muted>
+          <source src={bgvideo} type="video/mp4" />
         </video>
         <div
-          className='nav1'
+          className="nav1"
           style={{ minHeight: '100vh', height: '100%', opacity: open ? '0.5' : '' }}
         >
           {/* for Navbar */}

@@ -18,7 +18,7 @@ export const CompleteProfileLogic = () => {
     email: userInfo && userInfo.email,
     number: '',
     collegeName: '',
-    gender: ''
+    gender: '',
   })
 
   // If user is already logged in Do not show this page
@@ -40,7 +40,7 @@ export const CompleteProfileLogic = () => {
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
@@ -62,6 +62,6 @@ export const CompleteProfileLogic = () => {
     formData,
     error,
     loading,
-    handleSubmit
+    handleSubmit,
   }
 }

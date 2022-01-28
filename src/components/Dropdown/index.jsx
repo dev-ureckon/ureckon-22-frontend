@@ -12,7 +12,7 @@ const Dropdown = (props) => {
     onChange,
     type,
     disabled = false,
-    required = true
+    required = true,
   } = props
   const ref = useRef(null)
 
@@ -37,7 +37,7 @@ const Dropdown = (props) => {
           lineHeight: '2rem',
           letterSpacing: '0.1em',
           textShadow: '-1px 1px 5px #0DB3B3, 1px 1px 5px #0DB3B3',
-          textTransform: 'uppercase'
+          textTransform: 'uppercase',
         }}
       >
         {label}
@@ -48,19 +48,19 @@ const Dropdown = (props) => {
         ref={ref}
         style={{
           position: 'relative',
-          width
+          width,
         }}
       >
         <img
           src={InputImg}
-          alt=''
+          alt=""
           style={{
             width: '95%',
             height: '95%',
             position: 'absolute',
             top: '50%',
             transform: 'translateY(-50%)',
-            left: 0
+            left: 0,
           }}
         />
 
@@ -71,7 +71,7 @@ const Dropdown = (props) => {
           style={{
             outline: 'none',
             top: '17%',
-            left: '3%'
+            left: '3%',
           }}
         >
           <Select
@@ -93,18 +93,18 @@ const Dropdown = (props) => {
               paddingLeft: '10px',
               textAlign: 'left',
               fontFamily: "'IBM Plex Sans', sans-serif",
-              fontWeight: 500
+              fontWeight: 500,
             }}
-            color='secondary'
-            variant='outlined'
+            color="secondary"
+            variant="outlined"
             required={required}
           >
-            <MenuItem value='' disabled>
+            <MenuItem value="" disabled>
               <em style={{ color: 'grey' }}>Gender</em>
             </MenuItem>
-            <MenuItem value='Male'>Male</MenuItem>
-            <MenuItem value='Female'>Female</MenuItem>
-            <MenuItem value='Others'>Others</MenuItem>
+            <MenuItem value="Male">Male</MenuItem>
+            <MenuItem value="Female">Female</MenuItem>
+            <MenuItem value="Others">Others</MenuItem>
           </Select>
         </FormControl>
       </div>

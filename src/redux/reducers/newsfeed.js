@@ -1,13 +1,13 @@
 import {
   FETCH_NEWSFEED_REQUEST,
   FETCH_NEWSFEED_SUCCESS,
-  FETCH_NEWSFEED_FAILURE
+  FETCH_NEWSFEED_FAILURE,
 } from '../constants'
 
 const initialState = {
   loading: false,
   error: '',
-  newsfeed: [] // All of the existing newsfeed fetched from server, initially empty
+  newsfeed: [], // All of the existing newsfeed fetched from server, initially empty
 }
 
 const newsfeedReducer = (state = initialState, action) => {
@@ -17,19 +17,19 @@ const newsfeedReducer = (state = initialState, action) => {
     case FETCH_NEWSFEED_REQUEST:
       return {
         ...state,
-        loading: true
+        loading: true,
       }
     case FETCH_NEWSFEED_SUCCESS:
       return {
         newsfeed: payload,
         loading: false,
-        error: ''
+        error: '',
       }
     case FETCH_NEWSFEED_FAILURE:
       return {
         newsfeed: [],
         loading: false,
-        error: payload
+        error: payload,
       }
     default:
       return state

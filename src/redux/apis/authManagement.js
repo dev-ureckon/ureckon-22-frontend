@@ -6,8 +6,8 @@ const createConfig = (accessToken) => {
   return {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + accessToken
-    }
+      Authorization: 'Bearer ' + accessToken,
+    },
   }
 }
 
@@ -33,7 +33,7 @@ export const setNewPassword =
         `${url}/profile/changepassword`,
         {
           oldPassword,
-          newPassword
+          newPassword,
         },
         config
       )

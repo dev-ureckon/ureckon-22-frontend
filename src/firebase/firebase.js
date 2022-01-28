@@ -6,7 +6,7 @@ import { signUpSocialUser } from '../redux/actions'
 app.initializeApp(firebaseConfig)
 
 // Oauth with google SignIn
-export function googleSignIn (dispatch) {
+export function googleSignIn(dispatch) {
   const provider = new app.auth.GoogleAuthProvider()
   return app
     .auth()
@@ -49,14 +49,14 @@ export function googleSignIn (dispatch) {
         err: errorCode,
         message: errorMessage,
         email: email,
-        credential: credential
+        credential: credential,
       })
       return errorMessage
     })
 }
 
 // Oauth with Facebook Sign up
-export function facebookSignIn (dispatch) {
+export function facebookSignIn(dispatch) {
   const provider = new app.auth.FacebookAuthProvider()
   return app
     .auth()
@@ -100,7 +100,7 @@ export function facebookSignIn (dispatch) {
         err: errorCode,
         message: errorMessage,
         email: email,
-        credential: credential
+        credential: credential,
       })
       return errorMessage
     })

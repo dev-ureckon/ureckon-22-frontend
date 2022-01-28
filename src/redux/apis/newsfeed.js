@@ -2,7 +2,7 @@ import axios from '../../axios/axiosInstance'
 import {
   fetchNewsfeedRequest,
   fetchNewsfeedSuccess,
-  fetchNewsfeedError
+  fetchNewsfeedError,
 } from '../actions'
 
 export const getAllNewsfeed = () => async (dispatch) => {

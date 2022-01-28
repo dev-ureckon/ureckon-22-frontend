@@ -14,10 +14,10 @@ const Card = (props) => {
       className={classes.cardWrapper}
       onClick={() => window.open(link, '_blank')}
     >
-      <img src={Frame} alt='frame' className={classes.frame} />
+      <img src={Frame} alt="frame" className={classes.frame} />
       <div className={classes.cardtxt}>
-        <div className='cardHeader'>{headline}</div>
-        <div className='cardDesc'>{content}</div>
+        <div className="cardHeader">{headline}</div>
+        <div className="cardDesc">{content}</div>
       </div>
     </Grid>
   )

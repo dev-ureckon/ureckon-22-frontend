@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 
-export default function CompleteProfileAccess (props) {
+export default function CompleteProfileAccess(props) {
   const { userInfo } = useSelector((state) => state.userLogin)
 
   if (userInfo) {
@@ -12,9 +12,9 @@ export default function CompleteProfileAccess (props) {
       (userInfo.alreadyRegistered !== undefined && userInfo.alreadyRegistered) ||
       userInfo.alreadyRegistered === undefined
     ) {
-      return <Navigate to='/profile' />
+      return <Navigate to="/profile" />
     }
   } else {
-    return <Navigate to='/login' />
+    return <Navigate to="/login" />
   }
 }

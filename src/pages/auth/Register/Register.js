@@ -15,7 +15,7 @@ export const RegisterLogic = () => {
     number: '',
     password: '',
     collegeName: '',
-    gender: ''
+    gender: '',
   })
 
   // getting state from reducer
@@ -40,7 +40,7 @@ export const RegisterLogic = () => {
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
@@ -62,6 +62,6 @@ export const RegisterLogic = () => {
     formData,
     error,
     loading,
-    handleSubmit
+    handleSubmit,
   }
 }

@@ -12,13 +12,13 @@ export const LoginLogic = () => {
 
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
   })
 
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
@@ -39,6 +39,6 @@ export const LoginLogic = () => {
     loading,
     error,
     userInfo,
-    formData
+    formData,
   }
 }

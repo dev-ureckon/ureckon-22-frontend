@@ -7,7 +7,7 @@ import Button from '../../components/button'
 import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions/toast'
 
-function Contact () {
+function Contact() {
   // If user is logged in autofill name and email
   const { userInfo } = useSelector((state) => state.userLogin)
 
@@ -26,7 +26,7 @@ function Contact () {
         name,
         email,
         subject,
-        message
+        message,
       })
       if (success) {
         if (userInfo) {
@@ -56,9 +56,9 @@ function Contact () {
         <Grid container spacing={{ lg: 10, xs: 4 }}>
           <Grid item lg={6} md={12} sm={12}>
             <Input
-              width='100%'
-              label='Name'
-              placeholder='Your Name'
+              width="100%"
+              label="Name"
+              placeholder="Your Name"
               value={name}
               onChange={(e) => handleNameChange(e)}
               disabled={!!userInfo}
@@ -66,10 +66,10 @@ function Contact () {
           </Grid>
           <Grid item lg={6} md={12} sm={12}>
             <Input
-              width='100%'
-              label='Email'
-              placeholder='Your email'
-              type='email'
+              width="100%"
+              label="Email"
+              placeholder="Your email"
+              type="email"
               value={email}
               onChange={(e) => handleEmailChange(e)}
               disabled={!!userInfo}
@@ -77,21 +77,21 @@ function Contact () {
           </Grid>
           <Grid item lg={6} md={12} sm={12}>
             <Input
-              width='100%'
-              label='Subject'
-              placeholder='Subject'
+              width="100%"
+              label="Subject"
+              placeholder="Subject"
               value={subject}
               onChange={(e) => handleSubjectChange(e)}
             />
           </Grid>
           <Grid item lg={6} md={12} sm={12}>
             <Input
-              width='100%'
-              label='Message'
-              placeholder='Your message'
+              width="100%"
+              label="Message"
+              placeholder="Your message"
               value={message}
               onChange={(e) => handleMessageChange(e)}
-              size='big'
+              size="big"
             />
           </Grid>
         </Grid>

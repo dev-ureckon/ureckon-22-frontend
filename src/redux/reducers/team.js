@@ -3,7 +3,7 @@ import { FETCH_TEAMS_REQUEST, FETCH_TEAMS_SUCCESS, FETCH_TEAMS_ERROR } from '../
 const initialState = {
   loading: false,
   error: '',
-  teams: {} // All of the existing TEAMS fetched from server, initially empty
+  teams: {}, // All of the existing TEAMS fetched from server, initially empty
 }
 
 const teamsReducer = (state = initialState, action) => {
@@ -13,19 +13,19 @@ const teamsReducer = (state = initialState, action) => {
     case FETCH_TEAMS_REQUEST:
       return {
         ...state,
-        loading: true
+        loading: true,
       }
     case FETCH_TEAMS_SUCCESS:
       return {
         teams: payload,
         loading: false,
-        error: ''
+        error: '',
       }
     case FETCH_TEAMS_ERROR:
       return {
         teams: [],
         loading: false,
-        error: payload
+        error: payload,
       }
     default:
       return state

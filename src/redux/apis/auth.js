@@ -6,8 +6,8 @@ const url = '/auth/participant'
 
 const config = {
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 }
 
 export const loginUser = (email, password) =>
@@ -35,7 +35,7 @@ export const requestPasswordReset = (email) => async (dispatch, getState) => {
     const response = await axios.post(
       `${url}/resetPassword`,
       {
-        email
+        email,
       },
       config
     )

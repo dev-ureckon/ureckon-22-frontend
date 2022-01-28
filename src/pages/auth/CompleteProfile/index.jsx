@@ -13,7 +13,7 @@ const CompleteProfile = () => {
     <div className={classes.root}>
       <Container>
         {loading && (
-          <LinearProgress style={{ margin: '4px auto', top: 0 }} color='primary' />
+          <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
         )}
 
         <form
@@ -27,10 +27,10 @@ const CompleteProfile = () => {
             <br />
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Input
-                width='100%'
-                label='Name'
-                placeholder='Your Name'
-                name='name'
+                width="100%"
+                label="Name"
+                placeholder="Your Name"
+                name="name"
                 value={formData.name}
                 onChange={(e) => handleChange(e)}
                 disabled
@@ -38,10 +38,10 @@ const CompleteProfile = () => {
               <br />
               <br />
               <Input
-                width='100%'
-                label='Phone No.'
-                placeholder='Your Number'
-                name='number'
+                width="100%"
+                label="Phone No."
+                placeholder="Your Number"
+                name="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
               />
@@ -50,11 +50,11 @@ const CompleteProfile = () => {
             <br />
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Input
-                width='100%'
-                label='Email'
-                placeholder='name@example.com'
-                name='email'
-                type='email'
+                width="100%"
+                label="Email"
+                placeholder="name@example.com"
+                name="email"
+                type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
                 disabled
@@ -62,33 +62,33 @@ const CompleteProfile = () => {
               <br />
               <br />
               <Input
-                width='100%'
-                label='School/College'
-                placeholder='Your School/College name'
-                name='collegeName'
+                width="100%"
+                label="School/College"
+                placeholder="Your School/College name"
+                name="collegeName"
                 value={formData.collegeName}
                 onChange={(e) => handleChange(e)}
               />
             </Grid>
           </Grid>
           <br />
-          <Grid container justifyContent='center' pt={{ xs: 2, lg: 0, md: 0, sm: 0 }}>
+          <Grid container justifyContent="center" pt={{ xs: 2, lg: 0, md: 0, sm: 0 }}>
             <Grid item sm={12} xs={12} md={6}>
               <Dropdown
-                width='100%'
-                label='Gender'
-                placeholder='Gender'
-                name='gender'
+                width="100%"
+                label="Gender"
+                placeholder="Gender"
+                name="gender"
                 value={formData.gender}
                 onChange={(e) => handleChange(e)}
               />
             </Grid>
           </Grid>
-          <Typography align='center'>
+          <Typography align="center">
             <Button
-              type='submit'
-              variant='contained'
-              color='secondary'
+              type="submit"
+              variant="contained"
+              color="secondary"
               className={classes.submitButton}
             >
               Submit

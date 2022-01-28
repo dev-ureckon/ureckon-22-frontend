@@ -13,14 +13,14 @@ import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 import Teams from './pages/Teams/index.jsx'
 
-function RouteComponent ({ open, setOpen, handleOpen, handleClose }) {
+function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
     <>
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
           <Route
-            path='/'
+            path="/"
             element={
               <Home
                 open={open}
@@ -31,7 +31,7 @@ function RouteComponent ({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route
-            path='/register'
+            path="/register"
             element={
               <ReverseAuthProtectedRoute>
                 <Register />
@@ -39,7 +39,7 @@ function RouteComponent ({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route
-            path='/login'
+            path="/login"
             element={
               <ReverseAuthProtectedRoute>
                 <Login />
@@ -47,7 +47,7 @@ function RouteComponent ({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route
-            path='/complete-profile'
+            path="/complete-profile"
             element={
               <CompleteProfileAccess>
                 <CompleteProfile />
@@ -55,7 +55,7 @@ function RouteComponent ({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route
-            path='/forgot-password'
+            path="/forgot-password"
             element={
               <ReverseAuthProtectedRoute>
                 <ForgotPassword />
@@ -63,7 +63,7 @@ function RouteComponent ({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route
-            path='/profile'
+            path="/profile"
             element={
               <AuthProtectedRoute>
                 <h2>Profile component here</h2>
@@ -71,9 +71,9 @@ function RouteComponent ({ open, setOpen, handleOpen, handleClose }) {
             }
           />
 
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/team' element={<Teams />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/team" element={<Teams />} />
         </Routes>
       </BrowserRouter>
     </>
