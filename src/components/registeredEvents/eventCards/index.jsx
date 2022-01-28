@@ -40,15 +40,18 @@ const EventCards = ({ event, handleDisbandTeam }) => {
             >
               <SubmitButton label={'View Event'} />
             </Button>
-            <Button
-              type="submit"
-              variant="outlined"
-              color="secondary"
-              className={classes.disbandButton}
-              onClick={() => handleDisbandTeam(event._id)}
-            >
-              Disband team
-            </Button>
+
+            {event.isLeader && (
+              <Button
+                type="submit"
+                variant="outlined"
+                color="secondary"
+                className={classes.disbandButton}
+                onClick={() => handleDisbandTeam(event._id)}
+              >
+                Disband team
+              </Button>
+            )}
           </div>
         </Grid>
       </Grid>
