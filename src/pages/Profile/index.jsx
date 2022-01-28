@@ -47,7 +47,6 @@ const Profile = () => {
               type="file"
               onChange={(event) => handleEditProfilePic(event)}
               hidden
-              multiple="false"
               accept=".png, .jpeg, .jpg"
             />
           </form>
