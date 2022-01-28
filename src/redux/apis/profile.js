@@ -5,11 +5,12 @@ import {
   showToastTimer,
   updateUserProfileSuccess,
   userProfileRequest,
+  userLoginError,
 } from '../actions'
 
 const commonProfileUrl = `/participant/management/profile`
 
-export const getUserProfile = () => async (dispatch, getState) => {
+export const getUserProfile = (navigate) => async (dispatch, getState) => {
   dispatch(userProfileRequest())
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
@@ -22,8 +23,13 @@ export const getUserProfile = () => async (dispatch, getState) => {
     const { user, authProvider, registeredEvents } = response.data
     dispatch(fetchUserProfileSuccess(user, authProvider, registeredEvents))
   } catch (error) {
-    dispatch(showToastTimer('Error while fetching user profile, try again!', 'error'))
+    dispatch(showToastTimer('"Session expired! Please login again', 'error'))
     dispatch(fetchUserProfileError(error))
+    dispatch(userLoginError(error))
+    if (error.response && error.response.data && error.response.data.success === false) {
+      localStorage.removeItem("userInfo")
+      navigate("/");
+    }
   }
 }
 

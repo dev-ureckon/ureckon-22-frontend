@@ -44,7 +44,7 @@ export const ProfileLogic = () => {
 
   // fetch user profile details
   useEffect(() => {
-    dispatch(getUserProfile())
+    dispatch(getUserProfile(navigate))
   }, [dispatch, counter])
 
   const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)
