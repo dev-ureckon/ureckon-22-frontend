@@ -125,6 +125,7 @@ const Profile = () => {
                       name="password"
                       type="password"
                       value={formData.password}
+                      disabled={true}
                       onChange={(e) => handleChange(e)}
                     />
                     <span className="pwd-txt" onClick={() => setShowPasswordModal(true)}>

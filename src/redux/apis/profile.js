@@ -95,7 +95,7 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
       },
     })
     dispatch(userProfileRequest())
-    const { message, profilePic } = await axios.put(
+    const { data: { message, profilePic } } = await axios.put(
       `${commonProfileUrl}/profilepic`,
       {
         profile_url: file_link,
