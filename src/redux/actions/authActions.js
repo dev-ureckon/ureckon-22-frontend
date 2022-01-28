@@ -8,7 +8,7 @@ import {
   USER_LOGOUT,
   USER_REGISTER_FAILED,
   USER_REGISTER_REQUEST,
-  USER_REGISTER_SUCCESS,
+  USER_REGISTER_SUCCESS
 } from '../constants'
 import { loginUser, registerUser, signUpSocial } from '../apis/auth'
 import { showToastTimer } from '../actions'
@@ -20,18 +20,18 @@ export const userRegister =
   (email, password, name, college, phone, gender) => async (dispatch) => {
     try {
       dispatch({
-        type: USER_REGISTER_REQUEST,
+        type: USER_REGISTER_REQUEST
       })
       const { data } = await registerUser(email, password, name, college, phone, gender)
       console.log(data)
       dispatch({
         type: USER_REGISTER_SUCCESS,
-        payload: data,
+        payload: data
       })
 
       dispatch({
         type: USER_LOGIN_SUCCESS,
-        payload: data,
+        payload: data
       })
       // swal('Success', 'Successfully Logged in', 'success')
       dispatch(showToastTimer('Successfully Logged in', 'success'))
@@ -41,21 +41,21 @@ export const userRegister =
       dispatch(showToastTimer(error.response.data.message, 'error'))
       dispatch({
         type: USER_REGISTER_FAILED,
-        payload: error.response.data.message,
+        payload: error.response.data.message
       })
     }
   }
 
-//user Login action
+// user Login action
 export const userLogin = (email, password) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: USER_LOGIN_REQUEST,
+      type: USER_LOGIN_REQUEST
     })
     const { data } = await loginUser(email, password)
     dispatch({
       type: USER_LOGIN_SUCCESS,
-      payload: data,
+      payload: data
     })
     // swal('Success', 'Successfully Logged in', 'success')
     dispatch(showToastTimer('Successfully Logged in', 'success'))
@@ -67,7 +67,7 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
-          : error.message,
+          : error.message
     })
   }
 }
@@ -76,19 +76,19 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
 export const signUpSocialUser = (idToken) => async (dispatch) => {
   try {
     dispatch({
-      type: USER_LOGIN_REQUEST,
+      type: USER_LOGIN_REQUEST
     })
 
     const { data } = await signUpSocial(idToken)
 
     dispatch({
       type: USER_LOGIN_SUCCESS,
-      payload: data,
+      payload: data
     })
 
     dispatch({
       type: USER_REGISTER_SUCCESS,
-      payload: data,
+      payload: data
     })
     // swal('Success', 'Successfully Logged in', 'success')
     dispatch(showToastTimer('Successfully Logged in', 'success'))
@@ -101,7 +101,7 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
-          : error.message,
+          : error.message
     })
   }
 }
@@ -111,17 +111,17 @@ export const completeProfileAction =
   (phone, college, gender, accessToken, navigate) => async (dispatch) => {
     try {
       dispatch({
-        type: USER_COMPLETE_PROFILE_REQUEST,
+        type: USER_COMPLETE_PROFILE_REQUEST
       })
       const { data } = await completeProfile(phone, college, gender, accessToken)
       console.log(data)
       dispatch({
         type: USER_LOGIN_SUCCESS,
-        payload: { ...data, alreadyRegistered: true },
+        payload: { ...data, alreadyRegistered: true }
       })
       dispatch({
         type: USER_COMPLETE_PROFILE_SUCCESS,
-        payload: { ...data, alreadyRegistered: true },
+        payload: { ...data, alreadyRegistered: true }
       })
 
       const userInfo = JSON.parse(localStorage.getItem('userInfo'))
@@ -136,14 +136,14 @@ export const completeProfileAction =
         payload:
           error.response && error.response.data.message
             ? error.response.data.message
-            : error.message,
+            : error.message
       })
       dispatch({
         type: USER_COMPLETE_PROFILE_FAILED,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message
-            : error.message,
+            : error.message
       })
     }
   }
@@ -152,6 +152,6 @@ export const completeProfileAction =
 export const userLogout = () => (dispatch) => {
   localStorage.removeItem('userInfo')
   dispatch({
-    type: USER_LOGOUT,
+    type: USER_LOGOUT
   })
 }

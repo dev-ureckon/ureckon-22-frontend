@@ -5,7 +5,7 @@ export * from './authActions.js'
 export {
   fetchNewsfeedRequest,
   fetchNewsfeedSuccess,
-  fetchNewsfeedError,
+  fetchNewsfeedError
 } from './newsfeed'
 
 export { showToast, clearToast, showToastTimer } from './toast'

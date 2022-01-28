@@ -3,17 +3,17 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
   container: {
     maxWidth: '44.5rem',
     border: '1px solid black',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   contentWrapper: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   headerWrapper: {
     display: 'flex',
@@ -21,13 +21,13 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'column',
     marginTop: '2rem',
-    marginBottom: '2rem',
+    marginBottom: '2rem'
   },
   btnWrapper: {
     marginTop: '2rem',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   btn: {
     width: '181px',
@@ -42,7 +42,7 @@ export const useStyles = makeStyles((theme) => ({
     color: '#FFFFFF',
     marginBottom: '2rem',
     '&:hover': {
-      background: '#222222',
-    },
-  },
+      background: '#222222'
+    }
+  }
 }))

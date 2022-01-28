@@ -15,25 +15,25 @@ const ForgotPassword = () => {
         handleFormSubmit(e)
       }}
     >
-      <Container maxWidth="sm">
+      <Container maxWidth='sm'>
         <Input
-          width="100%"
-          label="Your Email"
-          type="email"
-          placeholder="John Doe"
-          name="email"
+          width='100%'
+          label='Your Email'
+          type='email'
+          placeholder='John Doe'
+          name='email'
           value={formData.email}
           onChange={(e) => handleChange(e)}
         />
         <br />
-        <Typography align="center">
+        <Typography align='center'>
           <Button
-            type="submit"
-            variant="text"
-            color="secondary"
+            type='submit'
+            variant='text'
+            color='secondary'
             className={classes.submitButtonLogin}
           >
-            <SubmitButton label={'Submit'} />
+            <SubmitButton label='Submit' />
           </Button>
         </Typography>
       </Container>

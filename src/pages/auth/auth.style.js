@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles'
 export const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
+    minHeight: '100vh'
   },
   submitButton: {
     margin: '5rem auto',
@@ -15,7 +15,7 @@ export const useStyles = makeStyles((theme) => ({
     color: '#fff',
     fontStyle: 'normal',
     fontWeight: 500,
-    fontSize: '16px',
+    fontSize: '16px'
   },
   submitButtonLogin: {
     margin: '1rem auto',
@@ -29,7 +29,7 @@ export const useStyles = makeStyles((theme) => ({
     color: '#fff',
     fontStyle: 'normal',
     fontWeight: 500,
-    fontSize: '20px',
+    fontSize: '20px'
   },
-  socialAuth: {},
+  socialAuth: {}
 }))

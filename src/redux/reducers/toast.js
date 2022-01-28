@@ -3,7 +3,7 @@ import { SHOW_TOAST, CLEAR_TOAST } from '../constants/toast'
 const initialState = {
   isShowing: false,
   message: '', // Toast message to be shown
-  toastType: '', // Would indicate whether the toast shows some success or failure
+  toastType: '' // Would indicate whether the toast shows some success or failure
 }
 
 const toastReducer = (state = initialState, action) => {
@@ -13,13 +13,13 @@ const toastReducer = (state = initialState, action) => {
       return {
         isShowing: true,
         message,
-        toastType,
+        toastType
       }
     case CLEAR_TOAST:
       return {
         isShowing: false,
         message: '',
-        toastType: '',
+        toastType: ''
       }
     default:
       return state

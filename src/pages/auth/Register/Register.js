@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 
-//Redux
+// Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { userRegister, showToastTimer } from '../../../redux/actions'
 // import swal from 'sweetalert'
@@ -15,10 +15,10 @@ export const RegisterLogic = () => {
     number: '',
     password: '',
     collegeName: '',
-    gender: '',
+    gender: ''
   })
 
-  //getting state from reducer
+  // getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userRegister)
 
   // If user is already logged in Do not show this page
@@ -40,7 +40,7 @@ export const RegisterLogic = () => {
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }))
   }
 
@@ -62,6 +62,6 @@ export const RegisterLogic = () => {
     formData,
     error,
     loading,
-    handleSubmit,
+    handleSubmit
   }
 }

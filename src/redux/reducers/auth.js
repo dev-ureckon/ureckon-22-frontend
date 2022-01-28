@@ -8,7 +8,7 @@ import {
   USER_LOGOUT,
   USER_REGISTER_FAILED,
   USER_REGISTER_REQUEST,
-  USER_REGISTER_SUCCESS,
+  USER_REGISTER_SUCCESS
 } from '../constants'
 
 // User login Reducer
@@ -19,36 +19,36 @@ export const userLoginReducer = (state = {}, action) => {
         loading: true,
         isAuthenticated: false,
         error: null,
-        userInfo: null,
+        userInfo: null
       }
     case USER_LOGIN_SUCCESS:
       return {
         loading: false,
         userInfo: action.payload,
         isAuthenticated: true,
-        error: null,
+        error: null
       }
     case USER_LOGIN_FAILED:
       return {
         isAuthenticated: false,
         loading: false,
-        error: action.payload,
+        error: action.payload
       }
     case USER_LOGOUT:
       return {
-        isAuthenticated: false,
+        isAuthenticated: false
       }
     default:
       return state
   }
 }
 
-//User Register Reducer
+// User Register Reducer
 export const userRegisterReducer = (
   state = {
     loading: false,
     error: null,
-    userInfo: null,
+    userInfo: null
   },
   action
 ) => {
@@ -56,18 +56,18 @@ export const userRegisterReducer = (
     case USER_REGISTER_REQUEST:
       return {
         loading: true,
-        error: null,
+        error: null
       }
     case USER_REGISTER_SUCCESS:
       return {
         loading: false,
         userInfo: action.payload,
-        error: null,
+        error: null
       }
     case USER_REGISTER_FAILED:
       return {
         loading: false,
-        error: action.payload,
+        error: action.payload
       }
     default:
       return state
@@ -79,7 +79,7 @@ export const userCompleteProfileReducer = (
   state = {
     loading: false,
     error: null,
-    userInfo: null,
+    userInfo: null
   },
   action
 ) => {
@@ -87,18 +87,18 @@ export const userCompleteProfileReducer = (
     case USER_COMPLETE_PROFILE_REQUEST:
       return {
         loading: true,
-        error: null,
+        error: null
       }
     case USER_COMPLETE_PROFILE_SUCCESS:
       return {
         loading: false,
         userInfo: action.payload,
-        error: null,
+        error: null
       }
     case USER_COMPLETE_PROFILE_FAILED:
       return {
         loading: false,
-        error: action.payload,
+        error: action.payload
       }
     default:
       return state

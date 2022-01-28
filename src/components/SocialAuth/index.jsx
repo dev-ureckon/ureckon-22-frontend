@@ -3,7 +3,7 @@ import googleIcon from '../../assets/SVGs/googleIcon.svg'
 import facebookIcon from '../../assets/SVGs/facebookIcon.svg'
 import SocialAuthLogic from './socialAuth'
 
-function SocialAuth() {
+function SocialAuth () {
   const { googleAuth, facebookAuth } = SocialAuthLogic()
   const isMobile = window.innerWidth <= 768
 
@@ -14,7 +14,7 @@ function SocialAuth() {
           <img
             src={googleIcon}
             style={{ cursor: 'pointer' }}
-            alt="googleIcon"
+            alt='googleIcon'
             onClick={googleAuth}
           />
         </Grid>
@@ -22,7 +22,7 @@ function SocialAuth() {
           <img
             src={facebookIcon}
             style={{ cursor: 'pointer' }}
-            alt="facebookIcon"
+            alt='facebookIcon'
             onClick={facebookAuth}
           />
         </Grid>

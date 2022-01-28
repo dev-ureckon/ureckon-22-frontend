@@ -14,20 +14,22 @@ const Announcement = ({ open, handleClose }) => {
         <div className={classes.container}>
           <Grid container className={classes.contentWrapper}>
             <Grid item xs={12} className={classes.headerWrapper}>
-              <div className="header">News</div>
+              <div className='header'>News</div>
               <img
                 src={UnionPointer}
                 style={{ marginRight: '15rem', marginTop: '-1rem' }}
-                alt="Union"
+                alt='Union'
               />
             </Grid>
-            {newsfeed.length !== 0 ? (
-              newsfeed.map((card, i) => <Card key={i} {...card} />)
-            ) : (
-              <Card headline="No News to show" />
-            )}
+            {newsfeed.length !== 0
+              ? (
+                  newsfeed.map((card, i) => <Card key={i} {...card} />)
+                )
+              : (
+                <Card headline='No News to show' />
+                )}
             <Grid item xs={12} className={classes.btnWrapper}>
-              <Button variant="contained" className={classes.btn} onClick={handleClose}>
+              <Button variant='contained' className={classes.btn} onClick={handleClose}>
                 Back
               </Button>
             </Grid>

@@ -6,25 +6,25 @@ import Button from '@mui/material/Button'
 import line1 from '../../assets/SVGs/Union.svg'
 import { Link } from 'react-router-dom'
 
-function changeBackground(e) {
+function changeBackground (e) {
   e.target.style.background = '#022026'
 }
-function changeBackground2(e) {
+function changeBackground2 (e) {
   e.target.style.background = '#222222'
 }
 
-function About() {
+function About () {
   return (
     <Container>
       <Grid container spacing={12}>
         <Grid item lg={6} md={6} sm={12}>
           <Grid container>
             <Grid lg={12}>
-              <div className="blankaa">
+              <div className='blankaa'>
                 About UEM Kolkata
-                <img className="underlines" src={line1} alt="line" />
+                <img className='underlines' src={line1} alt='line' />
               </div>
-              <div className="whitetext">
+              <div className='whitetext'>
                 University Of Engineering &amp; Management, Kolkata was established in the
                 year 2014 by Act No 25 of 2014 of Govt of West Bengal and approved by
                 AICTE. The institute has stood one out of the top 10 institutes of India
@@ -34,12 +34,12 @@ function About() {
               </div>
             </Grid>
             <Grid lg={12}>
-              <div className="blankaa">
+              <div className='blankaa'>
                 About Ureckon
-                <img className="underlines" src={line1} alt="line" />
+                <img className='underlines' src={line1} alt='line' />
               </div>
 
-              <div className="whitetext">
+              <div className='whitetext'>
                 Every year it gets Bigger and Better, with more exciting events as well as
                 exhibitions. Students and tech enthusiasts from various parts of the
                 country are wholeheartedly invited to be a part of this budding
@@ -52,18 +52,18 @@ function About() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item lg={6} md={6} sm={12} className="buildingcontainer">
+        <Grid item lg={6} md={6} sm={12} className='buildingcontainer'>
           <div>
-            <img className="uembuilding" src={uemk} alt="UEM building" />
+            <img className='uembuilding' src={uemk} alt='UEM building' />
           </div>
         </Grid>
       </Grid>
-      <Grid paddingTop={'50px'} paddingBottom={'30px'}>
+      <Grid paddingTop='50px' paddingBottom='30px'>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Link to="/contact" style={{ textDecoration: 'none' }}>
+          <Link to='/contact' style={{ textDecoration: 'none' }}>
             <Button
-              className="contactbutton"
-              variant="contained"
+              className='contactbutton'
+              variant='contained'
               onMouseOver={changeBackground}
               onMouseOut={changeBackground2}
               style={{
@@ -71,7 +71,7 @@ function About() {
                 backgroundColor: '#222222',
                 width: '228px',
                 height: '49px',
-                color: 'white',
+                color: 'white'
               }}
             >
               Contact Us

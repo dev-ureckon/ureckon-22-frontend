@@ -9,6 +9,6 @@ export const TeamsLogic = () => {
   }, [dispatch])
 
   return {
-    teamData,
+    teamData
   }
 }

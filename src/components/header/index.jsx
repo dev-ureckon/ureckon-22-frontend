@@ -8,19 +8,19 @@ const Header = () => {
   return (
     <Grid
       container
-      direction="row"
-      justifyContent="space-around"
-      className="footer"
+      direction='row'
+      justifyContent='space-around'
+      className='footer'
       sx={{ marginBottom: '2rem' }}
     >
-      <Grid item alignSelf="center" sx={{ paddingTop: 5 }}>
-        <img src={uemLogo} alt="UEM" className="img" />
+      <Grid item alignSelf='center' sx={{ paddingTop: 5 }}>
+        <img src={uemLogo} alt='UEM' className='img' />
       </Grid>
       <Grid item sx={{ paddingTop: 5 }}>
-        <img src={headingLogo} alt="UEM" className="img" />
+        <img src={headingLogo} alt='UEM' className='img' />
       </Grid>
       <Grid item sx={{ paddingTop: 5 }}>
-        <img src={ureckonLogo} alt="heading" className="img" />
+        <img src={ureckonLogo} alt='heading' className='img' />
       </Grid>
     </Grid>
   )

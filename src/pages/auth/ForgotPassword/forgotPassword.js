@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-//Redux
+// Redux
 import { useSelector, useDispatch } from 'react-redux'
 import { requestPasswordReset } from '../../../redux/apis'
 
@@ -8,7 +8,7 @@ export const ForgotPasswordLogic = () => {
   const dispatch = useDispatch()
 
   const [formData, setFormData] = useState({
-    email: '',
+    email: ''
   })
 
   const { error, loading } = useSelector((state) => state.userLogin)
@@ -29,6 +29,6 @@ export const ForgotPasswordLogic = () => {
     formData,
     error,
     loading,
-    handleFormSubmit,
+    handleFormSubmit
   }
 }

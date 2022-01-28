@@ -13,9 +13,9 @@ const Login = () => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="sm">
+      <Container maxWidth='sm'>
         {loading && (
-          <LinearProgress style={{ margin: '4px auto', top: 0 }} color="primary" />
+          <LinearProgress style={{ margin: '4px auto', top: 0 }} color='primary' />
         )}
 
         <form
@@ -26,73 +26,73 @@ const Login = () => {
           }}
         >
           <Input
-            width="100%"
-            label="Email"
-            placeholder="Your Email"
-            name="email"
-            type="email"
+            width='100%'
+            label='Email'
+            placeholder='Your Email'
+            name='email'
+            type='email'
             value={formData.email}
             onChange={(e) => handleChange(e)}
           />
           <br />
           <br />
           <Input
-            width="100%"
-            label="Password"
-            placeholder="*********"
-            name="password"
+            width='100%'
+            label='Password'
+            placeholder='*********'
+            name='password'
             value={formData.password}
-            type="password"
+            type='password'
             onChange={(e) => handleChange(e)}
           />
           <Grid container>
-            <Grid item sm={7}></Grid>
+            <Grid item sm={7} />
             <Grid item sm={5}>
-              <Link to={'/forgot-password'} style={{ color: '#FFF' }}>
+              <Link to='/forgot-password' style={{ color: '#FFF' }}>
                 <Typography
                   style={{ paddingLeft: '11px' }}
-                  align="right"
-                  color="primary"
-                  className="authFont"
+                  align='right'
+                  color='primary'
+                  className='authFont'
                 >
                   Forgot password?
                 </Typography>
               </Link>
             </Grid>
           </Grid>
-          <Typography align="center">
+          <Typography align='center'>
             <Button
-              type="submit"
-              variant="text"
-              color="secondary"
+              type='submit'
+              variant='text'
+              color='secondary'
               className={classes.submitButtonLogin}
             >
-              <SubmitButton label={'Login'} />
+              <SubmitButton label='Login' />
             </Button>
           </Typography>
         </form>
-        <Typography align="center">
+        <Typography align='center'>
           <Grid container spacing={3} style={{ margin: '1.5rem auto' }}>
-            <Grid item sm={4} xs={12} justifyContent="center">
+            <Grid item sm={4} xs={12} justifyContent='center'>
               {' '}
               <Typography
                 align={isMobile ? 'right' : 'center'}
-                variant="h5"
-                color="primary"
-                className="authFont"
+                variant='h5'
+                color='primary'
+                className='authFont'
               >
                 Login With:{' '}
               </Typography>
             </Grid>
-            <Grid item justifyContent="center" sm={7} xs={12}>
+            <Grid item justifyContent='center' sm={7} xs={12}>
               <SocialAuth />
             </Grid>
           </Grid>
         </Typography>
-        <Typography color={'primary'} variant="h6" align="center" className="authFont">
+        <Typography color='primary' variant='h6' align='center' className='authFont'>
           Don't Have an account?{' '}
-          <Link to="/register" style={{ color: '#FFF' }}>
-            <b style={{ color: '#fff' }} className="authFont">
+          <Link to='/register' style={{ color: '#FFF' }}>
+            <b style={{ color: '#fff' }} className='authFont'>
               Register Here !
             </b>
           </Link>

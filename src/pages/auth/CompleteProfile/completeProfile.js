@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-//Redux
+// Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { completeProfileAction, showToastTimer } from '../../../redux/actions'
@@ -10,7 +10,7 @@ export const CompleteProfileLogic = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  //getting state from reducer
+  // getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
   const [formData, setFormData] = useState({
@@ -18,10 +18,10 @@ export const CompleteProfileLogic = () => {
     email: userInfo && userInfo.email,
     number: '',
     collegeName: '',
-    gender: '',
+    gender: ''
   })
 
-  //If user is already logged in Do not show this page
+  // If user is already logged in Do not show this page
   // or redirect to complete - profile page if not already registered with social auth
   useEffect(() => {
     if (userInfo && userInfo.alreadyRegistered) {
@@ -40,7 +40,7 @@ export const CompleteProfileLogic = () => {
   const handleChange = (e) => {
     setFormData((f) => ({
       ...f,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }))
   }
 
@@ -62,6 +62,6 @@ export const CompleteProfileLogic = () => {
     formData,
     error,
     loading,
-    handleSubmit,
+    handleSubmit
   }
 }

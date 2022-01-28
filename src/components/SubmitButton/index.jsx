@@ -3,22 +3,22 @@ import PropTypes from 'prop-types'
 import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled'
 import { styled } from '@mui/system'
 
-const ButtonRoot = React.forwardRef(function ButtonRoot(props, ref) {
+const ButtonRoot = React.forwardRef(function ButtonRoot (props, ref) {
   const { children, ...other } = props
 
   return (
-    <svg width="150" height="50" {...other} ref={ref}>
-      <polygon points="0,50 0,0 150,0 150,50" className="bg" />
-      <polygon points="0,50 0,0 150,0 150,50" className="borderEffect" />
-      <foreignObject x="0" y="0" width="150" height="50">
-        <div className="content">{children}</div>
+    <svg width='150' height='50' {...other} ref={ref}>
+      <polygon points='0,50 0,0 150,0 150,50' className='bg' />
+      <polygon points='0,50 0,0 150,0 150,50' className='borderEffect' />
+      <foreignObject x='0' y='0' width='150' height='50'>
+        <div className='content'>{children}</div>
       </foreignObject>
     </svg>
   )
 })
 
 ButtonRoot.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 const CustomButtonRoot = styled(ButtonRoot)(
@@ -98,11 +98,11 @@ const CustomButtonRoot = styled(ButtonRoot)(
   }`
 )
 
-const SvgButton = React.forwardRef(function SvgButton(props, ref) {
+const SvgButton = React.forwardRef(function SvgButton (props, ref) {
   return <ButtonUnstyled {...props} component={CustomButtonRoot} ref={ref} />
 })
 
-export default function UnstyledButtonCustom(props) {
+export default function UnstyledButtonCustom (props) {
   const { label } = props
   return <SvgButton>{label}</SvgButton>
 }

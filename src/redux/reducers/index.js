@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   userRegister: userRegisterReducer,
   userLogin: userLoginReducer,
   news: newsfeedReducer,
-  teams: teamsReducer,
+  teams: teamsReducer
 })
 
 export default rootReducer

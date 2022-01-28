@@ -1,5 +1,5 @@
 export const HomeLogic = () => {
-  function foo() {
+  function foo () {
     return 0
   }
 
