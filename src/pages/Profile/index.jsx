@@ -114,6 +114,8 @@ const Profile = () => {
                   name="number"
                   value={formData.number}
                   onChange={(e) => handleChange(e)}
+                  pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$"
+                  title="Phone number"
                 />
                 {authProvider === 'password' && (
                   <div className="pwd-field">

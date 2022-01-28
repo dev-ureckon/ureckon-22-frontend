@@ -48,6 +48,8 @@ const Register = () => {
                 name="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
+                pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$"
+                title="Phone number"
               />
               <Input
                 width="100%"
@@ -70,6 +72,8 @@ const Register = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
+                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                title="Email ID"
               />
               <Input
                 width="100%"
