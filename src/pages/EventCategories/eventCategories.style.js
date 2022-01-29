@@ -1,7 +1,6 @@
 import { makeStyles } from '@mui/styles'
 export const useStyles = makeStyles((theme) => ({
   categoryPaper: {
-    /* Auto layout */
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

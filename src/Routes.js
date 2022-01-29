@@ -74,7 +74,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route
-            path="/event-categories"
+            path="/events"
             element={
               <EventCategories />
             }
