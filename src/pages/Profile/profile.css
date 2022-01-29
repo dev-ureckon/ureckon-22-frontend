@@ -55,7 +55,7 @@
 
 .submitButton {
   margin: '5rem auto';
-  font-family: 'ibm-plex-sans, sans-serif';
+  font-family: 'IBM Plex Sans, sans-serif';
   text-transform: 'uppercase';
   width: '181px';
   height: '50px';
@@ -63,12 +63,9 @@
   border: 0;
   outline: 'none';
   color: '#fff';
-  font-size: 'normal';
   font-weight: 500;
   font-size: '16px';
 }
-
-
 
 .pwd-txt {
   cursor: pointer;
@@ -80,8 +77,8 @@
   font-weight: normal;
   text-decoration: underline;
   font-size: 20px;
-  text-align: right;    
-  color: #FFFFFF;
+  text-align: right;
+  color: #ffffff;
   flex: none;
   order: 2;
   align-self: stretch;
@@ -90,7 +87,6 @@
 }
 
 @media screen and (max-width: 900px) {
-
   .pwd-field {
     margin-bottom: 5rem;
   }
@@ -110,8 +106,8 @@
     font-weight: normal;
     text-decoration: underline;
     font-size: 20px;
-    text-align: right;    
-    color: #FFFFFF;
+    text-align: right;
+    color: #ffffff;
     flex: none;
     order: 2;
     align-self: stretch;
@@ -119,4 +115,3 @@
     margin: 0px 0px;
   }
 }
-  
