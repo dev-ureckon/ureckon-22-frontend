@@ -56,7 +56,7 @@ export const userRegister =
     }
   }
 
-//user Login action
+// user Login action
 export const userLogin = (email, password) => async (dispatch, getState) => {
   try {
     dispatch({

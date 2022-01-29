@@ -33,7 +33,7 @@ const CompleteProfile = () => {
                 name="name"
                 value={formData.name}
                 onChange={(e) => handleChange(e)}
-                disabled={true}
+                disabled
               />
               <br />
               <br />
@@ -76,7 +76,7 @@ const CompleteProfile = () => {
             </Grid>
           </Grid>
           <br />
-          <Grid container justifyContent={'center'} pt={{ xs: 2, lg: 0, md: 0, sm: 0 }}>
+          <Grid container justifyContent="center" pt={{ xs: 2, lg: 0, md: 0, sm: 0 }}>
             <Grid item sm={12} xs={12} md={6}>
               <Dropdown
                 width="100%"

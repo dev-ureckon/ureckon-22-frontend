@@ -43,7 +43,7 @@ export const userLoginReducer = (state = {}, action) => {
   }
 }
 
-//User Register Reducer
+// User Register Reducer
 export const userRegisterReducer = (
   state = {
     loading: false,

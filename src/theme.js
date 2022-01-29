@@ -67,15 +67,15 @@ const theme = createTheme({
     primary: {
       main: '#ffffff',
       secondary: '#001013',
-      navbar: 'rgba(1, 2, 8, 0.8)', //constant navbar colour
+      navbar: 'rgba(1, 2, 8, 0.8)', // constant navbar colour
     },
     secondary: {
       main: '#032e37',
       red: '#ED1B24',
       purple: '#2A3B97',
     },
-    warning: { main: '#F49320' }, //yellow
-    success: { main: '#0DB3B3' }, //green
+    warning: { main: '#F49320' }, // yellow
+    success: { main: '#0DB3B3' }, // green
   },
   props: {
     MuiTooltip: {

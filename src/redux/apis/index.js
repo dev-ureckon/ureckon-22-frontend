@@ -7,3 +7,4 @@ export { completeProfile, setNewPassword } from './authManagement'
 export { getAllNewsfeed } from './newsfeed'
 // All API's for user profile and it's associated operations
 export { getUserProfile, updateUserProfile, updateUserPassword } from './profile'
+export { getAllTeams } from './team.js'
