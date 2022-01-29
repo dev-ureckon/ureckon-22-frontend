@@ -44,7 +44,7 @@ const EventCategories = () => {
                     alt="event Category"
                   />
                   <Typography textAlign={'center'} variant="h4" style={{ color: '#fff' }}>
-                    {`${category.categoryName} Event`}
+                    {category.categoryName}
                   </Typography>
                 </Paper>
               </Link>
