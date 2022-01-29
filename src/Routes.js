@@ -73,12 +73,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </AuthProtectedRoute>
             }
           />
-          <Route
-            path="/events"
-            element={
-              <EventCategories />
-            }
-          />
+          <Route path="/events" element={<EventCategories />} />
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
