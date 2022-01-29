@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllEventCategories } from '../../redux/apis/eventCategories'
 
 export const EventCategoriesLogic = () => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-    const { loading, categories, error } = useSelector((state) => state.eventCategories);
+  const { loading, categories, error } = useSelector((state) => state.eventCategories)
 
-    useEffect(() => {
-        dispatch(getAllEventCategories());
-    }, [dispatch])
+  useEffect(() => {
+    dispatch(getAllEventCategories())
+  }, [dispatch])
 
-    return {
-        categories
-    }
+  return {
+    categories,
+  }
 }

@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom'
 
 const EventCategories = () => {
   const classes = useStyles()
-  const { categories } = EventCategoriesLogic();
+  const { categories } = EventCategoriesLogic()
 
-  console.log(categories);
+  console.log(categories)
 
   return (
     <Container>
