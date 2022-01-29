@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { Button } from '@mui/material'
 import { updateUserPassword } from '../../redux/apis/profile'
