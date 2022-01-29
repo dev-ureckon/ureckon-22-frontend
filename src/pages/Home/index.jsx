@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useStyles } from './home.style'
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
 import { Transition } from 'react-transition-group'
 import { Modal, Grid } from '@mui/material'
 import './fonts.css'
@@ -10,7 +11,7 @@ import line2 from '../../assets/SVGs/unionTwo.svg'
 import { Link } from 'react-router-dom'
 import { moreFunction, backoptions } from './home'
 
-import { getMainSponsors, getAllNewsfeed } from '../../redux/apis'
+import { getMainSponsors, getAllNewsfeed, getUserProfile } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
 import News from '../../components/announcement/index.jsx'
@@ -18,11 +19,13 @@ import './home.animation.css'
 import '../../app.css'
 
 function Home({ open, setOpen, handleOpen, handleClose }) {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const [inProp, setInProp] = useState(false)
 
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
-  const dispatch = useDispatch()
 
   const { userInfo } = useSelector((state) => state.userLogin)
 
@@ -45,6 +48,9 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
   // })
 
   useEffect(() => {
+    if (userInfo) {
+      dispatch(getUserProfile(navigate))
+    }
     dispatch(getMainSponsors())
     dispatch(getAllNewsfeed())
   }, [dispatch])

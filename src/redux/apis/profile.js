@@ -23,12 +23,12 @@ export const getUserProfile = (navigate) => async (dispatch, getState) => {
     const { user, authProvider, registeredEvents } = response.data
     dispatch(fetchUserProfileSuccess(user, authProvider, registeredEvents))
   } catch (error) {
-    dispatch(showToastTimer('"Session expired! Please login again', 'error'))
+    dispatch(showToastTimer('Session expired! Please login again', 'error'))
     dispatch(fetchUserProfileError(error))
     dispatch(userLoginError(error))
     if (error.response && error.response.data && error.response.data.success === false) {
-      localStorage.removeItem("userInfo")
-      navigate("/");
+      localStorage.removeItem('userInfo')
+      navigate('/')
     }
   }
 }
@@ -95,7 +95,9 @@ export const updateUserProfilePic = (file) => async (dispatch, getState) => {
       },
     })
     dispatch(userProfileRequest())
-    const { data: { message, profilePic } } = await axios.put(
+    const {
+      data: { message, profilePic },
+    } = await axios.put(
       `${commonProfileUrl}/profilepic`,
       {
         profile_url: file_link,
