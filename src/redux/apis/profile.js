@@ -10,28 +10,33 @@ import {
 
 const commonProfileUrl = `/participant/management/profile`
 
-export const getUserProfile = (navigate, currentLocationPath) => async (dispatch, getState) => {
-  dispatch(userProfileRequest())
-  const currentState = getState()
-  const { accessToken } = currentState.userLogin.userInfo
-  try {
-    const response = await axios.get(commonProfileUrl, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    })
-    const { user, authProvider, registeredEvents } = response.data
-    dispatch(fetchUserProfileSuccess(user, authProvider, registeredEvents))
-  } catch (error) {
-    dispatch(showToastTimer('Session expired! Please login again', 'error'))
-    dispatch(fetchUserProfileError(error))
-    dispatch(userLoginError(error))
-    if (error.response && error.response.data && error.response.data.success === false) {
-      localStorage.removeItem('userInfo')
-      currentLocationPath !== '/' ? navigate('/login') : navigate('/')
+export const getUserProfile =
+  (navigate, currentLocationPath) => async (dispatch, getState) => {
+    dispatch(userProfileRequest())
+    const currentState = getState()
+    const { accessToken } = currentState.userLogin.userInfo
+    try {
+      const response = await axios.get(commonProfileUrl, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+      const { user, authProvider, registeredEvents } = response.data
+      dispatch(fetchUserProfileSuccess(user, authProvider, registeredEvents))
+    } catch (error) {
+      dispatch(showToastTimer('Session expired! Please login again', 'error'))
+      dispatch(fetchUserProfileError(error))
+      dispatch(userLoginError(error))
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.success === false
+      ) {
+        localStorage.removeItem('userInfo')
+        currentLocationPath !== '/' ? navigate('/login') : navigate('/')
+      }
     }
   }
-}
 
 export const updateUserProfile = (updatedProfileData) => async (dispatch, getState) => {
   dispatch(userProfileRequest())

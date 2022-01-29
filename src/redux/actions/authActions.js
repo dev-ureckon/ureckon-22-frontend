@@ -121,57 +121,57 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
 // otherwise we go with completeProfile
 export const completeProfileAction =
   (phone, college, gender, accessToken, navigate, email = null) =>
-    async (dispatch) => {
-      try {
-        dispatch({
-          type: USER_COMPLETE_PROFILE_REQUEST,
-        })
-        let responseData
-        if (email) {
-          responseData = await completeProfileWithEmail(
-            email,
-            phone,
-            college,
-            gender,
-            accessToken
-          )
-        } else {
-          responseData = await completeProfile(phone, college, gender, accessToken)
-        }
-        const { data } = responseData
-        console.log(data)
-        dispatch({
-          type: USER_LOGIN_SUCCESS,
-          payload: { ...data, alreadyRegistered: true },
-        })
-        dispatch({
-          type: USER_COMPLETE_PROFILE_SUCCESS,
-          payload: { ...data, alreadyRegistered: true },
-        })
-
-        const userInfo = JSON.parse(localStorage.getItem('userInfo'))
-        userInfo.alreadyRegistered = true
-        localStorage.setItem('userInfo', JSON.stringify(userInfo))
-        // swal('Success', 'Successfully updated Profile', 'success')
-        dispatch(showToastTimer('Successfully updated Profile', 'success'))
-      } catch (error) {
-        dispatch(showToastTimer(error.response.data.message, 'error'))
-        dispatch({
-          type: USER_LOGIN_FAILED,
-          payload:
-            error.response && error.response.data.message
-              ? error.response.data.message
-              : error.message,
-        })
-        dispatch({
-          type: USER_COMPLETE_PROFILE_FAILED,
-          payload:
-            error.response && error.response.data.message
-              ? error.response.data.message
-              : error.message,
-        })
+  async (dispatch) => {
+    try {
+      dispatch({
+        type: USER_COMPLETE_PROFILE_REQUEST,
+      })
+      let responseData
+      if (email) {
+        responseData = await completeProfileWithEmail(
+          email,
+          phone,
+          college,
+          gender,
+          accessToken
+        )
+      } else {
+        responseData = await completeProfile(phone, college, gender, accessToken)
       }
+      const { data } = responseData
+      console.log(data)
+      dispatch({
+        type: USER_LOGIN_SUCCESS,
+        payload: { ...data, alreadyRegistered: true },
+      })
+      dispatch({
+        type: USER_COMPLETE_PROFILE_SUCCESS,
+        payload: { ...data, alreadyRegistered: true },
+      })
+
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      userInfo.alreadyRegistered = true
+      localStorage.setItem('userInfo', JSON.stringify(userInfo))
+      // swal('Success', 'Successfully updated Profile', 'success')
+      dispatch(showToastTimer('Successfully updated Profile', 'success'))
+    } catch (error) {
+      dispatch(showToastTimer(error.response.data.message, 'error'))
+      dispatch({
+        type: USER_LOGIN_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      })
+      dispatch({
+        type: USER_COMPLETE_PROFILE_FAILED,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      })
     }
+  }
 
 // logout action
 export const userLogout = () => (dispatch) => {
