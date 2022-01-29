@@ -33,7 +33,7 @@ const theme = createTheme({
     },
     h4: {
       fontFamily: "'IBM Plex Sans', sans-serif",
-      fontSize: '32px'
+      fontSize: '32px',
     },
     body1: {
       fontFamily: "'IBM Plex Sans', sans-serif",
