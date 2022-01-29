@@ -18,7 +18,7 @@ const EventCategories = () => {
       <Grid container spacing='40'>
         {categories && categories.map((category) => (
           <Grid item md={3} xs={12}>
-            <Link style={{ textDecoration: 'none' }} to={`/event/${category._id}`}>
+            <Link style={{ textDecoration: 'none' }} to={`/event/${category.categoryName}`}>
               <Paper className={classes.categoryPaper}>
                 <img src={category.icon} style={{ width: '100px', marginBottom: "15px" }} alt="event Category" />
                 <Typography textAlign={'center'} variant="h4" style={{ color: '#fff' }}>
