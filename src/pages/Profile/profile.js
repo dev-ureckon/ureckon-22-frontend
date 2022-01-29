@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate, useLocation } from 'react-router'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,6 +11,7 @@ import { unregisterFromEvent, updateUserProfilePic } from '../../redux/apis/prof
 export const ProfileLogic = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const location = useLocation()
 
   const [formData, setFormData] = useState({
     name: '',
@@ -44,7 +45,7 @@ export const ProfileLogic = () => {
 
   // fetch user profile details
   useEffect(() => {
-    dispatch(getUserProfile(navigate))
+    dispatch(getUserProfile(navigate, location.pathname))
   }, [dispatch, counter])
 
   const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)

@@ -8,7 +8,7 @@ import './fonts.css'
 import './home.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { moreFunction, backoptions } from './home'
 
 import { getMainSponsors, getAllNewsfeed, getUserProfile } from '../../redux/apis'
@@ -21,6 +21,7 @@ import '../../app.css'
 function Home({ open, setOpen, handleOpen, handleClose }) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const location = useLocation()
 
   const [inProp, setInProp] = useState(false)
 
@@ -49,7 +50,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
 
   useEffect(() => {
     if (userInfo) {
-      dispatch(getUserProfile(navigate))
+      dispatch(getUserProfile(navigate, location.pathname))
     }
     dispatch(getMainSponsors())
     dispatch(getAllNewsfeed())

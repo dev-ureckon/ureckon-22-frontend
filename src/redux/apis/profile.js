@@ -10,7 +10,7 @@ import {
 
 const commonProfileUrl = `/participant/management/profile`
 
-export const getUserProfile = (navigate) => async (dispatch, getState) => {
+export const getUserProfile = (navigate, currentLocationPath) => async (dispatch, getState) => {
   dispatch(userProfileRequest())
   const currentState = getState()
   const { accessToken } = currentState.userLogin.userInfo
@@ -28,7 +28,7 @@ export const getUserProfile = (navigate) => async (dispatch, getState) => {
     dispatch(userLoginError(error))
     if (error.response && error.response.data && error.response.data.success === false) {
       localStorage.removeItem('userInfo')
-      navigate('/')
+      currentLocationPath !== '/' ? navigate('/login') : navigate('/')
     }
   }
 }
