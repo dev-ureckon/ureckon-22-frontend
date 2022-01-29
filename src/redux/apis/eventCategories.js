@@ -8,7 +8,7 @@ import {
 export const getAllEventCategories = () => async (dispatch) => {
     dispatch(fetchCategoriesRequest())
     try {
-        const response = await axios.get('/event/categories')
+        const response = await axios.get('/events/categories')
         const actualData = response.data
         dispatch(fetchCategoriesSuccess(actualData))
     } catch (error) {

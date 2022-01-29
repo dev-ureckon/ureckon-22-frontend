@@ -76,9 +76,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
           <Route
             path="/event-categories"
             element={
-              <AuthProtectedRoute>
-                <EventCategories />
-              </AuthProtectedRoute>
+              <EventCategories />
             }
           />
 
