@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
   userProfile: userProfileReducer,
   news: newsfeedReducer,
   teams: teamsReducer,
-  eventCategories: eventCategoriesReducer
+  eventCategories: eventCategoriesReducer,
 })
 
 export default rootReducer
