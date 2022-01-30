@@ -35,7 +35,7 @@ const EventCategories = () => {
             <Grid item md={3} xs={12}>
               <Link
                 style={{ textDecoration: 'none' }}
-                to={`/event/${category.slug}`}
+                to={`/events/${category.slug}`}
               >
                 <Paper className={classes.categoryPaper}>
                   <img

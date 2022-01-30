@@ -74,6 +74,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             }
           />
           <Route path="/events" element={<EventCategories />} />
+          {/* <Route path="/events/:eventCategorySlug" element={} /> */}
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
