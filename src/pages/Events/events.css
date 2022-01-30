@@ -1,0 +1,13 @@
+.headingStyle {
+  font-family: 'Blanka', sans-serif;
+  font-size: 36px;
+  color: white;
+  letter-spacing: 0.1em;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 40px;
+  text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
+  line-height: 2em;
+  padding-left: 28px;
+}
