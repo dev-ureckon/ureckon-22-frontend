@@ -31,6 +31,10 @@ const theme = createTheme({
       fontWeight: '300',
       color: 'white',
     },
+    h4: {
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      fontSize: '32px',
+    },
     body1: {
       fontFamily: "'IBM Plex Sans', sans-serif",
       fontSize: '24px',

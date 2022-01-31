@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
 import { Select, FormControl, MenuItem } from '@mui/material'
@@ -70,18 +69,21 @@ const Dropdown = (props) => {
           fullWidth
           style={{
             outline: 'none',
-            top: '17%',
-            left: '3%',
+            top: '28%',
+            left: '1%',
           }}
         >
           <Select
-            inputProps={{ 'aria-label': 'Without label' }}
+            inputProps={{
+              'aria-label': 'Without label',
+            }}
             displayEmpty
             name={name}
             value={value}
             type={type}
             onChange={(e) => onChange(e)}
             disabled={disabled}
+            disableUnderline
             style={{
               width: '89%',
               position: 'relative',
@@ -90,13 +92,13 @@ const Dropdown = (props) => {
               outline: 'none',
               fontSize: '1.5625rem',
               color: 'white',
-              paddingLeft: '10px',
+              paddingLeft: '20px',
               textAlign: 'left',
               fontFamily: "'IBM Plex Sans', sans-serif",
               fontWeight: 500,
             }}
             color="secondary"
-            variant="outlined"
+            variant="standard"
             required={required}
           >
             <MenuItem value="" disabled>

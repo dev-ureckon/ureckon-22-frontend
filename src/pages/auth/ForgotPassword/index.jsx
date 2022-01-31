@@ -24,6 +24,8 @@ const ForgotPassword = () => {
           name="email"
           value={formData.email}
           onChange={(e) => handleChange(e)}
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          title="Email ID"
         />
         <br />
         <Typography align="center">
