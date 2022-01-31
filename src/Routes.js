@@ -14,6 +14,7 @@ import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRout
 import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 import Teams from './pages/Teams/index.jsx'
+import TeamRegister from './pages/TeamRegister/index.jsx'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
@@ -76,6 +77,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Teams />} />
+          <Route path="/team-register" element={<TeamRegister />} />
         </Routes>
       </BrowserRouter>
     </>
