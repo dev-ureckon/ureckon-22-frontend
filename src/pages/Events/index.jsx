@@ -7,19 +7,26 @@ import { Button, IconButton, CardActions, Grid, Container, Box } from '@mui/mate
 import { makeStyles } from '@mui/styles'
 import './events.css'
 import SearchIcon from '@mui/icons-material/Search'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
 const useStyles = makeStyles({
   btn1: {
     fontSize: 16,
-    backgroundColor: 'blue',
+    backgroundColor: '#2A3B97',
+    width: 184,
+    height: 56,
+    padding: 12,
     borderRadius: '0',
     '&:hover': {
       backgroundColor: 'blueviolet',
     },
   },
   btn2: {
-    backgroundColor: 'black',
+    backgroundColor: '#4B4C4F',
     fontSize: 16,
+    width: 184,
+    height: 56,
+    padding: 12,
     borderRadius: '0',
     '&:hover': {
       backgroundColor: 'blueviolet',
@@ -30,6 +37,13 @@ const useStyles = makeStyles({
   },
   icon: {
     color: 'white',
+  },
+  pdng: {
+    padding: '0',
+  },
+  mainBox: {
+    width: 368,
+    height: 304,
   },
 })
 
@@ -48,7 +62,7 @@ const Events = () => {
         </Grid>
 
         <Grid display="flex" justifyContent="center" flexWrap="wrap">
-          <Grid p={2}>
+          <Grid className={classes.mainBox} p={2}>
             <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
               <CardMedia component="img" alt="uic" height="140" image="/" />
               <CardContent>
@@ -56,49 +70,80 @@ const Events = () => {
                   Ureckon Innovation Challenge (UIC)
                 </Typography>
               </CardContent>
-              <CardActions padding={0}>
-                <Button className={classes.btn1} size="small">
-                  Register
-                </Button>
-                <Button className={classes.btn2} size="small">
-                  Know more
-                </Button>
+
+              <CardActions className={classes.pdng} padding={0}>
+                <Grid container spacing={2}>
+                  <Grid item xs={6}>
+                    {' '}
+                    <Button className={classes.btn1} size="small">
+                      Register
+                    </Button>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Button className={classes.btn2} size="small">
+                      Know more
+                      <IconButton size="large" aria-label="search" color="inherit">
+                        <ArrowForwardIcon className={classes.icon} />
+                      </IconButton>
+                    </Button>
+                  </Grid>
+                </Grid>
               </CardActions>
             </Card>
           </Grid>
-          <Grid p={2}>
+          <Grid className={classes.mainBox} p={2}>
             <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
               <CardMedia component="img" alt="uic" height="140" image="/" />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Ureckon Innovation Challenge (UIC)
+                  Tech-Expo
                 </Typography>
               </CardContent>
-              <CardActions padding={0}>
-                <Button className={classes.btn1} size="small">
-                  Register
-                </Button>
-                <Button className={classes.btn2} size="small">
-                  Know more
-                </Button>
+              <CardActions className={classes.pdng} padding={0}>
+                <Grid container spacing={2}>
+                  <Grid item xs={6}>
+                    {' '}
+                    <Button className={classes.btn1} size="small">
+                      Register
+                    </Button>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Button className={classes.btn2} size="small">
+                      Know more{' '}
+                      <IconButton size="large" aria-label="search" color="inherit">
+                        <ArrowForwardIcon className={classes.icon} />
+                      </IconButton>
+                    </Button>
+                  </Grid>
+                </Grid>
               </CardActions>
             </Card>
           </Grid>
-          <Grid p={2}>
+          <Grid className={classes.mainBox} p={2}>
             <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
               <CardMedia component="img" alt="uic" height="140" image="/" />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Ureckon Innovation Challenge (UIC)
+                  Ureck-a-thon
                 </Typography>
               </CardContent>
-              <CardActions padding={0}>
-                <Button className={classes.btn1} size="small">
-                  Register
-                </Button>
-                <Button className={classes.btn2} size="small">
-                  Know more
-                </Button>
+              <CardActions className={classes.pdng} padding={0}>
+                <Grid container spacing={2}>
+                  <Grid item xs={6}>
+                    {' '}
+                    <Button className={classes.btn1} size="small">
+                      Register
+                    </Button>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Button className={classes.btn2} size="small">
+                      Know more
+                      <IconButton size="large" aria-label="search" color="inherit">
+                        <ArrowForwardIcon className={classes.icon} />
+                      </IconButton>
+                    </Button>
+                  </Grid>
+                </Grid>
               </CardActions>
             </Card>
           </Grid>
