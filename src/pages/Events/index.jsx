@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     padding: 12,
     borderRadius: '0',
     '&:hover': {
-      backgroundColor: '#474748',
+      backgroundColor: '#1f1f1f',
     },
   },
   cardStyle: {
