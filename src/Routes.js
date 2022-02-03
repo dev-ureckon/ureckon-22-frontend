@@ -47,14 +47,6 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </ReverseAuthProtectedRoute>
             }
           />
-            <Route
-            path="/events"
-            element={
-              <ReverseAuthProtectedRoute>
-                <Events />
-              </ReverseAuthProtectedRoute>
-            }
-          />
           <Route
             path="/complete-profile"
             element={
