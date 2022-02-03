@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     padding: 12,
     borderRadius: '0',
     '&:hover': {
-      backgroundColor: 'blueviolet',
+      backgroundColor: '#0b053a',
     },
   },
   btn2: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     padding: 12,
     borderRadius: '0',
     '&:hover': {
-      backgroundColor: 'blueviolet',
+      backgroundColor: '#474748',
     },
   },
   cardStyle: {
@@ -53,7 +53,7 @@ const Events = () => {
     <>
       <Container>
         <Grid display="flex">
-          <Grid flexGrow={1}>
+          <Grid flexGrow={1} m={1.7}>
             <h1 className="headingStyle">FLAGSHIP EVENTS</h1>
           </Grid>
           <IconButton size="large" aria-label="search" color="inherit">
@@ -96,6 +96,7 @@ const Events = () => {
               <CardMedia component="img" alt="uic" height="140" image="/" />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
+                  <br />
                   Tech-Expo
                 </Typography>
               </CardContent>
@@ -124,6 +125,7 @@ const Events = () => {
               <CardMedia component="img" alt="uic" height="140" image="/" />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
+                  <br />
                   Ureck-a-thon
                 </Typography>
               </CardContent>
