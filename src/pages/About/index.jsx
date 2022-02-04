@@ -28,12 +28,12 @@ function About() {
               <img className="uembuilding" src={uemk} alt="UEM building" />
             </div>
           </Grid>
-          <Grid item className="buildingcontainer" lg={3} sm={4} order={{sm:4, lg:3, xs:4}}>
+          <Grid item className="buildingcontainer" lg={4} sm={4} order={{sm:3, lg:3, xs:4}}>
             <div>
               <img className="uembuilding" src={uemkart} alt="UEM building" />
             </div>
           </Grid>
-          <Grid item lg={9} sm={8} order={{sm:3, lg:4, xs:3}}>
+          <Grid item lg={8} sm={8} order={{sm:4, lg:4, xs:3}}>
             <div className="blankaa">
               About Ureckon
               <img className="underlines" src={line1} alt="line" />

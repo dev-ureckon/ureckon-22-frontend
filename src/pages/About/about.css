@@ -6,9 +6,9 @@
 
 .whitetext {
   color: white;
-  line-height: 23px;
+  line-height: 26px;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 15.8px;
+  font-size: 16px;
   font-style: normal;
   font-weight: normal;
 }
@@ -16,9 +16,10 @@
   font-family: 'Blanka', sans-serif;
   color: white;
   text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
-  line-height: 3em;
-  font-size: 22px;
+  font-size: 26px;
   letter-spacing: 0.1em;
+  padding-bottom: 35px;
+
 }
 
 .underlines {
@@ -27,7 +28,7 @@
   left: -155px;
 }
 .uembuilding {
-  height: 15.5vw;
+  height: 20vw;
   width: auto;
   padding: 10px;
   border: 3px solid;
@@ -47,17 +48,23 @@
 }
 @media (min-width:1401px){
   .uembuilding{
-    height: 12vw;
+    height: 17vw;
     width: auto;
   }
 }
-@media (max-width:752px) and (min-width:600px){
+@media (min-width:1600px){
+  .uembuilding{
+    height: 16vw;
+    width: auto;
+  }
+}
+@media (max-width:825px) and (min-width:600px){
   .underlines{
     display: none;
   }
 }
 
-@media (max-width: 491px){
+@media (max-width: 538px){
   .underlines{
     display: none;
   }
