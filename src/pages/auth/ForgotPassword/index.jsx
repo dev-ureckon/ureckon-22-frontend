@@ -24,6 +24,8 @@ const ForgotPassword = () => {
           name="email"
           value={formData.email}
           onChange={(e) => handleChange(e)}
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          title="Email ID"
         />
         <br />
         <Typography align="center">
@@ -33,7 +35,7 @@ const ForgotPassword = () => {
             color="secondary"
             className={classes.submitButtonLogin}
           >
-            <SubmitButton label={'Submit'} />
+            <SubmitButton label="Submit" />
           </Button>
         </Typography>
       </Container>

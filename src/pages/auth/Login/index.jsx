@@ -33,6 +33,8 @@ const Login = () => {
             type="email"
             value={formData.email}
             onChange={(e) => handleChange(e)}
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            title="Email ID"
           />
           <br />
           <br />
@@ -46,9 +48,9 @@ const Login = () => {
             onChange={(e) => handleChange(e)}
           />
           <Grid container>
-            <Grid item sm={7}></Grid>
+            <Grid item sm={7} />
             <Grid item sm={5}>
-              <Link to={'/forgot-password'}>
+              <Link to="/forgot-password" style={{ color: '#FFF' }}>
                 <Typography
                   style={{ paddingLeft: '11px' }}
                   align="right"
@@ -67,7 +69,7 @@ const Login = () => {
               color="secondary"
               className={classes.submitButtonLogin}
             >
-              <SubmitButton label={'Login'} />
+              <SubmitButton label="Login" />
             </Button>
           </Typography>
         </form>
@@ -89,9 +91,9 @@ const Login = () => {
             </Grid>
           </Grid>
         </Typography>
-        <Typography color={'primary'} variant="h6" align="center" className="authFont">
+        <Typography color="primary" variant="h6" align="center" className="authFont">
           Don't Have an account?{' '}
-          <Link to="/register">
+          <Link to="/register" style={{ color: '#FFF' }}>
             <b style={{ color: '#fff' }} className="authFont">
               Register Here !
             </b>

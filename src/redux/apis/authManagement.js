@@ -22,6 +22,21 @@ export const completeProfile = async (phone, college, gender, accessToken) => {
   return data
 }
 
+export const completeProfileWithEmail = async (
+  email,
+  phone,
+  college,
+  gender,
+  accessToken
+) => {
+  const config = createConfig(accessToken)
+  return axios.post(
+    `${url}/complete-profile-email`,
+    { email, phone, college, gender },
+    config
+  )
+}
+
 // API call for setting new password
 export const setNewPassword =
   (oldPassword, newPassword) => async (dispatch, getState) => {

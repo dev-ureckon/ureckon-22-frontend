@@ -48,6 +48,8 @@ const Register = () => {
                 name="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
+                pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$"
+                title="Phone number"
               />
               <Input
                 width="100%"
@@ -70,6 +72,8 @@ const Register = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
+                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                title="Email ID"
               />
               <Input
                 width="100%"
@@ -97,7 +101,7 @@ const Register = () => {
               className={classes.submitButton}
               style={{ marginTop: '4rem' }}
             >
-              <SubmitButton label={'Register'} />
+              <SubmitButton label="Register" />
             </Button>
           </Typography>
         </form>
@@ -119,9 +123,9 @@ const Register = () => {
             </Grid>
           </Grid>
         </Typography>
-        <Typography color={'primary'} variant="h6" align="center" className="authFont">
+        <Typography color="primary" variant="h6" align="center" className="authFont">
           Already Have an account?{' '}
-          <Link to="/login">
+          <Link to="/login" style={{ color: '#FFF' }}>
             <b style={{ color: '#fff' }} className="authFont">
               Login !
             </b>

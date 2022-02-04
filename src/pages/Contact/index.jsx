@@ -61,7 +61,7 @@ function Contact() {
               placeholder="Your Name"
               value={name}
               onChange={(e) => handleNameChange(e)}
-              disabled={userInfo ? true : false}
+              disabled={!!userInfo}
             />
           </Grid>
           <Grid item lg={6} md={12} sm={12}>
@@ -72,7 +72,7 @@ function Contact() {
               type="email"
               value={email}
               onChange={(e) => handleEmailChange(e)}
-              disabled={userInfo ? true : false}
+              disabled={!!userInfo}
             />
           </Grid>
           <Grid item lg={6} md={12} sm={12}>

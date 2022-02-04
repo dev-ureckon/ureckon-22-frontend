@@ -12,8 +12,18 @@ import {
 } from '../constants'
 import { loginUser, registerUser, signUpSocial } from '../apis/auth'
 import { showToastTimer } from '../actions'
-import { completeProfile } from '../apis/authManagement'
+import { completeProfile, completeProfileWithEmail } from '../apis/authManagement'
 // import swal from 'sweetalert'
+
+export const userLoginError = (error) => {
+  return {
+    type: USER_LOGIN_FAILED,
+    payload:
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message,
+  }
+}
 
 // user register action
 export const userRegister =
@@ -46,7 +56,7 @@ export const userRegister =
     }
   }
 
-//user Login action
+// user Login action
 export const userLogin = (email, password) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -107,13 +117,28 @@ export const signUpSocialUser = (idToken) => async (dispatch) => {
 }
 
 // completeProfile of auth user
+// if email is passed in the arguments then we call completeProfileWithEmail
+// otherwise we go with completeProfile
 export const completeProfileAction =
-  (phone, college, gender, accessToken, navigate) => async (dispatch) => {
+  (phone, college, gender, accessToken, navigate, email = null) =>
+  async (dispatch) => {
     try {
       dispatch({
         type: USER_COMPLETE_PROFILE_REQUEST,
       })
-      const { data } = await completeProfile(phone, college, gender, accessToken)
+      let responseData
+      if (email) {
+        responseData = await completeProfileWithEmail(
+          email,
+          phone,
+          college,
+          gender,
+          accessToken
+        )
+      } else {
+        responseData = await completeProfile(phone, college, gender, accessToken)
+      }
+      const { data } = responseData
       console.log(data)
       dispatch({
         type: USER_LOGIN_SUCCESS,

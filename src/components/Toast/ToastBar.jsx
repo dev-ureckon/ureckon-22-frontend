@@ -21,14 +21,14 @@ export default function ToastBar() {
 
   // eslint-disable-next-line
   const action = (
-    <React.Fragment>
+    <>
       <Button color="secondary" size="small" onClick={handleClose}>
         UNDO
       </Button>
       <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
         <CloseIcon fontSize="small" />
       </IconButton>
-    </React.Fragment>
+    </>
   )
 
   const Alert = React.forwardRef(function Alert(props, ref) {
