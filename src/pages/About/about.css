@@ -8,7 +8,7 @@
   color: white;
   line-height: 23px;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 14px;
+  font-size: 15.8px;
   font-style: normal;
   font-weight: normal;
 }
@@ -20,44 +20,46 @@
   font-size: 22px;
   letter-spacing: 0.1em;
 }
-.contactbutton {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  margin: 5rem auto;
-  text-transform: uppercase;
-  background-size: cover;
-  outline: none;
-}
 
 .underlines {
   position: relative;
   bottom: -9px;
   left: -155px;
 }
-.uembuilding{
-    padding: 10px;
-    border: 3px solid;
-    border-radius: 8px;
-    border-color: #43c9ed;
+.uembuilding {
+  height: 15.5vw;
+  width: auto;
+  padding: 10px;
+  border: 3px solid;
+  border-radius: 8px;
+  border-color: #43c9ed;
 }
-.buildingcontainer{
+.buildingcontainer {
   align-self: center;
   justify-content: center;
 }
-@media (max-width: 1063px){
-    .underlines{
-        display: none;
-    }
-    .uembuilding{
-      height: 30vw;
-      width: auto;
-    }
-}
-@media (max-width: 899px){
+
+@media (max-width: 600px){
   .uembuilding{
-    height: 72vw;
+    height: 70vw;
     width: auto;
   }
 }
+@media (min-width:1401px){
+  .uembuilding{
+    height: 12vw;
+    width: auto;
+  }
+}
+@media (max-width:752px) and (min-width:600px){
+  .underlines{
+    display: none;
+  }
+}
+
+@media (max-width: 491px){
+  .underlines{
+    display: none;
+  }
+}
+
