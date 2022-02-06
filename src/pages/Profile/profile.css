@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+.root {
+  min-height: '100vh';
+}
+
+.authFont {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+}
+
+.profilePicBg {
+  width: 68.5%;
+}
+
+.profilePic:hover.editProfilePic {
+  opacity: 0.8;
+}
+
+.profilePic {
+  width: 60%;
+  height: 85.5%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  border-radius: 4em;
+}
+
+.editProfilePic {
+  width: 60%;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  top: 10px;
+  left: 12px;
+  background-color: black;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.2s opacity ease;
+  cursor: pointer;
+}
+
+.profileName {
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.ureckonId {
+  color: white;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.submitButton {
+  margin: '5rem auto';
+  font-family: 'IBM Plex Sans, sans-serif';
+  text-transform: 'uppercase';
+  width: '181px';
+  height: '50px';
+  background-size: 'cover';
+  border: 0;
+  outline: 'none';
+  color: '#fff';
+  font-weight: 500;
+  font-size: '16px';
+}
+
+.pwd-txt {
+  cursor: pointer;
+  position: relative;
+  top: 1rem;
+  left: 1rem;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 20px;
+  text-align: right;
+  color: #ffffff;
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .pwd-field {
+    margin-bottom: 5rem;
+  }
+
+  .email-field {
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+  }
+
+  .pwd-txt {
+    cursor: pointer;
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: underline;
+    font-size: 20px;
+    text-align: right;
+    color: #ffffff;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
+  }
+}

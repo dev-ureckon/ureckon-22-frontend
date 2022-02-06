@@ -44,6 +44,8 @@ const CompleteProfile = () => {
                 name="number"
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
+                pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$"
+                title="Phone number"
               />
             </Grid>
             <br />
@@ -57,7 +59,9 @@ const CompleteProfile = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange(e)}
-                disabled
+                disabled={true}
+                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                title="Email ID"
               />
               <br />
               <br />

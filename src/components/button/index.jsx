@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   submitButton: {
     margin: '5rem auto',
-    fontFamily: 'ibm-plex-sans, sans-serif',
+    fontFamily: 'IBM Plex Sans, sans-serif',
     textTransform: 'uppercase',
     backgroundSize: 'cover',
     outline: 'none',
