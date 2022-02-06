@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate, useLocation } from 'react-router'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions'
 import { getUserProfile, updateUserProfile } from '../../redux/apis'
 import { unregisterFromEvent, updateUserProfilePic } from '../../redux/apis/profile'
-// import swal from 'sweetalert'
 
 export const ProfileLogic = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const location = useLocation()
 
   const [formData, setFormData] = useState({
     name: '',
@@ -44,7 +44,7 @@ export const ProfileLogic = () => {
 
   // fetch user profile details
   useEffect(() => {
-    dispatch(getUserProfile())
+    dispatch(getUserProfile(navigate, location.pathname))
   }, [dispatch, counter])
 
   const { userInfo: fetchedUserDetails } = useSelector((state) => state.userProfile)

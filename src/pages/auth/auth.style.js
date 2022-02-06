@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   submitButton: {
     margin: '5rem auto',
-    fontFamily: 'ibm-plex-sans, sans-serif',
+    fontFamily: 'IBM Plex Sans, sans-serif',
     textTransform: 'uppercase',
     width: '181px',
     height: '50px',
@@ -19,7 +19,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   submitButtonLogin: {
     margin: '1rem auto',
-    fontFamily: 'ibm-plex-sans, sans-serif',
+    fontFamily: 'IBM Plex Sans, sans-serif',
     textTransform: 'uppercase',
     width: '152px',
     height: '50px',

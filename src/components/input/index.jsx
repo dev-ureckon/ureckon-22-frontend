@@ -17,6 +17,8 @@ const Input = (props) => {
     disabled = false,
     required = true,
     variant,
+    pattern = '*',
+    title = '',
   } = props
 
   const ref = useRef(null)
@@ -119,6 +121,8 @@ const Input = (props) => {
             }}
             required={required}
             disabled={disabled}
+            pattern={pattern}
+            title={title}
           />
         )}
       </div>

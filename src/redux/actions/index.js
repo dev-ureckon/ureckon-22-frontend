@@ -19,3 +19,6 @@ export {
   fetchUserProfileError,
   updateUserProfileSuccess,
 } from './profile'
+
+export * from './team.js'
+export * from './eventCategories.js'

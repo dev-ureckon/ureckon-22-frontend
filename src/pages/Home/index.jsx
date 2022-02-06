@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useStyles } from './home.style'
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
 import { Transition } from 'react-transition-group'
 import { Modal, Grid } from '@mui/material'
 import './fonts.css'
 import './home.css'
 import line1 from '../../assets/SVGs/Union.svg'
 import line2 from '../../assets/SVGs/unionTwo.svg'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { moreFunction, backoptions } from './home'
 
-import { getMainSponsors, getAllNewsfeed } from '../../redux/apis'
+import { getMainSponsors, getAllNewsfeed, getUserProfile } from '../../redux/apis'
 import SocialIcons from '../../components/SocialIcons'
 
 import News from '../../components/announcement/index.jsx'
@@ -18,11 +19,14 @@ import './home.animation.css'
 import '../../app.css'
 
 function Home({ open, setOpen, handleOpen, handleClose }) {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const location = useLocation()
+
   const [inProp, setInProp] = useState(false)
 
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
-  const dispatch = useDispatch()
 
   const { userInfo } = useSelector((state) => state.userLogin)
 
@@ -45,6 +49,9 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
   // })
 
   useEffect(() => {
+    if (userInfo) {
+      dispatch(getUserProfile(navigate, location.pathname))
+    }
     dispatch(getMainSponsors())
     dispatch(getAllNewsfeed())
   }, [dispatch])
@@ -185,7 +192,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             <Grid item lg={12} className="menupad2" id="moreoptions">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  <Link to="/teams" className="menulink">
+                  <Link to="/team" className="menulink">
                     Team
                     <div>
                       <img className="test8" src={line1} alt="line" />

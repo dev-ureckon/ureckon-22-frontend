@@ -13,6 +13,8 @@ import Sponsor from './pages/sponsor/index.jsx'
 import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
 import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
+import Teams from './pages/Teams/index.jsx'
+import EventCategories from './pages/EventCategories/index.jsx'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
@@ -73,9 +75,12 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
           />
           <Route path="/sponsers" element={<Sponsor />} />
 
+          <Route path="/events" element={<EventCategories />} />
+          {/* <Route path="/events/:eventCategorySlug" element={} /> */}
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/team" element={<Teams />} />
         </Routes>
       </BrowserRouter>
     </>

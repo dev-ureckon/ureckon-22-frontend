@@ -24,11 +24,13 @@ const userProfileReducer = (state = initialState, action = {}) => {
       }
     case FETCH_USER_PROFILE_SUCCESS:
       return {
+        ...state,
         loading: false,
         error: '',
         userInfo: payload.user,
         authProvider: payload.authProvider,
         registeredEvents: payload.registeredEvents,
+        userProfile: payload.user,
       }
     case FETCH_USER_PROFILE_ERROR:
       return {
@@ -37,13 +39,19 @@ const userProfileReducer = (state = initialState, action = {}) => {
         userInfo: null,
         authProvider: null,
         registeredEvents: [],
+        userProfile: null,
       }
     case UPDATE_USER_PROFILE_SUCCESS:
       return {
+        ...state,
         loading: false,
         error: '',
         userInfo: {
           ...state.userInfo,
+          ...payload,
+        },
+        userProfile: {
+          ...state.userProfile,
           ...payload,
         },
       }

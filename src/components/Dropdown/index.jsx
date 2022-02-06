@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { useEffect, useRef } from 'react'
 import InputImg from '../../assets/SVGs/input.svg'
 import { Select, FormControl, MenuItem } from '@mui/material'

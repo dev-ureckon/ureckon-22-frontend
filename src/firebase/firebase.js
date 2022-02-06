@@ -7,19 +7,19 @@ app.initializeApp(firebaseConfig)
 
 // Oauth with google SignIn
 export function googleSignIn(dispatch) {
-  var provider = new app.auth.GoogleAuthProvider()
+  const provider = new app.auth.GoogleAuthProvider()
   return app
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
-      var credential = result.credential
+      const credential = result.credential
 
       // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = credential.accessToken
+      const token = credential.accessToken
       console.log('CHEKING TOKEN : ', token)
 
       // The signed-in user info.
-      var user = result.user
+      const user = result.user
       console.log(user)
 
       // get token
@@ -37,13 +37,13 @@ export function googleSignIn(dispatch) {
     })
     .catch((error) => {
       // Handle Errors here.
-      var errorCode = error.code
-      var errorMessage = error.message
+      const errorCode = error.code
+      const errorMessage = error.message
 
       // The email of the user's account used.
       // The firebase.auth.AuthCredential type that was used.
-      var email = error.email
-      var credential = error.credential
+      const email = error.email
+      const credential = error.credential
 
       console.log({
         err: errorCode,
@@ -57,21 +57,21 @@ export function googleSignIn(dispatch) {
 
 // Oauth with Facebook Sign up
 export function facebookSignIn(dispatch) {
-  var provider = new app.auth.FacebookAuthProvider()
+  const provider = new app.auth.FacebookAuthProvider()
   return app
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
       /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential
+      const credential = result.credential
       console.log(credential)
 
       // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = credential.accessToken
+      const token = credential.accessToken
       console.log(token)
 
       // The signed-in user info.
-      var user = result.user
+      const user = result.user
       console.log(user)
 
       // get token
@@ -88,13 +88,13 @@ export function facebookSignIn(dispatch) {
     })
     .catch((error) => {
       // Handle Errors here.
-      var errorCode = error.code
-      var errorMessage = error.message
+      const errorCode = error.code
+      const errorMessage = error.message
 
       // The email of the user's account used.
       // The firebase.auth.AuthCredential type that was used.
-      var email = error.email
-      var credential = error.credential
+      const email = error.email
+      const credential = error.credential
 
       console.log({
         err: errorCode,

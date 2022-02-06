@@ -15,6 +15,16 @@ import { showToastTimer } from '../actions'
 import { completeProfile, completeProfileWithEmail } from '../apis/authManagement'
 // import swal from 'sweetalert'
 
+export const userLoginError = (error) => {
+  return {
+    type: USER_LOGIN_FAILED,
+    payload:
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message,
+  }
+}
+
 // user register action
 export const userRegister =
   (email, password, name, college, phone, gender) => async (dispatch) => {
@@ -46,7 +56,7 @@ export const userRegister =
     }
   }
 
-//user Login action
+// user Login action
 export const userLogin = (email, password) => async (dispatch, getState) => {
   try {
     dispatch({

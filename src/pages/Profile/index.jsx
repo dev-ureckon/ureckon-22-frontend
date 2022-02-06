@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import RegisteredEvents from '../../components/registeredEvents/index.jsx'
@@ -47,8 +47,7 @@ const Profile = () => {
               type="file"
               onChange={(event) => handleEditProfilePic(event)}
               hidden
-              multiple="false"
-              accept=".png .jpeg .jpg"
+              accept=".png, .jpeg, .jpg"
             />
           </form>
 
@@ -115,6 +114,8 @@ const Profile = () => {
                   name="number"
                   value={formData.number}
                   onChange={(e) => handleChange(e)}
+                  pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$"
+                  title="Phone number"
                 />
                 {authProvider === 'password' && (
                   <div className="pwd-field">
@@ -125,6 +126,7 @@ const Profile = () => {
                       name="password"
                       type="password"
                       value={formData.password}
+                      disabled={true}
                       onChange={(e) => handleChange(e)}
                     />
                     <span className="pwd-txt" onClick={() => setShowPasswordModal(true)}>

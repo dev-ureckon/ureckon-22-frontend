@@ -30,7 +30,7 @@ export const completeProfileWithEmail = async (
   accessToken
 ) => {
   const config = createConfig(accessToken)
-  return await axios.post(
+  return axios.post(
     `${url}/complete-profile-email`,
     { email, phone, college, gender },
     config

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-//Redux
+// Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { userLogin } from '../../../redux/actions'
 
 export const LoginLogic = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  //getting state from reducer
+  // getting state from reducer
   const { userInfo, error, loading } = useSelector((state) => state.userLogin)
 
   const [formData, setFormData] = useState({
@@ -22,7 +22,7 @@ export const LoginLogic = () => {
     }))
   }
 
-  //If user is already logged in Do not show this page
+  // If user is already logged in Do not show this page
   useEffect(() => {
     if (userInfo) {
       navigate('/profile')
