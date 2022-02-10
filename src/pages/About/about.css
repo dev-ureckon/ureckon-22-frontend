@@ -28,7 +28,7 @@
   left: -155px;
 }
 .uembuilding {
-  height: 20vw;
+  height: 19vw;
   width: auto;
   padding: 10px;
   border: 3px solid;
@@ -46,18 +46,28 @@
     width: auto;
   }
 }
-@media (min-width:1401px){
-  .uembuilding{
-    height: 17vw;
-    width: auto;
-  }
-}
-@media (min-width:1600px){
+
+@media (min-width:1680px){
   .uembuilding{
     height: 16vw;
     width: auto;
   }
 }
+
+@media (min-width:2156px){
+  .uembuilding{
+    height: 14vw;
+    width: auto;
+  }
+}
+
+@media (min-width:2500px){
+  .uembuilding{
+    height: 13vw;
+    width: auto;
+  }
+}
+
 @media (max-width:825px) and (min-width:600px){
   .underlines{
     display: none;
