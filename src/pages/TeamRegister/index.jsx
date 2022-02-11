@@ -1,22 +1,18 @@
-import './teamregister.css'
-import './../../components/TeamRegister/Form'
-import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
+import { Container } from '@mui/material'
+import Teammates from '../../components/TeamRegister/Teammates/index.jsx'
 import Input from './../../components/input'
+import './teamregister.css'
 import Form from './../../components/TeamRegister/Form'
 
 const TeamRegister = () => {
   return (
-    <>
-    
-    <div className="heading">
-      <Container>
-      <h2>Register Your Team</h2>
-      </Container>
-     
+    <div className="teamReg-container">
+      <div className="teamReg-form-wrapper">
+        <div className="teamReg-header">Register Your Team</div>
+        <Form />
+      </div>
+      <Teammates />
     </div>
-    <Form/>
-    
-    </>
   )
 }
 

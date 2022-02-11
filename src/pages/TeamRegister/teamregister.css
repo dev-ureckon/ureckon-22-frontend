@@ -4,40 +4,28 @@
   }
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
 
+
+.teamReg-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 4rem;
+}
   
-.heading h2
-{
+.teamReg-form-wrapper {
+  width: 50%;
+}
+  
+.teamReg-header {
     position: static;
     width: 1136px;
     height: 40px;
-    left: 0px;
-    top: 0px;
-
     font-family: Blanka;
     font-style: normal;
     font-weight: normal;
     font-size: 36px;
     line-height: 40px;
-    /* identical to box height, or 111% */
-    
     letter-spacing: 0.1em;
-    
-    /* White */
-    
     color: #FFFFFF;
-    
-    /* 0DB3B3 */
-    
-    /* border: 0.1px solid #0DB3B3; */
-    /* [Web] Heading */
-    
     text-shadow: -0.8px 0.8px 1px #43C9ED, 0.5px 0.5px 1px #43C9ED;
-    
-    /* Inside auto layout */
-    
-    /* flex: none; */
-    /* order: 0; */
-    /* align-self: stretch; */
-    /* flex-grow: 0; */
     margin: 48px 0px;
 }

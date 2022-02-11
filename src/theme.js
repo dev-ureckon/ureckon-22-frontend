@@ -77,6 +77,9 @@ const theme = createTheme({
     navbar: {
       main: 'rgba(1, 2, 8, 0.8)',
     },
+    searchbar: {
+      main: '#FFFFFF',
+    },
     warning: { main: '#F49320' }, // yellow
     success: { main: '#0DB3B3' }, // green
   },
