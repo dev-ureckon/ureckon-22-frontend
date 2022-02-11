@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Blanka';
+    src: url('../../../assets/FONTs/Blanka-Regular.otf') format('opentype');
+  }
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+
+.teammates-container {
+    margin-top: 2rem;
+    padding: 2rem
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.add-teammates-header
+{
+    font-family: Blanka;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    order: 0.1px solid #0DB3B3;
+    text-shadow: -0.5px 0.5px 1px #43C9ED, 0.5px 0.5px 1px #43C9ED;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 91px;
+}
+
+.userlist-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.users {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.user-image {
+    width: 12%;
+    height: 12%;
+    border-radius: 50%;
+}
+
+.user-details {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.userid {
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 32px;
+	color: #FFFFFF;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+
+.username {
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 28px;
+	color: #FFFFFF;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+
+.user-email {
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 28px;
+	color: #FFFFFF;
+	flex: none;
+	order: 2;
+	flex-grow: 0;
+}
