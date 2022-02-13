@@ -14,6 +14,7 @@ import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRout
 import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 import Teams from './pages/Teams/index.jsx'
+import EventCategories from './pages/EventCategories/index.jsx'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
@@ -72,6 +73,8 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </AuthProtectedRoute>
             }
           />
+          <Route path="/events" element={<EventCategories />} />
+          {/* <Route path="/events/:eventCategorySlug" element={} /> */}
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />

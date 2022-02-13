@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions'
 import { getUserProfile, updateUserProfile } from '../../redux/apis'
 import { unregisterFromEvent, updateUserProfilePic } from '../../redux/apis/profile'
-// import swal from 'sweetalert'
 
 export const ProfileLogic = () => {
   const dispatch = useDispatch()

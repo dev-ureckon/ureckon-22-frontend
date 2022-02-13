@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles'
 export const useStyles = makeStyles((theme) => ({
   disbandButton: {
-    fontFamily: 'ibm-plex-sans, sans-serif',
+    fontFamily: 'IBM Plex Sans, sans-serif',
     textTransform: 'uppercase',
     width: '181px',
     height: '50px',
