@@ -73,7 +73,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </AuthProtectedRoute>
             }
           />
-          <Route path="/sponsers" element={<Sponsor />} />
+          <Route path="/partners" element={<Sponsor />} />
 
           <Route path="/events" element={<EventCategories />} />
           {/* <Route path="/events/:eventCategorySlug" element={} /> */}

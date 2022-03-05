@@ -43,6 +43,16 @@
   margin: 0px 12px;
 }
 
+@media (max-width: 531px) {
+  .pic img {
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  .pic img:nth-child(odd) {
+    margin-right: 12px;
+  }
+}
+
 .pic img:first-child {
   margin-left: 0px;
 }
