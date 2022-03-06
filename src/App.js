@@ -6,7 +6,7 @@ import './fonts.css'
 import './app.css'
 import RouteComponent from './Routes'
 import bgvideo from './assets/bgVideo.mp4'
-import Header from './components/header'
+import HomeNav from './components/header/homeNav'
 import ToastBar from './components/Toast/ToastBar'
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
           style={{ minHeight: '100vh', height: '100%', opacity: open ? '0.5' : '' }}
         >
           {/* for Navbar */}
-          <Header />
+
           <RouteComponent
             open={open}
             setOpen={setOpen}

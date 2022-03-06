@@ -15,6 +15,8 @@ import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 import Teams from './pages/Teams/index.jsx'
 import TeamRegister from './pages/TeamRegister/index.jsx'
+import HomeNav from './components/header/homeNav'
+import Header from './components/header'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
@@ -25,18 +27,22 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
           <Route
             path="/"
             element={
-              <Home
-                open={open}
-                setOpen={setOpen}
-                handleOpen={handleOpen}
-                handleClose={handleClose}
-              />
+              <>
+                <HomeNav />
+                <Home
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                />
+              </>
             }
           />
           <Route
             path="/register"
             element={
               <ReverseAuthProtectedRoute>
+                <Header />
                 <Register />
               </ReverseAuthProtectedRoute>
             }
@@ -45,6 +51,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/login"
             element={
               <ReverseAuthProtectedRoute>
+                <Header />
                 <Login />
               </ReverseAuthProtectedRoute>
             }
@@ -53,6 +60,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/complete-profile"
             element={
               <CompleteProfileAccess>
+                <Header />
                 <CompleteProfile />
               </CompleteProfileAccess>
             }
@@ -61,6 +69,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/forgot-password"
             element={
               <ReverseAuthProtectedRoute>
+                <Header />
                 <ForgotPassword />
               </ReverseAuthProtectedRoute>
             }
@@ -69,15 +78,48 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/profile"
             element={
               <AuthProtectedRoute>
+                <Header />
                 <Profile />
               </AuthProtectedRoute>
             }
           />
 
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/team" element={<Teams />} />
-          <Route path="/team-register" element={<TeamRegister />} />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Header />
+                <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header />
+                <About />
+              </>
+            }
+          />
+          <Route
+            path="/team"
+            element={
+              <>
+                <Header />
+                <Teams />}
+              </>
+            }
+          />
+          <Route
+            path="/team-register"
+            element={
+              <>
+                <Header />
+                <TeamRegister />
+              </>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
