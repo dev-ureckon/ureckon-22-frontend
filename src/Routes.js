@@ -79,7 +79,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/eventdetails" element={<EventDetails/>} />
+          <Route path="/eventdetails" element={<EventDetails />} />
           <Route path="/team" element={<Teams />} />
         </Routes>
       </BrowserRouter>

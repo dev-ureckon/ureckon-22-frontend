@@ -5,7 +5,6 @@ import uemkart from '../../assets/IMGs/uemKart.png'
 import CallIcon from '@mui/icons-material/Call'
 import GroupsIcon from '@mui/icons-material/Groups'
 
-
 function EventDetails() {
   return (
     <Container>
@@ -42,12 +41,20 @@ function EventDetails() {
           <div className="whitetext">
             <img className="uembuilding" src={uemkart} alt="UEM Kart" />
             <div>
-              <Button className="buttonEvents" variant="contained" style={{backgroundColor: "#242C6B"}}>
+              <Button
+                className="buttonEvents"
+                variant="contained"
+                style={{ backgroundColor: '#242C6B' }}
+              >
                 Register
               </Button>
             </div>
             <div>
-              <Button className="buttonEvents" variant="contained" style={{backgroundColor: "#4B4C4F"}}>
+              <Button
+                className="buttonEvents"
+                variant="contained"
+                style={{ backgroundColor: '#4B4C4F' }}
+              >
                 Problem Statement
               </Button>
             </div>
