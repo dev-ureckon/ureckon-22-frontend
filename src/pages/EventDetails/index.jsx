@@ -39,7 +39,12 @@ function EventDetails() {
         </Grid>
         <Grid item>
           <div className="whitetext">
-            <img className="uembuilding" src={uemkart} alt="UEM Kart" style={{ marginBottom: '20px' }} />
+            <img
+              className="uembuilding"
+              src={uemkart}
+              alt="UEM Kart"
+              style={{ marginBottom: '20px' }}
+            />
             <div>
               <Button
                 className="buttonEvents"
