@@ -4,14 +4,15 @@
   }
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
 
-.teammates-container {
+.teammates-wrapper {
+    width: 70%;
+    margin-right: 2rem;
     margin-top: 2rem;
-    padding: 2rem
 }
 
 .search-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: row wrap;
 }
 
 .add-teammates-header
@@ -29,6 +30,7 @@
     order: 0;
     flex-grow: 0;
     margin: 0px 91px;
+    margin-top: 2rem;
 }
 
 .userlist-wrapper {

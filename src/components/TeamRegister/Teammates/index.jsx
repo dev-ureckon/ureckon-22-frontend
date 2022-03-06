@@ -1,4 +1,5 @@
-import { TextField, Button } from '@mui/material'
+import { TextField, Button, IconButton, Icon, InputAdornment, Grid } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
 import { useStyles } from './styles.mui'
 import './styles.css'
@@ -7,17 +8,30 @@ const Teammates = () => {
   const classes = useStyles()
 
   return (
-    <div className="teammates-container">
+    <div className="teammates-wrapper">
       <div className="search-wrapper">
-        <div className="add-teammates-header">Add Teammates</div>
-        <div style={{ marginTop: '-2rem' }}>
-          <TextField
-            id="standard-basic"
-            label="Standard"
-            variant="standard"
-            color="primary"
-          />
-        </div>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={7} className="add-teammates-header">
+            Add Teammates
+          </Grid>
+          <Grid item xs={12} sm={12} md={5}>
+            <TextField
+              placeholder="Enter Ureckon-ID"
+              variant="standard"
+              color="searchbar"
+              focused
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <IconButton color="searchbar">
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+        </Grid>
       </div>
       <div className="userlist-wrapper">
         <div className="users">
