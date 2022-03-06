@@ -1,0 +1,65 @@
+import React from 'react'
+import { Button, Container, Grid } from '@mui/material'
+import './EventDetails.css'
+import uemkart from '../../assets/IMGs/uemKart.png'
+import CallIcon from '@mui/icons-material/Call'
+import GroupsIcon from '@mui/icons-material/Groups'
+
+
+function EventDetails() {
+  return (
+    <Container>
+      <Grid container>
+        <div className="blankaa">URECKON INNOVATION CHALLENGE</div>
+      </Grid>
+      <Grid container spacing={6}>
+        <Grid item lg={8}>
+          <Grid className="whitetext" paddingBottom={'25px'}>
+            <div className="blankaaTitle">EVENT DESCRIPTION</div>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, eligendi
+              libero laborum fugiat quibusdam velit nulla architecto necessitatibus ea
+              perspiciatis dicta aliquid! Quibusdam. Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Similique recusandae laborum, consequatur
+              excepturi accusamus vero voluptatem dolore minus odit atque animi,
+              consectetur tenetur. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Beatae odit harum culpa. Lorem ipsum dolor sit amet.
+            </div>
+          </Grid>
+          <Grid className="whitetext">
+            <div className="blankaaTitle">EVENT COORDINATORS</div>
+            <div>
+              <div>
+                Somsubhra &nbsp; <CallIcon style={{ paddingTop: '10px' }} /> 9876543210
+              </div>
+              <div>
+                Somsubhra &nbsp; <CallIcon style={{ paddingTop: '10px' }} /> 9876543210
+              </div>
+            </div>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <div className="whitetext">
+            <img className="uembuilding" src={uemkart} alt="UEM Kart" />
+            <div>
+              <Button className="buttonEvents" variant="contained" style={{backgroundColor: "#242C6B"}}>
+                Register
+              </Button>
+            </div>
+            <div>
+              <Button className="buttonEvents" variant="contained" style={{backgroundColor: "#4B4C4F"}}>
+                Problem Statement
+              </Button>
+            </div>
+            <div>
+              <GroupsIcon style={{ paddingTop: '6px', marginRight: '12px' }} />2 to 4
+              members per team
+            </div>
+          </div>
+        </Grid>
+      </Grid>
+    </Container>
+  )
+}
+
+export default EventDetails
