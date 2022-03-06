@@ -9,6 +9,8 @@ import './events.css'
 import SearchIcon from '@mui/icons-material/Search'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
+import SearchExpand from '../../components/SearchExpand'
+
 const useStyles = makeStyles({
   btn1: {
     fontSize: 16,
@@ -56,9 +58,7 @@ const Events = () => {
           <Grid flexGrow={1} m={1.7}>
             <h1 className="headingStyle">FLAGSHIP EVENTS</h1>
           </Grid>
-          <IconButton size="large" aria-label="search" color="inherit">
-            <SearchIcon className={classes.icon} />
-          </IconButton>
+          <SearchExpand></SearchExpand>
         </Grid>
 
         <Grid display="flex" justifyContent="center" flexWrap="wrap">
