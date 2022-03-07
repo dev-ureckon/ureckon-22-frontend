@@ -1,11 +1,28 @@
-import { TextField, Button, IconButton, Icon, InputAdornment, Grid } from '@mui/material'
+import { useState, useEffect } from 'react'
+import { TextField, InputAdornment, Grid } from '@mui/material'
+import { useDispatch, useSelector } from 'react-redux'
 import SearchIcon from '@mui/icons-material/Search'
-import CloseIcon from '@mui/icons-material/Close'
-import { useStyles } from './styles.mui'
+import Userlist from './Userlist'
 import './styles.css'
+import { userSearchAction } from '../../../redux/actions/userSearchActions'
 
 const Teammates = () => {
-  const classes = useStyles()
+  const dispatch = useDispatch()
+
+  const { loading, userInfo, error } = useSelector((state) => state.userSearch)
+
+  const [wordEntered, setWordEntered] = useState('')
+
+  useEffect(() => {
+    dispatch(userSearchAction(wordEntered))
+  }, [dispatch, wordEntered])
+
+  // const [filteredData, setFilteredData] = useState([])
+
+  const clearInput = () => {
+    // setFilteredData([])
+    setWordEntered('')
+  }
 
   return (
     <div className="teammates-wrapper">
@@ -19,13 +36,13 @@ const Teammates = () => {
               placeholder="Enter Ureckon-ID"
               variant="standard"
               color="searchbar"
+              value={wordEntered}
+              onChange={(e) => setWordEntered(e.target.value)}
               focused
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <IconButton color="searchbar">
-                      <SearchIcon />
-                    </IconButton>
+                    <SearchIcon color="searchbar" />
                   </InputAdornment>
                 ),
               }}
@@ -33,53 +50,8 @@ const Teammates = () => {
           </Grid>
         </Grid>
       </div>
-      <div className="userlist-wrapper">
-        <div className="users">
-          <img
-            src="https://i.pinimg.com/736x/b7/f9/ca/b7f9ca58135b349e96b56f54cd2fb356.jpg"
-            alt="user"
-            className="user-image"
-          />
-          <div className="user-details">
-            <div className="userid">Ureckon ID: U-1234</div>
-            <div className="username">Amitrajit Das</div>
-            <div className="user-email">amitrajitdas31@gmail.com</div>
-          </div>
-          <Button className={classes.closeButton}>
-            <CloseIcon />
-          </Button>
-        </div>
-        <div className="users">
-          <img
-            src="https://i.pinimg.com/736x/b7/f9/ca/b7f9ca58135b349e96b56f54cd2fb356.jpg"
-            alt="user"
-            className="user-image"
-          />
-          <div className="user-details">
-            <div className="userid">Ureckon ID: U-1234</div>
-            <div className="username">Amitrajit Das</div>
-            <div className="user-email">amitrajitdas31@gmail.com</div>
-          </div>
-          <Button className={classes.closeButton}>
-            <CloseIcon />
-          </Button>
-        </div>
-        <div className="users">
-          <img
-            src="https://i.pinimg.com/736x/b7/f9/ca/b7f9ca58135b349e96b56f54cd2fb356.jpg"
-            alt="user"
-            className="user-image"
-          />
-          <div className="user-details">
-            <div className="userid">Ureckon ID: U-1234</div>
-            <div className="username">Amitrajit Das</div>
-            <div className="user-email">amitrajitdas31@gmail.com</div>
-          </div>
-          <Button className={classes.closeButton}>
-            <CloseIcon />
-          </Button>
-        </div>
-      </div>
+
+      {userInfo && <Userlist userInfo={userInfo} />}
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import './styles.css'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import Input from '../../../components/input'
@@ -6,9 +7,13 @@ import Dropdown from '../../../components/Dropdown'
 import SubmitButton from '../../../components/SubmitButton'
 
 const Form = () => {
+  const { loading, error, isAuthenticated, userInfo } = useSelector(
+    (state) => state.userLogin
+  )
+
   const [formData, setFormData] = useState({
     team: '',
-    leader: '',
+    leader: userInfo.name,
   })
 
   const handleChange = (e) => {
@@ -22,7 +27,7 @@ const Form = () => {
     <>
       <div>
         <form>
-          <Grid item lg={6} md={6} sm={12} xs={12}>
+          <Grid item md={6} sm={12} xs={12}>
             <Input
               width="100%"
               label="Team Name"
@@ -31,8 +36,9 @@ const Form = () => {
               value={formData.name}
               onChange={(e) => handleChange(e)}
             />
-            <div style={{ height: 50 }} />
+          </Grid>
 
+          <Grid item md={6} sm={12} xs={12} style={{ marginTop: '3rem' }}>
             <Input
               width="100%"
               label="Team Leader"

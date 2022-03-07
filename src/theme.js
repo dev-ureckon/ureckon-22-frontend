@@ -80,6 +80,9 @@ const theme = createTheme({
     searchbar: {
       main: '#FFFFFF',
     },
+    addMemberBtn: {
+      main: '#0DB3B3',
+    },
     warning: { main: '#F49320' }, // yellow
     success: { main: '#0DB3B3' }, // green
   },
