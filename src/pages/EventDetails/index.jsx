@@ -30,14 +30,18 @@ function EventDetails() {
             <div className="blankaaTitle">EVENT COORDINATORS</div>
             <div>
               <div>
-                <div className='inlineclass'>Somsubhra &nbsp; </div>
-                <div className='inlineclass'><CallIcon style={{ paddingTop: '10px' }} /> 9876543210 &nbsp;
-                <MailIcon style={{ paddingTop: '10px' }} /> xyz@gmail.com</div>
+                <div className="inlineclass">Somsubhra &nbsp; </div>
+                <div className="inlineclass">
+                  <CallIcon style={{ paddingTop: '10px' }} /> 9876543210 &nbsp;
+                  <MailIcon style={{ paddingTop: '10px' }} /> xyz@gmail.com
+                </div>
               </div>
               <div>
-                <div className='inlineclass'>Somsubhra &nbsp; </div>
-                <div className='inlineclass'><CallIcon style={{ paddingTop: '10px' }} /> 9876543210 &nbsp;
-                <MailIcon style={{ paddingTop: '10px' }} /> xyz@gmail.com</div>
+                <div className="inlineclass">Somsubhra &nbsp; </div>
+                <div className="inlineclass">
+                  <CallIcon style={{ paddingTop: '10px' }} /> 9876543210 &nbsp;
+                  <MailIcon style={{ paddingTop: '10px' }} /> xyz@gmail.com
+                </div>
               </div>
             </div>
           </Grid>
@@ -50,7 +54,7 @@ function EventDetails() {
               alt="UEM Kart"
               style={{ marginBottom: '20px' }}
             />
-            <div className='teseclass'>
+            <div className="teseclass">
               <Button
                 className="buttonEvents"
                 variant="contained"
@@ -59,7 +63,7 @@ function EventDetails() {
                 Register
               </Button>
             </div>
-            <div className='teseclass'>
+            <div className="teseclass">
               <Button
                 className="buttonEvents"
                 variant="contained"
