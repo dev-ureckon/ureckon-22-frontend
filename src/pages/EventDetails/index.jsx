@@ -4,6 +4,7 @@ import './EventDetails.css'
 import uemkart from '../../assets/IMGs/uemKart.png'
 import CallIcon from '@mui/icons-material/Call'
 import GroupsIcon from '@mui/icons-material/Groups'
+import MailIcon from '@mui/icons-material/Mail'
 
 function EventDetails() {
   return (
@@ -29,10 +30,14 @@ function EventDetails() {
             <div className="blankaaTitle">EVENT COORDINATORS</div>
             <div>
               <div>
-                Somsubhra &nbsp; <CallIcon style={{ paddingTop: '10px' }} /> 9876543210
+                <div className='inlineclass'>Somsubhra &nbsp; </div>
+                <div className='inlineclass'><CallIcon style={{ paddingTop: '10px' }} /> 9876543210 &nbsp;
+                <MailIcon style={{ paddingTop: '10px' }} /> xyz@gmail.com</div>
               </div>
               <div>
-                Somsubhra &nbsp; <CallIcon style={{ paddingTop: '10px' }} /> 9876543210
+                <div className='inlineclass'>Somsubhra &nbsp; </div>
+                <div className='inlineclass'><CallIcon style={{ paddingTop: '10px' }} /> 9876543210 &nbsp;
+                <MailIcon style={{ paddingTop: '10px' }} /> xyz@gmail.com</div>
               </div>
             </div>
           </Grid>
@@ -45,7 +50,7 @@ function EventDetails() {
               alt="UEM Kart"
               style={{ marginBottom: '20px' }}
             />
-            <div>
+            <div className='teseclass'>
               <Button
                 className="buttonEvents"
                 variant="contained"
@@ -54,7 +59,7 @@ function EventDetails() {
                 Register
               </Button>
             </div>
-            <div>
+            <div className='teseclass'>
               <Button
                 className="buttonEvents"
                 variant="contained"
