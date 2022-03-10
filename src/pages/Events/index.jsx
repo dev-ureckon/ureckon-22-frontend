@@ -13,7 +13,6 @@ import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventList.style'
 import { EventListLogic } from './eventList'
 
-
 const Events = () => {
   const classes = useStyles()
   const { events } = EventListLogic()
