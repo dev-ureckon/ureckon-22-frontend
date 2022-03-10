@@ -14,14 +14,14 @@ import { Link } from 'react-router-dom'
 
 const Events = () => {
   const classes = useStyles()
-  const { events } = EventListLogic()
+  const { events, eventCategorySlug, makeHeading } = EventListLogic()
 
   return (
     <>
       <Container>
         <Grid display="flex">
           <Grid flexGrow={1} m={1.7}>
-            <h1 className="headingStyle">FLAGSHIP EVENTS</h1>
+            <h1 className="headingStyle">{makeHeading(eventCategorySlug)} EVENTS</h1>
           </Grid>
           <SearchExpand></SearchExpand>
         </Grid>
