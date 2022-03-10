@@ -107,12 +107,12 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             element={
               <>
                 <Header />
-                <Teams />}
+                <Teams />
               </>
             }
           />
           <Route
-            path="/team-register"
+            path="events/:eventCode/event-register"
             element={
               <>
                 <Header />
