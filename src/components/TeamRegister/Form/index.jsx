@@ -1,20 +1,15 @@
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './styles.css'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import Input from '../../../components/input'
 import Dropdown from '../../../components/Dropdown'
 import SubmitButton from '../../../components/SubmitButton'
+import { teamRegisterAction } from '../../../redux/actions/eventRegActions'
 
-const Form = () => {
-  const { loading, error, isAuthenticated, userInfo } = useSelector(
-    (state) => state.userLogin
-  )
+const Form = ({ formData, setFormData }) => {
 
-  const [formData, setFormData] = useState({
-    team: '',
-    leader: userInfo.name,
-  })
+  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     setFormData((f) => ({
