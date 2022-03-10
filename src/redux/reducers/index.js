@@ -7,6 +7,7 @@ import userProfileReducer from './profile'
 import teamsReducer from './team.js'
 import eventCategoriesReducer from './eventCategories'
 import eventDetailsReducer from './eventDetails'
+import eventListReducer from './eventList'
 
 const rootReducer = combineReducers({
   sponsor: sponsorReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   teams: teamsReducer,
   eventCategories: eventCategoriesReducer,
   eventDetails: eventDetailsReducer,
+  eventList: eventListReducer,
 })
 
 export default rootReducer
