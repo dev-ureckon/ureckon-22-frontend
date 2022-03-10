@@ -14,25 +14,31 @@ function EventDetails() {
   return (
     <Container>
       <Grid container>
-        <div className="blankaa">{eventDetails && eventDetails.event && eventDetails.event.eventName}</div>
+        <div className="blankaa">
+          {eventDetails && eventDetails.event && eventDetails.event.eventName}
+        </div>
       </Grid>
       <Grid container spacing={6}>
         <Grid item lg={8}>
           <Grid className="whitetext" paddingBottom={'25px'}>
             <div className="blankaaTitle">EVENT DESCRIPTION</div>
-            <div>{eventDetails && eventDetails.event && eventDetails.event.description}</div>
+            <div>
+              {eventDetails && eventDetails.event && eventDetails.event.description}
+            </div>
           </Grid>
           <Grid className="whitetext">
             <div className="blankaaTitle">EVENT COORDINATORS</div>
-            {eventDetails && eventDetails.event && eventDetails.event.coordinators.map((coordinator) => (
-              <div>
-                <div className="inlineclass">{coordinator.name} &nbsp; </div>
-                <div className="inlineclass">
-                  <CallIcon style={{ paddingTop: '10px' }} /> {coordinator.phone} &nbsp;
-                  <MailIcon style={{ paddingTop: '10px' }} /> {coordinator.email}
+            {eventDetails &&
+              eventDetails.event &&
+              eventDetails.event.coordinators.map((coordinator) => (
+                <div>
+                  <div className="inlineclass">{coordinator.name} &nbsp; </div>
+                  <div className="inlineclass">
+                    <CallIcon style={{ paddingTop: '10px' }} /> {coordinator.phone} &nbsp;
+                    <MailIcon style={{ paddingTop: '10px' }} /> {coordinator.email}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </Grid>
         </Grid>
         <Grid item>
@@ -68,7 +74,10 @@ function EventDetails() {
             </div>
             <div>
               <GroupsIcon style={{ paddingTop: '6px', marginRight: '12px' }} />
-              {eventDetails && eventDetails.event && eventDetails.event.minParticipants} to{' '}
+              {eventDetails &&
+                eventDetails.event &&
+                eventDetails.event.minParticipants}{' '}
+              to{' '}
               {eventDetails && eventDetails.event && eventDetails.event.maxParticipants}
               members per team
             </div>
