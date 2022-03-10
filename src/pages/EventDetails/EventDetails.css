@@ -15,6 +15,10 @@
 
 }
 
+.logo{
+padding-inline-end: 15px;
+}
+
 .whitetext {
   color: white;
   line-height: 26px;

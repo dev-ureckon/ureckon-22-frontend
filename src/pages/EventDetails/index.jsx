@@ -1,4 +1,6 @@
 import React from 'react'
+import {ReactComponent as Logo1} from '../../assets/SVGs/problemstatement.svg';
+import {ReactComponent as Logo2} from '../../assets/SVGs/download.svg';
 import { Button, Container, Grid } from '@mui/material'
 import './EventDetails.css'
 import uemkart from '../../assets/IMGs/uemKart.png'
@@ -60,7 +62,8 @@ function EventDetails() {
                 variant="contained"
                 style={{ backgroundColor: '#242C6B' }}
               >
-                Register
+                <Logo1 className='logo' />
+                <div style={{marginRight: '15px'}}>Register</div>
               </Button>
             </div>
             <div className="teseclass">
@@ -69,7 +72,8 @@ function EventDetails() {
                 variant="contained"
                 style={{ backgroundColor: '#4B4C4F' }}
               >
-                Problem Statement
+                <Logo2 className='logo' />
+                <div>Problem Statement</div>
               </Button>
             </div>
             <div>
