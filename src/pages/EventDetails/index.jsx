@@ -60,8 +60,14 @@ function EventDetails() {
               </Button>
             </div>
             <div className="teseclass">
-              <a target='_blank' href={eventDetails && eventDetails.event && eventDetails.event.problemStatement}>
-
+              <a
+                target="_blank"
+                href={
+                  eventDetails &&
+                  eventDetails.event &&
+                  eventDetails.event.problemStatement
+                }
+              >
                 <Button
                   className="buttonEvents"
                   variant="contained"
@@ -84,7 +90,7 @@ function EventDetails() {
           </div>
         </Grid>
       </Grid>
-    </Container >
+    </Container>
   )
 }
 
