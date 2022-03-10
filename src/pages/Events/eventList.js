@@ -6,16 +6,16 @@ import { useParams } from 'react-router-dom'
 import { getAllEventList } from '../../redux/apis/eventList'
 
 export const EventListLogic = () => {
-    const dispatch = useDispatch()
-    const { eventCategorySlug } = useParams()
+  const dispatch = useDispatch()
+  const { eventCategorySlug } = useParams()
 
-    const { loading, events, error } = useSelector((state) => state.eventList)
+  const { loading, events, error } = useSelector((state) => state.eventList)
 
-    useEffect(() => {
-        dispatch(getAllEventList(eventCategorySlug))
-    }, [dispatch])
+  useEffect(() => {
+    dispatch(getAllEventList(eventCategorySlug))
+  }, [dispatch])
 
-    return {
-        events,
-    }
+  return {
+    events,
+  }
 }

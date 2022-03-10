@@ -27,36 +27,42 @@ const Events = () => {
         </Grid>
 
         <Grid display="flex" justifyContent="center" flexWrap="wrap">
-
-          {events && events && events.map((event) => (
-            <Grid className={classes.mainBox} p={2}>
-              <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
-                <CardMedia component="img" alt={event.eventName} height="180" image={event.icon} />
-                <Typography gutterBottom variant="h5" component="div">
-                  {event.eventName}
-                </Typography>
-                <CardActions className={classes.pdng} padding={0}>
-                  <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                      <Button className={classes.btn1} size="small">
-                        Register
-                      </Button>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Link to={`/event/${event.code}`}>
-                        <Button className={classes.btn2} size="small">
-                          Know more
-                          <IconButton size="large" aria-label="search" color="inherit">
-                            <ArrowForwardIcon className={classes.icon} />
-                          </IconButton>
+          {events &&
+            events &&
+            events.map((event) => (
+              <Grid className={classes.mainBox} p={2}>
+                <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
+                  <CardMedia
+                    component="img"
+                    alt={event.eventName}
+                    height="180"
+                    image={event.icon}
+                  />
+                  <Typography gutterBottom variant="h5" component="div">
+                    {event.eventName}
+                  </Typography>
+                  <CardActions className={classes.pdng} padding={0}>
+                    <Grid container spacing={2}>
+                      <Grid item xs={6}>
+                        <Button className={classes.btn1} size="small">
+                          Register
                         </Button>
-                      </Link>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Link to={`/event/${event.code}`}>
+                          <Button className={classes.btn2} size="small">
+                            Know more
+                            <IconButton size="large" aria-label="search" color="inherit">
+                              <ArrowForwardIcon className={classes.icon} />
+                            </IconButton>
+                          </Button>
+                        </Link>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
         </Grid>
       </Container>
     </>
