@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import SearchIcon from '@mui/icons-material/Search'
 import Userlist from './Userlist'
 import './styles.css'
-import { userSearchAction } from '../../../redux/actions/userSearchActions'
+import { userSearchAction } from '../../../redux/actions/eventRegActions'
 
-const Teammates = () => {
+const Teammates = ({ teamMatesArr, setTeamMatesArr }) => {
   const dispatch = useDispatch()
 
   const { loading, userInfo, error } = useSelector((state) => state.userSearch)
@@ -51,7 +51,13 @@ const Teammates = () => {
         </Grid>
       </div>
 
-      {userInfo && <Userlist userInfo={userInfo} />}
+      {userInfo && (
+        <Userlist
+          userInfo={userInfo}
+          teamMatesArr={teamMatesArr}
+          setTeamMatesArr={setTeamMatesArr}
+        />
+      )}
     </div>
   )
 }
