@@ -15,22 +15,20 @@ export const EventListLogic = () => {
     dispatch(getAllEventList(eventCategorySlug))
   }, [dispatch])
 
+  function makeHeading(slug) {
+    var words = slug.split('-')
 
-    function makeHeading(slug) {
-        var words = slug.split('-');
-
-        for (var i = 0; i < words.length; i++) {
-            var word = words[i];
-            words[i] = word.charAt(0).toUpperCase() + word.slice(1);
-        }
-
-        return words.join(' ');
+    for (var i = 0; i < words.length; i++) {
+      var word = words[i]
+      words[i] = word.charAt(0).toUpperCase() + word.slice(1)
     }
 
+    return words.join(' ')
+  }
 
-    return {
-        events,
-        eventCategorySlug,
-        makeHeading
-    }
+  return {
+    events,
+    eventCategorySlug,
+    makeHeading,
+  }
 }
