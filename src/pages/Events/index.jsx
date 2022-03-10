@@ -12,7 +12,6 @@ import { useStyles } from './eventList.style'
 import { EventListLogic } from './eventList'
 import { Link } from 'react-router-dom'
 
-
 const Events = () => {
   const classes = useStyles()
   const { events } = EventListLogic()
