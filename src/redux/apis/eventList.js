@@ -1,17 +1,17 @@
 import axios from '../../axios/axiosInstance'
 import {
-    fetchEventListRequest,
-    fetchEventListSuccess,
-    fetchEventListError,
+  fetchEventListRequest,
+  fetchEventListSuccess,
+  fetchEventListError,
 } from '../actions'
 
 export const getAllEventList = (slug) => async (dispatch) => {
-    dispatch(fetchEventListRequest())
-    try {
-        const response = await axios.get(`/events/category-slug/${slug}`)
-        const actualData = response.data
-        dispatch(fetchEventListSuccess(actualData))
-    } catch (error) {
-        dispatch(fetchEventListError(error.message))
-    }
+  dispatch(fetchEventListRequest())
+  try {
+    const response = await axios.get(`/events/category-slug/${slug}`)
+    const actualData = response.data
+    dispatch(fetchEventListSuccess(actualData))
+  } catch (error) {
+    dispatch(fetchEventListError(error.message))
+  }
 }
