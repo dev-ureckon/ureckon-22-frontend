@@ -22,3 +22,4 @@ export {
 
 export * from './team.js'
 export * from './eventCategories.js'
+export * from './eventDetails.js'

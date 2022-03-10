@@ -8,6 +8,7 @@ import ForgotPassword from './pages/auth/ForgotPassword'
 import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 import About from './pages/About/index.jsx'
+import EventDetails from './pages/EventDetails/index.jsx'
 import Profile from './pages/Profile/index.jsx'
 
 import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
@@ -79,6 +80,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/event/:eventCode" element={<EventDetails />} />
           <Route path="/team" element={<Teams />} />
         </Routes>
       </BrowserRouter>
