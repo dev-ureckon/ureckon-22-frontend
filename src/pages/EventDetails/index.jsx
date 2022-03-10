@@ -54,14 +54,17 @@ function EventDetails() {
               </Button>
             </div>
             <div className="teseclass">
-              <Button
-                className="buttonEvents"
-                variant="contained"
-                style={{ backgroundColor: '#4B4C4F' }}
-              >
-                <Logo2 className="logo" />
-                <div>Problem Statement</div>
-              </Button>
+              <a target='_blank' href={eventDetails && eventDetails.event && eventDetails.event.problemStatement}>
+
+                <Button
+                  className="buttonEvents"
+                  variant="contained"
+                  style={{ backgroundColor: '#4B4C4F' }}
+                >
+                  <Logo2 className="logo" />
+                  <div>Problem Statement</div>
+                </Button>
+              </a>
             </div>
             <div>
               <GroupsIcon style={{ paddingTop: '6px', marginRight: '12px' }} />
@@ -72,7 +75,7 @@ function EventDetails() {
           </div>
         </Grid>
       </Grid>
-    </Container>
+    </Container >
   )
 }
 
