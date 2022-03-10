@@ -10,10 +10,14 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import EmailIcon from '@mui/icons-material/Email'
+import Loader from '../../components/loader/index.jsx'
 
 export default function Team() {
-  const { teamData } = TeamsLogic()
+  const { loading, teamData } = TeamsLogic()
   const classes = useStyles()
+
+  if (loading) return <Loader />
+
   return (
     <Container>
       {teamData &&

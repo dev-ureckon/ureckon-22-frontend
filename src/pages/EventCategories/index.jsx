@@ -5,10 +5,13 @@ import { useStyles } from './eventCategories.style'
 import SearchIcon from '@mui/icons-material/Search'
 import { EventCategoriesLogic } from './EventCategories'
 import { Link } from 'react-router-dom'
+import Loader from '../../components/loader'
 
 const EventCategories = () => {
   const classes = useStyles()
-  const { categories } = EventCategoriesLogic()
+  const { categories, loading } = EventCategoriesLogic()
+
+  if (loading) return <Loader />
 
   return (
     <Container>

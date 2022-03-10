@@ -3,12 +3,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getAllTeams } from '../../redux/apis'
 export const TeamsLogic = () => {
   const dispatch = useDispatch()
-  const { teams: teamData } = useSelector((state) => state.teams)
+  const { loading, teams: teamData } = useSelector((state) => state.teams)
   useEffect(() => {
     dispatch(getAllTeams())
   }, [dispatch])
 
-  return {
-    teamData,
-  }
+  return { loading, teamData }
 }

@@ -24,7 +24,7 @@ const sponsorReducer = (state = initialState, action) => {
     case FETCH_SPONSORS_SUCCESS:
       const newState = {
         ...state,
-        loading: true,
+        loading: false,
         error: '',
       }
       if (isMain) newState.mainSponsors = payload

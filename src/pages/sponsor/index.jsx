@@ -4,14 +4,17 @@ import { Container } from '@mui/material'
 import { getAllSponsors } from '../../redux/apis/sponsors'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
+import Loader from '../../components/loader'
 
 function Sponsor() {
   const dispatch = useDispatch()
-  const sponsors = useSelector((state) => state.sponsor.sponsors)
+  const { loading, sponsors } = useSelector((state) => state.sponsor)
 
   useEffect(() => {
     dispatch(getAllSponsors())
   }, [dispatch])
+
+  if (loading) return <Loader />
 
   return (
     <Container style={{ minHeight: 'calc(100vh - 255px)' }}>

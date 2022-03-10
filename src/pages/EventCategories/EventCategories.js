@@ -15,5 +15,6 @@ export const EventCategoriesLogic = () => {
 
   return {
     categories,
+    loading,
   }
 }
