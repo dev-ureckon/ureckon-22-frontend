@@ -239,8 +239,8 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="/sponsers" className="menulink">
-                    Sponsors
+                  <Link to="/partners" className="menulink">
+                    Partners
                     <div>
                       <img className="test6" src={line2} alt="line" />
                     </div>
