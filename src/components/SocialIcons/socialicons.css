@@ -1,0 +1,88 @@
+.instagram {
+  background: url(../../assets/SVGs/instaNew.svg);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  transition: 0.5s ease;
+}
+
+.instagram:hover {
+  background: url(../../assets/SVGs/instagram_active.svg);
+}
+
+.facebook {
+  background: url(../../assets/SVGs/fbWhite.svg) no-repeat;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  transition: 0.5s ease;
+}
+.facebook:hover {
+  background: url(../../assets/SVGs/fbColor.svg) no-repeat;
+}
+
+.twitter {
+  background: url(../../assets/SVGs/twitterWhite.svg) no-repeat;
+  width: 55px;
+  height: 45px;
+  display: inline-block;
+  transition: 0.5s ease;
+}
+.twitter:hover {
+  background: url(../../assets/SVGs/twitterColor.svg) no-repeat;
+}
+.linkedin {
+  background: url(../../assets/SVGs/linkedinNew.svg);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  transition: 0.5s ease;
+}
+.linkedin:hover {
+  background: url(../../assets/SVGs/linkedin_active.svg);
+}
+.youtube {
+  background: url(../../assets/SVGs/youtubeWhite.svg) no-repeat;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  transition: 0.5s ease;
+}
+.youtube:hover {
+  background: url(../../assets/SVGs/youtubeColor.svg) no-repeat;
+}
+
+@media (max-width: 1200px) {
+  .facebook {
+    margin: 15px;
+  }
+  .instagram {
+    margin: 15px;
+  }
+  .linkedin {
+    margin: 15px;
+  }
+  .twitter {
+    margin: 15px;
+  }
+  .youtube {
+    margin: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .facebook {
+    margin-bottom: 2rem;
+  }
+  .instagram {
+    margin-bottom: 2rem;
+  }
+  .linkedin {
+    margin-bottom: 2rem;
+  }
+  .twitter {
+    margin-bottom: 2rem;
+  }
+  .youtube {
+    margin-bottom: 2rem;
+  }
+}

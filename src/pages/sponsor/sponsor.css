@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Blanka';
+  src: url('../../assets/FONTs/Blanka-Regular.otf') format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+
+.one h2 {
+  /* Heading 2 */
+  font-family: Blanka;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  /* White */
+  color: #ffffff;
+  /* 0DB3B3 */
+  /* [Web] Heading */
+  text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 36px 0;
+}
+
+.pic img {
+  position: static;
+  width: 160px;
+  height: 132px;
+  left: 0px;
+  top: 0px;
+
+  border-radius: 8px;
+
+  /* Inside auto layout */
+
+  flex-direction: row;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 12px;
+}
+
+@media (max-width: 531px) {
+  .pic img {
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  .pic img:nth-child(odd) {
+    margin-right: 12px;
+  }
+}
+
+.pic img:first-child {
+  margin-left: 0px;
+}

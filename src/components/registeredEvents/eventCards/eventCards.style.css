@@ -1,0 +1,85 @@
+.card-container {
+  margin: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 5px solid #43c9ed;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 2rem;
+}
+
+.eventImg {
+  width: 14vw;
+}
+
+/* .event {
+    display: flex;
+    flex-flow: row nwrap;
+} */
+
+/* .event-details {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 2rem;
+}  */
+
+.btn-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0.5rem;
+}
+
+.eventButton {
+  margin: 2rem;
+  font-family: 'IBM Plex Sans, sans-serif';
+  text-transform: uppercase;
+  width: 181px;
+  height: 50px;
+  background-size: cover;
+  border: 0;
+  outline: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 5px solid #43c9ed;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 2rem;
+  }
+  .eventImg {
+    width: 24vw;
+    height: auto;
+  }
+  .btn-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    /* margin: 1.5rem; */
+  }
+}
+
+@media (max-width: 599px) {
+  .eventImg {
+    width: 60vw;
+    height: auto;
+  }
+  .btn-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1.2rem;
+  }
+  .event-details {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

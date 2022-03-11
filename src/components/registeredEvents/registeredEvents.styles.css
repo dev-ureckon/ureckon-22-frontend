@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Blanka';
+    src: url('../../assets/FONTs/Blanka-Regular.otf') format('opentype');
+  }
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+
+
+.container {
+    margin: 2rem;
+  }
+
+  .header {
+    /* display: flex;
+    flex-direction: column; */
+    font-family: 'Blanka', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 42px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    text-shadow: -0.5px 0.5px 1px #0DB3B3, 0.5px 0.5px 1px #0DB3B3;
+  }
+
+.line1 {
+    position: relative;
+    bottom: 20px;
+    left: 200px;
+  }
+
+@media (max-width: 462px){
+  .line1 {
+    bottom: 30px;
+    left: 45px;
+  }
+}

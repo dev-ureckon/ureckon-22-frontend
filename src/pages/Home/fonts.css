@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Blanka';
+  src: url('../../assets/FONTs/Blanka-Regular.otf') format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+
+#moreoptions {
+  display: none;
+}
+.Sponsor {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: aliceblue;
+  font-size: 36px;
+}
+.menufont {
+  font-family: 'Blanka', sans-serif;
+  font-size: 48px;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
+  line-height: 2em;
+}
+.menulink:hover {
+  text-shadow: 3px 3px 5px #43c9ed;
+}
+
+.menulink {
+  text-decoration: none;
+  color: white;
+  transition: 0.5s ease;
+}
+.menupad {
+  padding-top: 62px;
+}
+.menupad2 {
+  padding-top: 62px;
+}
+@media (max-width: 360px) {
+  .menuwithsocial {
+    padding-top: 45px;
+  }
+  .headimgcontain {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .menupad {
+    padding-top: 0px;
+  }
+  .menupad2 {
+    padding-top: 0px;
+  }
+}
+@media (min-width: 361px) and (max-width: 1200px) {
+  .headimgcontain {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 200px) and (max-width: 497px) {
+  .menuwithsocial {
+    padding-left: 0px;
+  }
+}
+

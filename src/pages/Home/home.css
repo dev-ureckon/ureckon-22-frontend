@@ -1,0 +1,95 @@
+.menufont {
+  font-family: 'Blanka', sans-serif;
+  font-size: 48px;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
+  line-height: 2em;
+}
+.menulink {
+  text-decoration: none;
+  color: white;
+}
+
+/*------------------------------------------- Menu Underlines ---------------------------------- */
+
+@media (max-width: 1200px) {
+  .socialicons {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .test0 {
+    display: none;
+  }
+  .test1 {
+    display: none;
+  }
+  .test2 {
+    display: none;
+  }
+  .test3 {
+    display: none;
+  }
+  .test4 {
+    display: none;
+  }
+  .test5 {
+    display: none;
+  }
+  .test6 {
+    display: none;
+  }
+  .test7 {
+    display: none;
+  }
+  .test8 {
+    display: none;
+  }
+}
+
+.test0 {
+  position: relative;
+  bottom: 82px;
+}
+.test1 {
+  position: relative;
+  bottom: 82px;
+  left: 50px;
+}
+.test2 {
+  position: relative;
+  bottom: 82px;
+  right: 42px;
+}
+.test3 {
+  position: relative;
+  bottom: 82px;
+  left: 25px;
+}
+.test4 {
+  position: relative;
+  bottom: 82px;
+  right: 38px;
+}
+.test5 {
+  position: relative;
+  bottom: 80px;
+  right: 45px;
+}
+.test6 {
+  position: relative;
+  bottom: 82px;
+  right: 30px;
+}
+
+.test7 {
+  position: relative;
+  bottom: 82px;
+  left: 80px;
+}
+
+.test8 {
+  position: relative;
+  bottom: 82px;
+  right: 20px;
+}

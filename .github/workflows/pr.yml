@@ -1,0 +1,34 @@
+name: PR
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  build:
+    name: PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Configure Sonar branch
+        run: |
+          key=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+          head_branch=${{ github.head_ref }}
+          head_branch=${head_branch#refs/heads/}
+          base_branch=${{ github.base_ref }}
+          base_branch=${base_branch#refs/heads/}
+          echo  "" >> sonar-project.properties 
+          echo "sonar.pullrequest.key=$key" >> sonar-project.properties
+          echo  "" >> sonar-project.properties 
+          echo "sonar.pullrequest.branch=$head_branch" >> sonar-project.properties
+          echo  "" >> sonar-project.properties 
+          echo "sonar.pullrequest.base=$base_branch" >> sonar-project.properties
+          echo Sonar configuration:
+          cat sonar-project.properties
+      - uses: docker://sonarsource/sonar-scanner-cli:latest
+        with:
+          Dsonar.branch.name: ${GITHUB_REF##*/}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}

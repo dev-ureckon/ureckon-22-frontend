@@ -1,0 +1,8 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="44" height="44">
+	<title>fbWhite-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff } 
+	</style>
+	<path id="Layer" fill-rule="evenodd" class="shp0" d="M25 0C38.75 0 50 11.31 50 25.14C50 37.57 40.97 47.9 29.17 50L29.17 31.94L34.72 31.94L35.83 25L29.17 25L29.17 20.14C29.17 18.19 29.86 16.67 32.92 16.67L36.11 16.67L36.11 10.28C34.31 10 32.36 9.72 30.56 9.72C24.86 9.72 20.83 13.19 20.83 19.44L20.83 25L14.58 25L14.58 31.94L20.83 31.94L20.83 50C9.03 47.9 0 37.57 0 25.14C0 11.31 11.25 0 25 0Z" />
+</svg>

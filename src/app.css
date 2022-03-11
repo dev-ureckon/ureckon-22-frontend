@@ -1,0 +1,33 @@
+:root {
+  --placeholder-color: rgb(160, 160, 160);
+}
+
+.videoTag {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(36%);
+}
+.nav1 {
+  /* padding-left: 90px; */
+}
+
+.modal {
+  position: fixed;
+  top: 0%;
+  left: 10%;
+
+  height: 100%;
+  display: block;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .videoTag {
+    width: auto !important;
+    height: 100% !important;
+  }
+}
