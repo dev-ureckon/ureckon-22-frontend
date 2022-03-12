@@ -4,6 +4,7 @@
     }
 
     .nav-font {
+    cursor: pointer;
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: normal;

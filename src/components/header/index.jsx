@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import Grid from '@mui/material/Grid'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -15,7 +17,6 @@ import ArchiveIcon from '@mui/icons-material/Archive'
 import FileCopyIcon from '@mui/icons-material/FileCopy'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-
 import NavUreckon from '../../assets/IMGs/navbar-ureckon-logo.png'
 import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
 import headingLogo from '../../assets/IMGs/Heading.png'
@@ -23,10 +24,21 @@ import uemLogo from '../../assets/IMGs/uemLogo.png'
 import './header.css'
 import { useStyles } from './styles'
 import DropDown from './dropdown/index.jsx'
+import { userLogout } from '../../redux/actions/authActions'
 
 const Header = () => {
   const classes = useStyles()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [events, setEvents] = useState(true)
+
+  const { userInfo } = useSelector((state) => state.userLogin)
+
+  const logoutHandler = () => {
+    dispatch(userLogout())
+    navigate('/')
+  }
+
   return (
     <Box className={classes.root}>
       <AppBar position="static" color="navbar" className={classes.navbar}>
@@ -34,9 +46,17 @@ const Header = () => {
           <div className="nav-font">Home</div>
           <DropDown events={events} />
           <DropDown />
-          <img src={NavUreckon} alt="ureckon-logo" style={{ marginLeft: '2rem' }} />
+          <img
+            src={NavUreckon}
+            alt="ureckon-logo"
+            style={{ marginLeft: '2rem', cursor: 'pointer' }}
+          />
           <div className="nav-font">About Us</div>
-          <div className="nav-font">Logout</div>
+          {userInfo && (
+            <div className="nav-font" onClick={logoutHandler}>
+              Logout
+            </div>
+          )}
           <div className="nav-font">News</div>
         </Toolbar>
       </AppBar>
