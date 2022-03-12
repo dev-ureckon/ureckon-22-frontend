@@ -8,6 +8,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import MenuIcon from '@mui/icons-material/Menu'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -32,6 +33,8 @@ const Header = () => {
   const navigate = useNavigate()
   const [events, setEvents] = useState(true)
 
+  const isMobile = useMediaQuery('(min-width:900px)')
+
   const { userInfo } = useSelector((state) => state.userLogin)
 
   const logoutHandler = () => {
@@ -43,21 +46,33 @@ const Header = () => {
     <Box className={classes.root}>
       <AppBar position="fixed" color="navbar" className={classes.navbar}>
         <Toolbar className={classes.navEle}>
-          <div className="nav-font">Home</div>
-          <DropDown events={events} />
-          <DropDown />
-          <img
-            src={NavUreckon}
-            alt="ureckon-logo"
-            style={{ marginLeft: '2rem', cursor: 'pointer' }}
-          />
-          <div className="nav-font">About Us</div>
-          {userInfo && (
-            <div className="nav-font" onClick={logoutHandler}>
-              Logout
-            </div>
+          {isMobile ? (
+            <>
+              <div className="nav-font">Home</div>
+              <DropDown events={events} />
+              <DropDown />
+              <img
+                src={NavUreckon}
+                alt="ureckon-logo"
+                style={{ marginLeft: '2rem', cursor: 'pointer' }}
+              />
+              <div className="nav-font">About Us</div>
+              {userInfo && (
+                <div className="nav-font" onClick={logoutHandler}>
+                  Logout
+                </div>
+              )}
+              <div className="nav-font">News</div>
+            </>
+          ) : (
+            <>
+              <img
+                src={NavUreckon}
+                alt="ureckon-logo"
+                style={{ marginLeft: '2rem', cursor: 'pointer' }}
+              />
+            </>
           )}
-          <div className="nav-font">News</div>
         </Toolbar>
       </AppBar>
     </Box>

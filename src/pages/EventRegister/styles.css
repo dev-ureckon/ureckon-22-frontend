@@ -32,7 +32,7 @@
     margin: 48px 0px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 
   .event-reg-container {
     padding: 0;
