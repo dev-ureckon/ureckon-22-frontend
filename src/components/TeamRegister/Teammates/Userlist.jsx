@@ -6,47 +6,23 @@ import CloseIcon from '@mui/icons-material/Close'
 import { useStyles } from './styles.mui'
 import './styles.css'
 
-const Userlist = ({ userInfo, teamMatesArr, setTeamMatesArr }) => {
+const Userlist = ({ userInfo, user, addUserToTeam, removeUserFromTeam, isMember }) => {
   const classes = useStyles()
-
-  const [isMember, setIsMember] = useState(false)
-
-  useEffect(() => {
-    // teamMatesArr.find((user) => user._id === userInfo?._id)
-    if (teamMatesArr.includes(userInfo._id)) {
-      setIsMember(true)
-    }
-
-    if (!teamMatesArr.includes(userInfo._id)) {
-      setIsMember(false)
-    }
-  }, [teamMatesArr, userInfo, setIsMember])
-
-  const addUserToTeam = () => {
-    setTeamMatesArr([...teamMatesArr, userInfo?._id])
-    console.log(teamMatesArr)
-  }
-  const removeUserFromTeam = () => {
-    setTeamMatesArr(teamMatesArr.filter((userId) => userId !== userInfo._id))
-  }
 
   return (
     <div className="userlist-wrapper">
       <div className="users">
-        <img src={userInfo && userInfo.profilePic} alt="user" className="user-image" />
+        <img
+          src={userInfo ? userInfo.profilePic : user?.profilePic}
+          alt="user"
+          className="user-image"
+        />
         <div className="user-details">
-          <div className="userid">Ureckon ID: {userInfo && userInfo.userId}</div>
-          {/* <div className="username">{userInfo && userInfo.name}</div> */}
-          <div className="user-email">{userInfo && userInfo.email}</div>
+          <div className="userid">
+            Ureckon ID: {userInfo ? userInfo.userId : user?.userId}
+          </div>
+          <div className="user-email">{userInfo ? userInfo.email : user?.email}</div>
         </div>
-        {/* <Button
-          className={classes.addButton}
-          variant="contained"
-          color="addMemberBtn"
-          onClick={addUserToTeam}
-        >
-          <AddIcon />
-        </Button> */}
         {isMember ? (
           <Button className={classes.removeButton} onClick={removeUserFromTeam}>
             <CloseIcon />

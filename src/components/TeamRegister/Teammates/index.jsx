@@ -9,6 +9,8 @@ import { userSearchAction } from '../../../redux/actions/eventRegActions'
 const Teammates = ({ teamMatesArr, setTeamMatesArr }) => {
   const dispatch = useDispatch()
 
+  const [savedUser, setSavedUser] = useState([])
+
   const { loading, userInfo, error } = useSelector((state) => state.userSearch)
 
   const [wordEntered, setWordEntered] = useState('')
@@ -17,12 +19,33 @@ const Teammates = ({ teamMatesArr, setTeamMatesArr }) => {
     dispatch(userSearchAction(wordEntered))
   }, [dispatch, wordEntered])
 
+  const [isMember, setIsMember] = useState(false)
+
+  useEffect(() => {
+    // teamMatesArr.find((user) => user._id === userInfo?._id)
+    if (teamMatesArr.includes(userInfo?._id)) {
+      setIsMember(true)
+    } else {
+      setIsMember(false)
+    }
+  }, [teamMatesArr, userInfo, setIsMember])
+
+  const addUserToTeam = () => {
+    setTeamMatesArr([...teamMatesArr, userInfo?._id])
+    setSavedUser([...savedUser, userInfo])
+    console.log(teamMatesArr)
+  }
+  const removeUserFromTeam = () => {
+    setTeamMatesArr(teamMatesArr.filter((userId) => userId !== userInfo?._id))
+    setSavedUser([...savedUser.filter((user) => user._id !== userInfo?._id)])
+  }
+
   // const [filteredData, setFilteredData] = useState([])
 
-  const clearInput = () => {
-    // setFilteredData([])
-    setWordEntered('')
-  }
+  // const clearInput = () => {
+  //   setFilteredData([])
+  //   setWordEntered('')
+  // }
 
   return (
     <div className="teammates-wrapper">
@@ -51,12 +74,25 @@ const Teammates = ({ teamMatesArr, setTeamMatesArr }) => {
         </Grid>
       </div>
 
-      {userInfo && (
+      {userInfo ? (
         <Userlist
           userInfo={userInfo}
           teamMatesArr={teamMatesArr}
           setTeamMatesArr={setTeamMatesArr}
+          addUserToTeam={addUserToTeam}
+          removeUserFromTeam={removeUserFromTeam}
+          isMember={isMember}
         />
+      ) : (
+        wordEntered === '' &&
+        savedUser?.map((user) => (
+          <Userlist
+            user={user}
+            isMember={isMember}
+            addUserToTeam={addUserToTeam}
+            removeUserFromTeam={removeUserFromTeam}
+          />
+        ))
       )}
     </div>
   )
