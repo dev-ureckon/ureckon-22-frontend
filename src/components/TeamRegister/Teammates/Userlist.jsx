@@ -6,7 +6,14 @@ import CloseIcon from '@mui/icons-material/Close'
 import { useStyles } from './styles.mui'
 import './styles.css'
 
-const Userlist = ({ userInfo, user, addUserToTeam, removeUserFromTeam, isMember }) => {
+const Userlist = ({
+  userInfo,
+  user,
+  addUserToTeam,
+  removeUserFromTeam,
+  isMember,
+  savedUser,
+}) => {
   const classes = useStyles()
 
   return (
@@ -23,7 +30,7 @@ const Userlist = ({ userInfo, user, addUserToTeam, removeUserFromTeam, isMember 
           </div>
           <div className="user-email">{userInfo ? userInfo.email : user?.email}</div>
         </div>
-        {isMember ? (
+        {isMember || (user && savedUser.length > 0) ? (
           <Button className={classes.removeButton} onClick={removeUserFromTeam}>
             <CloseIcon />
           </Button>

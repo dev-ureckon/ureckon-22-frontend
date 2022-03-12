@@ -37,7 +37,7 @@ const Teammates = ({ teamMatesArr, setTeamMatesArr }) => {
   }
   const removeUserFromTeam = () => {
     setTeamMatesArr(teamMatesArr.filter((userId) => userId !== userInfo?._id))
-    setSavedUser([...savedUser.filter((user) => user._id !== userInfo?._id)])
+    setSavedUser(savedUser.filter((user) => user?._id !== userInfo?._id))
   }
 
   // const [filteredData, setFilteredData] = useState([])
@@ -91,6 +91,7 @@ const Teammates = ({ teamMatesArr, setTeamMatesArr }) => {
             isMember={isMember}
             addUserToTeam={addUserToTeam}
             removeUserFromTeam={removeUserFromTeam}
+            savedUser={savedUser}
           />
         ))
       )}
