@@ -14,7 +14,7 @@ import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRout
 import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 import Teams from './pages/Teams/index.jsx'
-import TeamRegister from './pages/TeamRegister/index.jsx'
+import EventRegister from './pages/EventRegister/index.jsx'
 import HomeNav from './components/header/homeNav'
 import Header from './components/header'
 
@@ -116,7 +116,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             element={
               <>
                 <Header />
-                <TeamRegister />
+                <EventRegister />
               </>
             }
           />

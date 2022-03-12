@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { Button, Grid } from '@mui/material'
 import SubmitButton from '../../components/SubmitButton/index.jsx'
 import Teammates from '../../components/TeamRegister/Teammates/index.jsx'
 import './styles.css'
-import Form from './../../components/TeamRegister/Form'
+import Form from '../../components/TeamRegister/Form'
 import { teamRegisterAction } from '../../redux/actions/eventRegActions'
 import { PreviewOutlined } from '@mui/icons-material'
 
-const TeamRegister = () => {
+const EventRegister = () => {
   const dispatch = useDispatch()
+
+  const { eventCode } = useParams()
 
   const { loading, error, isAuthenticated, userInfo } = useSelector(
     (state) => state.userLogin
@@ -23,19 +26,17 @@ const TeamRegister = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(teamRegisterAction('spyder', formData.team, teamMatesArr))
+    dispatch(teamRegisterAction(eventCode, formData.team, teamMatesArr))
   }
 
   return (
     <div>
-      <Grid container spacing={'1'}>
-        <Grid item xs={12} sm={12} md={6}>
-          <div style={{ marginLeft: '10rem' }}>
-            <div className="teamReg-header">Register Your Team</div>
-            <Form formData={formData} setFormData={setFormData} />
-          </div>
+      <Grid container spacing={'1'} className="event-reg-container">
+        <Grid item xs={12} sm={12} md={6} className="form-container">
+          <div className="teamReg-header">Register Your Team</div>
+          <Form formData={formData} setFormData={setFormData} />
         </Grid>
-        <Grid item xs={12} sm={12} md={6}>
+        <Grid item xs={12} sm={12} md={6} className="teammates-container">
           <Teammates teamMatesArr={teamMatesArr} setTeamMatesArr={setTeamMatesArr} />
         </Grid>
       </Grid>
@@ -55,4 +56,4 @@ const TeamRegister = () => {
   )
 }
 
-export default TeamRegister
+export default EventRegister

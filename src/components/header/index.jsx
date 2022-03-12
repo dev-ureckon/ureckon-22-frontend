@@ -41,7 +41,7 @@ const Header = () => {
 
   return (
     <Box className={classes.root}>
-      <AppBar position="static" color="navbar" className={classes.navbar}>
+      <AppBar position="fixed" color="navbar" className={classes.navbar}>
         <Toolbar className={classes.navEle}>
           <div className="nav-font">Home</div>
           <DropDown events={events} />

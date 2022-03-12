@@ -97,3 +97,27 @@
 	order: 2;
 	flex-grow: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .teammates-wrapper {
+        width: 50%;
+        margin-top: 5rem;
+    }
+    .add-teammates-header {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 1rem !important;
+    }
+  }
+  
+
+  @media screen and (max-width: 425px) {
+    .teammates-wrapper {
+        width: 50%;
+        margin-top: 5rem;
+    }
+    .add-teammates-header {
+        font-size: 20px;
+        margin-bottom: 1rem !important;
+    }
+  }  

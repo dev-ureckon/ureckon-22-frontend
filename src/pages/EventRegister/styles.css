@@ -4,10 +4,19 @@
   }
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
 
+.event-reg-container {
+  padding: 5rem;
+}
+
 .teamReg-wrapper {
   margin-left: 5rem;
 }
-  
+
+.form-container {
+  margin-left: 5rem;
+}
+
+
 .teamReg-header {
     position: static;
     width: 1136px;
@@ -22,3 +31,31 @@
     text-shadow: -0.8px 0.8px 1px #43C9ED, 0.5px 0.5px 1px #43C9ED;
     margin: 48px 0px;
 }
+
+@media screen and (max-width: 768px) {
+
+  .event-reg-container {
+    padding: 0;
+  }
+
+  .form-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-left: 3rem;
+  }
+  .teamReg-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-size: 32px;
+  }
+
+   .teammates-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  } 
+}
+
+  
