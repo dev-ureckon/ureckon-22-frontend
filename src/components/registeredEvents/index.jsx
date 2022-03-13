@@ -15,7 +15,7 @@ const RegisteredEvents = ({ handleDisbandTeam, registeredEvents }) => {
       </div>
       {registeredEvents &&
         registeredEvents.map((event, key) => (
-          <EventCards handleDisbandTeam={handleDisbandTeam} event={event} />
+          <EventCards handleDisbandTeam={handleDisbandTeam} key={key} event={event} />
         ))}
     </>
   )
