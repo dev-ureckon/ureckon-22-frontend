@@ -30,8 +30,8 @@ function SearchExpand() {
   return (
     <div>
       <IconButton size="large" aria-label="search" color="inherit">
-        <input type="text" className={classes.searchText} placeholder="Search here" />
         <SearchIcon className={classes.icon} />
+        <input type="text" className={classes.searchText} placeholder="Search here" />
       </IconButton>
     </div>
   )
