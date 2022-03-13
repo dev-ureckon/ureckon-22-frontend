@@ -22,8 +22,7 @@ const useStyles = makeStyles({
   },
 })
 
-function SearchExpand() {
-  // const [searchTerm, setSearchTerm] = useState('')
+function SearchExpand({searchItem}) {
   const classes = useStyles()
   return (
     <>
@@ -31,7 +30,7 @@ function SearchExpand() {
         <FormControl variant="standard">
           <Input
             id="input-with-icon-adornment"
-            // onChange={(event) => setSearchTerm(event.target.value)}
+            onChange={(e) => searchItem(e)}
             startAdornment={
               <InputAdornment position="start" className={classes.searchText}>
                 <SearchIcon className={classes.icon} />
@@ -39,10 +38,6 @@ function SearchExpand() {
             }
           />
         </FormControl>
-        {/* <IconButton size="large" aria-label="search" color="inherit">
-          <SearchIcon className={classes.icon} />
-          <input type="text" className={classes.searchText} placeholder="Search here" />
-        </IconButton> */}
       </Box>
     </>
   )

@@ -3,7 +3,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import { Button, IconButton, CardActions, Grid, Container } from '@mui/material'
+import { Button, IconButton, CardActions, Grid, Container, LinearProgress } from '@mui/material'
 import './events.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
@@ -14,22 +14,25 @@ import { Link } from 'react-router-dom'
 
 const Events = () => {
   const classes = useStyles()
-  const { events, eventCategorySlug, makeHeading } = EventListLogic()
+  const {filterSearch,searchItem,loading, events, eventCategorySlug, makeHeading } = EventListLogic()
+
+
 
   return (
     <>
+   {loading && <LinearProgress color="secondary"  />}
       <Container>
         <Grid display="flex">
           <Grid flexGrow={1} m={1.7}>
             <h1 className="headingStyle">{makeHeading(eventCategorySlug)} EVENTS</h1>
           </Grid>
-          <SearchExpand></SearchExpand>
+          <SearchExpand searchItem={searchItem}/>
         </Grid>
 
         <Grid display="flex" justifyContent="center" flexWrap="wrap">
           {events &&
             events &&
-            events.map((event) => (
+            events.filter((val) => filterSearch(val)).map((event) => (
               <Grid className={classes.mainBox} p={2}>
                 <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
                   <CardMedia
