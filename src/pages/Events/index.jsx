@@ -52,7 +52,7 @@ const Events = () => {
                         </Button>
                       </Grid>
                       <Grid item xs={6}>
-                        <Link to={`/event/${event.code}`}>
+                        <Link to={`/event/${event.code}`} style={{textDecoration: "none"}}>
                           <Button className={classes.btn2} size="small">
                             Know more
                             <IconButton size="large" aria-label="search" color="inherit">

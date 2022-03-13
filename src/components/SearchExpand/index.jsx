@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search'
-import { Box, FormControl, Input, InputAdornment } from '@mui/material'
+import { Box, FormControl, Input, InputAdornment, TextField } from '@mui/material'
 
 import { makeStyles } from '@mui/styles'
 import { useState } from 'react'
@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     color: 'white',
     height: '35px',
     width: '35px',
+    marginTop: '0.6rem',
   },
   searchText: {
     color: 'white',
@@ -22,20 +23,24 @@ const useStyles = makeStyles({
   },
 })
 
-function SearchExpand({searchItem}) {
+function SearchExpand({ searchItem }) {
   const classes = useStyles()
   return (
     <>
       <Box>
-        <FormControl variant="standard">
-          <Input
+        <FormControl variant="standard" style={{ display: 'flex', flexDirection: 'row' }}>
+          <TextField
+            variant="standard"
+            focused
             id="input-with-icon-adornment"
             onChange={(e) => searchItem(e)}
-            startAdornment={
-              <InputAdornment position="start" className={classes.searchText}>
-                <SearchIcon className={classes.icon} />
-              </InputAdornment>
-            }
+            InputProps={{
+              startAdornment:(
+                <InputAdornment position="start">
+                  <SearchIcon className={classes.icon} />
+                </InputAdornment>
+              )
+            }}
           />
         </FormControl>
       </Box>
