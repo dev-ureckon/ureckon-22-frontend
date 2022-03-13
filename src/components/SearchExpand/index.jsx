@@ -1,18 +1,11 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search'
-import {
-  Button,
-  IconButton,
-  CardActions,
-  Grid,
-  Container,
-  Box,
-  Typography,
-  FormControl,
-  Input,
-  InputAdornment,
-} from '@mui/material'
+import { Box, FormControl, Input, InputAdornment } from '@mui/material'
+
 import { makeStyles } from '@mui/styles'
+import { useState } from 'react'
+
+import './search'
 
 const useStyles = makeStyles({
   icon: {
@@ -30,6 +23,7 @@ const useStyles = makeStyles({
 })
 
 function SearchExpand() {
+  // const [searchTerm, setSearchTerm] = useState('')
   const classes = useStyles()
   return (
     <>
@@ -37,6 +31,7 @@ function SearchExpand() {
         <FormControl variant="standard">
           <Input
             id="input-with-icon-adornment"
+            // onChange={(event) => setSearchTerm(event.target.value)}
             startAdornment={
               <InputAdornment position="start" className={classes.searchText}>
                 <SearchIcon className={classes.icon} />
