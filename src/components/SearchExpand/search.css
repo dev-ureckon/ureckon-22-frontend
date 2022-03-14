@@ -1,0 +1,35 @@
+.form1 {
+  overflow: hidden;
+  position: relative;
+  height: 45px;
+  right: 50%;
+  width: 45px;
+  -webkit-transition: width 0.55s ease;
+  -moz-transition: width 0.55s ease;
+  -ms-transition: width 0.55s ease;
+  -o-transition: width 0.55s ease;
+  transition: width 0.55s ease;
+}
+.form1:active,
+.form1:active,
+.form1:checked {
+  width: 200px;
+}
+
+.input1 {
+  width: 0px;
+  height: 69px;
+  font-size: 15px;
+  margin-left: 30px;
+  margin-top: 3px;
+  line-height: 30px;
+}
+.form1:active .input1 {
+  width: 200px;
+}
+
+.input1:focus,
+.input1:active,
+.input1:checked {
+  width: 300px;
+}
