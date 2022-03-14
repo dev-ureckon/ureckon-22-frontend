@@ -16,7 +16,6 @@ export const getAllEventList = (slug) => async (dispatch) => {
   }
 }
 
-
 export const getEventsSearch = (query) => async (dispatch) => {
   dispatch(fetchEventListRequest())
   try {

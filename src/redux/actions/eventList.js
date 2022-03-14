@@ -7,7 +7,6 @@ import {
   EVENT_LIST_SEARCH_FAILURE,
 } from '../constants'
 
-
 // Event List
 export const fetchEventListRequest = () => ({
   type: EVENT_LIST_REQUEST,

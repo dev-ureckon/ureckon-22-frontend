@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
   eventCategories: eventCategoriesReducer,
   eventDetails: eventDetailsReducer,
   eventList: eventListReducer,
-  eventSearch: eventSearchReducer
+  eventSearch: eventSearchReducer,
 })
 
 export default rootReducer
