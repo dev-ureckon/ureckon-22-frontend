@@ -24,7 +24,7 @@ export const getEventsSearch = (query) => async (dispatch) => {
   try {
     const response = await axios.get(`events/search?event=${query}`)
     const actualData = response.data
-    console.log(actualData);
+    console.log(actualData)
     dispatch(fetchEventSearchSuccess(actualData))
   } catch (error) {
     dispatch(fetchEventSearchError(error.message))
