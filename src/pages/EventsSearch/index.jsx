@@ -28,7 +28,7 @@ const EventsSearch = () => {
         </Grid>
 
         <Grid display="flex" justifyContent="center" flexWrap="wrap">
-          {eventsList &&
+          {eventsList ? (
             eventsList &&
             eventsList.map((event) => (
               <Grid className={classes.mainBox} p={2}>
@@ -71,7 +71,18 @@ const EventsSearch = () => {
                   </CardActions>
                 </Card>
               </Grid>
-            ))}
+            ))
+          ) : (
+            <Container>
+              <Typography
+                textAlign={'center'}
+                style={{ padding: '4rem', fontSize: '1.6rem' }}
+                variant="h3"
+              >
+                Type Something to search
+              </Typography>
+            </Container>
+          )}
         </Grid>
       </Container>
     </>
