@@ -45,12 +45,20 @@ const EventsSearch = () => {
                   <CardActions className={classes.pdng} padding={0}>
                     <Grid container spacing={2}>
                       <Grid item xs={6}>
-                        <Button className={classes.btn1} size="small">
-                          Register
-                        </Button>
+                        <Link
+                          style={{ textDecoration: 'none' }}
+                          to={`/events/${event.code}/event-register`}
+                        >
+                          <Button className={classes.btn1} size="small">
+                            Register
+                          </Button>
+                        </Link>
                       </Grid>
                       <Grid item xs={6}>
-                        <Link to={`/event/${event.code}`}>
+                        <Link
+                          style={{ textDecoration: 'none' }}
+                          to={`/event/${event.code}`}
+                        >
                           <Button className={classes.btn2} size="small">
                             Know more
                             <IconButton size="large" aria-label="search" color="inherit">
