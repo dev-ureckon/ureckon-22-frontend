@@ -1,44 +1,36 @@
 import React from 'react'
 import Card from '@mui/material/Card'
-import SearchIcon from '@mui/icons-material/Search'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { Button, IconButton, CardActions, Grid, Container } from '@mui/material'
-import './events.css'
+import './eventsSearch.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
 import SearchExpand from '../../components/SearchExpand'
-import { useStyles } from './eventList.style'
-import { EventListLogic } from './eventList'
+import { useStyles } from './eventSearch.style'
 import { Link } from 'react-router-dom'
+import { EventSearchLogic } from './EventsSearch'
 
-const Events = () => {
+const EventsSearch = () => {
   const classes = useStyles()
-  const { events, eventCategorySlug, makeHeading } = EventListLogic()
+  const { eventsList, setSearchedEventName } = EventSearchLogic()
 
   return (
     <>
       <Container>
-        <Grid display="flex">
-          <Grid flexGrow={1} m={1.7}>
-            <h1 className="headingStyle">{makeHeading(eventCategorySlug)} EVENTS</h1>
+        <Grid container>
+          <Grid item flexGrow={1} m={2}>
+            <h1 className="headingStyle">Searched EVENTS</h1>
           </Grid>
-          <Grid
-            item
-            md={2}
-            alignSelf={'center'}
-            style={{ display: 'flex', justifyContent: 'flex-end' }}
-          >
-            <Link to={`/events/search`}>
-              <SearchIcon style={{ color: '#fff' }} fontSize="large" />
-            </Link>
+          <Grid item md={2}>
+            <SearchExpand setSearchedEventName={setSearchedEventName} />
           </Grid>
         </Grid>
 
         <Grid display="flex" justifyContent="center" flexWrap="wrap">
-          {events &&
-            events &&
-            events.map((event) => (
+          {eventsList &&
+            eventsList &&
+            eventsList.map((event) => (
               <Grid className={classes.mainBox} p={2}>
                 <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
                   <CardMedia
@@ -78,4 +70,4 @@ const Events = () => {
   )
 }
 
-export default Events
+export default EventsSearch

@@ -3,11 +3,11 @@ import SearchIcon from '@mui/icons-material/Search'
 import { Box, FormControl, Input, InputAdornment } from '@mui/material'
 
 import { makeStyles } from '@mui/styles'
-import { useState } from 'react'
-
-import './search'
 
 const useStyles = makeStyles({
+  box: {
+    marginTop: '3rem',
+  },
   icon: {
     color: 'white',
     height: '35px',
@@ -22,16 +22,15 @@ const useStyles = makeStyles({
   },
 })
 
-function SearchExpand() {
-  // const [searchTerm, setSearchTerm] = useState('')
+function SearchExpand({ setSearchedEventName }) {
   const classes = useStyles()
   return (
     <>
-      <Box>
+      <Box className={classes.box}>
         <FormControl variant="standard">
           <Input
             id="input-with-icon-adornment"
-            // onChange={(event) => setSearchTerm(event.target.value)}
+            onChange={(e) => setSearchedEventName(e.target.value)}
             startAdornment={
               <InputAdornment position="start" className={classes.searchText}>
                 <SearchIcon className={classes.icon} />

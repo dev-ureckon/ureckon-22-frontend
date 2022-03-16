@@ -3,6 +3,9 @@ import {
   fetchEventListRequest,
   fetchEventListSuccess,
   fetchEventListError,
+  fetchEventSearchRequest,
+  fetchEventSearchSuccess,
+  fetchEventSearchError,
 } from '../actions'
 
 export const getAllEventList = (slug) => async (dispatch) => {
@@ -17,12 +20,13 @@ export const getAllEventList = (slug) => async (dispatch) => {
 }
 
 export const getEventsSearch = (query) => async (dispatch) => {
-  dispatch(fetchEventListRequest())
+  dispatch(fetchEventSearchRequest())
   try {
-    const response = await axios.get(`events/search?query=${query}`)
+    const response = await axios.get(`events/search?event=${query}`)
     const actualData = response.data
-    dispatch(fetchEventListSuccess(actualData))
+    console.log(actualData);
+    dispatch(fetchEventSearchSuccess(actualData))
   } catch (error) {
-    dispatch(fetchEventListError(error.message))
+    dispatch(fetchEventSearchError(error.message))
   }
 }
