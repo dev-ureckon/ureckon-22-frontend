@@ -16,8 +16,9 @@ const EventsSearch = () => {
   const classes = useStyles()
   const { eventsList, setSearchedEventName, fakeLoading } = EventSearchLogic()
 
-  if (fakeLoading) { return <Loader /> } else {
-
+  if (fakeLoading) {
+    return <Loader />
+  } else {
     return (
       <>
         <Container>
@@ -64,7 +65,11 @@ const EventsSearch = () => {
                           >
                             <Button className={classes.btn2} size="small">
                               Know more
-                              <IconButton size="large" aria-label="search" color="inherit">
+                              <IconButton
+                                size="large"
+                                aria-label="search"
+                                color="inherit"
+                              >
                                 <ArrowForwardIcon className={classes.icon} />
                               </IconButton>
                             </Button>

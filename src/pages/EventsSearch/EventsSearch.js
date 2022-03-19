@@ -31,6 +31,6 @@ export const EventSearchLogic = () => {
   return {
     eventsList,
     setSearchedEventName,
-    fakeLoading
+    fakeLoading,
   }
 }

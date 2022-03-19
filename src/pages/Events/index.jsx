@@ -15,9 +15,12 @@ import Loader from '../../components/loader'
 
 const Events = () => {
   const classes = useStyles()
-  const { events, eventCategorySlug, makeHeading, loading, fakeLoading } = EventListLogic()
+  const { events, eventCategorySlug, makeHeading, loading, fakeLoading } =
+    EventListLogic()
 
-  if (fakeLoading) { return <Loader /> } else {
+  if (fakeLoading) {
+    return <Loader />
+  } else {
     return (
       <>
         <Container>
@@ -71,7 +74,11 @@ const Events = () => {
                           >
                             <Button className={classes.btn2} size="small">
                               Know more
-                              <IconButton size="large" aria-label="search" color="inherit">
+                              <IconButton
+                                size="large"
+                                aria-label="search"
+                                color="inherit"
+                              >
                                 <ArrowForwardIcon className={classes.icon} />
                               </IconButton>
                             </Button>
@@ -87,7 +94,6 @@ const Events = () => {
       </>
     )
   }
-
 }
 
 export default Events

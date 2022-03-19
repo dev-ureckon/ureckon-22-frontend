@@ -39,6 +39,6 @@ export const EventListLogic = () => {
     events,
     eventCategorySlug,
     makeHeading,
-    fakeLoading
+    fakeLoading,
   }
 }
