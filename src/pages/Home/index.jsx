@@ -71,11 +71,11 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               open={open}
               onClose={handleClose}
               className={classes.modal}
-            // closeAfterTransition
-            // BackdropComponent={Backdrop}
-            // BackdropProps={{
-            //   timeout: 500,
-            // }}
+              // closeAfterTransition
+              // BackdropComponent={Backdrop}
+              // BackdropProps={{
+              //   timeout: 500,
+              // }}
             >
               <News open={open} handleClose={handleClose} />
             </Modal>
