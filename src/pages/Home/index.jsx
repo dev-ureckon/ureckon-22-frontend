@@ -261,21 +261,25 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
           </Grid>
 
-          <div className={classes.Sponsor}>Partnered By</div>
-          {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
           {mainSponsors.length && (
-            <div className={classes.SponsorImg}>
-              {mainSponsors.map((aMainSponsor) => (
-                <img
-                  src={aMainSponsor.sponsorLogo}
-                  height={100}
-                  width={100}
-                  style={{ margin: '0 1.5rem' }}
-                  alt="UEM"
-                />
-              ))}
-            </div>
+            <>
+              <div className={classes.Sponsor}>Partnered By</div>
+              <div className={classes.SponsorImg}>
+                {mainSponsors.map((aMainSponsor) => (
+                  <img
+                    src={aMainSponsor.sponsorLogo}
+                    height={100}
+                    width={100}
+                    style={{ margin: '0 1.5rem' }}
+                    alt="UEM"
+                  />
+                ))}
+              </div>
+            </>
           )}
+
+          {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
+
           {/* ------------------------------------End Main Sponser Icons----------------------------------------------------- */}
         </Grid>
       </Grid>
