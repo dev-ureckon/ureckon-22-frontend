@@ -7,7 +7,7 @@ import Button from '../../components/button'
 import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions/toast'
 
-import Loader from "../../components/loader/index"
+import Loader from '../../components/loader/index'
 
 function Contact() {
   // If user is logged in autofill name and email
@@ -18,7 +18,7 @@ function Contact() {
   const [email, handleEmailChange, resetEmail] = useInputState(userInfo?.email || '')
   const [subject, handleSubjectChange, resetSubject] = useInputState('')
   const [message, handleMessageChange, resetMessage] = useInputState('')
-  const [fakeLoading, setFakeLoading] = useState(true);
+  const [fakeLoading, setFakeLoading] = useState(true)
 
   const dispatch = useDispatch()
 
@@ -58,7 +58,6 @@ function Contact() {
   if (fakeLoading) {
     return <Loader />
   } else {
-
     return (
       <Container>
         <form
@@ -116,7 +115,6 @@ function Contact() {
       </Container>
     )
   }
-
 }
 
 export default Contact

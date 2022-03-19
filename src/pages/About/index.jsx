@@ -4,10 +4,10 @@ import './about.css'
 import uemk from '../../assets/IMGs/uemk_image.png'
 import uemkart from '../../assets/IMGs/uemKart.png'
 import line1 from '../../assets/SVGs/Union.svg'
-import Loader from "../../components/loader/index"
+import Loader from '../../components/loader/index'
 
 function About() {
-  const [fakeLoading, setFakeLoading] = useState(true);
+  const [fakeLoading, setFakeLoading] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,8 +31,8 @@ function About() {
               year 2014 by Act No 25 of 2014 of Govt of West Bengal and approved by AICTE.
               The institute has stood one out of the top 10 institutes of India including
               all IITs and all NITs of the country in the NPTEL program ranked by IIT
-              Kharagpur and IIT Chennai. It is one of the most premier institutes of Eastern
-              India.
+              Kharagpur and IIT Chennai. It is one of the most premier institutes of
+              Eastern India.
             </div>
           </Grid>
           <Grid item className="buildingcontainer" lg={4} sm={4}>
@@ -61,11 +61,11 @@ function About() {
               Every year it gets Bigger and Better, with more exciting events as well as
               exhibitions. Students and tech enthusiasts from various parts of the country
               are wholeheartedly invited to be a part of this budding Techno-Management
-              fest, not only to showcase their talents but also to consider it as a field to
-              learn something new. URECKON in association with ISRO exhibits several
+              fest, not only to showcase their talents but also to consider it as a field
+              to learn something new. URECKON in association with ISRO exhibits several
               application based robots and also hosts several events based on Robotics,
-              Coding, B-plan, Quizzes, Guest lectures, Tech talks and exciting gaming events
-              with lucrative prizes to be won.
+              Coding, B-plan, Quizzes, Guest lectures, Tech talks and exciting gaming
+              events with lucrative prizes to be won.
             </div>
           </Grid>
         </Grid>

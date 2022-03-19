@@ -17,10 +17,10 @@ import SocialIcons from '../../components/SocialIcons'
 import News from '../../components/announcement/index.jsx'
 import './home.animation.css'
 import '../../app.css'
-import Loader from "../../components/loader/index"
+import Loader from '../../components/loader/index'
 
 function Home({ open, setOpen, handleOpen, handleClose }) {
-  const [fakeLoading, setFakeLoading] = useState(true);
+  const [fakeLoading, setFakeLoading] = useState(true)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -84,18 +84,18 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                 open={open}
                 onClose={handleClose}
                 className={classes.modal}
-              // closeAfterTransition
-              // BackdropComponent={Backdrop}
-              // BackdropProps={{
-              //   timeout: 500,
-              // }}
+                // closeAfterTransition
+                // BackdropComponent={Backdrop}
+                // BackdropProps={{
+                //   timeout: 500,
+                // }}
               >
                 <News open={open} handleClose={handleClose} />
               </Modal>
             </div>
           )}
         </Transition>
-  
+
         {/* for main container */}
         {/* for Navbar */}
         <Grid>
@@ -205,9 +205,9 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                   </Grid> */}
                 </Grid>
               </Grid>
-  
+
               {/* -------------------------------------------------------------------------------- */}
-  
+
               <Grid item lg={12} className="menupad2" id="moreoptions">
                 <Grid className="menufont" container alignItems="center">
                   <Grid item container justifyContent="center" lg={6} xs={12}>
@@ -267,13 +267,13 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                   </Grid>
                 </Grid>
               </Grid>
-  
+
               {/* ------------------------------------Social Icons----------------------------------------------------- */}
-  
+
               <SocialIcons />
               {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
             </Grid>
-  
+
             {mainSponsors.length && (
               <>
                 <div className={classes.Sponsor}>Partnered By</div>
@@ -290,9 +290,9 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                 </div>
               </>
             )}
-  
+
             {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
-  
+
             {/* ------------------------------------End Main Sponser Icons----------------------------------------------------- */}
           </Grid>
         </Grid>
