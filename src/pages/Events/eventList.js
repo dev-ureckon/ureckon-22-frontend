@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,9 +7,18 @@ import { getAllEventList } from '../../redux/apis/eventList'
 
 export const EventListLogic = () => {
   const dispatch = useDispatch()
+  const [fakeLoading, setFakeLoading] = useState(true)
   const { eventCategorySlug } = useParams()
 
   const { loading, events, error } = useSelector((state) => state.eventList)
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 2000)
+  }, [loading])
 
   useEffect(() => {
     dispatch(getAllEventList(eventCategorySlug))
@@ -30,5 +39,6 @@ export const EventListLogic = () => {
     events,
     eventCategorySlug,
     makeHeading,
+    fakeLoading,
   }
 }

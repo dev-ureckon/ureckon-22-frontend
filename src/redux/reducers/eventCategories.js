@@ -5,7 +5,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   categories: [], // All of the existing event categories fetched from server, initially empty
 }

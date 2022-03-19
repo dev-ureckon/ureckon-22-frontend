@@ -8,7 +8,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   events: [], // All of the existing event events fetched from server, initially empty
 }
