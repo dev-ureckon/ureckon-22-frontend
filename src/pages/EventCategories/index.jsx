@@ -10,8 +10,9 @@ const EventCategories = () => {
   const classes = useStyles()
   const { categories, loading, fakeLoading, setFakeLoading } = EventCategoriesLogic()
 
-  if (loading) { return <Loader /> } else {
-
+  if (loading) {
+    return <Loader />
+  } else {
     return (
       <Container>
         <Grid container justifyContent={'space-between'} style={{ marginBottom: '30px' }}>
@@ -43,7 +44,11 @@ const EventCategories = () => {
                       style={{ width: '100px', marginBottom: '15px' }}
                       alt="event Category"
                     />
-                    <Typography textAlign={'center'} variant="h4" style={{ color: '#fff' }}>
+                    <Typography
+                      textAlign={'center'}
+                      variant="h4"
+                      style={{ color: '#fff' }}
+                    >
                       {category.categoryName}
                     </Typography>
                   </Paper>
@@ -54,7 +59,6 @@ const EventCategories = () => {
       </Container>
     )
   }
-
 }
 
 export default EventCategories

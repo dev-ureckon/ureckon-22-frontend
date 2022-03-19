@@ -12,7 +12,9 @@ import Loader from '../../components/loader'
 function EventDetails() {
   const { eventDetails, fakeLoading } = EventDetailsLogic()
 
-  if (fakeLoading) { return <Loader /> } else {
+  if (fakeLoading) {
+    return <Loader />
+  } else {
     return (
       <Container>
         <Grid container>
@@ -36,7 +38,8 @@ function EventDetails() {
                   <div>
                     <div className="inlineclass">{coordinator.name} &nbsp; </div>
                     <div className="inlineclass">
-                      <CallIcon style={{ paddingTop: '10px' }} /> {coordinator.phone} &nbsp;
+                      <CallIcon style={{ paddingTop: '10px' }} /> {coordinator.phone}{' '}
+                      &nbsp;
                       <MailIcon style={{ paddingTop: '10px' }} /> {coordinator.email}
                     </div>
                   </div>
@@ -95,7 +98,6 @@ function EventDetails() {
       </Container>
     )
   }
-
 }
 
 export default EventDetails

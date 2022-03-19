@@ -26,6 +26,6 @@ export const EventDetailsLogic = () => {
 
   return {
     eventDetails,
-    fakeLoading
+    fakeLoading,
   }
 }

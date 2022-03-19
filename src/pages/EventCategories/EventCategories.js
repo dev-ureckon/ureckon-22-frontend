@@ -10,8 +10,8 @@ export const EventCategoriesLogic = () => {
 
   const { loading, categories, error } = useSelector((state) => state.eventCategories)
 
-  console.log(loading);
-  console.log(fakeLoading);
+  console.log(loading)
+  console.log(fakeLoading)
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -29,6 +29,6 @@ export const EventCategoriesLogic = () => {
     categories,
     loading,
     fakeLoading,
-    setFakeLoading
+    setFakeLoading,
   }
 }
