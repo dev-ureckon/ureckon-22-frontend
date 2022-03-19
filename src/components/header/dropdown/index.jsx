@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { styled, alpha } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
@@ -62,6 +63,7 @@ const StyledMenu = styled((props) => (
 
 const DropDown = ({ eventCategories, more }) => {
   const classes = useStyles()
+  const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -70,6 +72,13 @@ const DropDown = ({ eventCategories, more }) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
+
+  const handleRedirect = (category) => {
+    let slug = category.replace(/ /g, '-').toLowerCase()
+    navigate(`/events/category-slug/${slug}`)
+    setAnchorEl(null)
+  }
+
   return (
     <div style={{ marginRight: '2rem', marginLeft: '2rem' }}>
       <Button
@@ -95,7 +104,7 @@ const DropDown = ({ eventCategories, more }) => {
         {eventCategories ? (
           eventCategories.map((event) => (
             <>
-              <MenuItem onClick={handleClose} disableRipple>
+              <MenuItem onClick={() => handleRedirect(event?.categoryName)} disableRipple>
                 <img
                   src={event?.icon}
                   alt="icon"

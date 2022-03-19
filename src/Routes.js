@@ -87,11 +87,43 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </AuthProtectedRoute>
             }
           /> */}
-          <Route path="/partners" element={<Sponsor />} />
+          <Route
+            path="/partners"
+            element={
+              <>
+                <Header />
+                <Sponsor />
+              </>
+            }
+          />
 
-          <Route path="/events" element={<EventCategories />} />
-          <Route path="/events/category-slug/:eventCategorySlug" element={<Events />} />
-          <Route path="/events/search" element={<EventsSearch />} />
+          <Route
+            path="/events"
+            element={
+              <>
+                <Header />
+                <EventCategories />
+              </>
+            }
+          />
+          <Route
+            path="/events/category-slug/:eventCategorySlug"
+            element={
+              <>
+                <Header />
+                <Events />
+              </>
+            }
+          />
+          <Route
+            path="/events/search"
+            element={
+              <>
+                <Header />
+                <EventsSearch />
+              </>
+            }
+          />
 
           <Route
             path="/contact"
@@ -129,10 +161,42 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </>
             }
           /> */}
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/event/:eventCode" element={<EventDetails />} />
-          <Route path="/team" element={<Teams />} />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Header />
+                <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header />
+                <About />
+              </>
+            }
+          />
+          <Route
+            path="/event/:eventCode"
+            element={
+              <>
+                <Header />
+                <EventDetails />
+              </>
+            }
+          />
+          <Route
+            path="/team"
+            element={
+              <>
+                <Header />
+                <Teams />
+              </>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
