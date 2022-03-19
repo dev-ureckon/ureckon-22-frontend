@@ -60,7 +60,7 @@ const StyledMenu = styled((props) => (
   },
 }))
 
-const DropDown = ({ events, more }) => {
+const DropDown = ({ eventCategories, more }) => {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
@@ -81,7 +81,7 @@ const DropDown = ({ events, more }) => {
         onClick={handleClick}
         endIcon={<img src={DropdownIMG} alt="icon" />}
       >
-        <div className={classes.btnTxt}>{events ? 'Events' : 'More'}</div>
+        <div className={classes.btnTxt}>{eventCategories ? 'Events' : 'More'}</div>
       </Button>
       <StyledMenu
         id="demo-customized-menu"
@@ -92,45 +92,19 @@ const DropDown = ({ events, more }) => {
         open={open}
         onClose={handleClose}
       >
-        {events ? (
-          <>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={flagship} alt="icon" style={{ marginRight: '10px' }} />
-              Flagship Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={robotics} alt="icon" style={{ marginRight: '10px' }} />
-              Robotics Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={gaming} alt="icon" style={{ marginRight: '10px' }} />
-              Gaming Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={coding} alt="icon" style={{ marginRight: '10px' }} />
-              Coding Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={design} alt="icon" style={{ marginRight: '10px' }} />
-              Design Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={business} alt="icon" style={{ marginRight: '10px' }} />
-              Business Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={biotech} alt="icon" style={{ marginRight: '10px' }} />
-              Biotech Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={quiz} alt="icon" style={{ marginRight: '10px' }} />
-              Quiz Events
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              <img src={school} alt="icon" style={{ marginRight: '10px' }} />
-              School Events
-            </MenuItem>
-          </>
+        {eventCategories ? (
+          eventCategories.map((event) => (
+            <>
+              <MenuItem onClick={handleClose} disableRipple>
+                <img
+                  src={event?.icon}
+                  alt="icon"
+                  style={{ marginRight: '10px', width: '15px', height: '15px' }}
+                />
+                {event?.categoryName} Events
+              </MenuItem>
+            </>
+          ))
         ) : (
           <>
             <MenuItem onClick={handleClose} disableRipple>

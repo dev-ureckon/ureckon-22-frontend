@@ -4,6 +4,7 @@ import newsfeedReducer from './newsfeed'
 import toastReducer from './toast'
 import { userLoginReducer, userRegisterReducer } from './auth.js'
 import { userSearchReducer, teamRegisterReducer } from './eventRegReducer'
+import { eventCategoryReducer } from './eventCategoryReducer'
 import userProfileReducer from './profile'
 import teamsReducer from './team.js'
 
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   teams: teamsReducer,
   userSearch: userSearchReducer,
   teamRegister: teamRegisterReducer,
+  eventCategory: eventCategoryReducer,
 })
 
 export default rootReducer
