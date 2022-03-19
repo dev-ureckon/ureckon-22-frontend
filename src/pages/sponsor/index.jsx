@@ -7,17 +7,17 @@ import { useDispatch } from 'react-redux'
 import Loader from '../../components/loader'
 
 function Sponsor() {
+  const [fakeLoading, setFakeLoading] = useState(true)
   const dispatch = useDispatch()
   const { loading, sponsors } = useSelector((state) => state.sponsor)
-  const [fakeLoading, setFakeLoading] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
       if (!loading) {
         setFakeLoading(false)
       }
-    }, 4000)
-  }, [])
+    }, 2000)
+  }, [loading])
 
   useEffect(() => {
     dispatch(getAllSponsors())

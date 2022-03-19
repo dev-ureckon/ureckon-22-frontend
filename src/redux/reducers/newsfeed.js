@@ -5,7 +5,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   newsfeed: [], // All of the existing newsfeed fetched from server, initially empty
 }

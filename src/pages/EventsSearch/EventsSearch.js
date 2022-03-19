@@ -18,7 +18,7 @@ export const EventSearchLogic = () => {
         setFakeLoading(false)
       }
     }, 2000)
-  }, [])
+  }, [loading])
 
   useEffect(() => {
     dispatch(getEventsSearch(searchedEventName))

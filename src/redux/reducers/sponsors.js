@@ -5,7 +5,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   mainSponsors: [], // Only the main sponsors of Ureckon
   sponsors: [], // All the sponsors of Ureckon sorted by order

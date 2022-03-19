@@ -15,16 +15,7 @@ import Loader from '../../components/loader/index.jsx'
 
 export default function Team() {
   const classes = useStyles()
-  const { loading, teamData } = TeamsLogic()
-  const [fakeLoading, setFakeLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (!loading) {
-        setFakeLoading(false)
-      }
-    }, 4000)
-  }, [])
+  const { loading, teamData, fakeLoading } = TeamsLogic()
 
   if (fakeLoading) return <Loader />
 
@@ -90,7 +81,7 @@ export default function Team() {
                                     </a>
 
                                     {teamMemberData.social &&
-                                    teamMemberData.social.facebook ? (
+                                      teamMemberData.social.facebook ? (
                                       <>
                                         <a
                                           target="_blank"
@@ -105,7 +96,7 @@ export default function Team() {
                                       <></>
                                     )}
                                     {teamMemberData.social &&
-                                    teamMemberData.social.linkedIn ? (
+                                      teamMemberData.social.linkedIn ? (
                                       <>
                                         <a
                                           target="_blank"
@@ -120,7 +111,7 @@ export default function Team() {
                                       <></>
                                     )}
                                     {teamMemberData.social &&
-                                    teamMemberData.social.twitter ? (
+                                      teamMemberData.social.twitter ? (
                                       <a
                                         target="_blank"
                                         href={teamMemberData.social.twitter}

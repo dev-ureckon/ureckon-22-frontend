@@ -18,7 +18,7 @@ export const EventDetailsLogic = () => {
         setFakeLoading(false)
       }
     }, 2000)
-  }, [])
+  }, [loading])
 
   useEffect(() => {
     dispatch(getAllEventDetails(eventCode))

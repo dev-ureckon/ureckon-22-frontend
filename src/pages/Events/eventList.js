@@ -18,7 +18,7 @@ export const EventListLogic = () => {
         setFakeLoading(false)
       }
     }, 2000)
-  }, [])
+  }, [loading])
 
   useEffect(() => {
     dispatch(getAllEventList(eventCategorySlug))
