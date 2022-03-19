@@ -2,21 +2,25 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop.js'
 
 import Home from './pages/Home'
-import Register from './pages/auth/Register'
-import Login from './pages/auth/Login/index.jsx'
-import ForgotPassword from './pages/auth/ForgotPassword'
-import CompleteProfile from './pages/auth/CompleteProfile'
+// import Register from './pages/auth/Register'
+// import Login from './pages/auth/Login/index.jsx'
+// import ForgotPassword from './pages/auth/ForgotPassword'
+// import CompleteProfile from './pages/auth/CompleteProfile'
 import Contact from './pages/Contact/index.jsx'
 import About from './pages/About/index.jsx'
-import Profile from './pages/Profile/index.jsx'
-
-import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
-import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
-import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
+import EventDetails from './pages/EventDetails/index.jsx'
+// import Profile from './pages/Profile/index.jsx'
+import Sponsor from './pages/sponsor/index.jsx'
+// import ReverseAuthProtectedRoute from './components/hoc/ReverseAuthProtectedRoute'
+// import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
+// import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 import Teams from './pages/Teams/index.jsx'
 // import EventRegister from './pages/EventRegister/index.jsx'
 import HomeNav from './components/header/homeNav'
 import Header from './components/header'
+import Events from './pages/Events/index.jsx'
+import EventsSearch from './pages/EventsSearch/index.jsx'
+import EventCategories from './pages/EventCategories/index.jsx'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
   return (
@@ -38,7 +42,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </>
             }
           />
-          <Route
+          {/* <Route
             path="/register"
             element={
               <ReverseAuthProtectedRoute>
@@ -46,8 +50,8 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
                 <Register />
               </ReverseAuthProtectedRoute>
             }
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/login"
             element={
               <ReverseAuthProtectedRoute>
@@ -55,8 +59,8 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
                 <Login />
               </ReverseAuthProtectedRoute>
             }
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/complete-profile"
             element={
               <CompleteProfileAccess>
@@ -64,8 +68,8 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
                 <CompleteProfile />
               </CompleteProfileAccess>
             }
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/forgot-password"
             element={
               <ReverseAuthProtectedRoute>
@@ -73,8 +77,8 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
                 <ForgotPassword />
               </ReverseAuthProtectedRoute>
             }
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/profile"
             element={
               <AuthProtectedRoute>
@@ -82,7 +86,12 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
                 <Profile />
               </AuthProtectedRoute>
             }
-          />
+          /> */}
+          <Route path="/partners" element={<Sponsor />} />
+
+          <Route path="/events" element={<EventCategories />} />
+          <Route path="/events/category-slug/:eventCategorySlug" element={<Events />} />
+          <Route path="/events/search" element={<EventsSearch />} />
 
           <Route
             path="/contact"
@@ -120,6 +129,10 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
               </>
             }
           /> */}
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/event/:eventCode" element={<EventDetails />} />
+          <Route path="/team" element={<Teams />} />
         </Routes>
       </BrowserRouter>
     </>

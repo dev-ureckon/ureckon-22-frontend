@@ -97,7 +97,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             <Grid item lg={12} className="menupad" id="mainpage">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  {userInfo ? (
+                  {/* {userInfo ? (
                     <Link to="/profile" className="menulink">
                       Profile
                       <div>
@@ -111,7 +111,13 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                         <img className="test0" src={line1} alt="line" />
                       </div>
                     </Link>
-                  )}
+                  )} */}
+                  <Link to="/about" className="menulink">
+                    About Us
+                    <div>
+                      <img className="test5" src={line2} alt="line" />
+                    </div>
+                  </Link>
                 </Grid>
                 <Grid
                   item
@@ -119,7 +125,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                   justifyContent={{ lg: 'flex-end', xs: 'center' }}
                   lg={6}
                   xs={12}
-                  order={{ lg: 2, xs: 4 }}
+                  order={{ lg: 2, xs: 5 }}
                 >
                   <div onClick={moreFunction}>
                     <Link to="" className="menulink">
@@ -169,7 +175,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                     </div>
                   </div>
                 </Grid>
-                <Grid
+                {/* <Grid
                   item
                   container
                   justifyContent="center"
@@ -183,7 +189,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                       <img className="test5" src={line2} alt="line" />
                     </div>
                   </Link>
-                </Grid>
+                </Grid> */}
               </Grid>
             </Grid>
 
@@ -239,8 +245,8 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                   xs={12}
                   order={{ lg: 4, xs: 3 }}
                 >
-                  <Link to="/sponsers" className="menulink">
-                    Sponsors
+                  <Link to="/partners" className="menulink">
+                    Partners
                     <div>
                       <img className="test6" src={line2} alt="line" />
                     </div>
@@ -255,21 +261,25 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
           </Grid>
 
-          <div className={classes.Sponsor}>Partnered By</div>
-          {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
           {mainSponsors.length && (
-            <div className={classes.SponsorImg}>
-              {mainSponsors.map((aMainSponsor) => (
-                <img
-                  src={aMainSponsor.sponsorLogo}
-                  height={100}
-                  width={100}
-                  style={{ margin: '0 1.5rem' }}
-                  alt="UEM"
-                />
-              ))}
-            </div>
+            <>
+              <div className={classes.Sponsor}>Partnered By</div>
+              <div className={classes.SponsorImg}>
+                {mainSponsors.map((aMainSponsor) => (
+                  <img
+                    src={aMainSponsor.sponsorLogo}
+                    height={100}
+                    width={100}
+                    style={{ margin: '0 1.5rem' }}
+                    alt="UEM"
+                  />
+                ))}
+              </div>
+            </>
           )}
+
+          {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
+
           {/* ------------------------------------End Main Sponser Icons----------------------------------------------------- */}
         </Grid>
       </Grid>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import RegisteredEvents from '../../components/registeredEvents/index.jsx'

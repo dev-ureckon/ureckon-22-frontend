@@ -21,4 +21,8 @@ export {
 } from './profile'
 
 export { SHOW_TOAST, CLEAR_TOAST } from './toast'
+
 export * from './teams.js'
+export * from './eventCategories.js'
+export * from './eventDetails.js'
+export * from './eventList.js'

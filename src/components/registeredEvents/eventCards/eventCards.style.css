@@ -34,8 +34,8 @@
 }
 
 .eventButton {
-  margin : 2rem;
-  font-family: 'ibm-plex-sans, sans-serif';
+  margin: 2rem;
+  font-family: 'IBM Plex Sans, sans-serif';
   text-transform: uppercase;
   width: 181px;
   height: 50px;
@@ -43,7 +43,6 @@
   border: 0;
   outline: none;
   color: #fff;
-  font-size: normal;
   font-weight: 500;
   font-size: 16px;
 }
@@ -79,8 +78,8 @@
     flex-flow: column wrap;
     margin: 1.2rem;
   }
-  .event-details{
-      padding-top: 15px;
-      padding-bottom: 15px;
+  .event-details {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
