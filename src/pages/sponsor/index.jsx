@@ -9,12 +9,21 @@ import Loader from '../../components/loader'
 function Sponsor() {
   const dispatch = useDispatch()
   const { loading, sponsors } = useSelector((state) => state.sponsor)
+  const [fakeLoading, setFakeLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 4000)
+  }, [])
 
   useEffect(() => {
     dispatch(getAllSponsors())
   }, [dispatch])
 
-  if (loading) return <Loader />
+  if (fakeLoading) return <Loader />
 
   return (
     <Container style={{ minHeight: 'calc(100vh - 255px)' }}>

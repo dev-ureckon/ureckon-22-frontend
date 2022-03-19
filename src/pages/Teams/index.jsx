@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Container, Grid, Typography, Card, Paper } from '@mui/material'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
@@ -13,10 +14,19 @@ import EmailIcon from '@mui/icons-material/Email'
 import Loader from '../../components/loader/index.jsx'
 
 export default function Team() {
-  const { loading, teamData } = TeamsLogic()
   const classes = useStyles()
+  const { loading, teamData } = TeamsLogic()
+  const [fakeLoading, setFakeLoading] = useState(true)
 
-  if (loading) return <Loader />
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 4000)
+  }, [])
+
+  if (fakeLoading) return <Loader />
 
   return (
     <Container>

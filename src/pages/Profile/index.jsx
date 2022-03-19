@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import RegisteredEvents from '../../components/registeredEvents/index.jsx'
@@ -25,10 +25,19 @@ const Profile = () => {
   const { registeredEvents, authProvider, loading } = useSelector(
     (state) => state.userProfile
   )
+  const [fakeLoading, setFakeLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 4000)
+  }, [])
 
   const [showPasswordModal, setShowPasswordModal] = useState(false)
 
-  if (loading) return <Loader />
+  if (fakeLoading) return <Loader />
 
   return (
     <>
