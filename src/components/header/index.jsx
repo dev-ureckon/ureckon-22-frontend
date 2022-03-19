@@ -38,7 +38,9 @@ const Header = () => {
         <Toolbar className={classes.navEle}>
           {isMobile ? (
             <>
-              <div className="nav-font">Home</div>
+              <a href="/" className="nav-font">
+                Home
+              </a>
               <DropDown eventCategories={eventCategories} />
               <DropDown />
               <img
@@ -46,7 +48,9 @@ const Header = () => {
                 alt="ureckon-logo"
                 style={{ marginLeft: '2rem', cursor: 'pointer' }}
               />
-              <div className="nav-font">About Us</div>
+              <a href="/about" className="nav-font">
+                About Us
+              </a>
               {userInfo && (
                 <div className="nav-font" onClick={logoutHandler}>
                   Logout
