@@ -5,7 +5,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   mainSponsors: [], // Only the main sponsors of Ureckon
   sponsors: [], // All the sponsors of Ureckon sorted by order
@@ -24,7 +24,7 @@ const sponsorReducer = (state = initialState, action) => {
     case FETCH_SPONSORS_SUCCESS:
       const newState = {
         ...state,
-        loading: true,
+        loading: false,
         error: '',
       }
       if (isMain) newState.mainSponsors = payload

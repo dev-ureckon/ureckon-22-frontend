@@ -1,7 +1,7 @@
 import { FETCH_TEAMS_REQUEST, FETCH_TEAMS_SUCCESS, FETCH_TEAMS_ERROR } from '../constants'
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   teams: {}, // All of the existing TEAMS fetched from server, initially empty
 }

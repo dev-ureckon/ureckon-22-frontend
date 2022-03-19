@@ -4,14 +4,26 @@ import { Container } from '@mui/material'
 import { getAllSponsors } from '../../redux/apis/sponsors'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
+import Loader from '../../components/loader'
 
 function Sponsor() {
+  const [fakeLoading, setFakeLoading] = useState(true)
   const dispatch = useDispatch()
-  const sponsors = useSelector((state) => state.sponsor.sponsors)
+  const { loading, sponsors } = useSelector((state) => state.sponsor)
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 2000)
+  }, [loading])
 
   useEffect(() => {
     dispatch(getAllSponsors())
   }, [dispatch])
+
+  if (fakeLoading) return <Loader />
 
   return (
     <Container style={{ minHeight: 'calc(100vh - 255px)' }}>
