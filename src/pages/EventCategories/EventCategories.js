@@ -13,13 +13,13 @@ export const EventCategoriesLogic = () => {
   console.log(loading);
   console.log(fakeLoading);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     if (!loading) {
-  //       setFakeLoading(false)
-  //     }
-  //   }, 2000)
-  // }, [loading])
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 2000)
+  }, [loading])
 
   useEffect(() => {
     dispatch(getAllEventCategories())
