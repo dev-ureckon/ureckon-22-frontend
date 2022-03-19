@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,8 +8,17 @@ import { getAllEventDetails } from '../../redux/apis/eventDetails'
 export const EventDetailsLogic = () => {
   const dispatch = useDispatch()
   const { eventCode } = useParams()
+  const [fakeLoading, setFakeLoading] = useState(true)
 
   const { loading, eventDetails, error } = useSelector((state) => state.eventDetails)
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 2000)
+  }, [])
 
   useEffect(() => {
     dispatch(getAllEventDetails(eventCode))
@@ -17,5 +26,6 @@ export const EventDetailsLogic = () => {
 
   return {
     eventDetails,
+    fakeLoading
   }
 }

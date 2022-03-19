@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '@mui/material/Card'
 import SearchIcon from '@mui/icons-material/Search'
 import CardMedia from '@mui/material/CardMedia'
@@ -11,10 +11,13 @@ import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventList.style'
 import { EventListLogic } from './eventList'
 import { Link } from 'react-router-dom'
+import Loader from '../../components/loader'
 
 const Events = () => {
   const classes = useStyles()
-  const { events, eventCategorySlug, makeHeading } = EventListLogic()
+  const { events, eventCategorySlug, makeHeading, fakeLoading } = EventListLogic()
+
+  if (fakeLoading) return <Loader />
 
   return (
     <>

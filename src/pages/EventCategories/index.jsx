@@ -1,5 +1,4 @@
 import { Container, Grid, Paper, Typography } from '@mui/material'
-import { useEffect, useState } from 'react'
 import { useStyles } from './eventCategories.style'
 
 import SearchIcon from '@mui/icons-material/Search'
@@ -9,16 +8,7 @@ import Loader from '../../components/loader'
 
 const EventCategories = () => {
   const classes = useStyles()
-  const { categories, loading } = EventCategoriesLogic()
-  const [fakeLoading, setFakeLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (!loading) {
-        setFakeLoading(false)
-      }
-    }, 4000)
-  }, [])
+  const { categories, loading, fakeLoading, setFakeLoading } = EventCategoriesLogic()
 
   if (fakeLoading) return <Loader />
 

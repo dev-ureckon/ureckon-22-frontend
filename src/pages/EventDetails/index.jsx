@@ -7,9 +7,12 @@ import CallIcon from '@mui/icons-material/Call'
 import GroupsIcon from '@mui/icons-material/Groups'
 import MailIcon from '@mui/icons-material/Mail'
 import { EventDetailsLogic } from './eventDetails'
+import Loader from '../../components/loader'
 
 function EventDetails() {
-  const { eventDetails } = EventDetailsLogic()
+  const { eventDetails, fakeLoading } = EventDetailsLogic()
+
+  if (fakeLoading) return <Loader />
 
   return (
     <Container>
