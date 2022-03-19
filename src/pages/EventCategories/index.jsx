@@ -22,18 +22,19 @@ const EventCategories = () => {
           alignSelf={'center'}
           style={{ display: 'flex', justifyContent: 'flex-end' }}
         >
-          {categories && categories[0] && (
-            <Link to={`/events/${categories[0].categoryName}`}>
-              <SearchIcon style={{ color: '#fff' }} fontSize="large" />
-            </Link>
-          )}
+          <Link to={`/events/search`}>
+            <SearchIcon style={{ color: '#fff' }} fontSize="large" />
+          </Link>
         </Grid>
       </Grid>
       <Grid container spacing="40">
         {categories &&
           categories.map((category) => (
             <Grid item md={3} xs={12}>
-              <Link style={{ textDecoration: 'none' }} to={`/events/${category.slug}`}>
+              <Link
+                style={{ textDecoration: 'none' }}
+                to={`/events/category-slug/${category.slug}`}
+              >
                 <Paper className={classes.categoryPaper}>
                   <img
                     src={category.icon}
