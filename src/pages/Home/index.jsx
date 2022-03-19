@@ -71,11 +71,11 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
               open={open}
               onClose={handleClose}
               className={classes.modal}
-              // closeAfterTransition
-              // BackdropComponent={Backdrop}
-              // BackdropProps={{
-              //   timeout: 500,
-              // }}
+            // closeAfterTransition
+            // BackdropComponent={Backdrop}
+            // BackdropProps={{
+            //   timeout: 500,
+            // }}
             >
               <News open={open} handleClose={handleClose} />
             </Modal>
@@ -97,7 +97,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
             <Grid item lg={12} className="menupad" id="mainpage">
               <Grid className="menufont" container alignItems="center">
                 <Grid item container justifyContent="center" lg={6} xs={12}>
-                  {userInfo ? (
+                  {/* {userInfo ? (
                     <Link to="/profile" className="menulink">
                       Profile
                       <div>
@@ -111,7 +111,13 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                         <img className="test0" src={line1} alt="line" />
                       </div>
                     </Link>
-                  )}
+                  )} */}
+                  <Link to="/about" className="menulink">
+                    About Us
+                    <div>
+                      <img className="test5" src={line2} alt="line" />
+                    </div>
+                  </Link>
                 </Grid>
                 <Grid
                   item
@@ -169,7 +175,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                     </div>
                   </div>
                 </Grid>
-                <Grid
+                {/* <Grid
                   item
                   container
                   justifyContent="center"
@@ -183,7 +189,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
                       <img className="test5" src={line2} alt="line" />
                     </div>
                   </Link>
-                </Grid>
+                </Grid> */}
               </Grid>
             </Grid>
 
