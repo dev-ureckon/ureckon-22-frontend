@@ -22,7 +22,7 @@ import Events from './pages/Events/index.jsx'
 import EventsSearch from './pages/EventsSearch/index.jsx'
 import EventCategories from './pages/EventCategories/index.jsx'
 
-function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
+function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInProp }) {
   return (
     <>
       <BrowserRouter>
@@ -38,6 +38,8 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
                   setOpen={setOpen}
                   handleOpen={handleOpen}
                   handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
                 />
               </>
             }
@@ -91,7 +93,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/partners"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <Sponsor />
               </>
             }
@@ -101,7 +110,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/events"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <EventCategories />
               </>
             }
@@ -110,7 +126,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/events/category-slug/:eventCategorySlug"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <Events />
               </>
             }
@@ -119,7 +142,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/events/search"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <EventsSearch />
               </>
             }
@@ -129,7 +159,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/contact"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <Contact />
               </>
             }
@@ -138,7 +175,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/about"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <About />
               </>
             }
@@ -147,7 +191,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/team"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <Teams />
               </>
             }
@@ -165,7 +216,14 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/contact"
             element={
               <>
-                <Header />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
                 <Contact />
               </>
             }
@@ -174,7 +232,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/about"
             element={
               <>
-                <Header />
+                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
                 <About />
               </>
             }
@@ -183,7 +241,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/event/:eventCode"
             element={
               <>
-                <Header />
+                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
                 <EventDetails />
               </>
             }
@@ -192,7 +250,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/team"
             element={
               <>
-                <Header />
+                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
                 <Teams />
               </>
             }

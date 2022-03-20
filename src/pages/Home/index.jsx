@@ -19,14 +19,12 @@ import './home.animation.css'
 import '../../app.css'
 import Loader from '../../components/loader/index'
 
-function Home({ open, setOpen, handleOpen, handleClose }) {
+function Home({ open, setOpen, handleOpen, handleClose, inProp, setInProp }) {
   const [fakeLoading, setFakeLoading] = useState(true)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const location = useLocation()
-
-  const [inProp, setInProp] = useState(false)
 
   const classes = useStyles()
   const mainSponsors = useSelector((state) => state.sponsor.mainSponsors)
@@ -57,7 +55,7 @@ function Home({ open, setOpen, handleOpen, handleClose }) {
     }
     dispatch(getMainSponsors())
     dispatch(getAllNewsfeed())
-  }, [dispatch])
+  }, [dispatch, userInfo, location, navigate])
 
   useEffect(() => {
     setTimeout(() => {

@@ -12,7 +12,7 @@ import Footer from './components/footer'
 
 function App() {
   const [open, setOpen] = useState(false)
-
+  const [inProp, setInProp] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
@@ -35,6 +35,8 @@ function App() {
             setOpen={setOpen}
             handleOpen={handleOpen}
             handleClose={handleClose}
+            inProp={inProp}
+            setInProp={setInProp}
           />
           {/* For the Toast messages that are to be shown */}
           <ToastBar />
