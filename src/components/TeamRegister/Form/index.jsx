@@ -8,7 +8,6 @@ import SubmitButton from '../../../components/SubmitButton'
 import { teamRegisterAction } from '../../../redux/actions/eventRegActions'
 
 const Form = ({ formData, setFormData }) => {
-
   const dispatch = useDispatch()
 
   const handleChange = (e) => {
