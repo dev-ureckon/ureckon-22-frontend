@@ -67,8 +67,7 @@ const EventsSearch = () => {
                           left: 10,
                         }}
                       >
-                        {' '}
-                        Offline event
+                        {event.isOnline ? 'Online event' : 'Offline Event'}
                       </div>
                       <Typography
                         style={{
