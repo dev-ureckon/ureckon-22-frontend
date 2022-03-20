@@ -6,6 +6,8 @@ import { Button, IconButton, CardActions, Grid, Container } from '@mui/material'
 import './eventsSearch.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
+import { Box } from '@mui/material'
+import CardContent from '@mui/material/CardContent'
 import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventSearch.style'
 import { Link } from 'react-router-dom'
@@ -37,15 +39,51 @@ const EventsSearch = () => {
               eventsList.map((event) => (
                 <Grid className={classes.mainBox} p={2}>
                   <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
-                    <CardMedia
-                      component="img"
-                      alt={event.eventName}
-                      height="180"
-                      image={event.icon}
-                    />
-                    <Typography gutterBottom variant="h5" component="div">
-                      {event.eventName}
-                    </Typography>
+                    <div style={{ position: 'relative' }}>
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          bottom: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          bgcolor: 'rgba(0, 0, 0, 0.54)',
+                          color: 'white',
+                          padding: '10px',
+                        }}
+                      ></Box>
+                      <CardMedia
+                        component="img"
+                        alt={event.eventName}
+                        height="180"
+                        image={event.icon}
+                      />
+                      <div
+                        style={{
+                          position: 'absolute',
+                          fontSize: '14px',
+                          color: 'white',
+                          top: 10,
+                          left: 10,
+                        }}
+                      >
+                        {event.isOnline ? 'Online event' : 'Offline Event'}
+                      </div>
+                      <Typography
+                        style={{
+                          position: 'absolute',
+                          color: 'white',
+                          bottom: 0,
+                          left: 10,
+                        }}
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                      >
+                        {event.eventName}
+                      </Typography>
+                    </div>
+
                     <CardActions className={classes.pdng} padding={0}>
                       <Grid container spacing={2}>
                         <Grid item xs={6}>
