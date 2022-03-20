@@ -15,11 +15,14 @@ import Sponsor from './pages/sponsor/index.jsx'
 // import AuthProtectedRoute from './components/hoc/AuthProtectedRoute'
 // import CompleteProfileAccess from './components/hoc/CompleteProfileAccess'
 import Teams from './pages/Teams/index.jsx'
+// import EventRegister from './pages/EventRegister/index.jsx'
+import HomeNav from './components/header/homeNav'
+import Header from './components/header'
 import Events from './pages/Events/index.jsx'
 import EventsSearch from './pages/EventsSearch/index.jsx'
 import EventCategories from './pages/EventCategories/index.jsx'
 
-function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
+function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInProp }) {
   return (
     <>
       <BrowserRouter>
@@ -28,18 +31,24 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
           <Route
             path="/"
             element={
-              <Home
-                open={open}
-                setOpen={setOpen}
-                handleOpen={handleOpen}
-                handleClose={handleClose}
-              />
+              <>
+                <HomeNav />
+                <Home
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+              </>
             }
           />
           {/* <Route
             path="/register"
             element={
               <ReverseAuthProtectedRoute>
+                <Header />
                 <Register />
               </ReverseAuthProtectedRoute>
             }
@@ -48,6 +57,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/login"
             element={
               <ReverseAuthProtectedRoute>
+                <Header />
                 <Login />
               </ReverseAuthProtectedRoute>
             }
@@ -56,6 +66,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/complete-profile"
             element={
               <CompleteProfileAccess>
+                <Header />
                 <CompleteProfile />
               </CompleteProfileAccess>
             }
@@ -64,6 +75,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/forgot-password"
             element={
               <ReverseAuthProtectedRoute>
+                <Header />
                 <ForgotPassword />
               </ReverseAuthProtectedRoute>
             }
@@ -72,20 +84,177 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose }) {
             path="/profile"
             element={
               <AuthProtectedRoute>
+                <Header />
                 <Profile />
               </AuthProtectedRoute>
             }
           /> */}
-          <Route path="/partners" element={<Sponsor />} />
+          <Route
+            path="/partners"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <Sponsor />
+              </>
+            }
+          />
 
-          <Route path="/events" element={<EventCategories />} />
-          <Route path="/events/category-slug/:eventCategorySlug" element={<Events />} />
-          <Route path="/events/search" element={<EventsSearch />} />
+          <Route
+            path="/events"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <EventCategories />
+              </>
+            }
+          />
+          <Route
+            path="/events/category-slug/:eventCategorySlug"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <Events />
+              </>
+            }
+          />
+          <Route
+            path="/events/search"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <EventsSearch />
+              </>
+            }
+          />
 
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/event/:eventCode" element={<EventDetails />} />
-          <Route path="/team" element={<Teams />} />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <About />
+              </>
+            }
+          />
+          <Route
+            path="/team"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <Teams />
+              </>
+            }
+          />
+          {/* <Route
+            path="events/:eventCode/event-register"
+            element={
+              <>
+                <Header />
+                <EventRegister />
+              </>
+            }
+          /> */}
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                />
+                <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
+                <About />
+              </>
+            }
+          />
+          <Route
+            path="/event/:eventCode"
+            element={
+              <>
+                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
+                <EventDetails />
+              </>
+            }
+          />
+          <Route
+            path="/team"
+            element={
+              <>
+                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
+                <Teams />
+              </>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
