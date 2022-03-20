@@ -74,8 +74,7 @@ const DropDown = ({ eventCategories, more }) => {
   }
 
   const handleRedirect = (category) => {
-    let slug = category.replace(/ /g, '-').toLowerCase()
-    navigate(`/events/category-slug/${slug}`)
+    let slug = navigate(`/events/category-slug/${slug}`)
     setAnchorEl(null)
   }
 
@@ -104,14 +103,25 @@ const DropDown = ({ eventCategories, more }) => {
         {eventCategories ? (
           eventCategories.map((event) => (
             <>
-              <MenuItem onClick={() => handleRedirect(event?.categoryName)} disableRipple>
-                <img
-                  src={event?.icon}
-                  alt="icon"
-                  style={{ marginRight: '10px', width: '15px', height: '15px' }}
-                />
-                {event?.categoryName} Events
-              </MenuItem>
+              <a
+                href={
+                  '/events/category-slug/' +
+                  event?.categoryName.replace(/ /g, '-').toLowerCase()
+                }
+                style={{ textDecoration: 'none', color: 'white' }}
+              >
+                <MenuItem
+                  // onClick={() => handleRedirect(event?.categoryName)}
+                  disableRipple
+                >
+                  <img
+                    src={event?.icon}
+                    alt="icon"
+                    style={{ marginRight: '10px', width: '15px', height: '15px' }}
+                  />
+                  {event?.categoryName} Events
+                </MenuItem>
+              </a>
             </>
           ))
         ) : (
