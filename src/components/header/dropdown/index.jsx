@@ -126,18 +126,26 @@ const DropDown = ({ eventCategories, more }) => {
           ))
         ) : (
           <>
-            <MenuItem onClick={handleClose} disableRipple>
-              Team
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              Profile
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              Partners
-            </MenuItem>
-            <MenuItem onClick={handleClose} disableRipple>
-              Contact us
-            </MenuItem>
+            <a href="/team" style={{ textDecoration: 'none', color: 'white' }}>
+              <MenuItem onClick={handleClose} disableRipple>
+                Team
+              </MenuItem>
+            </a>
+            <a href="/profile" style={{ textDecoration: 'none', color: 'white' }}>
+              <MenuItem onClick={handleClose} disableRipple>
+                Profile
+              </MenuItem>
+            </a>
+            <a href="/partners" style={{ textDecoration: 'none', color: 'white' }}>
+              <MenuItem onClick={handleClose} disableRipple>
+                Partners
+              </MenuItem>
+            </a>
+            <a href="/contact" style={{ textDecoration: 'none', color: 'white' }}>
+              <MenuItem onClick={handleClose} disableRipple>
+                Contact us
+              </MenuItem>
+            </a>
           </>
         )}
       </StyledMenu>
