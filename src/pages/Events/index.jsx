@@ -46,12 +46,16 @@ const Events = () => {
               events.map((event) => (
                 <Grid className={classes.mainBox} p={2}>
                   <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
+                  <div style={{ position: 'relative' }}>
                     <CardMedia
-                      component="img"
-                      alt={event.eventName}
-                      height="180"
-                      image={event.icon}
+                        component="img"
+                        alt={event.eventName}
+                        height="180"
+                        image={event.icon}
                     />
+                    <div style={{position: "absolute", fontSize:"15px", color: "white",top: 10, left:50, transform: "translateX(-50%)",}}> Offline event</div>
+                  </div>
+                    
                     <Typography gutterBottom variant="h5" component="div">
                       {event.eventName}
                     </Typography>

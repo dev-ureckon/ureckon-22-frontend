@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 import { Button, IconButton, CardActions, Grid, Container } from '@mui/material'
 import './eventsSearch.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-
+import CardContent from '@mui/material/CardContent';
 import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventSearch.style'
 import { Link } from 'react-router-dom'
@@ -37,12 +37,15 @@ const EventsSearch = () => {
               eventsList.map((event) => (
                 <Grid className={classes.mainBox} p={2}>
                   <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
-                    <CardMedia
-                      component="img"
-                      alt={event.eventName}
-                      height="180"
-                      image={event.icon}
-                    />
+                    <div style={{ position: 'relative' }}>
+                        <CardMedia
+                          component="img"
+                          alt={event.eventName}
+                          height="180"
+                          image={event.icon}
+                        />
+                      <div style={{position: "absolute", fontSize:"15px", color: "white",top: 10, left:50, transform: "translateX(-50%)",}}> Offline event</div>
+                    </div>
                     <Typography gutterBottom variant="h5" component="div">
                       {event.eventName}
                     </Typography>
