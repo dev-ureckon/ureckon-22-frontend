@@ -66,12 +66,11 @@ const Events = () => {
                         height="180"
                         image={event.icon}
                     />
-                    <div style={{position: "absolute", fontSize:"15px", color: "white",top: 10, left:50, transform: "translateX(-50%)",}}> Offline event</div>
+                    <div style={{position: "absolute", fontSize:"14px", color: "white",top: 10, left:10,}}> Offline event</div>
+                      <Typography style={{position: "absolute", color: "white",bottom:0, left:10,}} gutterBottom variant="h5" component="div">
+                        {event.eventName}
+                      </Typography>
                   </div>
-                    
-                    <Typography gutterBottom variant="h5" component="div">
-                      {event.eventName}
-                    </Typography>
                     <CardActions className={classes.pdng} padding={0}>
                       <Grid container spacing={2}>
                         <Grid item xs={6}>
