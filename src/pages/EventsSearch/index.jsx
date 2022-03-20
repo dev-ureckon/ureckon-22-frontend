@@ -47,7 +47,7 @@ const EventsSearch = () => {
                           left: 0,
                           width: '100%',
                           height: '100%',
-                          bgcolor: 'rgba(0, 0, 0, 0.54)',
+                          bgcolor: 'rgba(0, 0, 0, 0.72)',
                           color: 'white',
                           padding: '10px',
                         }}
