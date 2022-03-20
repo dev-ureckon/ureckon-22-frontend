@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography'
 import { Button, IconButton, CardActions, Grid, Container } from '@mui/material'
 import './eventsSearch.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+
+import { Box } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventSearch.style'
@@ -38,6 +40,18 @@ const EventsSearch = () => {
                 <Grid className={classes.mainBox} p={2}>
                   <Card className={classes.cardStyle} sx={{ maxWidth: 345 }}>
                     <div style={{ position: 'relative' }}>
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          bottom: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          bgcolor: 'rgba(0, 0, 0, 0.54)',
+                          color: 'white',
+                          padding: '10px',
+                        }} >
+                      </Box>
                         <CardMedia
                           component="img"
                           alt={event.eventName}
