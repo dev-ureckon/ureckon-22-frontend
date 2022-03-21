@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     width: '100%',
     position: 'absolute',
     top: '75%',
-    color: "#fff"
+    color: '#fff',
   },
   teamMember_image: {
     color: '#fff',
@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: '0',
   },
   teamMember_social: {
-    background: "#2A3B97",
+    background: '#2A3B97',
     color: '#fff',
     margin: '0 auto',
     borderRadius: '0',
