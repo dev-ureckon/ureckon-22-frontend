@@ -91,27 +91,34 @@ const Events = () => {
                         {event.eventName}
                       </Typography>
                     </div>
-                    <CardActions style={{
-                      padding: '0'
-                    }} className={classes.pdng} padding={0}>
+                    <CardActions
+                      style={{
+                        padding: '0',
+                      }}
+                      className={classes.pdng}
+                      padding={0}
+                    >
                       <Grid container spacing={2}>
                         <Grid item xs={6}>
                           <Link
                             style={{ textDecoration: 'none' }}
                             to={`/events/${event.code}/event-register`}
                           >
-                            <Button style={{
-                              fontSize: 16,
-                              backgroundColor: '#2A3B97',
-                              width: 184,
-                              height: 56,
-                              padding: 12,
-                              borderRadius: '0',
-                              '&:hover': {
-                                backgroundColor: '#0b053a',
-                              },
-
-                            }} className={classes.btn1} size="small">
+                            <Button
+                              style={{
+                                fontSize: 16,
+                                backgroundColor: '#2A3B97',
+                                width: 184,
+                                height: 56,
+                                padding: 12,
+                                borderRadius: '0',
+                                '&:hover': {
+                                  backgroundColor: '#0b053a',
+                                },
+                              }}
+                              className={classes.btn1}
+                              size="small"
+                            >
                               Register
                             </Button>
                           </Link>
@@ -121,18 +128,21 @@ const Events = () => {
                             style={{ textDecoration: 'none' }}
                             to={`/event/${event.code}`}
                           >
-                            <Button style={{
-                              backgroundColor: '#4B4C4F',
-                              fontSize: 16,
-                              width: 184,
-                              height: 56,
-                              padding: 12,
-                              borderRadius: '0',
-                              '&:hover': {
-                                backgroundColor: '#1f1f1f',
-                              },
-
-                            }} className={classes.btn2} size="small">
+                            <Button
+                              style={{
+                                backgroundColor: '#4B4C4F',
+                                fontSize: 16,
+                                width: 184,
+                                height: 56,
+                                padding: 12,
+                                borderRadius: '0',
+                                '&:hover': {
+                                  backgroundColor: '#1f1f1f',
+                                },
+                              }}
+                              className={classes.btn2}
+                              size="small"
+                            >
                               Know more
                               <IconButton
                                 size="large"
