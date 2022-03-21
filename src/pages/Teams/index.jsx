@@ -71,7 +71,7 @@ export default function Team() {
                                     </Typography>
                                   </div>
                                 </Paper>
-                                <Paper className={classes.teamMember_social}>
+                                <div className={classes.teamMember_social}>
                                   <Typography variant="subtitle2" align="center">
                                     <a
                                       href={`mailto:${teamMemberData.email}`}
@@ -81,7 +81,7 @@ export default function Team() {
                                     </a>
 
                                     {teamMemberData.social &&
-                                    teamMemberData.social.facebook ? (
+                                      teamMemberData.social.facebook ? (
                                       <>
                                         <a
                                           target="_blank"
@@ -96,7 +96,7 @@ export default function Team() {
                                       <></>
                                     )}
                                     {teamMemberData.social &&
-                                    teamMemberData.social.linkedIn ? (
+                                      teamMemberData.social.linkedIn ? (
                                       <>
                                         <a
                                           target="_blank"
@@ -111,7 +111,7 @@ export default function Team() {
                                       <></>
                                     )}
                                     {teamMemberData.social &&
-                                    teamMemberData.social.twitter ? (
+                                      teamMemberData.social.twitter ? (
                                       <a
                                         target="_blank"
                                         href={teamMemberData.social.twitter}
@@ -124,7 +124,7 @@ export default function Team() {
                                       <></>
                                     )}
                                   </Typography>
-                                </Paper>
+                                </div>
                               </Card>
                             </div>
                           </Grid>
