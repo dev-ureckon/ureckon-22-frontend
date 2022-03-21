@@ -86,10 +86,11 @@ const EventsSearch = () => {
 
                     <CardActions
                       style={{
-                        padding: '0'
+                        padding: '0',
                       }}
                       // className={classes.pdng}
-                      padding={0}>
+                      padding={0}
+                    >
                       <Grid container spacing={2}>
                         <Grid item xs={6}>
                           <Link
@@ -106,10 +107,11 @@ const EventsSearch = () => {
                                 borderRadius: '0',
                                 '&:hover': {
                                   backgroundColor: '#0b053a',
-                                }
+                                },
                               }}
                               // className={classes.btn1}
-                              size="small">
+                              size="small"
+                            >
                               Register
                             </Button>
                           </Link>
@@ -129,10 +131,11 @@ const EventsSearch = () => {
                                 borderRadius: '0',
                                 '&:hover': {
                                   backgroundColor: '#1f1f1f',
-                                }
+                                },
                               }}
                               // className={classes.btn2}
-                              size="small">
+                              size="small"
+                            >
                               Know more
                               <IconButton
                                 size="large"
