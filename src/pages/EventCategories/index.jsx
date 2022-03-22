@@ -38,25 +38,44 @@ const EventCategories = () => {
                   style={{ textDecoration: 'none' }}
                   to={`/events/category-slug/${category.slug}`}
                 >
-                  <Paper className={classes.categoryPaper}>
+                  <Paper
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      padding: '36px',
+                      position: 'static',
+                      height: '252px',
+                      left: '0px',
+                      top: '0px',
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      border: '3px solid #0DB3B3',
+                      borderRadius: '5px',
+                      flex: 'none',
+                      order: '0',
+                      flexGrow: '0'
+                    }}
+                  // className={classes.categoryPaper}
+                  >
                     <img
-                      src={category.icon}
-                      style={{ width: '100px', marginBottom: '15px' }}
-                      alt="event Category"
-                    />
-                    <Typography
-                      textAlign={'center'}
-                      variant="h4"
-                      style={{ color: '#fff' }}
-                    >
-                      {category.categoryName}
-                    </Typography>
-                  </Paper>
-                </Link>
+                    src={category.icon}
+                    style={{ width: '100px', marginBottom: '15px' }}
+                    alt="event Category"
+                  />
+                  <Typography
+                    textAlign={'center'}
+                    variant="h4"
+                    style={{ color: '#fff' }}
+                  >
+                    {category.categoryName}
+                  </Typography>
+                </Paper>
+              </Link>
               </Grid>
             ))}
-        </Grid>
-      </Container>
+      </Grid>
+      </Container >
     )
   }
 }
