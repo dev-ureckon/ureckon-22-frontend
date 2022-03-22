@@ -54,28 +54,28 @@ const EventCategories = () => {
                       borderRadius: '5px',
                       flex: 'none',
                       order: '0',
-                      flexGrow: '0'
+                      flexGrow: '0',
                     }}
-                  // className={classes.categoryPaper}
+                    // className={classes.categoryPaper}
                   >
                     <img
-                    src={category.icon}
-                    style={{ width: '100px', marginBottom: '15px' }}
-                    alt="event Category"
-                  />
-                  <Typography
-                    textAlign={'center'}
-                    variant="h4"
-                    style={{ color: '#fff' }}
-                  >
-                    {category.categoryName}
-                  </Typography>
-                </Paper>
-              </Link>
+                      src={category.icon}
+                      style={{ width: '100px', marginBottom: '15px' }}
+                      alt="event Category"
+                    />
+                    <Typography
+                      textAlign={'center'}
+                      variant="h4"
+                      style={{ color: '#fff' }}
+                    >
+                      {category.categoryName}
+                    </Typography>
+                  </Paper>
+                </Link>
               </Grid>
             ))}
-      </Grid>
-      </Container >
+        </Grid>
+      </Container>
     )
   }
 }
