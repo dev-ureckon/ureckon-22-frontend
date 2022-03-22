@@ -30,16 +30,18 @@ function App() {
         >
           {/* for Navbar */}
 
-          <RouteComponent
-            open={open}
-            setOpen={setOpen}
-            handleOpen={handleOpen}
-            handleClose={handleClose}
-            inProp={inProp}
-            setInProp={setInProp}
-          />
-          {/* For the Toast messages that are to be shown */}
-          <ToastBar />
+          <div style={{ minHeight: '90vh' }}>
+            <RouteComponent
+              open={open}
+              setOpen={setOpen}
+              handleOpen={handleOpen}
+              handleClose={handleClose}
+              inProp={inProp}
+              setInProp={setInProp}
+            />
+            {/* For the Toast messages that are to be shown */}
+            <ToastBar />
+          </div>
           <Footer />
         </div>
       </ThemeProvider>

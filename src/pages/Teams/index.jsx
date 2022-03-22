@@ -71,7 +71,7 @@ export default function Team() {
                                     </Typography>
                                   </div>
                                 </Paper>
-                                <Paper className={classes.teamMember_social}>
+                                <div className={classes.teamMember_social}>
                                   <Typography variant="subtitle2" align="center">
                                     <a
                                       href={`mailto:${teamMemberData.email}`}
@@ -124,7 +124,7 @@ export default function Team() {
                                       <></>
                                     )}
                                   </Typography>
-                                </Paper>
+                                </div>
                               </Card>
                             </div>
                           </Grid>
