@@ -108,7 +108,7 @@ function Contact() {
               />
             </Grid>
           </Grid>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ margin: '3.5rem 0 1.8rem 0', display: 'flex', justifyContent: 'center' }}>
             <Button>Submit</Button>
           </div>
         </form>
