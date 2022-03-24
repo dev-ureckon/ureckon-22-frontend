@@ -6,6 +6,7 @@ import './EventDetails.css'
 import CallIcon from '@mui/icons-material/Call'
 import GroupsIcon from '@mui/icons-material/Groups'
 import MailIcon from '@mui/icons-material/Mail'
+import EventIcon from '@mui/icons-material/Event'
 import { EventDetailsLogic } from './eventDetails'
 import Loader from '../../components/loader'
 
@@ -30,21 +31,51 @@ function EventDetails() {
                 {eventDetails && eventDetails.event && eventDetails.event.description}
               </div>
             </Grid>
-            <Grid className="whitetext">
-              <div className="blankaaTitle">EVENT COORDINATORS</div>
-              {eventDetails &&
-                eventDetails.event &&
-                eventDetails.event.coordinators.map((coordinator) => (
-                  <div>
-                    <div className="inlineclass">{coordinator.name} &nbsp; </div>
-                    <div className="inlineclass">
-                      <CallIcon style={{ paddingTop: '10px' }} /> {coordinator.phone}{' '}
-                      &nbsp;
-                      <MailIcon style={{ paddingTop: '10px' }} /> {coordinator.email}
+            <Grid container spacing={4} className="whitetext">
+              {/* Event Coordinator */}
+              <Grid item md={6}>
+                <div className="blankaaTitle">EVENT COORDINATORS</div>
+                {eventDetails &&
+                  eventDetails.event &&
+                  eventDetails.event.coordinators.map((coordinator) => (
+                    <div>
+                      <div className="inlineclass">{coordinator.name} &nbsp; </div>
+                      <div className="inlineclass">
+                        <CallIcon style={{ paddingTop: '10px' }} /> {coordinator.phone}
+                      </div>
                     </div>
+                  ))}
+              </Grid>
+
+              {/* Event Details */}
+              <Grid item md={6}>
+                <div className="blankaaTitle">EVENT DETAILS</div>
+                <div className="inlineclass">
+                  <div>
+                    <GroupsIcon style={{ paddingTop: '6px', marginRight: '12px' }} />
+                    {eventDetails &&
+                      eventDetails.event &&
+                      eventDetails.event.minParticipants}{' '}
+                    to{' '}
+                    {eventDetails &&
+                      eventDetails.event &&
+                      eventDetails.event.maxParticipants}
+                    members per team
                   </div>
-                ))}
+                </div>
+                <div className="inlineclass">
+                  <EventIcon style={{ paddingTop: '6px', marginRight: '12px' }} />
+                  {eventDetails && eventDetails.event && eventDetails.event.isOnline
+                    ? 'Online event'
+                    : 'Offline Event'}
+                </div>
+              </Grid>
             </Grid>
+            <br />
+
+            {/* <Grid className="whitetext">
+             
+            </Grid> */}
           </Grid>
           <Grid item>
             <div className="whitetext">
@@ -82,15 +113,6 @@ function EventDetails() {
                     <div>Problem Statement</div>
                   </Button>
                 </a>
-              </div>
-              <div>
-                <GroupsIcon style={{ paddingTop: '6px', marginRight: '12px' }} />
-                {eventDetails &&
-                  eventDetails.event &&
-                  eventDetails.event.minParticipants}{' '}
-                to{' '}
-                {eventDetails && eventDetails.event && eventDetails.event.maxParticipants}
-                members per team
               </div>
             </div>
           </Grid>
