@@ -98,15 +98,9 @@ const Header = ({ open, setOpen, close, handleOpen, handleClose, inProp, setInPr
                     Logout
                   </div>
                 )}
-                <div
-                  className="nav-font"
-                  onClick={() => {
-                    handleOpen()
-                    setInProp(true)
-                  }}
-                >
-                  News
-                </div>
+                <a href="/contact" className="nav-font">
+                  Contact Us
+                </a>
               </>
             ) : (
               <>
