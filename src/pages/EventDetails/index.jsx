@@ -6,7 +6,7 @@ import './EventDetails.css'
 import CallIcon from '@mui/icons-material/Call'
 import GroupsIcon from '@mui/icons-material/Groups'
 import MailIcon from '@mui/icons-material/Mail'
-import EventIcon from '@mui/icons-material/Event';
+import EventIcon from '@mui/icons-material/Event'
 import { EventDetailsLogic } from './eventDetails'
 import Loader from '../../components/loader'
 
@@ -32,7 +32,6 @@ function EventDetails() {
               </div>
             </Grid>
             <Grid container className="whitetext">
-
               {/* Event Coordinator */}
               <Grid item md={6}>
                 <div className="blankaaTitle">EVENT COORDINATORS</div>
@@ -58,13 +57,17 @@ function EventDetails() {
                       eventDetails.event &&
                       eventDetails.event.minParticipants}{' '}
                     to{' '}
-                    {eventDetails && eventDetails.event && eventDetails.event.maxParticipants}
+                    {eventDetails &&
+                      eventDetails.event &&
+                      eventDetails.event.maxParticipants}
                     members per team
                   </div>
                 </div>
                 <div className="inlineclass">
                   <EventIcon style={{ paddingTop: '6px', marginRight: '12px' }} />
-                  {eventDetails && eventDetails.event && eventDetails.event.isOnline ? 'Online event' : 'Offline Event'}
+                  {eventDetails && eventDetails.event && eventDetails.event.isOnline
+                    ? 'Online event'
+                    : 'Offline Event'}
                 </div>
               </Grid>
             </Grid>
@@ -111,7 +114,6 @@ function EventDetails() {
                   </Button>
                 </a>
               </div>
-
             </div>
           </Grid>
         </Grid>
