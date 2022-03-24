@@ -31,7 +31,7 @@ function EventDetails() {
                 {eventDetails && eventDetails.event && eventDetails.event.description}
               </div>
             </Grid>
-            <Grid container className="whitetext">
+            <Grid container spacing={4} className="whitetext">
               {/* Event Coordinator */}
               <Grid item md={6}>
                 <div className="blankaaTitle">EVENT COORDINATORS</div>
