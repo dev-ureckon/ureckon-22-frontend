@@ -7,7 +7,7 @@ import { Button, IconButton, CardActions, Grid, Container } from '@mui/material'
 import './events.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { Box } from '@mui/material'
-
+import { ReactComponent as Logo1 } from '../../assets/SVGs/problemstatement.svg'
 import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventList.style'
 import { EventListLogic } from './eventList'
@@ -120,6 +120,7 @@ const Events = () => {
                               size="small"
                             >
                               Register
+                              <Logo1 className="logo" style={{ marginLeft: '20px'}} />
                             </Button>
                           </Link>
                         </Grid>

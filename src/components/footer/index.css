@@ -1,0 +1,13 @@
+.TextStyle{
+ color: white;
+ margin-right: 3rem;
+}
+
+@media (max-width: 482px){
+    .TextStyle{
+        margin-right: 0;
+        padding-bottom: 25px;
+        flex-flow: 1;
+        text-align: center;
+    }
+  }

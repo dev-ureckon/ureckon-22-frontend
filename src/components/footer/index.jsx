@@ -4,6 +4,7 @@ import InstagramIcon from '../../assets/SVGs/instaWhite.svg'
 import TwitterIcon from '../../assets/SVGs/twitterWhite.svg'
 import LinkedInIcon from '../../assets/SVGs/linkedinNew.svg'
 import YoutubeIcon from '../../assets/SVGs/youtubeWhite.svg'
+import './index.css'
 
 const ImgStyle = {
   marginLeft: '2rem',
@@ -20,13 +21,14 @@ const Footer = () => {
         justifyContent: 'center',
         flexWrap: 'wrap',
         position: 'relative',
-        bottom: 0,
+        paddingBottom: '25px',
+        paddingTop: '50px',
         width: '100%',
         padding: '1rem 0',
         alignItems: 'center',
       }}
     >
-      <Typography variant="body1" style={{ color: 'white', marginRight: '3rem' }}>
+      <Typography variant="body1" className="TextStyle">
         © Copyright Ureckon 2022 - All Rights Reserved
       </Typography>
       <img src={FacebookIcon} alt="facebook" style={ImgStyle} />

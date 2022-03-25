@@ -9,7 +9,7 @@ const HomeNav = () => {
     <Grid
       container
       direction="row"
-      justifyContent="space-around"
+      justifyContent="space-evenly"
       className="footer"
       sx={{ marginBottom: '2rem' }}
     >
