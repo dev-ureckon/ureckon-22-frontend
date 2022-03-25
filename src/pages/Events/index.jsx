@@ -11,7 +11,7 @@ import { ReactComponent as Logo1 } from '../../assets/SVGs/problemstatement.svg'
 import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventList.style'
 import { EventListLogic } from './eventList'
-import { Link as a } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Loader from '../../components/loader'
 
 const Events = () => {
@@ -126,7 +126,7 @@ const Events = () => {
                           </a>
                         </Grid>
                         <Grid item xs={6}>
-                          <a
+                          <Link
                             style={{ textDecoration: 'none' }}
                             to={`/event/${event.code}`}
                           >
@@ -154,7 +154,7 @@ const Events = () => {
                                 <ArrowForwardIcon className={classes.icon} />
                               </IconButton>
                             </Button>
-                          </a>
+                          </Link>
                         </Grid>
                       </Grid>
                     </CardActions>
