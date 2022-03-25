@@ -120,7 +120,7 @@ const Events = () => {
                               size="small"
                             >
                               Register
-                              <Logo1 className="logo" style={{ marginLeft: '20px'}} />
+                              <Logo1 className="logo" style={{ marginLeft: '20px' }} />
                             </Button>
                           </Link>
                         </Grid>
