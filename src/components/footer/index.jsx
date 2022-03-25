@@ -21,6 +21,8 @@ const Footer = () => {
         justifyContent: 'center',
         flexWrap: 'wrap',
         position: 'relative',
+        paddingBottom: '25px',
+        paddingTop: '50px',
         width: '100%',
         padding: '1rem 0',
         alignItems: 'center',
