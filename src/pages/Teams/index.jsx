@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Container, Grid, Typography, Card, Paper } from '@mui/material'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
@@ -10,10 +11,14 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import EmailIcon from '@mui/icons-material/Email'
+import Loader from '../../components/loader/index.jsx'
 
 export default function Team() {
-  const { teamData } = TeamsLogic()
   const classes = useStyles()
+  const { loading, teamData, fakeLoading } = TeamsLogic()
+
+  if (fakeLoading) return <Loader />
+
   return (
     <Container>
       {teamData &&
@@ -66,7 +71,7 @@ export default function Team() {
                                     </Typography>
                                   </div>
                                 </Paper>
-                                <Paper className={classes.teamMember_social}>
+                                <div className={classes.teamMember_social}>
                                   <Typography variant="subtitle2" align="center">
                                     <a
                                       href={`mailto:${teamMemberData.email}`}
@@ -119,7 +124,7 @@ export default function Team() {
                                       <></>
                                     )}
                                   </Typography>
-                                </Paper>
+                                </div>
                               </Card>
                             </div>
                           </Grid>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Button, Container, Grid, LinearProgress, Typography } from '@mui/material'
 import RegisteredEvents from '../../components/registeredEvents/index.jsx'
@@ -10,20 +10,34 @@ import editProfileImage from '../../assets/IMGs/edit-profile-image.png'
 import './profile.css'
 import Dropdown from '../../components/Dropdown'
 import SubmitButton from '../../components/SubmitButton'
+import Loader from '../../components/loader'
 
 const Profile = () => {
   const {
     handleChange,
     formData,
-    loading,
+    // loading,
     handleSubmit,
     handleDisbandTeam,
     handleEditProfilePic,
     fetchedUserDetails,
   } = ProfileLogic()
-  const { registeredEvents, authProvider } = useSelector((state) => state.userProfile)
+  const { registeredEvents, authProvider, loading } = useSelector(
+    (state) => state.userProfile
+  )
+  const [fakeLoading, setFakeLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!loading) {
+        setFakeLoading(false)
+      }
+    }, 4000)
+  }, [])
 
   const [showPasswordModal, setShowPasswordModal] = useState(false)
+
+  if (fakeLoading) return <Loader />
 
   return (
     <>

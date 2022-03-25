@@ -28,7 +28,8 @@
 
 .pic img {
   position: static;
-  width: 160px;
+  /* width: auto; */
+  max-width: 90vw;
   height: 132px;
   left: 0px;
   top: 0px;

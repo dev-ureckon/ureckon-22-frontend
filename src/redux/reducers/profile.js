@@ -6,7 +6,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   userInfo: null,
   authProvider: null,

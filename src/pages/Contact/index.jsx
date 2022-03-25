@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useInputState } from '../../hooks/useInputState'
 import { createNewContact } from './contact'
 import { Container, Grid } from '@mui/material'
@@ -6,6 +6,8 @@ import Input from '../../components/input'
 import Button from '../../components/button'
 import { useDispatch, useSelector } from 'react-redux'
 import { showToastTimer } from '../../redux/actions/toast'
+
+import Loader from '../../components/loader/index'
 
 function Contact() {
   // If user is logged in autofill name and email
@@ -16,8 +18,16 @@ function Contact() {
   const [email, handleEmailChange, resetEmail] = useInputState(userInfo?.email || '')
   const [subject, handleSubjectChange, resetSubject] = useInputState('')
   const [message, handleMessageChange, resetMessage] = useInputState('')
+  const [fakeLoading, setFakeLoading] = useState(true)
 
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFakeLoading(false)
+    }, 2000)
+  }, [])
+
   // Contact form submit handler
   const handleFormSubmit = async (event) => {
     event.preventDefault()
@@ -45,62 +55,72 @@ function Contact() {
     }
   }
 
-  return (
-    <Container>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          handleFormSubmit(e)
-        }}
-      >
-        <Grid container spacing={{ lg: 10, xs: 4 }}>
-          <Grid item lg={6} md={12} sm={12}>
-            <Input
-              width="100%"
-              label="Name"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => handleNameChange(e)}
-              disabled={!!userInfo}
-            />
+  if (fakeLoading) {
+    return <Loader />
+  } else {
+    return (
+      <Container>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            handleFormSubmit(e)
+          }}
+        >
+          <Grid container spacing={{ lg: 10, xs: 4 }}>
+            <Grid item lg={6} md={12} sm={12}>
+              <Input
+                width="100%"
+                label="Name"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => handleNameChange(e)}
+                disabled={!!userInfo}
+              />
+            </Grid>
+            <Grid item lg={6} md={12} sm={12}>
+              <Input
+                width="100%"
+                label="Email"
+                placeholder="Your email"
+                type="email"
+                value={email}
+                onChange={(e) => handleEmailChange(e)}
+                disabled={!!userInfo}
+              />
+            </Grid>
+            <Grid item lg={6} md={12} sm={12}>
+              <Input
+                width="100%"
+                label="Subject"
+                placeholder="Subject"
+                value={subject}
+                onChange={(e) => handleSubjectChange(e)}
+              />
+            </Grid>
+            <Grid item lg={6} md={12} sm={12}>
+              <Input
+                width="100%"
+                label="Message"
+                placeholder="Your message"
+                value={message}
+                onChange={(e) => handleMessageChange(e)}
+                size="big"
+              />
+            </Grid>
           </Grid>
-          <Grid item lg={6} md={12} sm={12}>
-            <Input
-              width="100%"
-              label="Email"
-              placeholder="Your email"
-              type="email"
-              value={email}
-              onChange={(e) => handleEmailChange(e)}
-              disabled={!!userInfo}
-            />
-          </Grid>
-          <Grid item lg={6} md={12} sm={12}>
-            <Input
-              width="100%"
-              label="Subject"
-              placeholder="Subject"
-              value={subject}
-              onChange={(e) => handleSubjectChange(e)}
-            />
-          </Grid>
-          <Grid item lg={6} md={12} sm={12}>
-            <Input
-              width="100%"
-              label="Message"
-              placeholder="Your message"
-              value={message}
-              onChange={(e) => handleMessageChange(e)}
-              size="big"
-            />
-          </Grid>
-        </Grid>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button>Submit</Button>
-        </div>
-      </form>
-    </Container>
-  )
+          <div
+            style={{
+              margin: '3.5rem 0 1.8rem 0',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <Button>Submit</Button>
+          </div>
+        </form>
+      </Container>
+    )
+  }
 }
 
 export default Contact
