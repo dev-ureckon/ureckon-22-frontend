@@ -11,7 +11,7 @@ import { ReactComponent as Logo1 } from '../../assets/SVGs/problemstatement.svg'
 import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventList.style'
 import { EventListLogic } from './eventList'
-import { Link } from 'react-router-dom'
+import { Link as a } from 'react-router-dom'
 import Loader from '../../components/loader'
 
 const Events = () => {
@@ -35,9 +35,9 @@ const Events = () => {
               alignSelf={'center'}
               style={{ display: 'flex', justifyContent: 'flex-end' }}
             >
-              <Link to={`/events/search`}>
+              <a to={`/events/search`}>
                 <SearchIcon style={{ color: '#fff' }} fontSize="large" />
-              </Link>
+              </a>
             </Grid>
           </Grid>
 
@@ -100,9 +100,10 @@ const Events = () => {
                     >
                       <Grid container spacing={2}>
                         <Grid item xs={6}>
-                          <Link
+                          <a
                             style={{ textDecoration: 'none' }}
-                            to={`/events/${event.code}/event-register`}
+                            href={event.registrationLink}
+                            target="_blank"
                           >
                             <Button
                               style={{
@@ -122,10 +123,10 @@ const Events = () => {
                               Register
                               <Logo1 className="logo" style={{ marginLeft: '20px' }} />
                             </Button>
-                          </Link>
+                          </a>
                         </Grid>
                         <Grid item xs={6}>
-                          <Link
+                          <a
                             style={{ textDecoration: 'none' }}
                             to={`/event/${event.code}`}
                           >
@@ -153,7 +154,7 @@ const Events = () => {
                                 <ArrowForwardIcon className={classes.icon} />
                               </IconButton>
                             </Button>
-                          </Link>
+                          </a>
                         </Grid>
                       </Grid>
                     </CardActions>

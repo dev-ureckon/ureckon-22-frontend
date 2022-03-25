@@ -10,7 +10,7 @@ import { Box } from '@mui/material'
 import CardContent from '@mui/material/CardContent'
 import SearchExpand from '../../components/SearchExpand'
 import { useStyles } from './eventSearch.style'
-import { Link } from 'react-router-dom'
+import { Link as a } from 'react-router-dom'
 import { EventSearchLogic } from './EventsSearch'
 import Loader from '../../components/loader'
 
@@ -93,9 +93,10 @@ const EventsSearch = () => {
                     >
                       <Grid container spacing={2}>
                         <Grid item xs={6}>
-                          <Link
+                          <a
                             style={{ textDecoration: 'none' }}
-                            to={`/events/${event.code}/event-register`}
+                            href={event.registrationLink}
+                            target="_blank"
                           >
                             <Button
                               style={{
@@ -114,10 +115,10 @@ const EventsSearch = () => {
                             >
                               Register
                             </Button>
-                          </Link>
+                          </a>
                         </Grid>
                         <Grid item xs={6}>
-                          <Link
+                          <a
                             style={{ textDecoration: 'none' }}
                             to={`/event/${event.code}`}
                           >
@@ -145,7 +146,7 @@ const EventsSearch = () => {
                                 <ArrowForwardIcon className={classes.icon} />
                               </IconButton>
                             </Button>
-                          </Link>
+                          </a>
                         </Grid>
                       </Grid>
                     </CardActions>

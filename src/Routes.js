@@ -123,7 +123,7 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
             }
           />
           <Route
-            path="/events/category-slug/:eventCategorySlug"
+            path="/events/:eventCategorySlug"
             element={
               <>
                 <Header

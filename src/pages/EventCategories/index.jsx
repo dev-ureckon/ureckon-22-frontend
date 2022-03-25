@@ -34,10 +34,7 @@ const EventCategories = () => {
           {categories &&
             categories.map((category) => (
               <Grid item md={3} xs={12}>
-                <Link
-                  style={{ textDecoration: 'none' }}
-                  to={`/events/category-slug/${category.slug}`}
-                >
+                <Link style={{ textDecoration: 'none' }} to={`/events/${category.slug}`}>
                   <Paper
                     sx={{
                       display: 'flex',

@@ -74,7 +74,7 @@ const DropDown = ({ eventCategories, more }) => {
   }
 
   const handleRedirect = (category) => {
-    let slug = navigate(`/events/category-slug/${slug}`)
+    let slug = navigate(`/events/${slug}`)
     setAnchorEl(null)
   }
 
@@ -104,10 +104,7 @@ const DropDown = ({ eventCategories, more }) => {
           eventCategories.map((event) => (
             <>
               <a
-                href={
-                  '/events/category-slug/' +
-                  event?.categoryName.replace(/ /g, '-').toLowerCase()
-                }
+                href={'/events/' + event?.categoryName.replace(/ /g, '-').toLowerCase()}
                 style={{ textDecoration: 'none', color: 'white' }}
               >
                 <MenuItem

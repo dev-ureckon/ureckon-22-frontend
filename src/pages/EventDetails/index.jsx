@@ -59,7 +59,7 @@ function EventDetails() {
                     to{' '}
                     {eventDetails &&
                       eventDetails.event &&
-                      eventDetails.event.maxParticipants}
+                      eventDetails.event.maxParticipants}{' '}
                     members per team
                   </div>
                 </div>
@@ -86,14 +86,16 @@ function EventDetails() {
                 style={{ marginBottom: '20px' }}
               />
               <div className="teseclass">
-                <Button
-                  className="buttonEvents"
-                  variant="contained"
-                  style={{ backgroundColor: '#242C6B' }}
-                >
-                  <Logo1 className="logo" />
-                  <div style={{ marginRight: '15px' }}>Register</div>
-                </Button>
+                <a href={eventDetails?.event?.registrationLink} target="_blank">
+                  <Button
+                    className="buttonEvents"
+                    variant="contained"
+                    style={{ backgroundColor: '#242C6B' }}
+                  >
+                    <Logo1 className="logo" />
+                    <div style={{ marginRight: '15px' }}>Register</div>
+                  </Button>
+                </a>
               </div>
               <div className="teseclass">
                 <a
