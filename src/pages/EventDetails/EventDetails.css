@@ -4,7 +4,6 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500&display=swap');
 
-
 .blankaa {
   font-family: 'Blanka', sans-serif;
   color: white;
@@ -12,11 +11,10 @@
   font-size: 32px;
   letter-spacing: 0.1em;
   padding-bottom: 35px;
-
 }
 
-.logo{
-padding-inline-end: 15px;
+.logo {
+  padding-inline-end: 15px;
 }
 
 .whitetext {
@@ -35,70 +33,72 @@ padding-inline-end: 15px;
   font-size: 24px;
   letter-spacing: 0.1em;
   padding-bottom: 25px;
-
 }
 
-.uembuilding {
-  height: 17vw;
-  width: auto;
+.borderIcon {
   padding: 10px;
   border: 3px solid;
   border-radius: 8px;
   border-color: #43c9ed;
 }
 
-.buttonEvents{
-    width: 275px;
-    height: 42px;
-    padding: 8px;
-    font-size: 15px !important;
-    color: #FFFFFF !important;
-    font-weight: 600 !important;
-    text-transform: none !important;
-    margin-top: 8px !important;
-    margin-bottom: 8px !important;
+.eventIcon {
+  background-color: #ffffff;
+  width: 100%; /* or any custom size */
+  height: 215px;
+  /* object-fit: contain; */
 }
 
-.teseclass{
-display: grid;
-/* align-items: center;  */
-/* left and right */
-justify-content: center; 
-/* up and down */
-
+.buttonEvents {
+  width: 275px;
+  height: 42px;
+  padding: 8px;
+  font-size: 15px !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
 }
 
-.inlineclass{
-display: inline;
+.teseclass {
+  display: grid;
+  /* align-items: center;  */
+  /* left and right */
+  justify-content: center;
+  /* up and down */
 }
 
-@media (max-width: 437px){
-.inlineclass{
-  display: block;
-}
+.inlineclass {
+  display: inline;
 }
 
+@media (max-width: 437px) {
+  .inlineclass {
+    display: block;
+  }
+}
 
-@media (max-width: 768px){
-  .uembuilding{
+@media (max-width: 768px) {
+  .eventIcon {
     height: 70vw;
-    width: auto;
+    width: 100%;
   }
 }
 
-@media (max-width: 414px){
-  .uembuilding{
+@media (max-width: 414px) {
+  .eventIcon {
     height: 65vw;
-    width: auto;
+    width: 100%;
   }
 }
 
-@media (min-width: 1235px){
-  .uembuilding{
+/* @media (min-width: 1235px) {
+  .eventIcon {
     height: 215px;
     width: auto;
   }
-}
+} */
 
 /* @media (min-width: 2232px){
   .uembuilding{
