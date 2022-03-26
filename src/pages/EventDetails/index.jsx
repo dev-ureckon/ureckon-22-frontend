@@ -79,10 +79,7 @@ function EventDetails() {
           </Grid>
           <Grid item>
             <div className="whitetext">
-              <div
-                className="borderIcon"
-                style={{ marginBottom: '20px' }}
-              >
+              <div className="borderIcon" style={{ marginBottom: '20px' }}>
                 <img
                   className="eventIcon"
                   src={eventDetails && eventDetails.event && eventDetails.event.icon}
