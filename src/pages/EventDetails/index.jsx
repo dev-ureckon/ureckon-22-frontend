@@ -79,12 +79,13 @@ function EventDetails() {
           </Grid>
           <Grid item>
             <div className="whitetext">
-              <img
-                className="uembuilding"
-                src={eventDetails && eventDetails.event && eventDetails.event.icon}
-                alt="UEM Kart"
-                style={{ marginBottom: '20px' }}
-              />
+              <div className="borderIcon" style={{ marginBottom: '20px' }}>
+                <img
+                  className="eventIcon"
+                  src={eventDetails && eventDetails.event && eventDetails.event.icon}
+                  alt="UEM Kart"
+                />
+              </div>
               <div className="teseclass">
                 <a href={eventDetails?.event?.registrationLink} target="_blank">
                   <Button

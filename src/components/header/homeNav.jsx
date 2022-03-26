@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid'
 import ureckonLogo from '../../assets/UreckonWhiteLogo.png'
-import headingLogo from '../../assets/IMGs/Heading.png'
+import headingLogo from '../../assets/SVGs/ureckon2nd3rd.svg'
 import uemLogo from '../../assets/IMGs/uemLogo.png'
 import './header.css'
 
@@ -17,7 +17,7 @@ const HomeNav = () => {
         <img src={uemLogo} alt="UEM" className="img" />
       </Grid>
       <Grid item sx={{ paddingTop: 5 }}>
-        <img src={headingLogo} alt="UEM" className="img" />
+        <img src={headingLogo} alt="UEM" className="img" style={{ height: '110px' }} />
       </Grid>
       <Grid item sx={{ paddingTop: 5 }}>
         <img src={ureckonLogo} alt="heading" className="img" />
