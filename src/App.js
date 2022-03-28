@@ -5,7 +5,8 @@ import theme from './theme'
 import './fonts.css'
 import './app.css'
 import RouteComponent from './Routes'
-import bgvideo from './assets/bgVideo.mp4'
+// import bgvideo from './assets/bgVideo.mp4'
+import bgvideo2 from './assets/bgVideo2.mp4'
 import HomeNav from './components/header/homeNav'
 import ToastBar from './components/Toast/ToastBar'
 import Footer from './components/footer'
@@ -22,7 +23,7 @@ function App() {
         <CssBaseline />
         {/* for main container */}
         <video className="videoTag" autoPlay loop muted>
-          <source src={bgvideo} type="video/mp4" />
+          <source src={bgvideo2} type="video/mp4" />
         </video>
         <div
           className="nav1"

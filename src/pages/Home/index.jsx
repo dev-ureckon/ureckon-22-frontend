@@ -272,7 +272,7 @@ function Home({ open, setOpen, handleOpen, handleClose, inProp, setInProp }) {
               {/* ------------------------------------End of Social Icons----------------------------------------------------- */}
             </Grid>
 
-            {mainSponsors.length && (
+            {mainSponsors.length ? (
               <>
                 <div className={classes.Sponsor}>Partnered By</div>
                 <div className={classes.SponsorImg}>
@@ -287,7 +287,7 @@ function Home({ open, setOpen, handleOpen, handleClose, inProp, setInProp }) {
                   ))}
                 </div>
               </>
-            )}
+            ) : null}
 
             {/* ------------------------------------Main Sponser Icons----------------------------------------------------- */}
 
