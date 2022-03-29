@@ -15,6 +15,12 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
 
+  navEleMob: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
   font: {
     fontFamily: 'IBM Plex Sans',
     fontStyle: 'normal',
