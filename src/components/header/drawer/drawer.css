@@ -1,0 +1,19 @@
+.drawer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.menufont {
+    font-family: 'Blanka', sans-serif;
+    font-size: 48px;
+    color: white;
+    letter-spacing: 0.1em;
+    text-shadow: -0.5px 0.5px 1px #43c9ed, 0.5px 0.5px 1px #43c9ed;
+    line-height: 2em;
+    text-decoration: none;
+    color: #ffffff;
+    margin-top: 2rem;
+  }
