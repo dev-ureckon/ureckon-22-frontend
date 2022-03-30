@@ -126,23 +126,19 @@ const Header = ({
                   <img
                     src={CloseIcon}
                     alt="menu"
-                    style={{ marginLeft: '2rem', cursor: 'pointer' }}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => setDrawer(false)}
                   />
                 ) : (
                   <img
                     src={Hamburger}
                     alt="menu"
-                    style={{ marginLeft: '2rem', cursor: 'pointer' }}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => setDrawer(true)}
                   />
                 )}
 
-                <img
-                  src={NavUreckon}
-                  alt="ureckon-logo"
-                  style={{ marginLeft: '2rem', cursor: 'pointer' }}
-                />
+                <img src={NavUreckon} alt="ureckon-logo" style={{ cursor: 'pointer' }} />
               </>
             )}
           </Toolbar>
