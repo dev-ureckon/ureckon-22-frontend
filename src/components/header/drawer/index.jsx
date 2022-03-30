@@ -55,34 +55,37 @@ const Drawer = (open, setOpen, close, handleOpen, handleClose, inProp, setInProp
         </Transition>
       )}
       <div className="drawer-container">
+        <a href="/" className="menufont">
+          Home
+        </a>
         <a href="/events" className="menufont">
           Events
         </a>
-        <img src={line1} alt="line" style={{ marginTop: '-2rem', marginLeft: '2rem' }} />
+        {/* <img src={line1} alt="line" style={{ marginTop: '-2rem', marginLeft: '2rem' }} /> */}
         <a href="/about" className="menufont">
           About Us
         </a>
-        <img src={line2} alt="line" style={{ marginTop: '-2rem', marginRight: '7rem' }} />
-        <div className="menufont" onClick={() => setModal(true)}>
+        {/* <img src={line2} alt="line" style={{ marginTop: '-2rem', marginRight: '7rem' }} /> */}
+        {/* <div className="menufont" onClick={() => setModal(true)}>
           News
-        </div>
-        <img src={line2} alt="line" style={{ marginTop: '-2rem', marginRight: '1rem' }} />
+        </div> */}
+        {/* <img src={line2} alt="line" style={{ marginTop: '-2rem', marginRight: '1rem' }} /> */}
         <a href="/team" className="menufont">
           Team
         </a>
-        <img src={line1} alt="line" style={{ marginTop: '-2rem', marginLeft: '1rem' }} />
+        {/* <img src={line1} alt="line" style={{ marginTop: '-2rem', marginLeft: '1rem' }} /> */}
         <a href="/partners" className="menufont">
           Partners
         </a>
-        <img src={line1} alt="line" style={{ marginTop: '-2rem', marginLeft: '7rem' }} />
+        {/* <img src={line1} alt="line" style={{ marginTop: '-2rem', marginLeft: '7rem' }} /> */}
         <a href="/contact" className="menufont">
           Contact Us
         </a>
-        <img
+        {/* <img
           src={line2}
           alt="line"
           style={{ marginTop: '-2rem', marginRight: '12rem' }}
-        />
+        /> */}
       </div>
     </>
   )

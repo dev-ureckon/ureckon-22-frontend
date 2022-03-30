@@ -105,6 +105,13 @@ const Header = ({
                 <a href="/about" className="nav-font">
                   About Us
                 </a>
+                <a
+                  href="/partners"
+                  className="nav-font"
+                  style={{ marginLeft: '20px', marginRight: '20px' }}
+                >
+                  Partners
+                </a>
                 {userInfo && (
                   <div className="nav-font" onClick={logoutHandler}>
                     Logout
