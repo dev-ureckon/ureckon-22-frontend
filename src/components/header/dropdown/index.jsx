@@ -128,11 +128,11 @@ const DropDown = ({ eventCategories, more }) => {
                 Team
               </MenuItem>
             </a>
-            <a href="/partners" style={{ textDecoration: 'none', color: 'white' }}>
+            {/* <a href="/partners" style={{ textDecoration: 'none', color: 'white' }}>
               <MenuItem onClick={handleClose} disableRipple>
                 Partners
               </MenuItem>
-            </a>
+            </a> */}
             <a href="/contact" style={{ textDecoration: 'none', color: 'white' }}>
               <MenuItem onClick={handleClose} disableRipple>
                 Contact us

@@ -8,6 +8,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { Transition } from 'react-transition-group'
 import { Modal } from '@mui/material'
 import NavUreckon from '../../assets/IMGs/navbar-ureckon-logo.png'
+import Hamburger from '../../assets/IMGs/hamburger.png'
+import CloseIcon from '../../assets/IMGs/close.png'
 import './header.css'
 import { useStyles } from './styles'
 import DropDown from './dropdown/index.jsx'
@@ -15,13 +17,23 @@ import { userLogout } from '../../redux/actions/authActions'
 import { fetchCategory } from '../../redux/actions/eventCategoryAction'
 import News from '../announcement/index.jsx'
 
-const Header = ({ open, setOpen, close, handleOpen, handleClose, inProp, setInProp }) => {
+const Header = ({
+  open,
+  setOpen,
+  close,
+  handleOpen,
+  handleClose,
+  inProp,
+  setInProp,
+  drawer,
+  setDrawer,
+}) => {
   const classes = useStyles()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [events, setEvents] = useState(true)
 
-  const isMobile = useMediaQuery('(min-width:900px)')
+  const isMobile = useMediaQuery('(max-width:900px)')
 
   const { userInfo } = useSelector((state) => state.userLogin)
   const { eventCategories } = useSelector((state) => state.eventCategory)
@@ -77,8 +89,8 @@ const Header = ({ open, setOpen, close, handleOpen, handleClose, inProp, setInPr
       </Transition>
       <Box className={classes.root}>
         <AppBar position="static" color="navbar" className={classes.navbar}>
-          <Toolbar className={classes.navEle}>
-            {isMobile ? (
+          <Toolbar className={isMobile ? classes.navEleMob : classes.navEle}>
+            {!isMobile ? (
               <>
                 <a href="/" className="nav-font">
                   Home
@@ -93,17 +105,46 @@ const Header = ({ open, setOpen, close, handleOpen, handleClose, inProp, setInPr
                 <a href="/about" className="nav-font">
                   About Us
                 </a>
+                <a
+                  href="/partners"
+                  className="nav-font"
+                  style={{ marginLeft: '20px', marginRight: '20px' }}
+                >
+                  Partners
+                </a>
                 {userInfo && (
                   <div className="nav-font" onClick={logoutHandler}>
                     Logout
                   </div>
                 )}
-                <a href="/contact" className="nav-font">
-                  Contact Us
-                </a>
+                <div
+                  className="nav-font"
+                  onClick={() => {
+                    handleOpen()
+                    setInProp(true)
+                  }}
+                >
+                  News
+                </div>
               </>
             ) : (
               <>
+                {drawer ? (
+                  <img
+                    src={CloseIcon}
+                    alt="menu"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setDrawer(false)}
+                  />
+                ) : (
+                  <img
+                    src={Hamburger}
+                    alt="menu"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setDrawer(true)}
+                  />
+                )}
+
                 <img
                   src={NavUreckon}
                   alt="ureckon-logo"

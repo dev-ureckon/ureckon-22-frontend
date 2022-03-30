@@ -124,9 +124,9 @@ function Home({ open, setOpen, handleOpen, handleClose, inProp, setInProp }) {
                       </Link>
                     )} */}
                     <Link to="/about" className="menulink">
-                      About Us
+                      About
                       <div>
-                        <img className="test5" src={line2} alt="line" />
+                        <img className="test3" src={line1} alt="line" />
                       </div>
                     </Link>
                   </Grid>

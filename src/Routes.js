@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop.js'
 
@@ -21,8 +22,10 @@ import Header from './components/header'
 import Events from './pages/Events/index.jsx'
 import EventsSearch from './pages/EventsSearch/index.jsx'
 import EventCategories from './pages/EventCategories/index.jsx'
+import Drawer from './components/header/drawer'
 
 function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInProp }) {
+  const [drawer, setDrawer] = useState(false)
   return (
     <>
       <BrowserRouter>
@@ -100,8 +103,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <Sponsor />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <Sponsor />
+                )}
               </>
             }
           />
@@ -117,8 +133,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <EventCategories />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <EventCategories />
+                )}
               </>
             }
           />
@@ -133,8 +162,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <Events />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <Events />
+                )}
               </>
             }
           />
@@ -149,8 +191,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <EventsSearch />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <EventsSearch />
+                )}
               </>
             }
           />
@@ -166,8 +221,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <Contact />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <Contact />
+                )}
               </>
             }
           />
@@ -182,8 +250,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <About />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <About />
+                )}
               </>
             }
           />
@@ -198,8 +279,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <Teams />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <Teams />
+                )}
               </>
             }
           />
@@ -223,17 +317,21 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
                   handleClose={handleClose}
                   inProp={inProp}
                   setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
                 />
-                <Contact />
-              </>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <>
-                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
-                <About />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <Contact />
+                )}
               </>
             }
           />
@@ -241,17 +339,28 @@ function RouteComponent({ open, setOpen, handleOpen, handleClose, inProp, setInP
             path="/event/:eventCode"
             element={
               <>
-                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
-                <EventDetails />
-              </>
-            }
-          />
-          <Route
-            path="/team"
-            element={
-              <>
-                <Header inProp={inProp} handleOpen={handleOpen} setInProp={setInProp} />
-                <Teams />
+                <Header
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  inProp={inProp}
+                  setInProp={setInProp}
+                  drawer={drawer}
+                  setDrawer={setDrawer}
+                />
+                {drawer ? (
+                  <Drawer
+                    open={open}
+                    setOpen={setOpen}
+                    handleOpen={handleOpen}
+                    handleClose={handleClose}
+                    inProp={inProp}
+                    setInProp={setInProp}
+                  />
+                ) : (
+                  <EventDetails />
+                )}
               </>
             }
           />
