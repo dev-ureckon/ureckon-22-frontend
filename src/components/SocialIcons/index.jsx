@@ -1,8 +1,10 @@
 import React from 'react'
 import './socialicons.css'
-import { Grid } from '@mui/material'
+import { Grid, useMediaQuery } from '@mui/material'
 function SocialIcons() {
-  return (
+  const isMobile = useMediaQuery('(max-width:900px)')
+
+  return isMobile ? null : (
     <div>
       <Grid
         item
