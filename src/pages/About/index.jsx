@@ -62,10 +62,10 @@ function About() {
               exhibitions. Students and tech enthusiasts from various parts of the country
               are wholeheartedly invited to be a part of this budding Techno-Management
               fest, not only to showcase their talents but also to consider it as a field
-              to learn something new. URECKON in association with ISRO exhibits several
-              application based robots and also hosts several events based on Robotics,
-              Coding, B-plan, Quizzes, Guest lectures, Tech talks and exciting gaming
-              events with lucrative prizes to be won.
+              to learn something new. URECKON exhibits several application based robots
+              and also hosts several events based on Robotics, Coding, B-plan, Quizzes,
+              Guest lectures, Tech talks and exciting gaming events with lucrative prizes
+              to be won.
             </div>
           </Grid>
         </Grid>

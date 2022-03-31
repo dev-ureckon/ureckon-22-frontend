@@ -54,7 +54,7 @@ const Footer = () => {
       <a href="https://www.youtube.com/c/UreckonUEMKolkata" target="_blank">
         <img src={YoutubeIcon} alt="youtube" style={ImgStyle} />
       </a>
-      <a href="https://ureckon.s3.amazonaws.com/APK/URECKON-22.apk">
+      <a href="https://play.google.com/store/apps/details?id=com.sreesubh.ureckon2022">
         <img
           src={APKIcon}
           alt="youtube"
