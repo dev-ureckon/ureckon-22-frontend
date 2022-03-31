@@ -1,0 +1,19 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="44" height="44">
+	<title>fbColor-svg</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M0 0L50 0L50 50L0 50L0 0Z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #1877f2 } 
+		.shp1 { fill: #ffffff } 
+	</style>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g id="Layer">
+			<path id="Layer" class="shp0" d="M28.91 49.7L28.91 32.23L34.73 32.23L35.84 25L28.91 25L28.91 20.31C28.91 18.33 29.87 16.41 32.98 16.41L36.13 16.41L36.13 10.25C36.13 10.25 33.27 9.77 30.54 9.77C24.83 9.77 21.09 13.23 21.09 19.49L21.09 25L14.75 25L14.75 32.23L21.09 32.23L21.09 49.7C9.14 47.82 0 37.48 0 25C0 11.19 11.19 0 25 0C38.81 0 50 11.19 50 25C50 37.48 40.86 47.82 28.91 49.7Z" />
+			<path id="Layer" class="shp1" d="M28.91 32.23L28.91 49.7C27.63 49.9 26.33 50 25 50C23.67 50 22.37 49.9 21.09 49.7L21.09 32.23L14.75 32.23L14.75 25L21.09 25L21.09 19.49C21.09 13.23 24.83 9.77 30.54 9.77C33.27 9.77 36.13 10.25 36.13 10.25L36.13 16.41L32.98 16.41C29.87 16.41 28.91 18.33 28.91 20.31L28.91 25L35.84 25L34.73 32.23L28.91 32.23Z" />
+		</g>
+	</g>
+</svg>
